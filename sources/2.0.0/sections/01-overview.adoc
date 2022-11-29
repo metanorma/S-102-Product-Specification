@@ -1,13 +1,22 @@
 
 [[sec-overview]]
 == Overview
+
 With the advent of electronic navigation and the technological progress of surveying systems and production capabilities, the ability to enhance maritime navigation with the portrayal of high resolution bathymetry has become a requirement. The provision and utilization of such data in a standardized format is essential to support the safe and precise navigation of marine vessels, and furthermore an important basis for many other maritime applications.
 
 === Introduction
+
 This document describes an S-100 compliant product specification for a bathymetric surface product. Incorporating aspects of the navigation surface concept [Smith et al, 2002], an S-102 bathymetric surface product is a digital elevation model which represents the seafloor in a regular grid structure. It can be used alone or as an important element/source for future S-100 conformant ECDIS navigation. The product specification is based on the IHO S-100 framework specification and the ISO 19100 series of standards. It comprises the content model (spatial structure and metadata), encoding structure, portrayal and exchange file format for a bathymetric surface product.
+
+I am citing S-100 here: <<iho-s100>>.
+
+I am citing S-100 here: IHO S-100.
 
 [bibliography]
 === References
+
+* [[[iho-s100,document identifier]]]
+
 * [[[iho-s100,IHO S-100]]], Universal Hydrographic Data Model v4.0.0, December 2018 (Encoding, Feature Catalogue)
 
 * [[[iho-s44,IHO S-44]]], Standards for Hydrographic Surveys 5^th^ Edition, February 2008
