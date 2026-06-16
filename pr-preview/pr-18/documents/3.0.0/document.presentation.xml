@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="presentation" version="1.3.3" schema-version="v2.1.5" flavor="iho">
+<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="presentation" version="1.3.6" schema-version="v2.1.6" flavor="iho">
 <bibdata type="standard">
 <title language="en" type="main">Bathymetric Surface Product Specification</title>
 <docidentifier primary="true" type="IHO">S-102</docidentifier><docnumber>102</docnumber><date type="published"><on>2024-12</on></date><contributor><role type="author"/><organization>
@@ -244,7 +244,7 @@ sourcecode .nt {
 </table>
 </clause></preface><sections>
 
-<clause id="sec-overview" anchor="sec-overview" obligation="normative" semx-id="_86410ce9-57d3-52e9-e5e9-57c2f6b3186a" displayorder="3">
+<clause id="sec-overview" anchor="sec-overview" obligation="normative" semx-id="_97f5fbe1-088f-f501-310b-fe07ca9a1824" displayorder="3">
 <title id="_c6adaea6-a036-2e0d-8793-b30900cc2285" semx-id="_6a13218d-655a-ce5a-a75b-2a8f4a2affc3">Overview</title><fmt-title depth="1" id="_ae9412d6-10af-04cc-f253-5617e451e298"><span class="fmt-caption-label"><semx element="autonum" source="sec-overview">1</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_c6adaea6-a036-2e0d-8793-b30900cc2285">Overview</semx></fmt-title><fmt-xref-label><span class="fmt-element-name">Section</span> <semx element="autonum" source="sec-overview">1</semx></fmt-xref-label>
 <p id="_63d21965-446c-02b9-fecb-699d6e8faa7a" semx-id="_63d21965-446c-02b9-fecb-699d6e8faa7a">With the advent of electronic navigation and the technological progress of surveying systems and production capabilities, the ability to enhance maritime navigation with the portrayal of high-resolution bathymetry has become a requirement. The provision and utilization of such data in a standardized format is essential to support the safe and precise navigation of marine vessels, and furthermore an important basis for many other maritime applications.</p>
 
@@ -253,12 +253,15 @@ sourcecode .nt {
 <p id="_b83bc247-8615-c795-0bf2-b55449a37e69" semx-id="_b83bc247-8615-c795-0bf2-b55449a37e69">This document describes an S-100 compliant product specification for a bathymetric surface product. Incorporating aspects of the navigation surface concept <eref type="inline" bibitemid="NavigationSurface" citeas="The Navigation Surface" id="_2e92ecb1-f514-e637-64e4-277bc8b3c83a">[Smith et al, 2002]</eref><semx element="eref" source="_2e92ecb1-f514-e637-64e4-277bc8b3c83a"><fmt-xref type="inline" target="NavigationSurface">[Smith et al, 2002]</fmt-xref></semx>, an S-102 bathymetric surface product is a digital elevation model which represents the seafloor in a regular grid structure. It can be used alone or as an important element/source for future S-100 conformant ECDIS navigation. The product specification is based on the IHO S-100 framework specification and the ISO 19100 series of standards. It comprises the content model (spatial structure and metadata), encoding structure, portrayal and exchange file format for a bathymetric surface product.</p>
 </clause>
 
-<references id="_e557e6a4-1f61-93fe-2498-f3b4846ab289" normative="true" obligation="informative" semx-id="_e557e6a4-1f61-93fe-2498-f3b4846ab289">
-<title id="_95eda529-3fe2-e4d7-ac63-b961772d8d11" semx-id="_72654c3d-2b1e-ad22-df33-e3b55e043dfd">References</title><fmt-title depth="2" id="_230bbeee-93da-2bf8-ce3a-28f8034f3da0"><span class="fmt-caption-label"><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_e557e6a4-1f61-93fe-2498-f3b4846ab289">2</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_95eda529-3fe2-e4d7-ac63-b961772d8d11">References</semx></fmt-title><fmt-xref-label><span class="fmt-element-name">Clause</span> <semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_e557e6a4-1f61-93fe-2498-f3b4846ab289">2</semx></fmt-xref-label>
-<bibitem id="iho-s100" type="standard" schema-version="v1.2.9" anchor="iho-s100" semx-id="_49e69dcc-d9f8-5932-9266-568160572dac"><biblio-tag>[1]<tab/></biblio-tag><formattedref>S-100 edition 5.2.0: IHO Universal Hydrographic Data Model, International Hydrographic Organization (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf">https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<references id="_450c7f83-4d73-0317-7234-defe1ed64d55" normative="true" obligation="informative" semx-id="_450c7f83-4d73-0317-7234-defe1ed64d55">
+<title id="_95eda529-3fe2-e4d7-ac63-b961772d8d11" semx-id="_72654c3d-2b1e-ad22-df33-e3b55e043dfd">References</title><fmt-title depth="2" id="_230bbeee-93da-2bf8-ce3a-28f8034f3da0"><span class="fmt-caption-label"><semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_450c7f83-4d73-0317-7234-defe1ed64d55">2</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_95eda529-3fe2-e4d7-ac63-b961772d8d11">References</semx></fmt-title><fmt-xref-label><span class="fmt-element-name">Clause</span> <semx element="autonum" source="sec-overview">1</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="_450c7f83-4d73-0317-7234-defe1ed64d55">2</semx></fmt-xref-label>
+<bibitem id="iho-s100" type="standard" schema-version="v1.5.6" anchor="iho-s100" semx-id="_8cf3e315-7c50-ac33-d39e-6fee6ef87bcb"><biblio-tag>[1]<tab/></biblio-tag><formattedref>S-100 edition 5.2.0: IHO Universal Hydrographic Data Model, International Hydrographic Organization, committee, International Hydrographic Organization (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf">https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="main" format="text/plain" language="en">IHO Universal Hydrographic Data Model</title>
+<title language="en" type="main">IHO Universal Hydrographic Data Model</title>
+
+  
+<title language="fr" type="main">Modèle universel de données hydrographiques de l’OHI</title>
 
   <uri type="pdf">https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf</uri>
   <docidentifier type="IHO" primary="true">S-100</docidentifier><docidentifier scope="biblio-tag">S-100</docidentifier>
@@ -276,10 +279,25 @@ sourcecode .nt {
       <uri>www.iho.int</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <subdivision type="technical-committee">
+        
+<name>Hydrographic Services and Standards Committee</name>
+
+        <identifier id="_6fec6ca1-bec5-9767-4075-0d51ac5cf808">HSSC</identifier><fmt-identifier><tt><semx element="identifier" source="_6fec6ca1-bec5-9767-4075-0d51ac5cf808">HSSC</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>IHO</abbreviation>
+    </organization>
+  </contributor>
   <edition>5.2.0</edition>
-  <version>
-    <revision-date>2024-06-07</revision-date>
-  </version>
+  <version>2024-06-07</version>
   <language>en</language>
   <language>fr</language>
   <script>Latn</script>
@@ -300,21 +318,40 @@ sourcecode .nt {
   </copyright>
   <series type="main">
     
-<title type="original" format="text/plain">        Standards and Specifications        Normes et Spécifications     </title>
+<title language="en" script="Latn" type="original">Standards and Specifications</title>
 
-    <place>Monaco</place>
+    
+<title language="fr" script="Latn" type="original">Normes et Spécifications</title>
+
+    <place>
+      <formattedPlace>Monaco</formattedPlace>
+    </place>
     <organization>International Hydrographic Organization</organization>
     <number>S</number>
   </series>
-  <place>Monaco</place>
+  <place>
+    <formattedPlace>Monaco</formattedPlace>
+  </place>
   <validity>
-    <validityBegins>2024-06-07 00:00</validityBegins>
+    <validityBegins>2024-06-07T00:00:00Z</validityBegins>
   </validity>
 </bibitem>
-<bibitem id="iho-s44" type="standard" schema-version="v1.2.9" anchor="iho-s44" semx-id="_4fabb0f7-c0fc-2e02-1301-b211187b0d74"><biblio-tag>[2]<tab/></biblio-tag><formattedref>S-44 edition 5.0.0: IHO Standards for Hydrographic Surveys, International Hydrographic Organization (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-44/S-44_5E.pdf">https://iho.int/uploads/user/pubs/standards/s-44/S-44_5E.pdf</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iho-s44" type="standard" schema-version="v1.5.6" anchor="iho-s44" semx-id="_59496b8c-3eb2-3d32-62f4-1a59f26445b9"><biblio-tag>[2]<tab/></biblio-tag><formattedref>S-44 edition 5.0.0: IHO Standards for Hydrographic Surveys, International Hydrographic Organization, committee, International Hydrographic Organization (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-44/S-44_5E.pdf">https://iho.int/uploads/user/pubs/standards/s-44/S-44_5E.pdf</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="main" format="text/plain" language="en">IHO Standards for Hydrographic Surveys</title>
+<title language="en" type="main">IHO Standards for Hydrographic Surveys</title>
+
+  
+<title language="fr" type="main">Normes OHI pour les levés hydrographiques</title>
+
+  
+<title language="es" type="main">Normas de la OHI para los Levantamientos Hidrográficos</title>
+
+  
+<title language="pt" type="main">Especificações da OHI para Levantamentos Hidrográficos</title>
+
+  
+<title language="zh" type="main">海道测量标准</title>
 
   <uri type="pdf">https://iho.int/uploads/user/pubs/standards/s-44/S-44_5E.pdf</uri>
   <docidentifier type="IHO" primary="true">S-44</docidentifier><docidentifier scope="biblio-tag">S-44</docidentifier>
@@ -332,10 +369,25 @@ sourcecode .nt {
       <uri>www.iho.int</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <subdivision type="technical-committee">
+        
+<name>Hydrographic Services and Standards Committee</name>
+
+        <identifier id="_46866d39-8538-84ec-61fa-4c9487fbef38">HSSC</identifier><fmt-identifier><tt><semx element="identifier" source="_46866d39-8538-84ec-61fa-4c9487fbef38">HSSC</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>IHO</abbreviation>
+    </organization>
+  </contributor>
   <edition>5.0.0</edition>
-  <version>
-    <revision-date>2008-02-01</revision-date>
-  </version>
+  <version>2008-02-01</version>
   <language>en</language>
   <language>fr</language>
   <language>es</language>
@@ -358,21 +410,34 @@ sourcecode .nt {
   </copyright>
   <series type="main">
     
-<title type="original" format="text/plain">        Standards and Specifications        Normes et Spécifications     </title>
+<title language="en" script="Latn" type="original">Standards and Specifications</title>
 
-    <place>Monaco</place>
+    
+<title language="fr" script="Latn" type="original">Normes et Spécifications</title>
+
+    <place>
+      <formattedPlace>Monaco</formattedPlace>
+    </place>
     <organization>International Hydrographic Organization</organization>
     <number>S</number>
   </series>
-  <place>Monaco</place>
+  <place>
+    <formattedPlace>Monaco</formattedPlace>
+  </place>
   <validity>
-    <validityBegins>2008-02-01 00:00</validityBegins>
+    <validityBegins>2008-02-01T00:00:00Z</validityBegins>
   </validity>
 </bibitem>
-<bibitem id="iho-s4" type="standard" schema-version="v1.2.9" anchor="iho-s4" semx-id="_68afa71a-de43-808e-d2cf-7a862aeb67c2"><biblio-tag>[3]<tab/></biblio-tag><formattedref>S-4 edition 4.8.0: Regulations for International (INT) Charts and Chart Specifications of the IHO, International Hydrographic Organization (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-4/S4_V4-8-0_Oct_2018_EN.pdf">https://iho.int/uploads/user/pubs/standards/s-4/S4_V4-8-0_Oct_2018_EN.pdf</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iho-s4" type="standard" schema-version="v1.5.6" anchor="iho-s4" semx-id="_8f35c193-7f00-fea5-6a0d-93cb4de62dd8"><biblio-tag>[3]<tab/></biblio-tag><formattedref>S-4 edition 4.8.0: Regulations for International (INT) Charts and Chart Specifications of the IHO, International Hydrographic Organization, committee, International Hydrographic Organization (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-4/S4_V4-8-0_Oct_2018_EN.pdf">https://iho.int/uploads/user/pubs/standards/s-4/S4_V4-8-0_Oct_2018_EN.pdf</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="main" format="text/plain" language="en">Regulations for International (INT) Charts and Chart Specifications of the IHO</title>
+<title language="en" type="main">Regulations for International (INT) Charts and Chart Specifications of the IHO</title>
+
+  
+<title language="fr" type="main">RÈGLEMENT DE L’OHI POUR LES CARTES MARINES INTERNATIONALES (INT) ET SPÉCIFICATIONS DE L’OHI POUR LES CARTES MARINES</title>
+
+  
+<title language="es" type="main">Reglamento de la OHI para cartas internacionales y especificaciones cartográficas de la OHI</title>
 
   <uri type="pdf">https://iho.int/uploads/user/pubs/standards/s-4/S4_V4-8-0_Oct_2018_EN.pdf</uri>
   <docidentifier type="IHO" primary="true">S-4</docidentifier><docidentifier scope="biblio-tag">S-4</docidentifier>
@@ -390,10 +455,25 @@ sourcecode .nt {
       <uri>www.iho.int</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <subdivision type="technical-committee">
+        
+<name>Hydrographic Services and Standards Committee</name>
+
+        <identifier id="_4692cc57-62fd-6600-e7af-053d8d4eed38">HSSC</identifier><fmt-identifier><tt><semx element="identifier" source="_4692cc57-62fd-6600-e7af-053d8d4eed38">HSSC</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>IHO</abbreviation>
+    </organization>
+  </contributor>
   <edition>4.8.0</edition>
-  <version>
-    <revision-date>2018-10-01</revision-date>
-  </version>
+  <version>2018-10-01</version>
   <language>en</language>
   <language>fr</language>
   <language>es</language>
@@ -415,21 +495,40 @@ sourcecode .nt {
   </copyright>
   <series type="main">
     
-<title type="original" format="text/plain">        Standards and Specifications        Normes et Spécifications     </title>
+<title language="en" script="Latn" type="original">Standards and Specifications</title>
 
-    <place>Monaco</place>
+    
+<title language="fr" script="Latn" type="original">Normes et Spécifications</title>
+
+    <place>
+      <formattedPlace>Monaco</formattedPlace>
+    </place>
     <organization>International Hydrographic Organization</organization>
     <number>S</number>
   </series>
-  <place>Monaco</place>
+  <place>
+    <formattedPlace>Monaco</formattedPlace>
+  </place>
   <validity>
-    <validityBegins>2018-10-01 00:00</validityBegins>
+    <validityBegins>2018-10-01T00:00:00Z</validityBegins>
   </validity>
 </bibitem>
-<bibitem id="iho-s32" type="standard" schema-version="v1.2.9" anchor="iho-s32" semx-id="_78a3347c-4b9b-eede-9e32-6c346211354c"><biblio-tag>[4]<tab/></biblio-tag><formattedref>S-32 edition 1.0.0: Hydrographic Dictionary — Glossary of ECDIS Related Terms, International Hydrographic Organization (<fmt-link target="https://portal.iho.int/iho-ohi/S32/">https://portal.iho.int/iho-ohi/S32/</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iho-s32" type="standard" schema-version="v1.5.6" anchor="iho-s32" semx-id="_c24020ae-a700-422d-d553-d7a35538b8c9"><biblio-tag>[4]<tab/></biblio-tag><formattedref>S-32 edition 1.0.0: Hydrographic Dictionary — Glossary of ECDIS Related Terms, International Hydrographic Organization, committee, International Hydrographic Organization (<fmt-link target="https://portal.iho.int/iho-ohi/S32/">https://portal.iho.int/iho-ohi/S32/</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="main" format="text/plain" language="en">Hydrographic Dictionary — Glossary of ECDIS Related Terms</title>
+<title language="en" type="main">Hydrographic Dictionary — Glossary of ECDIS Related Terms</title>
+
+  
+<title language="fr" type="main">Dictionnaire hydrographique — Glossaire des termes relatifs aux ECDIS</title>
+
+  
+<title language="es" type="main">Diccionario Hidrográfico — Glosario de Términos relativos al ECDIS</title>
+
+  
+<title language="zh" type="main">水文词典 — ECDIS 相关术语词汇表</title>
+
+  
+<title language="id" type="main">Kamus Hidrografi</title>
 
   <uri type="website">https://portal.iho.int/iho-ohi/S32/</uri>
   <docidentifier type="IHO" primary="true">S-32</docidentifier><docidentifier scope="biblio-tag">S-32</docidentifier>
@@ -447,10 +546,25 @@ sourcecode .nt {
       <uri>www.iho.int</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <subdivision type="technical-committee">
+        
+<name>Hydrographic Services and Standards Committee</name>
+
+        <identifier id="_69fae8f4-c76a-4c1a-2929-e5e6439d64e3">HSSC</identifier><fmt-identifier><tt><semx element="identifier" source="_69fae8f4-c76a-4c1a-2929-e5e6439d64e3">HSSC</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>IHO</abbreviation>
+    </organization>
+  </contributor>
   <edition>1.0.0</edition>
-  <version>
-    <revision-date>2019</revision-date>
-  </version>
+  <version>2019-01-01</version>
   <language>en</language>
   <language>fr</language>
   <language>es</language>
@@ -472,39 +586,59 @@ sourcecode .nt {
   </copyright>
   <series type="main">
     
-<title type="original" format="text/plain">        Standards and Specifications        Normes et Spécifications     </title>
+<title language="en" script="Latn" type="original">Standards and Specifications</title>
 
-    <place>Monaco</place>
+    
+<title language="fr" script="Latn" type="original">Normes et Spécifications</title>
+
+    <place>
+      <formattedPlace>Monaco</formattedPlace>
+    </place>
     <organization>International Hydrographic Organization</organization>
     <number>S</number>
   </series>
-  <place>Monaco</place>
+  <place>
+    <formattedPlace>Monaco</formattedPlace>
+  </place>
   <validity>
-    <validityBegins>1994-01-01 00:00</validityBegins>
+    <validityBegins>1994-01-01T00:00:00Z</validityBegins>
   </validity>
 </bibitem>
-<bibitem id="iso-8601" type="standard" schema-version="v1.2.9" anchor="iso-8601" semx-id="_6c444a93-b68b-3a5b-72b0-8802e95b0153"><biblio-tag>[5]<tab/></biblio-tag><formattedref>ISO 8601:2004: Data elements and interchange formats — Information interchange — Representation of dates and times, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/40874.html">https://www.iso.org/standard/40874.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iso-8601" type="standard" schema-version="v1.5.6" anchor="iso-8601" semx-id="_9bf01bc8-5a02-22d9-9d22-9728ac1b8cf7"><biblio-tag>[5]<tab/></biblio-tag><formattedref>ISO 8601:2004: Data elements and interchange formats — Information interchange — Representation of dates and times, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/40874.html">https://www.iso.org/standard/40874.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-intro" format="text/plain" language="en" script="Latn">Data elements and interchange formats</title>
+<title language="en" script="Latn" type="title-intro">Data elements and interchange formats</title>
 
   
-<title type="title-main" format="text/plain" language="en" script="Latn">Information interchange</title>
+<title language="en" script="Latn" type="title-main">Information interchange</title>
 
   
-<title type="title-part" format="text/plain" language="en" script="Latn">Representation of dates and times</title>
+<title language="en" script="Latn" type="title-part">Representation of dates and times</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Data elements and interchange formats — Information interchange — Representation of dates and times</title>
+<title language="en" script="Latn" type="main">Data elements and interchange formats — Information interchange — Representation of dates and times</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Éléments de données et formats d’échange</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Échange d’information</title>
+
+  
+<title language="fr" script="Latn" type="title-part">Représentation de la date et de l’heure</title>
+
+  
+<title language="fr" script="Latn" type="main">Éléments de données et formats d’échange — Échange d’information — Représentation de la date et de l’heure</title>
 
   <uri type="src">https://www.iso.org/standard/40874.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:40874:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/04/08/40874.detail.rss</uri>
   <docidentifier type="ISO" primary="true">ISO 8601:2004</docidentifier>
   <docidentifier type="iso-reference">iso-reference ISO 8601:2004(E)</docidentifier>
   <docidentifier type="URN">URN urn:iso:std:iso:8601:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO 8601:2004</docidentifier>
   <docnumber>8601</docnumber>
   <date type="published">
-    <on>2004-12</on>
+    <on>2004-12-03</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -516,22 +650,27 @@ sourcecode .nt {
       <uri>www.iso.org</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Processes, data elements and documents in commerce, industry and administration</name>
+
+        <identifier id="_0191fdbb-4de6-47e1-1542-b95ca66793ad">ISO/TC 154</identifier><fmt-identifier><tt><semx element="identifier" source="_0191fdbb-4de6-47e1-1542-b95ca66793ad">ISO/TC 154</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>3</edition>
   <language>en</language>
-  <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">ISO 8601:2004 is applicable whenever representation of dates in the Gregorian calendar, times in the 24-hour timekeeping system, time intervals and recurring time intervals or of the formats of these representations are included in information interchange. It includes
-- calendar dates expressed in terms of calendar year, calendar month and calendar day of the month;
-- ordinal dates expressed in terms of calendar year and calendar day of the year;
-- week dates expressed in terms of calendar year, calendar week number and calendar day of the week;
-- local time based upon the 24-hour timekeeping system;
-- Coordinated Universal Time of day;
-- local time and the difference from Coordinated Universal Time;
-- combination of date and time of day;
-- time intervals;
-- recurring time intervals.
-ISO 8601:2004 does not cover dates and times where words are used in the representation and dates and times where characters are not used in the representation.
-ISO 8601:2004 does not assign any particular meaning or interpretation to any data element that uses representations in accordance with ISO 8601:2004. Such meaning will be determined by the context of the application.</abstract>
+  <abstract language="en" script="Latn">ISO 8601:2004 is applicable whenever representation of dates in the Gregorian calendar, times in the 24-hour timekeeping system, time intervals and recurring time intervals or of the formats of these representations are included in information interchange. It includes calendar dates expressed in terms of calendar year, calendar month and calendar day of the month;ordinal dates expressed in terms of calendar year and calendar day of the year;week dates expressed in terms of calendar year, calendar week number and calendar day of the week;local time based upon the 24-hour timekeeping system;Coordinated Universal Time of day;local time and the difference from Coordinated Universal Time;combination of date and time of day;time intervals;recurring time intervals. ISO 8601:2004 does not cover dates and times where words are used in the representation and dates and times where characters are not used in the representation. ISO 8601:2004 does not assign any particular meaning or interpretation to any data element that uses representations in accordance with ISO 8601:2004. Such meaning will be determined by the context of the application.</abstract>
   <status>
     <stage>95</stage>
     <substage>99</substage>
@@ -547,27 +686,30 @@ ISO 8601:2004 does not assign any particular meaning or interpretation to any da
     </owner>
   </copyright>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 8601:2000</formattedref>
+    <bibitem>
+      <formattedref>ISO 8601:2000</formattedref>
       <docidentifier type="ISO" primary="true">ISO 8601:2000</docidentifier>
+      <date type="published">
+        <on>2000-12-21</on>
+      </date>
     </bibitem>
 
   </relation>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 8601-1:2019</formattedref>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO 8601-1:2019</formattedref>
       <docidentifier type="ISO" primary="true">ISO 8601-1:2019</docidentifier>
-      <date type="circulated">
+      <date type="published">
         <on>2019-02-25</on>
       </date>
     </bibitem>
 
   </relation>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 8601-2:2019</formattedref>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO 8601-2:2019</formattedref>
       <docidentifier type="ISO" primary="true">ISO 8601-2:2019</docidentifier>
-      <date type="circulated">
+      <date type="published">
         <on>2019-02-25</on>
       </date>
     </bibitem>
@@ -577,25 +719,35 @@ ISO 8601:2004 does not assign any particular meaning or interpretation to any da
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso-639-2" type="standard" schema-version="v1.2.9" anchor="iso-639-2" semx-id="_6c01a733-810e-ffde-1955-e4f86c41d8cb"><biblio-tag>[6]<tab/></biblio-tag><formattedref>ISO 639-2:1998: Codes for the representation of names of languages — Part 2: Alpha-3 code, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/4767.html">https://www.iso.org/standard/4767.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iso-639-2" type="standard" schema-version="v1.5.6" anchor="iso-639-2" semx-id="_7b1e36ca-d8ae-8c8c-00c0-962673852887"><biblio-tag>[6]<tab/></biblio-tag><formattedref>ISO 639-2:1998: Codes for the representation of names of languages — Part 2: Alpha-3 code, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/4767.html">https://www.iso.org/standard/4767.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-main" format="text/plain" language="en" script="Latn">Codes for the representation of names of languages</title>
+<title language="en" script="Latn" type="title-main">Codes for the representation of names of languages</title>
 
   
-<title type="title-part" format="text/plain" language="en" script="Latn">Part 2: Alpha-3 code</title>
+<title language="en" script="Latn" type="title-part">Part 2: Alpha-3 code</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Codes for the representation of names of languages — Part 2: Alpha-3 code</title>
+<title language="en" script="Latn" type="main">Codes for the representation of names of languages — Part 2: Alpha-3 code</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Codes pour la représentation des noms de langue</title>
+
+  
+<title language="fr" script="Latn" type="title-part">Partie 2: Code alpha-3</title>
+
+  
+<title language="fr" script="Latn" type="main">Codes pour la représentation des noms de langue — Partie 2: Code alpha-3</title>
 
   <uri type="src">https://www.iso.org/standard/4767.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:4767:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/00/47/4767.detail.rss</uri>
   <docidentifier type="ISO" primary="true">ISO 639-2:1998</docidentifier>
   <docidentifier type="iso-reference">iso-reference ISO 639-2:1998(E)</docidentifier>
   <docidentifier type="URN">URN urn:iso:std:iso:639:-2:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO 639-2:1998</docidentifier>
   <docnumber>639</docnumber>
   <date type="published">
-    <on>1998-11</on>
+    <on>1998-10-22</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -607,11 +759,27 @@ ISO 8601:2004 does not assign any particular meaning or interpretation to any da
       <uri>www.iso.org</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Terminology workflow and language coding</name>
+
+        <identifier id="_ecdc6a17-746b-85b4-c4a1-decf8fefadca">ISO/TC 37/SC 2</identifier><fmt-identifier><tt><semx element="identifier" source="_ecdc6a17-746b-85b4-c4a1-decf8fefadca">ISO/TC 37/SC 2</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>1</edition>
   <language>en</language>
   <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="fr" script="Latn">La présente partie de l’ISO 639 fournit deux jeux de codets à trois caractères pour la représentation des noms de langue, l’un destiné à des applications en terminologie, l’autre destiné à des applications bibliographiques. Les deux jeux de codets sont les mêmes, excepté pour vingt-cinq langues qui ont des codets différents à cause du critère utilisé pour les former . À l’origine, des codets de langues ont été créés à l’usage des bibliothèques, des services documentaires et des éditeurs, pour indiquer la langue dans l’échange d’information, particulièrement entre des systèmes informatisés. Ces codets ont été utilisés largement à l’intérieur de la communauté des bibliothèques, et ils peuvent être adoptés pour toute application qui requiert l’expression de la langue sous forme codée, en terminologie ou en lexicographie. Le code alpha-2 a été créé pour un usage pratique pour la plupart des grandes langues du monde, langues qui sont les plus souvent représentées dans le corpus de la littérature mondiale. De nouveaux codets sont créés quand il devient évident qu’il existe un corpus significatif de littérature dans une langue particulière. Les langages créés pour être utilisés exclusivement par des machines, comme les langages de programmation, ne sont pas inclus dans le présent code.</abstract>
   <status>
     <stage>95</stage>
     <substage>99</substage>
@@ -626,11 +794,11 @@ ISO 8601:2004 does not assign any particular meaning or interpretation to any da
       </organization>
     </owner>
   </copyright>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 639:2023</formattedref>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO 639:2023</formattedref>
       <docidentifier type="ISO" primary="true">ISO 639:2023</docidentifier>
-      <date type="circulated">
+      <date type="published">
         <on>2023-11-08</on>
       </date>
     </bibitem>
@@ -640,25 +808,35 @@ ISO 8601:2004 does not assign any particular meaning or interpretation to any da
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso-19103" type="standard" schema-version="v1.2.9" anchor="iso-19103" semx-id="_31f8e741-ef97-a851-81ab-a92832957f4e"><biblio-tag>[7]<tab/></biblio-tag><formattedref>ISO 19103:2015: Geographic information — Conceptual schema language, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/56734.html">https://www.iso.org/standard/56734.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iso-19103" type="standard" schema-version="v1.5.6" anchor="iso-19103" semx-id="_5d256cfe-db9b-5071-c945-e379442190c9"><biblio-tag>[7]<tab/></biblio-tag><formattedref>ISO 19103:2015: Geographic information — Conceptual schema language, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/56734.html">https://www.iso.org/standard/56734.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
 
   
-<title type="title-main" format="text/plain" language="en" script="Latn">Conceptual schema language</title>
+<title language="en" script="Latn" type="title-main">Conceptual schema language</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Conceptual schema language</title>
+<title language="en" script="Latn" type="main">Geographic information — Conceptual schema language</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Langage de schéma conceptuel</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Langage de schéma conceptuel</title>
 
   <uri type="src">https://www.iso.org/standard/56734.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:56734:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/05/67/56734.detail.rss</uri>
   <docidentifier type="ISO" primary="true">ISO 19103:2015</docidentifier>
   <docidentifier type="iso-reference">iso-reference ISO 19103:2015(E)</docidentifier>
   <docidentifier type="URN">URN urn:iso:std:iso:19103:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO 19103:2015</docidentifier>
   <docnumber>19103</docnumber>
   <date type="published">
-    <on>2015-12</on>
+    <on>2015-12-02</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -670,13 +848,27 @@ ISO 8601:2004 does not assign any particular meaning or interpretation to any da
       <uri>www.iso.org</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier id="_241fb499-0d76-11a3-5c51-faa71f0d4b10">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_241fb499-0d76-11a3-5c51-faa71f0d4b10">ISO/TC 211</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>1</edition>
   <language>en</language>
-  <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">ISO 19103:2015 provides rules and guidelines for the use of a conceptual schema language within the context of geographic information. The chosen conceptual schema language is the Unified Modeling Language (UML).
-ISO 19103.2015 provides a profile of the Unified Modelling Language (UML).
-The standardization target type of this standard is UML schemas describing geographic information.</abstract>
+  <abstract language="en" script="Latn">ISO 19103:2015 provides rules and guidelines for the use of a conceptual schema language within the context of geographic information. The chosen conceptual schema language is the Unified Modeling Language (UML). ISO 19103.2015 provides a profile of the Unified Modelling Language (UML). The standardization target type of this standard is UML schemas describing geographic information.</abstract>
   <status>
     <stage>95</stage>
     <substage>99</substage>
@@ -692,17 +884,20 @@ The standardization target type of this standard is UML schemas describing geogr
     </owner>
   </copyright>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/TS 19103:2005</formattedref>
+    <bibitem>
+      <formattedref>ISO/TS 19103:2005</formattedref>
       <docidentifier type="ISO" primary="true">ISO/TS 19103:2005</docidentifier>
+      <date type="published">
+        <on>2005-07-18</on>
+      </date>
     </bibitem>
 
   </relation>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 19103:2024</formattedref>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO 19103:2024</formattedref>
       <docidentifier type="ISO" primary="true">ISO 19103:2024</docidentifier>
-      <date type="circulated">
+      <date type="published">
         <on>2024-09-27</on>
       </date>
     </bibitem>
@@ -712,25 +907,35 @@ The standardization target type of this standard is UML schemas describing geogr
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso-19111" type="standard" schema-version="v1.2.9" anchor="iso-19111" semx-id="_b08a1d99-7ede-71aa-6b49-9c176548f1e9"><biblio-tag>[8]<tab/></biblio-tag><formattedref>ISO 19111:2007: Geographic information — Spatial referencing by coordinates, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/41126.html">https://www.iso.org/standard/41126.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iso-19111" type="standard" schema-version="v1.5.6" anchor="iso-19111" semx-id="_58ef1149-47d7-8655-9130-1f0f3f5501d0"><biblio-tag>[8]<tab/></biblio-tag><formattedref>ISO 19111:2007: Geographic information — Spatial referencing by coordinates, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/41126.html">https://www.iso.org/standard/41126.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
 
   
-<title type="title-main" format="text/plain" language="en" script="Latn">Spatial referencing by coordinates</title>
+<title language="en" script="Latn" type="title-main">Spatial referencing by coordinates</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Spatial referencing by coordinates</title>
+<title language="en" script="Latn" type="main">Geographic information — Spatial referencing by coordinates</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Système de références spatiales par coordonnées</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Système de références spatiales par coordonnées</title>
 
   <uri type="src">https://www.iso.org/standard/41126.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:41126:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/04/11/41126.detail.rss</uri>
   <docidentifier type="ISO" primary="true">ISO 19111:2007</docidentifier>
   <docidentifier type="iso-reference">iso-reference ISO 19111:2007(E)</docidentifier>
   <docidentifier type="URN">URN urn:iso:std:iso:19111:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO 19111:2007</docidentifier>
   <docnumber>19111</docnumber>
   <date type="published">
-    <on>2007-07</on>
+    <on>2007-06-26</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -742,14 +947,28 @@ The standardization target type of this standard is UML schemas describing geogr
       <uri>www.iso.org</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier id="_a6ac0eb3-b5ce-7c1c-63bb-59ea40e7271e">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_a6ac0eb3-b5ce-7c1c-63bb-59ea40e7271e">ISO/TC 211</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>2</edition>
   <language>en</language>
   <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">ISO 19111:2007 defines the conceptual schema for the description of spatial referencing by coordinates, optionally extended to spatio-temporal referencing. It describes the minimum data required to define one-, two- and three-dimensional spatial coordinate reference systems with an extension to merged spatial-temporal reference systems. It allows additional descriptive information to be provided. It also describes the information required to change coordinates from one coordinate reference system to another.
-In ISO 19111:2007, a coordinate reference system does not change with time. For coordinate reference systems defined on moving platforms such as cars, ships, aircraft and spacecraft, the transformation to an Earth-fixed coordinate reference system can include a time element.
-ISO 19111:2007 is applicable to producers and users of geographic information. Although it is applicable to digital geographic data, its principles can be extended to many other forms of geographic data such as maps, charts and text documents.
-The schema described can be applied to the combination of horizontal position with a third non-spatial parameter which varies monotonically with height or depth. This extension to non-spatial data is beyond the scope of ISO 19111:2007 but can be implemented through profiles.</abstract>
+  <abstract language="en" script="Latn">ISO 19111:2007 defines the conceptual schema for the description of spatial referencing by coordinates, optionally extended to spatio-temporal referencing. It describes the minimum data required to define one-, two- and three-dimensional spatial coordinate reference systems with an extension to merged spatial-temporal reference systems. It allows additional descriptive information to be provided. It also describes the information required to change coordinates from one coordinate reference system to another. In ISO 19111:2007, a coordinate reference system does not change with time. For coordinate reference systems defined on moving platforms such as cars, ships, aircraft and spacecraft, the transformation to an Earth-fixed coordinate reference system can include a time element. ISO 19111:2007 is applicable to producers and users of geographic information. Although it is applicable to digital geographic data, its principles can be extended to many other forms of geographic data such as maps, charts and text documents. The schema described can be applied to the combination of horizontal position with a third non-spatial parameter which varies monotonically with height or depth. This extension to non-spatial data is beyond the scope of ISO 19111:2007 but can be implemented through profiles.</abstract>
   <status>
     <stage>95</stage>
     <substage>99</substage>
@@ -765,17 +984,27 @@ The schema described can be applied to the combination of horizontal position wi
     </owner>
   </copyright>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 19111:2003</formattedref>
+    <bibitem>
+      <formattedref>ISO 19111:2003</formattedref>
       <docidentifier type="ISO" primary="true">ISO 19111:2003</docidentifier>
+      <date type="published">
+        <on>2003-03-04</on>
+      </date>
     </bibitem>
 
   </relation>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 19111:2019</formattedref>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO/WD 19111-1</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/WD 19111-1</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO 19111:2019</formattedref>
       <docidentifier type="ISO" primary="true">ISO 19111:2019</docidentifier>
-      <date type="circulated">
+      <date type="published">
         <on>2019-01-31</on>
       </date>
     </bibitem>
@@ -785,94 +1014,42 @@ The schema described can be applied to the combination of horizontal position wi
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso-19115-1" type="standard" schema-version="v1.2.9" anchor="iso-19115-1" semx-id="_5ba7be4c-7db2-dfa4-2001-abea0992fbf7"><biblio-tag>[9]<tab/></biblio-tag><formattedref>ISO 19115-1:2014/Amd 1:2018: Geographic information — Metadata — Part 1: Fundamentals — Amendment 1, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/73118.html">https://www.iso.org/standard/73118.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem anchor="iso-19115-1" id="iso-19115-1" semx-id="_850b28e3-c507-feb0-b8ae-743e04fdb4ee"><biblio-tag>[9]<tab/></biblio-tag><formattedref format="application/x-isodoc+xml">[NO INFORMATION AVAILABLE]</formattedref><docidentifier type="ISO">ISO 19115-1:2014/Amd 1:2018</docidentifier><docidentifier scope="biblio-tag">ISO 19115-1:2014/Amd 1:2018</docidentifier><docnumber>19115-1:2014/Amd 1</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem id="iso-19115-2" type="standard" schema-version="v1.5.6" anchor="iso-19115-2" semx-id="_1bbb7cc1-ce19-2a7e-d621-20bef08a1e6d"><biblio-tag>[10]<tab/></biblio-tag><formattedref>ISO 19115-2:2009: Geographic information — Metadata — Part 2: Extensions for imagery and gridded data, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/39229.html">https://www.iso.org/standard/39229.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
-
-  
-<title type="title-main" format="text/plain" language="en" script="Latn">Metadata</title>
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
 
   
-<title type="title-part" format="text/plain" language="en" script="Latn">Part 1: Fundamentals — Amendment 1</title>
+<title language="en" script="Latn" type="title-main">Metadata</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Metadata — Part 1: Fundamentals — Amendment 1</title>
-
-  <uri type="src">https://www.iso.org/standard/73118.html</uri>
-  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:73118:en</uri>
-  <uri type="rss">https://www.iso.org/contents/data/standard/07/31/73118.detail.rss</uri>
-  <docidentifier type="ISO" primary="true">ISO 19115-1:2014/Amd 1:2018</docidentifier>
-  <docidentifier type="iso-reference">iso-reference ISO 19115-1:2014/Amd 1:2018(E)</docidentifier>
-  <docidentifier type="URN">URN urn:iso:std:iso:19115:-1:ed-1:stage-60.60:amd:2018:v1</docidentifier><docidentifier scope="biblio-tag">ISO 19115-1:2014/Amd 1:2018</docidentifier>
-  <docnumber>19115</docnumber>
-  <date type="published">
-    <on>2014</on>
-  </date>
-  <date type="updated">
-    <on>2018-02</on>
-  </date>
-  <contributor>
-    <role type="publisher"/>
-    <organization>
-      
-<name>International Organization for Standardization</name>
-
-      <abbreviation>ISO</abbreviation>
-      <uri>www.iso.org</uri>
-    </organization>
-  </contributor>
-  <edition>1</edition>
-  <language>en</language>
-  <language>fr</language>
-  <script>Latn</script>
-  <status>
-    <stage>60</stage>
-    <substage>60</substage>
-  </status>
-  <copyright>
-    <from>2014</from>
-    <owner>
-      <organization>
-        
-<name>ISO</name>
-
-      </organization>
-    </owner>
-  </copyright>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/AWI 19115-1</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/AWI 19115-1</docidentifier>
-    </bibitem>
-
-  </relation>
-  <place>
-    <city>Geneva</city>
-  </place>
-</bibitem>
-<bibitem id="iso-19115-2" type="standard" schema-version="v1.2.9" anchor="iso-19115-2" semx-id="_b458fdc9-ddbc-130a-2a62-d48644894a6a"><biblio-tag>[10]<tab/></biblio-tag><formattedref>ISO 19115-2:2009: Geographic information — Metadata — Part 2: Extensions for imagery and gridded data, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/39229.html">https://www.iso.org/standard/39229.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
-  
-<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+<title language="en" script="Latn" type="title-part">Part 2: Extensions for imagery and gridded data</title>
 
   
-<title type="title-main" format="text/plain" language="en" script="Latn">Metadata</title>
+<title language="en" script="Latn" type="main">Geographic information — Metadata — Part 2: Extensions for imagery and gridded data</title>
 
   
-<title type="title-part" format="text/plain" language="en" script="Latn">Part 2: Extensions for imagery and gridded data</title>
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Metadata — Part 2: Extensions for imagery and gridded data</title>
+<title language="fr" script="Latn" type="title-main">Métadonnées</title>
+
+  
+<title language="fr" script="Latn" type="title-part">Partie 2: Extensions pour les images et les matrices</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Métadonnées — Partie 2: Extensions pour les images et les matrices</title>
 
   <uri type="src">https://www.iso.org/standard/39229.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:39229:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/03/92/39229.detail.rss</uri>
   <docidentifier type="ISO" primary="true">ISO 19115-2:2009</docidentifier>
   <docidentifier type="iso-reference">iso-reference ISO 19115-2:2009(E)</docidentifier>
   <docidentifier type="URN">URN urn:iso:std:iso:19115:-2:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO 19115-2:2009</docidentifier>
   <docnumber>19115</docnumber>
   <date type="published">
-    <on>2009-02</on>
+    <on>2009-02-03</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -884,11 +1061,28 @@ The schema described can be applied to the combination of horizontal position wi
       <uri>www.iso.org</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier id="_5ecc633c-33ca-5b53-88dc-15b28b369163">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_5ecc633c-33ca-5b53-88dc-15b28b369163">ISO/TC 211</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>1</edition>
   <language>en</language>
   <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">ISO 19115-2:2009 extends the existing geographic metadata standard by defining the schema required for describing imagery and gridded data. It provides information about the properties of the measuring equipment used to acquire the data, the geometry of the measuring process employed by the equipment, and the production process used to digitize the raw data. This extension deals with metadata needed to describe the derivation of geographic information from raw data, including the properties of the measuring system, and the numerical methods and computational procedures used in the derivation. The metadata required to address coverage data in general is addressed sufficiently in the general part of ISO 19115.</abstract>
+  <abstract language="en" script="Latn">ISO 19115-2:2009 extends the existing geographic metadata standard by defining the schema required for describing imagery and gridded data. It provides information about the properties of the measuring equipment used to acquire the data, the geometry of the measuring process employed by the equipment, and the production process used to digitize the raw data. This extension deals with metadata needed to describe the derivation of geographic information from raw data, including the properties of the measuring system, and the numerical methods and computational procedures used in the derivation. The metadata required to address coverage data in general is addressed sufficiently in the general part of ISO 19115.</abstract>
   <status>
     <stage>95</stage>
     <substage>99</substage>
@@ -903,11 +1097,11 @@ The schema described can be applied to the combination of horizontal position wi
       </organization>
     </owner>
   </copyright>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 19115-2:2019</formattedref>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO 19115-2:2019</formattedref>
       <docidentifier type="ISO" primary="true">ISO 19115-2:2019</docidentifier>
-      <date type="circulated">
+      <date type="published">
         <on>2019-01-10</on>
       </date>
     </bibitem>
@@ -917,28 +1111,41 @@ The schema described can be applied to the combination of horizontal position wi
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso-19115-3" type="standard" schema-version="v1.2.9" anchor="iso-19115-3" semx-id="_8910c5ba-3fd8-1c93-df6d-3249b50741ba"><biblio-tag>[11]<tab/></biblio-tag><formattedref>ISO/TS 19115-3:2016: Geographic information —  Metadata — Part 3: XML schema implementation for fundamental concepts, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/32579.html">https://www.iso.org/standard/32579.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iso-19115-3" type="standard" schema-version="v1.5.6" anchor="iso-19115-3" semx-id="_8e0850fc-e2e6-abd0-2943-9d32f1e9e44a"><biblio-tag>[11]<tab/></biblio-tag><formattedref>ISO/TS 19115-3:2016: Geographic information —  Metadata — Part 3: XML schema implementation for fundamental concepts, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/32579.html">https://www.iso.org/standard/32579.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
 
   
-<title type="title-main" format="text/plain" language="en" script="Latn"> Metadata</title>
+<title language="en" script="Latn" type="title-main"> Metadata</title>
 
   
-<title type="title-part" format="text/plain" language="en" script="Latn">Part 3: XML schema implementation for fundamental concepts</title>
+<title language="en" script="Latn" type="title-part">Part 3: XML schema implementation for fundamental concepts</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Geographic information —  Metadata — Part 3: XML schema implementation for fundamental concepts</title>
+<title language="en" script="Latn" type="main">Geographic information —  Metadata — Part 3: XML schema implementation for fundamental concepts</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Métadonnées</title>
+
+  
+<title language="fr" script="Latn" type="title-part">Partie 3: Mise en oeuvre par des schémas XML</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Métadonnées — Partie 3: Mise en oeuvre par des schémas XML</title>
 
   <uri type="src">https://www.iso.org/standard/32579.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:32579:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/03/25/32579.detail.rss</uri>
   <docidentifier type="ISO" primary="true">ISO/TS 19115-3:2016</docidentifier>
   <docidentifier type="iso-reference">iso-reference ISO/TS 19115-3:2016(E)</docidentifier>
   <docidentifier type="URN">URN urn:iso:std:iso:ts:19115:-3:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO/TS 19115-3:2016</docidentifier>
   <docnumber>19115</docnumber>
   <date type="published">
-    <on>2016-08</on>
+    <on>2016-08-12</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -950,16 +1157,27 @@ The schema described can be applied to the combination of horizontal position wi
       <uri>www.iso.org</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier id="_58ffe7b9-3e87-7581-044a-26d431f22bd5">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_58ffe7b9-3e87-7581-044a-26d431f22bd5">ISO/TC 211</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>1</edition>
   <language>en</language>
-  <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">ISO/TS 19115-3:2016 defines an integrated XML implementation of ISO 19115‑1, ISO 19115‑2, and concepts from ISO/TS 19139 by defining the following artefacts:
-a)    a set of XML schema required to validate metadata instance documents conforming to conceptual model elements defined in ISO 19115‑1, ISO 19115‑2, and ISO/TS 19139;
-b)    a set of ISO/IEC 19757‑3 (Schematron) rules that implement validation constraints in the ISO 19115‑1 and ISO 19115‑2 UML models that are not validated by the XML schema;
-c)    an Extensible Stylesheet Language Transformation (XSLT) for transforming ISO 19115-1 metadata encoded using the ISO/TS 19139 XML schema and ISO 19115‑2 metadata encoded using the ISO/TS 19139‑2 XML schema into an equivalent document that is valid against the XML schema defined in this document.
-ISO/TS 19115-3:2016 describes the procedure used to generate XML schema from ISO geographic information conceptual models related to metadata. The procedure includes creation of an UML model for XML implementation derived from the conceptual UML model.
-This implementation model does not alter the semantics of the target conceptual model, but adds abstract classes that remove dependencies between model packages, tagged values and stereotypes required by the UML to XML transformation software, and refactors the packaging of a few elements into XML namespaces. The XML schema has been generated systematically from the UML model for XML implementation according to the rules defined in ISO/TS 19139 or ISO 19118.</abstract>
+  <abstract language="en" script="Latn">ISO/TS 19115-3:2016 defines an integrated XML implementation of ISO 19115‑1, ISO 19115‑2, and concepts from ISO/TS 19139 by defining the following artefacts: a) a set of XML schema required to validate metadata instance documents conforming to conceptual model elements defined in ISO 19115‑1, ISO 19115‑2, and ISO/TS 19139; b) a set of ISO/IEC 19757‑3 (Schematron) rules that implement validation constraints in the ISO 19115‑1 and ISO 19115‑2 UML models that are not validated by the XML schema; c) an Extensible Stylesheet Language Transformation (XSLT) for transforming ISO 19115-1 metadata encoded using the ISO/TS 19139 XML schema and ISO 19115‑2 metadata encoded using the ISO/TS 19139‑2 XML schema into an equivalent document that is valid against the XML schema defined in this document. ISO/TS 19115-3:2016 describes the procedure used to generate XML schema from ISO geographic information conceptual models related to metadata. The procedure includes creation of an UML model for XML implementation derived from the conceptual UML model. This implementation model does not alter the semantics of the target conceptual model, but adds abstract classes that remove dependencies between model packages, tagged values and stereotypes required by the UML to XML transformation software, and refactors the packaging of a few elements into XML namespaces. The XML schema has been generated systematically from the UML model for XML implementation according to the rules defined in ISO/TS 19139 or ISO 19118.</abstract>
   <status>
     <stage>95</stage>
     <substage>99</substage>
@@ -974,11 +1192,11 @@ This implementation model does not alter the semantics of the target conceptual 
       </organization>
     </owner>
   </copyright>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 19115-3:2023</formattedref>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO 19115-3:2023</formattedref>
       <docidentifier type="ISO" primary="true">ISO 19115-3:2023</docidentifier>
-      <date type="circulated">
+      <date type="published">
         <on>2023-08-23</on>
       </date>
     </bibitem>
@@ -988,25 +1206,35 @@ This implementation model does not alter the semantics of the target conceptual 
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso-19123" type="standard" schema-version="v1.2.9" anchor="iso-19123" semx-id="_7ce8dff5-dc4c-35d7-37c9-34a083768eda"><biblio-tag>[12]<tab/></biblio-tag><formattedref>ISO 19123:2005: Geographic information — Schema for coverage geometry and functions, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/40121.html">https://www.iso.org/standard/40121.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iso-19123" type="standard" schema-version="v1.5.6" anchor="iso-19123" semx-id="_f40df08d-646d-cd1d-fbc9-d078c6fe4093"><biblio-tag>[12]<tab/></biblio-tag><formattedref>ISO 19123:2005: Geographic information — Schema for coverage geometry and functions, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/40121.html">https://www.iso.org/standard/40121.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
 
   
-<title type="title-main" format="text/plain" language="en" script="Latn">Schema for coverage geometry and functions</title>
+<title language="en" script="Latn" type="title-main">Schema for coverage geometry and functions</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Schema for coverage geometry and functions</title>
+<title language="en" script="Latn" type="main">Geographic information — Schema for coverage geometry and functions</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Schéma de la géométrie et des fonctions de couverture</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Schéma de la géométrie et des fonctions de couverture</title>
 
   <uri type="src">https://www.iso.org/standard/40121.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:40121:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/04/01/40121.detail.rss</uri>
   <docidentifier type="ISO" primary="true">ISO 19123:2005</docidentifier>
   <docidentifier type="iso-reference">iso-reference ISO 19123:2005(E)</docidentifier>
   <docidentifier type="URN">URN urn:iso:std:iso:19123:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO 19123:2005</docidentifier>
   <docnumber>19123</docnumber>
   <date type="published">
-    <on>2005-08</on>
+    <on>2005-08-31</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -1018,12 +1246,28 @@ This implementation model does not alter the semantics of the target conceptual 
       <uri>www.iso.org</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier id="_cd47296f-989b-6f37-8622-c238ae01569b">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_cd47296f-989b-6f37-8622-c238ae01569b">ISO/TC 211</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>1</edition>
   <language>en</language>
   <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">ISO 19123:2005 defines a conceptual schema for the spatial characteristics of coverages. Coverages support mapping from a spatial, temporal or spatiotemporal domain to feature attribute values where feature attribute types are common to all geographic positions within the domain. A coverage domain consists of a collection of direct positions in a coordinate space that may be defined in terms of up to three spatial dimensions as well as a temporal dimension. Examples of coverages include rasters, triangulated irregular networks, point coverages and polygon coverages. Coverages are the prevailing data structures in a number of application areas, such as remote sensing, meteorology and mapping of bathymetry, elevation, soil and vegetation. 
-ISO 19123:2005 defines the relationship between the domain of a coverage and an associated attribute range. The characteristics of the spatial domain are defined whereas the characteristics of the attribute range are not part of ISO 19123:2005.</abstract>
+  <abstract language="en" script="Latn">ISO 19123:2005 defines a conceptual schema for the spatial characteristics of coverages. Coverages support mapping from a spatial, temporal or spatiotemporal domain to feature attribute values where feature attribute types are common to all geographic positions within the domain. A coverage domain consists of a collection of direct positions in a coordinate space that may be defined in terms of up to three spatial dimensions as well as a temporal dimension. Examples of coverages include rasters, triangulated irregular networks, point coverages and polygon coverages. Coverages are the prevailing data structures in a number of application areas, such as remote sensing, meteorology and mapping of bathymetry, elevation, soil and vegetation. ISO 19123:2005 defines the relationship between the domain of a coverage and an associated attribute range. The characteristics of the spatial domain are defined whereas the characteristics of the attribute range are not part of ISO 19123:2005.</abstract>
   <status>
     <stage>95</stage>
     <substage>99</substage>
@@ -1038,13 +1282,20 @@ ISO 19123:2005 defines the relationship between the domain of a coverage and an 
       </organization>
     </owner>
   </copyright>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 19123-1:2023</formattedref>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO 19123-1:2023</formattedref>
       <docidentifier type="ISO" primary="true">ISO 19123-1:2023</docidentifier>
-      <date type="circulated">
+      <date type="published">
         <on>2023-06-21</on>
       </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO/PWI 19123</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/PWI 19123</docidentifier>
     </bibitem>
 
   </relation>
@@ -1052,16 +1303,25 @@ ISO 19123:2005 defines the relationship between the domain of a coverage and an 
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso-19129" type="standard" schema-version="v1.2.9" anchor="iso-19129" semx-id="_b8716a14-0aa3-473b-2dae-d203314ca61f"><biblio-tag>[13]<tab/></biblio-tag><formattedref>ISO/TS 19129:2009: Geographic information — Imagery, gridded and coverage data framework, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/43041.html">https://www.iso.org/standard/43041.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iso-19129" type="standard" schema-version="v1.5.6" anchor="iso-19129" semx-id="_eda63314-bd7f-c9a7-f572-90ef97ebbada"><biblio-tag>[13]<tab/></biblio-tag><formattedref>ISO/TS 19129:2009: Geographic information — Imagery, gridded and coverage data framework, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/43041.html">https://www.iso.org/standard/43041.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
 
   
-<title type="title-main" format="text/plain" language="en" script="Latn">Imagery, gridded and coverage data framework</title>
+<title language="en" script="Latn" type="title-main">Imagery, gridded and coverage data framework</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Imagery, gridded and coverage data framework</title>
+<title language="en" script="Latn" type="main">Geographic information — Imagery, gridded and coverage data framework</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information Géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Structure de données pour les images, les matrices et les mosaïques</title>
+
+  
+<title language="fr" script="Latn" type="main">Information Géographique — Structure de données pour les images, les matrices et les mosaïques</title>
 
   <uri type="src">https://www.iso.org/standard/43041.html</uri>
   <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:43041:en</uri>
@@ -1071,7 +1331,7 @@ ISO 19123:2005 defines the relationship between the domain of a coverage and an 
   <docidentifier type="URN">URN urn:iso:std:iso:ts:19129:stage-90.93</docidentifier><docidentifier scope="biblio-tag">ISO/TS 19129:2009</docidentifier>
   <docnumber>19129</docnumber>
   <date type="published">
-    <on>2009-04</on>
+    <on>2009-03-23</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -1083,11 +1343,29 @@ ISO 19123:2005 defines the relationship between the domain of a coverage and an 
       <uri>www.iso.org</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier id="_50c4d262-4a28-94b0-e405-de3a2bd2fb6c">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_50c4d262-4a28-94b0-e405-de3a2bd2fb6c">ISO/TC 211</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>1</edition>
   <language>en</language>
-  <language>fr</language>
+  <language>ru</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">ISO/TS 19129:2009 defines the framework for imagery, gridded and coverage data. This framework defines a content model for the content type imagery and for other specific content types that can be represented as coverage data. These content models are represented as a set of generic UML patterns for application schemas.</abstract>
+  <script>Cyrl</script>
+  <abstract language="en" script="Latn">ISO/TS 19129:2009 defines the framework for imagery, gridded and coverage data. This framework defines a content model for the content type imagery and for other specific content types that can be represented as coverage data. These content models are represented as a set of generic UML patterns for application schemas.</abstract>
   <status>
     <stage>90</stage>
     <substage>93</substage>
@@ -1106,87 +1384,32 @@ ISO 19123:2005 defines the relationship between the domain of a coverage and an 
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso-19131" type="standard" schema-version="v1.2.9" anchor="iso-19131" semx-id="_291929ad-bd68-af7a-9998-246d8f3bc273"><biblio-tag>[14]<tab/></biblio-tag><formattedref>ISO 19131:2007/Amd 1:2011: Geographic information — Data product specifications — Amendment 1: Requirements relating to the inclusion of an application schema and feature catalogue and the treatment of coverages in an application schema., International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/51790.html">https://www.iso.org/standard/51790.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem anchor="iso-19131" id="iso-19131" semx-id="_48e5099b-1643-31a3-6f3f-98e2ba1df423"><biblio-tag>[14]<tab/></biblio-tag><formattedref format="application/x-isodoc+xml">[NO INFORMATION AVAILABLE]</formattedref><docidentifier type="ISO">ISO 19131:2007/Amd 1:2011</docidentifier><docidentifier scope="biblio-tag">ISO 19131:2007/Amd 1:2011</docidentifier><docnumber>19131:2007/Amd 1</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem id="iso-iec-19501" type="standard" schema-version="v1.5.6" anchor="iso-iec-19501" semx-id="_5b003ce0-e3d8-7ce1-f8a5-4a8cde77a62b"><biblio-tag>[15]<tab/></biblio-tag><formattedref>ISO/IEC 19501:2005: Information technology — Open Distributed Processing — Unified Modeling Language (UML) Version 1.4.2, International Organization for Standardization, committee, International Organization for Standardization and International Electrotechnical Commission (<fmt-link target="https://www.iso.org/standard/32620.html">https://www.iso.org/standard/32620.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
-
-  
-<title type="title-main" format="text/plain" language="en" script="Latn">Data product specifications</title>
+<title language="en" script="Latn" type="title-intro">Information technology</title>
 
   
-<title type="title-part" format="text/plain" language="en" script="Latn">Amendment 1: Requirements relating to the inclusion of an application schema and feature catalogue and the treatment of coverages in an application schema.</title>
+<title language="en" script="Latn" type="title-main">Open Distributed Processing</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Data product specifications — Amendment 1: Requirements relating to the inclusion of an application schema and feature catalogue and the treatment of coverages in an application schema.</title>
-
-  <uri type="src">https://www.iso.org/standard/51790.html</uri>
-  <uri type="rss">https://www.iso.org/contents/data/standard/05/17/51790.detail.rss</uri>
-  <docidentifier type="ISO" primary="true">ISO 19131:2007/Amd 1:2011</docidentifier>
-  <docidentifier type="iso-reference">iso-reference ISO 19131:2007/Amd 1:2011(E)</docidentifier>
-  <docidentifier type="URN">URN urn:iso:std:iso:19131:ed-1:stage-95.99:amd:2011:v1</docidentifier><docidentifier scope="biblio-tag">ISO 19131:2007/Amd 1:2011</docidentifier>
-  <docnumber>19131</docnumber>
-  <date type="published">
-    <on>2007</on>
-  </date>
-  <date type="updated">
-    <on>2011-10</on>
-  </date>
-  <contributor>
-    <role type="publisher"/>
-    <organization>
-      
-<name>International Organization for Standardization</name>
-
-      <abbreviation>ISO</abbreviation>
-      <uri>www.iso.org</uri>
-    </organization>
-  </contributor>
-  <edition>1</edition>
-  <language>en</language>
-  <language>fr</language>
-  <script>Latn</script>
-  <status>
-    <stage>95</stage>
-    <substage>99</substage>
-  </status>
-  <copyright>
-    <from>2007</from>
-    <owner>
-      <organization>
-        
-<name>ISO</name>
-
-      </organization>
-    </owner>
-  </copyright>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 19131:2022</formattedref>
-      <docidentifier type="ISO" primary="true">ISO 19131:2022</docidentifier>
-      <date type="circulated">
-        <on>2022-11-28</on>
-      </date>
-    </bibitem>
-
-  </relation>
-  <place>
-    <city>Geneva</city>
-  </place>
-</bibitem>
-<bibitem id="iso-iec-19501" type="standard" schema-version="v1.2.9" anchor="iso-iec-19501" semx-id="_5b53a03f-077d-ba16-e42e-1945babfe203"><biblio-tag>[15]<tab/></biblio-tag><formattedref>ISO/IEC 19501:2005: Information technology — Open Distributed Processing — Unified Modeling Language (UML) Version 1.4.2, International Organization for Standardization and International Electrotechnical Commission (<fmt-link target="https://www.iso.org/standard/32620.html">https://www.iso.org/standard/32620.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
-  
-<title type="title-intro" format="text/plain" language="en" script="Latn">Information technology</title>
+<title language="en" script="Latn" type="title-part">Unified Modeling Language (UML) Version 1.4.2</title>
 
   
-<title type="title-main" format="text/plain" language="en" script="Latn">Open Distributed Processing</title>
+<title language="en" script="Latn" type="main">Information technology — Open Distributed Processing — Unified Modeling Language (UML) Version 1.4.2</title>
 
   
-<title type="title-part" format="text/plain" language="en" script="Latn">Unified Modeling Language (UML) Version 1.4.2</title>
+<title language="fr" script="Latn" type="title-intro">Technologies de l’information</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Information technology — Open Distributed Processing — Unified Modeling Language (UML) Version 1.4.2</title>
+<title language="fr" script="Latn" type="title-main">Traitement distribué ouvert</title>
+
+  
+<title language="fr" script="Latn" type="title-part">Langage de modélisation unifié (UML), version 1.4.2</title>
+
+  
+<title language="fr" script="Latn" type="main">Technologies de l’information — Traitement distribué ouvert — Langage de modélisation unifié (UML), version 1.4.2</title>
 
   <uri type="src">https://www.iso.org/standard/32620.html</uri>
   <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:32620:en</uri>
@@ -1196,7 +1419,7 @@ ISO 19123:2005 defines the relationship between the domain of a coverage and an 
   <docidentifier type="URN">URN urn:iso:std:iso-iec:19501:stage-90.93</docidentifier><docidentifier scope="biblio-tag">ISO/IEC 19501:2005</docidentifier>
   <docnumber>19501</docnumber>
   <date type="published">
-    <on>2005-04</on>
+    <on>2005-04-13</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -1218,11 +1441,27 @@ ISO 19123:2005 defines the relationship between the domain of a coverage and an 
       <uri>www.iec.ch</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="IEC">
+        
+<name>Information technology</name>
+
+        <identifier id="_db79e7ac-0219-2e25-bf2e-4f98bd0b75d7">ISO/IEC JTC 1</identifier><fmt-identifier><tt><semx element="identifier" source="_db79e7ac-0219-2e25-bf2e-4f98bd0b75d7">ISO/IEC JTC 1</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>1</edition>
   <language>en</language>
-  <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">ISO/IEC 19501:2004 describes the Unified Modeling Language (UML), a graphical language for visualizing, specifying, constructing and documenting the artifacts of a software-intensive system. The UML offers a standard way to write a system’s blueprints, including conceptual things such as business processes and system functions, as well as concrete things such as programming language statements, database schemas, and reusable software components.</abstract>
+  <abstract language="en" script="Latn">ISO/IEC 19501:2004 describes the Unified Modeling Language (UML), a graphical language for visualizing, specifying, constructing and documenting the artifacts of a software-intensive system. The UML offers a standard way to write a system’s blueprints, including conceptual things such as business processes and system functions, as well as concrete things such as programming language statements, database schemas, and reusable software components.</abstract>
   <status>
     <stage>90</stage>
     <substage>93</substage>
@@ -1241,25 +1480,35 @@ ISO 19123:2005 defines the relationship between the domain of a coverage and an 
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso3166" type="standard" schema-version="v1.2.9" anchor="iso3166" semx-id="_1354e5b9-c9c5-79a6-b7bf-9e950a690eba"><biblio-tag>[16]<tab/></biblio-tag><formattedref>ISO 3166-2:2013: Codes for the representation of names of countries and their subdivisions — Part 2: Country subdivision code, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/63546.html">https://www.iso.org/standard/63546.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iso3166" type="standard" schema-version="v1.5.6" anchor="iso3166" semx-id="_a05c9e53-8135-9883-c9f7-89763e3f2a77"><biblio-tag>[16]<tab/></biblio-tag><formattedref>ISO 3166-2:2013: Codes for the representation of names of countries and their subdivisions — Part 2: Country subdivision code, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/63546.html">https://www.iso.org/standard/63546.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-main" format="text/plain" language="en" script="Latn">Codes for the representation of names of countries and their subdivisions</title>
+<title language="en" script="Latn" type="title-main">Codes for the representation of names of countries and their subdivisions</title>
 
   
-<title type="title-part" format="text/plain" language="en" script="Latn">Part 2: Country subdivision code</title>
+<title language="en" script="Latn" type="title-part">Part 2: Country subdivision code</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Codes for the representation of names of countries and their subdivisions — Part 2: Country subdivision code</title>
+<title language="en" script="Latn" type="main">Codes for the representation of names of countries and their subdivisions — Part 2: Country subdivision code</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Codes pour la représentation des noms de pays et de leurs subdivisions</title>
+
+  
+<title language="fr" script="Latn" type="title-part">Partie 2: Code pour les subdivisions de pays</title>
+
+  
+<title language="fr" script="Latn" type="main">Codes pour la représentation des noms de pays et de leurs subdivisions — Partie 2: Code pour les subdivisions de pays</title>
 
   <uri type="src">https://www.iso.org/standard/63546.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:63546:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/06/35/63546.detail.rss</uri>
   <docidentifier type="ISO" primary="true">ISO 3166-2:2013</docidentifier>
   <docidentifier type="iso-reference">iso-reference ISO 3166-2:2013(E)</docidentifier>
   <docidentifier type="URN">URN urn:iso:std:iso:3166:-2:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO 3166-2:2013</docidentifier>
   <docnumber>3166</docnumber>
   <date type="published">
-    <on>2013-11</on>
+    <on>2013-11-19</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -1271,13 +1520,28 @@ ISO 19123:2005 defines the relationship between the domain of a coverage and an 
       <uri>www.iso.org</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Information and documentation</name>
+
+        <identifier id="_fddbd3f4-c1e7-457c-58da-0178e8414faf">ISO/TC 46</identifier><fmt-identifier><tt><semx element="identifier" source="_fddbd3f4-c1e7-457c-58da-0178e8414faf">ISO/TC 46</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>3</edition>
   <language>en</language>
   <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">ISO 3166-2:2013 establishes a universally applicable code for the representation of the names of principal administrative divisions of countries and territories included in ISO 3166-1. It is intended to be used in conjunction with ISO 3166-1.
-Clauses 4 to 7 of ISO 3166-2:2013 provide the structure for a code for the representation of names of principal administrative divisions, or similar areas, of the countries and geopolitical entities included in ISO 3166-1.
-Clause 8 contains a list of names of subdivisions of countries and geopolitical entities, together with the code element developed for each one of them.</abstract>
+  <abstract language="en" script="Latn">ISO 3166-2:2013 establishes a universally applicable code for the representation of the names of principal administrative divisions of countries and territories included in ISO 3166-1. It is intended to be used in conjunction with ISO 3166-1. Clauses 4 to 7 of ISO 3166-2:2013 provide the structure for a code for the representation of names of principal administrative divisions, or similar areas, of the countries and geopolitical entities included in ISO 3166-1. Clause 8 contains a list of names of subdivisions of countries and geopolitical entities, together with the code element developed for each one of them.</abstract>
   <status>
     <stage>95</stage>
     <substage>99</substage>
@@ -1293,17 +1557,20 @@ Clause 8 contains a list of names of subdivisions of countries and geopolitical 
     </owner>
   </copyright>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 3166-2:2007</formattedref>
+    <bibitem>
+      <formattedref>ISO 3166-2:2007</formattedref>
       <docidentifier type="ISO" primary="true">ISO 3166-2:2007</docidentifier>
+      <date type="published">
+        <on>2007-12-13</on>
+      </date>
     </bibitem>
 
   </relation>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 3166-2:2020</formattedref>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO 3166-2:2020</formattedref>
       <docidentifier type="ISO" primary="true">ISO 3166-2:2020</docidentifier>
-      <date type="circulated">
+      <date type="published">
         <on>2020-08-25</on>
       </date>
     </bibitem>
@@ -1313,25 +1580,35 @@ Clause 8 contains a list of names of subdivisions of countries and geopolitical 
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso-ts-19130" type="standard" schema-version="v1.2.9" anchor="iso-ts-19130" semx-id="_9f1c19ff-641a-0e77-ad38-10dab6a69dae"><biblio-tag>[17]<tab/></biblio-tag><formattedref>ISO/TS 19130:2010: Geographic information — Imagery sensor models for geopositioning, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/51789.html">https://www.iso.org/standard/51789.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iso-ts-19130" type="standard" schema-version="v1.5.6" anchor="iso-ts-19130" semx-id="_81c5fadb-0ca5-bfb7-ebec-46797b7bd488"><biblio-tag>[17]<tab/></biblio-tag><formattedref>ISO/TS 19130:2010: Geographic information — Imagery sensor models for geopositioning, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/51789.html">https://www.iso.org/standard/51789.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
 
   
-<title type="title-main" format="text/plain" language="en" script="Latn">Imagery sensor models for geopositioning</title>
+<title language="en" script="Latn" type="title-main">Imagery sensor models for geopositioning</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Imagery sensor models for geopositioning</title>
+<title language="en" script="Latn" type="main">Geographic information — Imagery sensor models for geopositioning</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Modèles de capteurs d’images de géopositionnement</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Modèles de capteurs d’images de géopositionnement</title>
 
   <uri type="src">https://www.iso.org/standard/51789.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:51789:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/05/17/51789.detail.rss</uri>
   <docidentifier type="ISO" primary="true">ISO/TS 19130:2010</docidentifier>
   <docidentifier type="iso-reference">iso-reference ISO/TS 19130:2010(E)</docidentifier>
   <docidentifier type="URN">URN urn:iso:std:iso:ts:19130:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO/TS 19130:2010</docidentifier>
   <docnumber>19130</docnumber>
   <date type="published">
-    <on>2010-06</on>
+    <on>2010-06-10</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -1343,13 +1620,27 @@ Clause 8 contains a list of names of subdivisions of countries and geopolitical 
       <uri>www.iso.org</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier id="_cfa96d3d-c04d-257e-8af8-30f388639fe6">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_cfa96d3d-c04d-257e-8af8-30f388639fe6">ISO/TC 211</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>1</edition>
   <language>en</language>
-  <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">ISO/TS 19130:2010 identifies the information required to determine the relationship between the position of a remotely sensed pixel in image coordinates and its geoposition. It supports exploitation of remotely sensed images. It defines the metadata to be distributed with the image to enable user determination of geographic position from the observations. 
-ISO/TS 19130:2010 specifies several ways in which information in support of geopositioning may be provided. 
-ISO/TS 19130:2010 does not specify either how users derive geoposition data or the format or content of the data the users generate.</abstract>
+  <abstract language="en" script="Latn">ISO/TS 19130:2010 identifies the information required to determine the relationship between the position of a remotely sensed pixel in image coordinates and its geoposition. It supports exploitation of remotely sensed images. It defines the metadata to be distributed with the image to enable user determination of geographic position from the observations. ISO/TS 19130:2010 specifies several ways in which information in support of geopositioning may be provided. It may be provided as a sensor description with the associated physical and geometric information necessary to rigorously construct a Physical Sensor Model. For the case where precise geoposition information is needed, ISO/TS 19130:2010 identifies the mathematical formulae for rigorously constructing Physical Sensor Models that relate two-dimensional image space to three-dimensional ground space and the calculation of the associated propagated errors. ISO/TS 19130:2010 provides detailed information for three types of passive electro-optical/infrared (IR) sensors (frame, pushbroom and whiskbroom) and for an active microwave sensing system [Synthetic Aperture Radar (SAR)]. It provides a framework by which these sensor models can be extended to other sensor types. It may be provided as a True Replacement Model, using functions whose coefficients are based on a Physical Sensor Model so that they provide information for precise geopositioning, including the calculation of errors, as precisely as the Physical Sensor Model they replace. It may be provided as a Correspondence Model that provides a functional fitting based on observed relationships between the geopositions of a set of ground control points and their image coordinates. It may be provided as a set of ground control points that can be used to develop a Correspondence Model or to refine a Physical Sensor Model or True Replacement Model. ISO/TS 19130:2010 does not specify either how users derive geoposition data or the format or content of the data the users generate.</abstract>
   <status>
     <stage>95</stage>
     <substage>99</substage>
@@ -1364,11 +1655,11 @@ ISO/TS 19130:2010 does not specify either how users derive geoposition data or t
       </organization>
     </owner>
   </copyright>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO 19130-1:2018</formattedref>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO 19130-1:2018</formattedref>
       <docidentifier type="ISO" primary="true">ISO 19130-1:2018</docidentifier>
-      <date type="circulated">
+      <date type="published">
         <on>2018-09-05</on>
       </date>
     </bibitem>
@@ -1378,19 +1669,31 @@ ISO/TS 19130:2010 does not specify either how users derive geoposition data or t
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso-ts-19130-2" type="standard" schema-version="v1.2.9" anchor="iso-ts-19130-2" semx-id="_b7e2e46d-d799-6635-01d5-8377d6676e4f"><biblio-tag>[18]<tab/></biblio-tag><formattedref>ISO/TS 19130-2:2014: Geographic information — Imagery sensor models for geopositioning — Part 2: SAR, InSAR, lidar and sonar, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/56113.html">https://www.iso.org/standard/56113.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iso-ts-19130-2" type="standard" schema-version="v1.5.6" anchor="iso-ts-19130-2" semx-id="_e7d6f974-15b3-f9c4-88f5-ec3d5c8f22d7"><biblio-tag>[18]<tab/></biblio-tag><formattedref>ISO/TS 19130-2:2014: Geographic information — Imagery sensor models for geopositioning — Part 2: SAR, InSAR, lidar and sonar, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/56113.html">https://www.iso.org/standard/56113.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
 
   
-<title type="title-main" format="text/plain" language="en" script="Latn">Imagery sensor models for geopositioning</title>
+<title language="en" script="Latn" type="title-main">Imagery sensor models for geopositioning</title>
 
   
-<title type="title-part" format="text/plain" language="en" script="Latn">Part 2: SAR, InSAR, lidar and sonar</title>
+<title language="en" script="Latn" type="title-part">Part 2: SAR, InSAR, lidar and sonar</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Geographic information — Imagery sensor models for geopositioning — Part 2: SAR, InSAR, lidar and sonar</title>
+<title language="en" script="Latn" type="main">Geographic information — Imagery sensor models for geopositioning — Part 2: SAR, InSAR, lidar and sonar</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Modèles de capteurs d’images de géopositionnement</title>
+
+  
+<title language="fr" script="Latn" type="title-part">Partie 2: SAR, InSAR, lidar et sonar</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Modèles de capteurs d’images de géopositionnement — Partie 2: SAR, InSAR, lidar et sonar</title>
 
   <uri type="src">https://www.iso.org/standard/56113.html</uri>
   <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:56113:en</uri>
@@ -1400,7 +1703,7 @@ ISO/TS 19130:2010 does not specify either how users derive geoposition data or t
   <docidentifier type="URN">URN urn:iso:std:iso:ts:19130:-2:stage-90.92</docidentifier><docidentifier scope="biblio-tag">ISO/TS 19130-2:2014</docidentifier>
   <docnumber>19130</docnumber>
   <date type="published">
-    <on>2014-01</on>
+    <on>2014-01-14</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -1412,13 +1715,28 @@ ISO/TS 19130:2010 does not specify either how users derive geoposition data or t
       <uri>www.iso.org</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier id="_1541c9a5-2a58-ddb9-a0d0-67e04666e3fe">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_1541c9a5-2a58-ddb9-a0d0-67e04666e3fe">ISO/TC 211</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>1</edition>
   <language>en</language>
   <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">ISO/TS 19130-2:2014 supports exploitation of remotely sensed images. It specifies the sensor models and metadata for geopositioning images remotely sensed by Synthetic Aperture Radar (SAR), Interferometric Synthetic Aperture Radar (InSAR), LIght Detection And Ranging (lidar), and SOund Navigation And Ranging (sonar) sensors. The specification also defines the metadata needed for the aerial triangulation of airborne and spaceborne images.
-ISO/TS 19130-2:2014 specifies the detailed information that shall be provided for a sensor description of SAR, InSAR, lidar, and sonar sensors with the associated physical and geometric information necessary to rigorously construct a physical sensor model. For the case where precise geoposition information is needed, this Technical Specification identifies the mathematical formulae for rigorously constructing physical sensor models that relate two-dimensional image space to three-dimensional ground space and the calculation of the associated propagated error.
-ISO/TS 19130-2:2014 does not specify either how users derive geoposition data or the format or content of the data the users generate.</abstract>
+  <abstract language="en" script="Latn">ISO/TS 19130-2:2014 supports exploitation of remotely sensed images. It specifies the sensor models and metadata for geopositioning images remotely sensed by Synthetic Aperture Radar (SAR), Interferometric Synthetic Aperture Radar (InSAR), LIght Detection And Ranging (lidar), and SOund Navigation And Ranging (sonar) sensors. The specification also defines the metadata needed for the aerial triangulation of airborne and spaceborne images. ISO/TS 19130-2:2014 specifies the detailed information that shall be provided for a sensor description of SAR, InSAR, lidar, and sonar sensors with the associated physical and geometric information necessary to rigorously construct a physical sensor model. For the case where precise geoposition information is needed, this Technical Specification identifies the mathematical formulae for rigorously constructing physical sensor models that relate two-dimensional image space to three-dimensional ground space and the calculation of the associated propagated error. ISO/TS 19130-2:2014 does not specify either how users derive geoposition data or the format or content of the data the users generate.</abstract>
   <status>
     <stage>90</stage>
     <substage>92</substage>
@@ -1433,10 +1751,10 @@ ISO/TS 19130-2:2014 does not specify either how users derive geoposition data or
       </organization>
     </owner>
   </copyright>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/CD TS 19130-2</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/CD TS 19130-2</docidentifier>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO/DTS 19130-2</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/DTS 19130-2</docidentifier>
     </bibitem>
 
   </relation>
@@ -1444,19 +1762,31 @@ ISO/TS 19130-2:2014 does not specify either how users derive geoposition data or
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso-19139-1" type="standard" schema-version="v1.2.9" anchor="iso-19139-1" semx-id="_cfc06699-b9c2-1728-dc85-4533c07b1ef4"><biblio-tag>[19]<tab/></biblio-tag><formattedref>ISO/TS 19139-1:2019: Geographic information — XML schema implementation — Part 1: Encoding rules, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/67253.html">https://www.iso.org/standard/67253.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iso-19139-1" type="standard" schema-version="v1.5.6" anchor="iso-19139-1" semx-id="_6f300fd8-8ba1-c13f-e904-82ae0cb22585"><biblio-tag>[19]<tab/></biblio-tag><formattedref>ISO/TS 19139-1:2019: Geographic information — XML schema implementation — Part 1: Encoding rules, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/67253.html">https://www.iso.org/standard/67253.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
 
   
-<title type="title-main" format="text/plain" language="en" script="Latn">XML schema implementation</title>
+<title language="en" script="Latn" type="title-main">XML schema implementation</title>
 
   
-<title type="title-part" format="text/plain" language="en" script="Latn">Part 1: Encoding rules</title>
+<title language="en" script="Latn" type="title-part">Part 1: Encoding rules</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Geographic information — XML schema implementation — Part 1: Encoding rules</title>
+<title language="en" script="Latn" type="main">Geographic information — XML schema implementation — Part 1: Encoding rules</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Implémentation de schémas XML</title>
+
+  
+<title language="fr" script="Latn" type="title-part">Partie 1: Règles de codage</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Implémentation de schémas XML — Partie 1: Règles de codage</title>
 
   <uri type="src">https://www.iso.org/standard/67253.html</uri>
   <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:67253:en</uri>
@@ -1466,7 +1796,7 @@ ISO/TS 19130-2:2014 does not specify either how users derive geoposition data or
   <docidentifier type="URN">URN urn:iso:std:iso:ts:19139:-1:stage-90.93</docidentifier><docidentifier scope="biblio-tag">ISO/TS 19139-1:2019</docidentifier>
   <docnumber>19139</docnumber>
   <date type="published">
-    <on>2019-03</on>
+    <on>2019-02-25</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -1478,12 +1808,27 @@ ISO/TS 19130-2:2014 does not specify either how users derive geoposition data or
       <uri>www.iso.org</uri>
     </organization>
   </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier id="_061d709c-aaee-aa79-db00-db72e040460f">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_061d709c-aaee-aa79-db00-db72e040460f">ISO/TC 211</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
   <edition>1</edition>
   <language>en</language>
-  <language>fr</language>
   <script>Latn</script>
-  <abstract format="text/plain" language="en" script="Latn">This document defines XML based encoding rules for conceptual schemas specifying types that describe geographic resources. The encoding rules support the UML profile as used in the UML models commonly used in the standards developed by ISO/TC 211. The encoding rules use XML schema for the output data structure schema.
-The encoding rules described in this document are not applicable for encoding UML application schema for geographic features (see ISO 19136 for those rules).</abstract>
+  <abstract language="en" script="Latn">This document defines XML based encoding rules for conceptual schemas specifying types that describe geographic resources. The encoding rules support the UML profile as used in the UML models commonly used in the standards developed by ISO/TC 211. The encoding rules use XML schema for the output data structure schema. The encoding rules described in this document are not applicable for encoding UML application schema for geographic features (see ISO 19136 for those rules).</abstract>
   <status>
     <stage>90</stage>
     <substage>93</substage>
@@ -1499,9 +1844,12 @@ The encoding rules described in this document are not applicable for encoding UM
     </owner>
   </copyright>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/TS 19139:2007</formattedref>
+    <bibitem>
+      <formattedref>ISO/TS 19139:2007</formattedref>
       <docidentifier type="ISO" primary="true">ISO/TS 19139:2007</docidentifier>
+      <date type="published">
+        <on>2007-04-17</on>
+      </date>
     </bibitem>
 
   </relation>
@@ -1509,28 +1857,41 @@ The encoding rules described in this document are not applicable for encoding UM
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="iso-10646-1" type="standard" schema-version="v1.2.9" anchor="iso-10646-1" semx-id="_da14c1eb-4d2d-edde-5cec-17c28a8cfddd"><biblio-tag>[20]<tab/></biblio-tag><formattedref>ISO/IEC 10646-1:2000: Information technology — Universal Multiple-Octet Coded Character Set (UCS) — Part 1: Architecture and Basic Multilingual Plane, International Organization for Standardization and International Electrotechnical Commission (<fmt-link target="https://www.iso.org/standard/29819.html">https://www.iso.org/standard/29819.html</fmt-link>).</formattedref>
-  <fetched>2026-04-16</fetched>
+<bibitem id="iso-10646-1" type="standard" schema-version="v1.5.6" anchor="iso-10646-1" semx-id="_16dab69d-1dfd-94a0-a57c-cb64d4c50ab7"><biblio-tag>[20]<tab/></biblio-tag><formattedref>ISO/IEC 10646-1:2000: Information technology — Universal Multiple-Octet Coded Character Set (UCS) — Part 1: Architecture and Basic Multilingual Plane, International Organization for Standardization, committee, International Organization for Standardization and International Electrotechnical Commission (<fmt-link target="https://www.iso.org/standard/29819.html">https://www.iso.org/standard/29819.html</fmt-link>).</formattedref>
+  <fetched>2026-06-16</fetched>
   
-<title type="title-intro" format="text/plain" language="en" script="Latn">Information technology</title>
+<title language="en" script="Latn" type="title-intro">Information technology</title>
 
   
-<title type="title-main" format="text/plain" language="en" script="Latn">Universal Multiple-Octet Coded Character Set (UCS)</title>
+<title language="en" script="Latn" type="title-main">Universal Multiple-Octet Coded Character Set (UCS)</title>
 
   
-<title type="title-part" format="text/plain" language="en" script="Latn">Part 1: Architecture and Basic Multilingual Plane</title>
+<title language="en" script="Latn" type="title-part">Part 1: Architecture and Basic Multilingual Plane</title>
 
   
-<title type="main" format="text/plain" language="en" script="Latn">Information technology — Universal Multiple-Octet Coded Character Set (UCS) — Part 1: Architecture and Basic Multilingual Plane</title>
+<title language="en" script="Latn" type="main">Information technology — Universal Multiple-Octet Coded Character Set (UCS) — Part 1: Architecture and Basic Multilingual Plane</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Technologies de l’information</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Jeu universel de caractères codés sur plusieurs octets (JUC)</title>
+
+  
+<title language="fr" script="Latn" type="title-part">Partie 1: Architecture et plan multilingue de base</title>
+
+  
+<title language="fr" script="Latn" type="main">Technologies de l’information — Jeu universel de caractères codés sur plusieurs octets (JUC) — Partie 1: Architecture et plan multilingue de base</title>
 
   <uri type="src">https://www.iso.org/standard/29819.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:29819:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/02/98/29819.detail.rss</uri>
   <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:2000</docidentifier>
   <docidentifier type="iso-reference">iso-reference ISO/IEC 10646-1:2000(E)</docidentifier>
   <docidentifier type="URN">URN urn:iso:std:iso-iec:10646:-1:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO/IEC 10646-1:2000</docidentifier>
   <docnumber>10646</docnumber>
   <date type="published">
-    <on>2000-09</on>
+    <on>2000-10-05</on>
   </date>
   <contributor>
     <role type="publisher"/>
@@ -1550,6 +1911,23 @@ The encoding rules described in this document are not applicable for encoding UM
 
       <abbreviation>IEC</abbreviation>
       <uri>www.iec.ch</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="IEC">
+        
+<name>Coded character sets</name>
+
+        <identifier id="_4e657161-3404-ef57-ee7a-83851b8197f8">ISO/IEC JTC 1/SC 2</identifier><fmt-identifier><tt><semx element="identifier" source="_4e657161-3404-ef57-ee7a-83851b8197f8">ISO/IEC JTC 1/SC 2</semx></tt></fmt-identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
     </organization>
   </contributor>
   <edition>2</edition>
@@ -1571,183 +1949,336 @@ The encoding rules described in this document are not applicable for encoding UM
     </owner>
   </copyright>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 1:1996</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 1:1996</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Cor 1:1996</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Cor 1:1996</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 2:1996</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 2:1996</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Cor 2:1998</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Cor 2:1998</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 3:1996</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 3:1996</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 4:1996</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 4:1996</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 5:1998</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 5:1998</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 6:1997</formattedref>
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 6:1997</formattedref>
       <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 6:1997</docidentifier>
+      <date type="published">
+        <on>1997-11-13</on>
+      </date>
     </bibitem>
 
   </relation>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 7:1997</formattedref>
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 1:1996</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 1:1996</docidentifier>
+      <date type="published">
+        <on>1996-10-24</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 7:1997</formattedref>
       <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 7:1997</docidentifier>
+      <date type="published">
+        <on>1997-11-13</on>
+      </date>
     </bibitem>
 
   </relation>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 8:1997</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 8:1997</docidentifier>
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 2:1996</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 2:1996</docidentifier>
+      <date type="published">
+        <on>1996-10-24</on>
+      </date>
     </bibitem>
 
   </relation>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 9:1997</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 9:1997</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 10:1998</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 10:1998</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 11:1998</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 11:1998</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 12:1998</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 12:1998</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 13:1998</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 13:1998</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 16:1998</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 16:1998</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 17:1999</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 17:1999</docidentifier>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 18:1999</formattedref>
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 18:1999</formattedref>
       <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 18:1999</docidentifier>
+      <date type="published">
+        <on>1999-07-22</on>
+      </date>
     </bibitem>
 
   </relation>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 19:1998</formattedref>
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 16:1998</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 16:1998</docidentifier>
+      <date type="published">
+        <on>1998-10-22</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 19:1998</formattedref>
       <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 19:1998</docidentifier>
+      <date type="published">
+        <on>1998-11-05</on>
+      </date>
     </bibitem>
 
   </relation>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 20:1998</formattedref>
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/FDAM 30</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/FDAM 30</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 5:1998</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 5:1998</docidentifier>
+      <date type="published">
+        <on>1998-06-04</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 20:1998</formattedref>
       <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 20:1998</docidentifier>
+      <date type="published">
+        <on>1998-11-05</on>
+      </date>
     </bibitem>
 
   </relation>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 21:1999</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 21:1999</docidentifier>
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/FDAM 31</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/FDAM 31</docidentifier>
     </bibitem>
 
   </relation>
   <relation type="obsoletes">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:1993/Amd 23:1999</formattedref>
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 17:1999</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 17:1999</docidentifier>
+      <date type="published">
+        <on>1999-08-12</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/FDAM 15</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/FDAM 15</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 9:1997</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 9:1997</docidentifier>
+      <date type="published">
+        <on>1997-12-11</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/FDAM 14</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/FDAM 14</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Cor 2:1998</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Cor 2:1998</docidentifier>
+      <date type="published">
+        <on>1998-06-25</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/FDAM 27</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/FDAM 27</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/FDAM 28</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/FDAM 28</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/FDAM 29</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/FDAM 29</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/FDAM 22</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/FDAM 22</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/FDAM 24</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/FDAM 24</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 13:1998</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 13:1998</docidentifier>
+      <date type="published">
+        <on>1998-10-22</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/FDAM 25</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/FDAM 25</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/FDAM 26</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/FDAM 26</docidentifier>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 8:1997</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 8:1997</docidentifier>
+      <date type="published">
+        <on>1997-12-11</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 3:1996</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 3:1996</docidentifier>
+      <date type="published">
+        <on>1996-10-24</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 10:1998</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 10:1998</docidentifier>
+      <date type="published">
+        <on>1998-10-01</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 4:1996</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 4:1996</docidentifier>
+      <date type="published">
+        <on>1996-10-24</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 11:1998</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 11:1998</docidentifier>
+      <date type="published">
+        <on>1998-07-16</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993</docidentifier>
+      <date type="published">
+        <on>1993-05-20</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 12:1998</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 12:1998</docidentifier>
+      <date type="published">
+        <on>1998-09-03</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Cor 1:1996</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Cor 1:1996</docidentifier>
+      <date type="published">
+        <on>1996-02-29</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 23:1999</formattedref>
       <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 23:1999</docidentifier>
+      <date type="published">
+        <on>1999-05-06</on>
+      </date>
     </bibitem>
 
   </relation>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646:2003</formattedref>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:1993/Amd 21:1999</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:1993/Amd 21:1999</docidentifier>
+      <date type="published">
+        <on>1999-05-20</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO/IEC 10646:2003</formattedref>
       <docidentifier type="ISO" primary="true">ISO/IEC 10646:2003</docidentifier>
-      <date type="circulated">
-        <on>2004-04-08</on>
+      <date type="published">
+        <on>2003-12-15</on>
       </date>
     </bibitem>
 
   </relation>
-  <relation type="updates">
-    <bibitem type="standard">
-      <formattedref format="text/plain">ISO/IEC 10646-1:2000/Amd 1:2002</formattedref>
+  <relation type="updatedBy">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:2000/Amd 1:2002</formattedref>
       <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:2000/Amd 1:2002</docidentifier>
-      <date type="circulated">
-        <on>2004-04-08</on>
+      <date type="published">
+        <on>2002-07-18</on>
       </date>
+    </bibitem>
+
+  </relation>
+  <relation type="updatedBy">
+    <bibitem>
+      <formattedref>ISO/IEC 10646-1:2000/FDAM 2</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/IEC 10646-1:2000/FDAM 2</docidentifier>
     </bibitem>
 
   </relation>

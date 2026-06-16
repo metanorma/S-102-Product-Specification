@@ -1,14 +1,14 @@
-<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>IHO S-102 Bathymetric Surface Product Specification</title><contributor><role type='author'/><organization><name>IHO: International Hydrographic Organization</name></organization></contributor><relation type='partOf'><bibdata type="standard" schema-version="v1.2.9">
-  <title type="main" language="en">Bathymetric Surface Product Specification</title>
+<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>IHO S-102 Bathymetric Surface Product Specification</title><contributor><role type='author'/><organization><name>IHO: International Hydrographic Organization</name></organization></contributor><relation type='partOf'><bibdata type="standard" schema-version="v1.5.6">
+  <title language="en" type="main">Bathymetric Surface Product Specification</title>
   <uri type="xml">./documents/2.2.0/document.xml</uri>
   <uri type="pdf">./documents/2.2.0/document.pdf</uri>
   <uri type="doc">./documents/2.2.0/document.doc</uri>
   <uri type="html">./documents/2.2.0/document.html</uri>
   <uri type="rxl">./documents/2.2.0/document.rxl</uri>
-  <docidentifier type="IHO" primary="true">S-102</docidentifier>
+  <docidentifier primary="true" type="IHO">S-102</docidentifier>
   <docnumber>102</docnumber>
   <date type="published">
-    <on>2023-04-01</on>
+    <on>2023-04</on>
   </date>
   <contributor>
     <role type="author"/>
@@ -23,12 +23,12 @@
     </role>
     <organization>
       <name>International Hydrographic Organization</name>
-      <subdivision>
-hssc
-</subdivision>
-      <subdivision>
-tsmad
-</subdivision>
+      <subdivision type="Committee">
+        <name>hssc</name>
+      </subdivision>
+      <subdivision type="Workgroup">
+        <name>tsmad</name>
+      </subdivision>
     </organization>
   </contributor>
   <contributor>
@@ -57,21 +57,25 @@ tsmad
     <title>Standards and Specifications</title>
     <abbreviation>S</abbreviation>
   </series>
-  <ext schema-version="v1.0.0">
+  <ext schema-version="v1.1.2">
     <doctype>standard</doctype>
+    <flavor>iho</flavor>
+    <structuredidentifier>
+      <docnumber>102</docnumber>
+    </structuredidentifier>
   </ext>
 </bibdata></relation>
-<relation type='partOf'><bibdata type="standard" schema-version="v1.2.9">
-  <title type="main" language="en">Bathymetric Surface Product Specification</title>
+<relation type='partOf'><bibdata type="standard" schema-version="v1.5.6">
+  <title language="en" type="main">Bathymetric Surface Product Specification</title>
   <uri type="xml">./documents/3.0.0/document.xml</uri>
   <uri type="pdf">./documents/3.0.0/document.pdf</uri>
   <uri type="doc">./documents/3.0.0/document.doc</uri>
   <uri type="html">./documents/3.0.0/document.html</uri>
   <uri type="rxl">./documents/3.0.0/document.rxl</uri>
-  <docidentifier type="IHO" primary="true">S-102</docidentifier>
+  <docidentifier primary="true" type="IHO">S-102</docidentifier>
   <docnumber>102</docnumber>
   <date type="published">
-    <on>2024-12-01</on>
+    <on>2024-12</on>
   </date>
   <contributor>
     <role type="author"/>
@@ -86,12 +90,12 @@ tsmad
     </role>
     <organization>
       <name>International Hydrographic Organization</name>
-      <subdivision>
-hssc
-</subdivision>
-      <subdivision>
-tsmad
-</subdivision>
+      <subdivision type="Committee">
+        <name>hssc</name>
+      </subdivision>
+      <subdivision type="Workgroup">
+        <name>tsmad</name>
+      </subdivision>
     </organization>
   </contributor>
   <contributor>
@@ -120,8 +124,12 @@ tsmad
     <title>Standards and Specifications</title>
     <abbreviation>S</abbreviation>
   </series>
-  <ext schema-version="v1.0.0">
+  <ext schema-version="v1.1.2">
     <doctype>standard</doctype>
+    <flavor>iho</flavor>
+    <structuredidentifier>
+      <docnumber>102</docnumber>
+    </structuredidentifier>
   </ext>
 </bibdata></relation>
 </relaton-collection>
