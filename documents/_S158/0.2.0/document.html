@@ -1,0 +1,2209 @@
+
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style>@charset "UTF-8";
+/*
+    0 CSS RESET
+*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  vertical-align: baseline;
+}
+
+html, body, div, span, applet, object, iframe,
+p, blockquote,
+a, abbr, acronym, address, big, cite,
+del, dfn, em, img, ins, q, s,
+small, strike, strong, sub, sup, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+code, pre, tt, kbd, samp {
+  font-family: "Fira Code",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-variant-ligatures: none;
+}
+
+code *, pre *, tt *, kbd *, samp * {
+  font-family: "Fira Code",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace !important;
+  font-variant-ligatures: none;
+}
+
+p code, dt code, li code, label code, legend code, caption code, th code, td code,
+p tt, dt tt, li tt, label tt, legend tt, caption tt, th tt, td tt,
+p kbd, dt kbd, li kbd, label kbd, legend kbd, caption kbd, th kbd, td kbd,
+p samp, dt samp, li samp, label samp, legend samp, caption samp, th samp, td samp {
+  font-size: ;
+}
+
+sub, sup {
+  font-size: 0.75em;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote::before, blockquote::after, q::before, q::after {
+  content: "";
+  content: none;
+}
+
+.h2Annex {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+dl {
+  display: grid;
+  grid-template-columns: max-content auto;
+}
+dl dt p, dl dd p {
+  margin-top: 0;
+}
+dl dt {
+  grid-column-start: 1;
+}
+dl dd {
+  grid-column-start: 2;
+}
+
+dl:has(dt .stem) {
+  grid-template-columns: fit-content(8em) auto;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+div.document-stage-band, div.document-type-band {
+  background-color: #333333;
+}
+
+a.TableFootnoteRef, span.TableFootnoteRef,
+a.FootnoteRef, span.FootnoteRef {
+  vertical-align: super;
+}
+
+a.TableFootnoteRef, a.FootnoteRef, a.footnote-number,
+sup a, a:has(> sup) {
+  vertical-align: baseline;
+}
+
+.addition {
+  color: blue;
+}
+
+.deletion {
+  color: red;
+  text-decoration: line-through;
+}
+
+ruby {
+  ruby-position: over;
+  -webkit-ruby-position: before;
+}
+
+ruby ruby {
+  ruby-position: under;
+  -webkit-ruby-position: after;
+}
+
+/* code highlighting with line numbers */
+table.rouge-line-table td.rouge-gutter {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  padding-right: 1em;
+}
+
+table.rouge-line-table td.rouge-code {
+  -moz-user-select: all;
+  -ms-user-select: all;
+  -webkit-user-select: all;
+  user-select: all;
+}
+
+table.rouge-line-table,
+table.rouge-line-table th,
+table.rouge-line-table td {
+  width: auto;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+table.rouge-line-table pre {
+  margin: 0;
+  padding: 0;
+  overflow-x: visible;
+  font-size: 100%;
+}
+
+/* header § links */
+a.header {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.header:hover {
+  color: #a53221 !important;
+  background: inherit;
+  box-shadow: none;
+}
+
+a.header:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.anchor {
+  position: absolute;
+  z-index: 1001;
+  width: 1.5ex;
+  margin-left: -1.5ex;
+  display: block;
+  text-decoration: none !important;
+  visibility: hidden;
+  text-align: center;
+  font-weight: 400;
+}
+
+a.anchor::before {
+  content: "§";
+  font-size: 0.85em;
+  display: block;
+  padding-top: 0.1em;
+}
+
+a.anchor:hover {
+  color: #a53221;
+  background: inherit;
+  box-shadow: none;
+}
+
+h1 > a.anchor:hover,
+h2 > a.anchor:hover,
+h3 > a.anchor:hover,
+h4 > a.anchor:hover,
+h5 > a.anchor:hover,
+h6 > a.anchor:hover,
+.inline-header > a.anchor:hover,
+h1:hover > a.anchor,
+h2:hover > a.anchor,
+h3:hover > a.anchor,
+h4:hover > a.anchor,
+h5:hover > a.anchor,
+h6:hover > a.anchor,
+.inline-header:hover > a.anchor {
+  visibility: visible;
+}
+
+/* collapsible snippets: collapsible before hidable */
+.hidable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 3px 0;
+  margin: 0;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: "▼";
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.active:after {
+  content: "▲";
+}
+
+/* collapsible: */
+.collapsible + .hidable {
+  margin-top: 0;
+}
+
+.collapsible:not(.active) + .hidable {
+  overflow: hidden;
+  padding: 0;
+}
+
+.svg-container {
+  width: 100%; /* or any desired width */
+  display: block; /* ← removes unwanted inline spacing */
+}
+
+svg {
+  width: 100%;
+  height: auto; /* ← key to maintaining aspect ratio */
+  display: block; /* ← removes unwanted inline spacing */
+}
+
+/* style dfn by override in flavor */
+dfn {
+  font-style: inherit;
+}
+
+#standard-band {
+  background-color: #0AC442;
+}
+
+#standard {
+  border-bottom: solid 3px #0AC442;
+}
+
+#directive-band {
+  background-color: #540D6E;
+}
+
+#directive {
+  border-bottom: solid 3px #540D6E;
+}
+
+#guide-band {
+  background-color: #D183C9;
+}
+
+#guide {
+  border-bottom: solid 3px #D183C9;
+}
+
+#specification-band {
+  background-color: #65AFFF;
+}
+
+#specification {
+  border-bottom: solid 3px #65AFFF;
+}
+
+#report-band {
+  background-color: #3A405A;
+}
+
+#report {
+  border-bottom: solid 3px #3A405A;
+}
+
+#amendment-band {
+  background-color: #F26430;
+}
+
+#amendment {
+  border-bottom: solid 3px #F26430;
+}
+
+#corrigendum-band {
+  background-color: #C84630;
+}
+
+#corrigendum {
+  border-bottom: solid 3px #C84630;
+}
+
+#administrative-band {
+  background-color: #BFAE48;
+}
+
+#administrative {
+  border-bottom: solid 3px #BFAE48;
+}
+
+#advisory-band {
+  background-color: #BD9391;
+}
+
+#advisory {
+  border-bottom: solid 3px #BD9391;
+}
+
+#proposal-band {
+  background-color: #39A0ED;
+}
+
+#proposal {
+  border-bottom: solid 3px #39A0ED;
+}
+
+#working-draft-band {
+  background-color: #2D7393;
+}
+
+#working-draft {
+  border-bottom: solid 3px #2D7393;
+}
+
+#committee-draft-band {
+  background-color: #2A6B7C;
+}
+
+#committee-draft {
+  border-bottom: solid 3px #2A6B7C;
+}
+
+#draft-standard-band {
+  background-color: #1C7F7A;
+}
+
+#draft-standard {
+  border-bottom: solid 3px #1C7F7A;
+}
+
+#final-draft-band {
+  background-color: #53C170;
+}
+
+#final-draft {
+  border-bottom: solid 3px #53C170;
+}
+
+#published-band {
+  background-color: #069E2D;
+}
+
+#published {
+  border-bottom: solid 3px #069E2D;
+}
+
+#withdrawn-band {
+  background-color: #004E64;
+}
+
+#withdrawn {
+  border-bottom: solid 3px #004E64;
+}
+
+#cancelled-band {
+  background-color: #2E382E;
+}
+
+#cancelled {
+  border-bottom: solid 3px #2E382E;
+}
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4em;
+  color: #212529;
+  background-color: #ffffff;
+}
+body main {
+  margin: 0 3em 0 6em;
+}
+
+main {
+  margin: 0 3em 0 6em;
+}
+
+#toc ul, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#toc ul li a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul li a {
+  padding: 5px 10px;
+}
+#toc ul a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul a {
+  color: #05164d;
+  text-decoration: none;
+  display: block;
+}
+#toc ul a:hover, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul a:hover {
+  box-shadow: none;
+  color: #05164d;
+}
+#toc .h2, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h2 {
+  padding-left: 30px;
+}
+#toc .h3, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h3 {
+  padding-left: 50px;
+}
+#toc .h4, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h4 {
+  padding-left: 70px;
+}
+#toc .h5, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h5 {
+  padding-left: 90px;
+}
+#toc .h6, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h6 {
+  padding-left: 110px;
+}
+#toc .toc-active, #toc li:hover, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover {
+  background: #fedc5b;
+  box-shadow: inset -5px 0px 10px -5px #fedc5b !important;
+}
+#toc .toc-active a, #toc li:hover a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover a {
+  color: #05164d;
+}
+@media print {
+  #toc .toc-active, #toc li:hover, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover {
+    background: white;
+    box-shadow: none !important;
+  }
+  #toc .toc-active a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active a {
+    color: #05164d;
+  }
+  #toc li:hover a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover a {
+    color: black;
+  }
+}
+#toc, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: 400;
+}
+@media screen and (max-width: 768px) {
+  #toc, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) {
+    padding: 0 1.5em;
+    overflow: visible;
+  }
+}
+#toc .toc-active a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active a {
+  color: #05164d;
+}
+#toc li a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li a {
+  text-transform: uppercase;
+}
+#toc ul a:hover, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul a:hover {
+  box-shadow: none;
+  color: #05164d;
+}
+
+#toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 323px;
+    font-size: 0.9em;
+    overflow: auto;
+    padding: 0 0 0 30px;
+    background-color: #f7f7f7;
+  }
+}
+@media print {
+  nav {
+    position: relative;
+    width: auto;
+    font-size: 0.9em;
+    overflow: auto;
+    padding: 0;
+    margin-right: 0;
+    background-color: white;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #toggle {
+    position: fixed;
+    height: 100%;
+    width: 30px;
+    background-color: #05164D;
+    color: white !important;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    z-index: 103;
+  }
+  #toggle span {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+@media screen and (max-width: 768px) {
+  #toggle {
+    display: none;
+  }
+}
+@media print {
+  #toggle {
+    display: none;
+  }
+}
+
+#myBtn {
+  font-family: "Fira Code",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-variant-ligatures: none;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  background-color: #1f8ca0;
+  opacity: 0.15;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px 10px 15px;
+  border-radius: 4px;
+}
+#myBtn:hover {
+  opacity: 1;
+}
+@media print {
+  #myBtn {
+    display: none;
+  }
+}
+#myBtn {
+  text-transform: uppercase;
+}
+#myBtn a.anchorjs-link:hover {
+  background: none;
+  color: #05164d;
+  box-shadow: none;
+}
+
+/*
+    2. Responsive navigation layout
+*/
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: 360px;
+  }
+  .rule.toc {
+    display: none;
+  }
+  h1.toc-contents {
+    margin-top: 1em;
+  }
+  ul#toc-list, ul#toc-list > :is(.h1, .h2, .h3, .h4, .h5, .h6) {
+    padding: 0;
+    margin: 0;
+  }
+}
+figure figcaption {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+figure > img, figure > svg {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+figure {
+  line-height: 1.6em;
+  padding: 1.5em;
+  margin: 2em 0 1em 0;
+  overflow: auto;
+}
+
+table figure {
+  padding: 0;
+  margin: 0;
+}
+
+/*
+    Document types + stages
+*/
+.document-type-band {
+  left: 0;
+  top: 180px;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 102;
+}
+.document-type-band > :first-child {
+  position: relative;
+  width: 25px;
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+  margin-left: 6px;
+  writing-mode: tb-rl;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  white-space: nowrap;
+  display: block;
+  bottom: 0;
+}
+@media print {
+  .document-type-band {
+    display: none;
+  }
+}
+.document-type-band .document-type {
+  top: 20px;
+}
+
+.document-stage-band {
+  left: 0;
+  top: 0;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 101;
+  box-shadow: -5px 0px 10px #1d1d1d;
+}
+.document-stage-band > :first-child {
+  position: relative;
+  width: 25px;
+  font-weight: 300;
+  height: 160px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+  margin-left: 6px;
+  writing-mode: tb-rl;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  white-space: nowrap;
+  display: block;
+  bottom: 0;
+}
+@media print {
+  .document-stage-band {
+    display: none;
+  }
+}
+
+#governance-band p.document-type {
+  height: 230px !important;
+}
+
+p.document-stage {
+  font-weight: 300;
+  height: 160px;
+}
+
+#standard-band p {
+  height: 270px;
+}
+
+#proposal-band p {
+  height: 150px;
+}
+
+#standard-band,
+#in-force-band {
+  background-color: #00AAA9;
+}
+
+#standard,
+#in-force {
+  border-bottom: solid 3px #00AAA9;
+}
+
+#specification {
+  border-bottom: solid 3px #750697;
+}
+
+#specification-band {
+  background-color: #750697;
+}
+
+#draft-proposal,
+#resolution {
+  border-bottom: solid 3px #48a0e7;
+}
+
+#draft-proposal-band,
+#resolution-band {
+  background-color: #48a0e7;
+}
+
+.coverpage-maturity {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: 400;
+  font-size: 1em;
+  margin: 0 0 2em 0;
+  text-transform: uppercase;
+}
+
+#draft-development,
+#regulation {
+  border-bottom: solid 3px #F7803C;
+}
+
+#draft-development-band,
+#regulation-band {
+  background-color: #F7803C;
+}
+
+#draft-testing {
+  border-bottom: solid 3px #fd06fd;
+}
+
+#draft-testing-band {
+  background-color: #fd06fd;
+}
+
+#draft-implementation {
+  border-bottom: solid 3px #fdf906;
+}
+
+#draft-implementation-band {
+  background-color: #fdf906;
+}
+
+#standard {
+  border-bottom: solid 3px #00AAA9;
+}
+
+#standard-band {
+  background-color: #00AAA9;
+}
+
+#retired {
+  border-bottom: solid 3px #7e0d13;
+}
+
+#retired-band {
+  background-color: #7e0d13;
+}
+
+/*
+    3. TYPOGRAPHY
+*/
+/*
+    3.1 Titles
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  color: #05164D;
+  font-weight: 300;
+  margin-top: 1.6em;
+  margin-bottom: 0.3em;
+}
+
+h1, .h1 {
+  font-size: 1.6em;
+  text-transform: uppercase;
+  margin-top: 2em;
+}
+
+h1#content, .h1#content {
+  margin-top: 2em;
+}
+
+h2, .h2 {
+  margin-top: 1.3em;
+  font-size: 1.3em;
+  font-weight: 400;
+}
+
+h3, .h3 {
+  margin-top: 1.1em;
+  font-size: 1.1em;
+  font-weight: 100;
+}
+
+.TermNum,
+.Terms,
+.AltTerms {
+  color: #05164D;
+}
+
+.TermNum {
+  font-weight: 100;
+}
+
+span.TermNum {
+  font-weight: bold;
+}
+
+h2.TermNum {
+  margin-bottom: 0;
+}
+
+p.Terms {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+p.AltTerms {
+  /*
+  font-style: italic;
+    */
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.contact-info a:hover {
+  color: #05164d;
+  text-decoration: underline;
+  background: none;
+  box-shadow: 0 0 0 0;
+}
+
+/*
+  3.2 Links
+*/
+a, a:visited {
+  text-decoration: none;
+  color: #05164d;
+}
+
+a:hover {
+  color: #05164d;
+  background: #fedc5b;
+  box-shadow: 3px 0 0 #fedc5b, -3px 0 0 #fedc5b;
+}
+
+*::selection {
+  background: #fedc5b;
+  color: #05164d;
+}
+
+*::-moz-selection {
+  background: #fedc5b;
+  color: #05164d;
+}
+
+/*
+    3.3 Lists
+*/
+ul,
+ol {
+  margin-left: 1.2em;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul > li::before {
+  content: "—";
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.2em;
+}
+
+ul > li p:first-child {
+  display: inline;
+}
+
+ul > li:first-child {
+  margin-top: 1em;
+}
+
+ul ul > li:first-child {
+  margin-top: 0;
+}
+
+ol ul > li:first-child {
+  margin-top: 0;
+}
+
+#toc-list ul {
+  margin-bottom: 0.25em;
+}
+
+#toc-list li {
+  list-style-type: none;
+}
+
+#toc li::before {
+  content: " ";
+  display: none;
+}
+
+/*
+    3.4 Rules
+*/
+.rule {
+  width: 100%;
+  height: 1px;
+  background-color: #0e1a85;
+  margin: 2em 0;
+}
+
+/*
+    3.5 Bibliograhy
+*/
+p.Biblio,
+p.NormRef, div.Biblio, div.NormRef {
+  margin-top: 1em;
+  margin-left: 2em;
+}
+
+.Biblio.note, .Biblio.Note, .NormRef.note, .NormRef.Note {
+  margin-left: 3em;
+}
+
+/*
+    3.6 Source Code + figures
+*/
+figure .SourceTitle,
+pre .SourceTitle,
+.pseudocode .SourceTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+figure,
+pre,
+.pseudocode {
+  background-color: #f7f7f7;
+  font-size: ;
+  line-height: 1.6em;
+  padding: 1.5em;
+  margin: 2em 0 1em 0;
+  overflow: auto;
+}
+
+pre {
+  font-family: "Fira Code",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-variant-ligatures: none;
+}
+
+.AdmonitionTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+.RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+.ListTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+  text-align: left;
+}
+
+figcaption,
+.SourceTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+/*
+    3.7 Notes
+*/
+.Note {
+  background-color: #fedc5b;
+  color: #47430c;
+  padding: 1.2em;
+  margin: 1em 0 1em 0;
+}
+.Note p {
+  margin: 0;
+}
+
+.Admonition {
+  background-color: #ffcccc;
+  color: #47430c;
+  padding: 1.2em;
+  margin: 1em 0 1em 0;
+}
+.Admonition p {
+  margin: 0;
+}
+
+/*
+    3.8 Examples
+*/
+.example {
+  background-color: #e1eef1;
+  padding: 1.2em;
+  margin: 2em 0 1em 0;
+  text-align: left;
+}
+.example p {
+  margin: 0;
+}
+.example {
+  color: #424242;
+  padding-left: 2.7em;
+}
+.example .example-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-left: -1.5em;
+}
+.example .example-title {
+  margin-top: 0;
+}
+.example pre,
+.example .pseudocode {
+  background: none;
+}
+
+/*
+    3.9 Tables
+*/
+table {
+  width: 100%;
+  font-weight: 300;
+  margin: 1em 0 2em 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 2em;
+}
+table, table th, table td {
+  border: 1px solid black;
+  font-size: 0.95em;
+}
+table th, table td {
+  padding: 1em;
+}
+table td.header {
+  font-weight: 400;
+}
+table table.plain, table table.plain th, table table.plain td {
+  border: none !important;
+  font-size: 0.95em;
+}
+
+table > caption {
+  text-align: center;
+  margin-top: 2.5em;
+  font-weight: 400;
+}
+
+/*
+  3.10 Footnotes
+*/
+a.footnote-number {
+  vertical-align: super;
+  font-size: 0.8em;
+}
+
+.footnote {
+  font-size: 0.9em;
+}
+
+/*
+    3.11 Blockquotes
+*/
+.Quote {
+  background-color: #f7f7f7;
+  font-style: italic;
+  width: 80%;
+  padding: 1.5em;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+    3.12 Formulas
+*/
+.formula {
+  background-color: #f7f7f7;
+  padding: 1.5em;
+  margin-top: 2em;
+  text-align: center;
+}
+
+/*
+    3.13 Contact Info
+*/
+.contact-info {
+  padding: 2em;
+  margin-top: 5em;
+  width: 250px;
+  text-align: left;
+  border: #05164D solid 2px;
+  color: #05164D !important;
+  border-radius: 25px;
+}
+
+.contact-info a,
+.contact-info a:hover {
+  color: #05164D;
+}
+
+.contact-info p,
+.contact-info a {
+  font-family: "Fira Code",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-variant-ligatures: none;
+  font-weight: 400;
+}
+
+.contact-info .name {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.contact-info .address {
+  font-size: 1em;
+  line-height: 1.3em;
+  margin-top: 0;
+}
+
+/*
+    Keywords
+*/
+span.keyword {
+  font-weight: 600;
+}
+
+/*
+    Paragraphs
+*/
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h2 p, .h2 p {
+  display: inline;
+}
+
+/*
+    4.0 Page header
+*/
+/*
+    4.1 Top Logo
+*/
+.icon-svg {
+  width: 100%;
+  color: #5ecf86;
+}
+
+.wrapper-top {
+  background: #05164D;
+  color: #ffffff;
+  padding: 2em 0;
+  width: 100%;
+}
+
+.wrapper-top-bottom {
+  width: 0;
+  height: 0;
+  border-top: 100px solid #05164D;
+  border-right: 100px solid transparent;
+  position: absolute;
+}
+
+.doc-number {
+  font-size: 0.5em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.coverpage-title {
+  padding-bottom: 0.5em;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.2em;
+  line-height: 1.5em;
+  font-weight: 100;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-transform: uppercase;
+}
+
+.WordSection11 {
+  padding: 0 2em 0 3em;
+}
+
+.info-section {
+  padding: 0 2em 0 5em;
+}
+
+.prefatory-section {
+  padding: 0 3em 0 6em;
+}
+
+.zzSTDTitle1,
+.MsoCommentText {
+  display: none;
+}
+
+.coverpage {
+  text-align: center;
+  padding-left: 1.5em;
+}
+.coverpage img {
+  height: auto;
+  width: 400px;
+}
+
+.coverpage-logo span,
+.coverpage-tc-name span {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  text-transform: none;
+  font-weight: 300;
+}
+
+.logo-img {
+  max-width: 600px;
+  margin: auto;
+  padding: 0.5em;
+}
+
+.coverpage-tc-name {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  margin: 0.25em 0;
+}
+
+/*
+    4.2 Document Identity
+*/
+.coverpage-doc-identity {
+  font-size: 2em;
+  line-height: 2em;
+}
+
+.coverpage-title .title-second {
+  display: none;
+}
+
+.coverpage-stage-block {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: 600;
+  font-size: 1.25em;
+  margin: 2em 0em 2em 0em;
+  text-transform: uppercase;
+}
+
+/*
+    4.3 Draft Warning
+*/
+.coverpage-warning {
+  border: #f36f36 solid 2px;
+  color: #f36f36 !important;
+  margin: 1em 2em;
+  color: #05164d;
+  padding: 2em 1em 1em 1em;
+  border-radius: 25px;
+}
+
+.coverpage-warning .title {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+/*
+    4.4 Copyright
+*/
+.boilerplate-copyright {
+  padding: 1em;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+/*  .copyright .name, .copyright .address {color: #05164d;} */
+/*
+    5.0 Other styles
+*/
+/*
+To top button
+*/
+@page {
+  margin: 2cm 1cm;
+}
+@media print {
+  .document-info,
+  nav,
+  .copyright {
+    page-break-before: always;
+  }
+  nav {
+    page-break-after: always;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  .h1, .h2, .h3, .h4 {
+    page-break-after: avoid;
+    margin-top: 1.2em;
+  }
+  .note,
+  figure,
+  pre,
+  .pseudocode,
+  table {
+    page-break-inside: avoid;
+  }
+  .info-section {
+    display: none;
+  }
+  .coverpage {
+    height: 23cm;
+  }
+  .wrapper-top {
+    top: 0;
+    padding-top: 4cm;
+    padding-bottom: 4cm;
+  }
+  .wrapper-top-bottom {
+    margin-top: -5px;
+  }
+  button#myBtn {
+    background-color: white;
+  }
+  .container {
+    padding-left: 0;
+  }
+  h1.content, .h1.content {
+    margin-top: 2em;
+    line-height: 2.5em;
+  }
+  h1, .h1 {
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
+  h2, .h2 {
+    font-size: 1.2em;
+  }
+  h3, .h3 {
+    font-size: 1em;
+  }
+  .Note {
+    background-color: #fedc5b;
+    color: #47430c;
+    padding: 5px;
+    margin: 2em 0 1em 0;
+  }
+  .Note p {
+    padding: 0 5px 0 5px;
+  }
+  .Admonition {
+    background-color: #ffcccc;
+    color: #47430c;
+    padding: 5px;
+    margin: 2em 0 1em 0;
+  }
+  .Admonition p {
+    padding: 0 5px 0 5px;
+  }
+  .wrapper-top-bottom {
+    display: none;
+  }
+}
+</style><style>pre.sourcecode table td { padding: 5px; }
+pre.sourcecode table pre { margin: 0; }
+pre.sourcecode, pre.sourcecode .w {
+  color: #444444;
+}
+pre.sourcecode .cp {
+  color: #CC00A3;
+}
+pre.sourcecode .cs {
+  color: #CC00A3;
+}
+pre.sourcecode .c, pre.sourcecode .ch, pre.sourcecode .cd, pre.sourcecode .cm, pre.sourcecode .cpf, pre.sourcecode .c1 {
+  color: #FF0000;
+}
+pre.sourcecode .kc {
+  color: #C34E00;
+}
+pre.sourcecode .kd {
+  color: #0000FF;
+}
+pre.sourcecode .kr {
+  color: #007575;
+}
+pre.sourcecode .k, pre.sourcecode .kn, pre.sourcecode .kp, pre.sourcecode .kt, pre.sourcecode .kv {
+  color: #0000FF;
+}
+pre.sourcecode .s, pre.sourcecode .sb, pre.sourcecode .sc, pre.sourcecode .ld, pre.sourcecode .sd, pre.sourcecode .s2, pre.sourcecode .se, pre.sourcecode .sh, pre.sourcecode .si, pre.sourcecode .sx, pre.sourcecode .sr, pre.sourcecode .s1, pre.sourcecode .ss {
+  color: #009C00;
+}
+pre.sourcecode .sa {
+  color: #0000FF;
+}
+pre.sourcecode .nb, pre.sourcecode .bp {
+  color: #C34E00;
+}
+pre.sourcecode .nt {
+  color: #0000FF;
+}
+
+</style><title>Bathymetric Surface Validation Checks</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!--TOC script import-->
+<script type="text/javascript" src="https://cdn.rawgit.com/jgallen23/toc/0.3.2/dist/toc.min.js"></script>
+<script type="text/javascript">function toclevel() { return "h1:not(:empty):not(.TermNum):not(.noTOC),h2:not(:empty):not(.TermNum):not(.noTOC)";}
+</script>
+
+<!--Google fonts-->
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+<!--Font awesome import for the link icon-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous" />
+<style class="anchorjs"></style>
+</head><body lang="EN-US" link="blue" vlink="#954F72" xml:lang="EN-US" class="container"><div class="title-section"><div class="document-stage-band" id="in-force-band">
+  <p class="document-stage">In Force</p>
+</div>
+
+<div class="document-type-band" id="standard-band">
+  <p class="document-type">IHO Standard</p>
+</div>
+
+
+
+<div id="toggle"> <span>•</span> </div>
+
+<header>
+
+  <div class="coverpage">
+    <div class="wrapper-top">
+
+      <div class="coverpage-doc-identity">
+        <div class="doc-number">
+          <span class="docnumber">S-158:102</span>
+          <span class="docyear">Edition 0.2.0</span>
+          <span class="docyear"></span>
+        </div>
+
+        <div class="coverpage-title">
+          <span class="title-first">Bathymetric Surface Validation Checks</span>
+          <!--<span class="title-second"></span>-->
+        </div>
+      </div>
+
+      <div class="coverpage-logo">
+        <span>International Hydographic Organization. 2016</span><br />
+        <div class="logo-img">
+        <svg xmlns="http://www.w3.org/2000/svg" width="705.73mm" height="235.3mm" viewBox="0 0 2000.5 667" preserveaspectratio="xMidYMin slice"><g id="uuid-cc53c83d-696a-477a-bb10-6f5f1da40b87"><rect x="666.5" width="667" height="667" style="fill:#01a9aa;"></rect><rect x="1333.5" width="667" height="667" style="fill:#f0ebd8;"></rect><rect width="667" height="667" style="fill:#00154c;"></rect><path d="M345.73,314.66v-75.32c-4.09-.54-8.25-.82-12.48-.82s-8.57.3-12.73.86v75.28h25.22Z" style="fill:#fdda5a;"></path><path d="M215.62,172.83l9.45,13,95.44,7.97v9.33c4.21-.4,8.45-.61,12.73-.61s8.36.2,12.48.59v-9.31l93.48-7.68,10.74-13.29-104.22-8.45v-7.09c8.47-4.6,14.23-13.57,14.23-23.89,0-15-12.16-27.16-27.16-27.16s-27.16,12.16-27.16,27.16c0,3.66.74,7.15,2.05,10.33,4.9-3.49,9.75-6.94,13.33-9.49,0-.12-.02-.23-.02-.35,0-6.52,5.29-11.81,11.81-11.81s11.81,5.29,11.81,11.81c0,4.99-3.09,9.24-7.46,10.98l-2.47,1.76-14.87,10.62c.22.12.44.25.67.37v6.76l-104.89,8.45Z" style="fill:#fdda5a;"></path><path d="M362.63,311.41c-.73-.06-1.45-.05-2.17-.01-2.24-5.11-4.71-10.73-6.47-14.73,2.05-.98,3.92-2.4,5.45-4.28,5.55-6.8,4.54-16.81-2.26-22.36-1.02-.83-3.22-2.99-5.58-5.31v9.72c.44.4.82.74,1.15,1,3.8,3.1,4.37,8.71,1.27,12.51-.68.84-1.51,1.52-2.41,2.05v24.68s0,0,0,.02c-3.4,2.64-5.74,6.63-6.11,11.25-.23,2.86-2.46,13.85-2.76,17.56-.55,6.7,3.16,12.76,8.85,15.55-.63,3.84-1.31,8.05-1.95,11.98-5.46.88-10.3,4.59-12.37,10.14-1,2.69-6.13,12.65-7.43,16.14-2.18,5.86-.67,12.19,3.35,16.45-1.95,3.31-4.1,6.95-6.11,10.37-.81-.13-1.62-.19-2.43-.19-5.07,0-10.05,2.42-13.13,6.91-1.62,2.37-9.01,10.8-11.11,13.87-4.15,6.06-3.52,13.96,1.03,19.29l-3.82,5.59,9.38,2.97,2.38-3.53c1.36.37,2.74.56,4.13.56,5.07,0,10.05-2.42,13.13-6.91,1.62-2.37,9.01-10.8,11.11-13.87,4.5-6.57,3.38-15.3-2.26-20.57,1.93-3.28,3.96-6.73,5.81-9.89,1.15.26,2.3.4,3.44.4,6.45,0,12.51-3.95,14.9-10.35,1-2.69,6.13-12.65,7.43-16.14,2.92-7.82-.73-16.47-8.17-19.94.63-3.87,1.3-8.01,1.91-11.81,7.2-1.01,13.01-6.89,13.63-14.44.23-2.86,2.46-13.85,2.76-17.56.71-8.75-5.8-16.42-14.55-17.13ZM331.95,444.89c-.94,1.37-3.63,4.62-5.8,7.23-2.71,3.27-4.42,5.34-5.31,6.64-1.62,2.36-4.27,3.78-7.13,3.86l2.71-4.03h0c.32-.57.53-1.2.59-1.88.22-2.57-1.68-4.83-4.25-5.05-1.67-.14-3.2.62-4.14,1.87h0s-2.98,4.35-2.98,4.35c-.41-.78-.7-1.62-.87-2.51-.44-2.34.06-4.7,1.41-6.66.94-1.37,3.63-4.62,5.8-7.23,2.71-3.27,4.42-5.34,5.31-6.64,1.34-1.95,3.39-3.25,5.67-3.69-1.94,3.29-3.34,5.68-3.66,6.23-1.29,2.23-.52,5.09,1.71,6.38s5.09.52,6.38-1.71c.18-.31,1.95-3.32,4.38-7.46,2.19,2.96,2.39,7.1.19,10.31ZM360.24,383.04c.99,2.16,1.07,4.58.24,6.8-.58,1.55-2.41,5.36-3.88,8.41-1.84,3.83-3,6.25-3.55,7.73-1.24,3.32-4.36,5.57-7.87,5.76,1.06-1.8,1.89-3.21,2.37-4.03.15-.2.27-.42.38-.65.05-.09.08-.14.08-.14h0c.27-.59.42-1.24.42-1.92,0-2.58-2.09-4.67-4.67-4.67-1.68,0-3.14.89-3.96,2.22h0s-1.11,1.87-2.79,4.73c-1.26-2.21-1.57-4.95-.62-7.51.58-1.55,2.41-5.36,3.88-8.41,1.84-3.83,3-6.25,3.55-7.73.83-2.22,2.5-3.96,4.57-4.94-.6,3.7-1.03,6.38-1.13,7-.39,2.55,1.36,4.93,3.91,5.33,2.55.39,4.93-1.36,5.33-3.91.05-.32.52-3.23,1.18-7.34,1.09.86,1.97,1.97,2.56,3.27ZM370.2,327.98c-.13,1.65-.86,5.81-1.45,9.15-.73,4.18-1.19,6.83-1.32,8.41-.28,3.42-2.47,6.23-5.43,7.47.38-2.33.68-4.18.84-5.2.06-.24.1-.49.12-.74.02-.1.03-.16.03-.16h0c.04-.64-.05-1.3-.3-1.94-.94-2.4-3.64-3.59-6.05-2.66-1.56.61-2.6,1.97-2.89,3.51h0s-.37,2.28-.94,5.76c-2.1-1.79-3.34-4.52-3.1-7.48.13-1.65.86-5.81,1.45-9.15.73-4.18,1.19-6.83,1.32-8.41.16-1.99.98-3.76,2.21-5.15,1.07,2.38,2.1,4.72,2.45,5.74.85,2.44,3.51,3.73,5.94,2.88,2.44-.85,3.73-3.51,2.88-5.94-.09-.26-1-2.36-2.31-5.38,4.07,1.09,6.91,4.96,6.56,9.31Z" style="fill:#fdda5a;"></path><path d="M314.84,237.85c-.99-2.69-3.59-13.6-4.88-17.09-2.29-6.22-8.08-10.14-14.32-10.38-.78-2.82-1.62-5.9-2.45-8.93,1.25-.85,2.37-1.87,3.34-3.04-8.7-.79-17.64-1.59-26.13-2.35,2.25,4.03,6.23,7.05,11.14,7.9.92.16,1.83.24,2.74.24.79,2.91,1.6,5.85,2.34,8.58-6.26,3.9-9.14,11.78-6.49,18.97.99,2.69,3.59,13.6,4.88,17.09,2.37,6.42,8.45,10.4,14.91,10.4,1.83,0,3.68-.32,5.49-.98.65-.24,1.26-.52,1.85-.83,2.62,2.56,5.5,5.37,8.24,8.05v-13.04c-.54-.53-1.08-1.05-1.61-1.57,2.08-3.87,2.57-8.58.93-13.02ZM304.96,242.14c-.16-.19-.35-.36-.54-.53-.07-.07-.12-.12-.12-.12h0c-.51-.39-1.1-.7-1.76-.87-.37-.09-.75-.14-1.12-.14-2.1,0-4.01,1.43-4.53,3.56-.4,1.63.12,3.26,1.21,4.38h0s1.45,1.42,3.68,3.6c-.61.13-1.22.2-1.84.2-3.71,0-7.06-2.34-8.35-5.82-.57-1.56-1.66-5.63-2.54-8.91-1.1-4.1-1.8-6.69-2.34-8.18-1.21-3.29-.34-6.84,1.93-9.22.69,2.53,1.18,4.3,1.32,4.78.7,2.48,3.28,3.92,5.77,3.22,2.48-.7,3.92-3.28,3.22-5.77-.07-.24-.55-1.98-1.26-4.59,2.6.81,4.75,2.78,5.72,5.42.57,1.56,1.66,5.63,2.54,8.91,1.1,4.1,1.8,6.69,2.34,8.18.64,1.74.72,3.59.25,5.35-1.6-1.56-2.85-2.78-3.56-3.47Z" style="fill:#fdda5a;"></path><path d="M330.34,135.59c-1.53-.68-3.23-.46-4.52.42h0s-15.71,11.17-25.45,18.12c-2.22-2.17-5.09-3.72-8.37-4.29-.92-.16-1.84-.24-2.75-.24-7.58,0-14.29,5.44-15.64,13.16-.01.07-.03.15-.04.23l7.37-.62c1.28-3.42,4.55-5.77,8.31-5.77.51,0,1.03.05,1.55.14,1.37.24,2.63.79,3.71,1.58-.8.57-1.37.98-1.59,1.14-.73.53-1.26,1.24-1.57,2.03l16.79-1.42c8.43-6.02,19.71-14.07,22.68-16.19.22-.13.42-.28.61-.44.08-.06.14-.1.14-.1h0c.48-.43.89-.96,1.17-1.59,1.05-2.36,0-5.12-2.36-6.17Z" style="fill:#fdda5a;"></path><path d="M367.51,382.73v8.09c.73-2.73.68-5.5,0-8.09Z" style="fill:#fdda5a;"></path><path d="M324.31,418.97l2.83-4.8c-3.54-5.48-4.34-12.31-2-18.58.77-2.07,2.57-5.81,4.31-9.43,1.28-2.66,2.73-5.67,3.12-6.71,2.18-5.85,6.86-10.37,12.65-12.41l.51-3.1v-2.66c-3.4-2.64-5.88-6.22-7.12-10.27h-18.09v68.37c1.24-.25,2.51-.39,3.8-.41Z" style="fill:#fdda5a;"></path><path d="M298.14,346h39.57c-.03-.46-.04-.93-.03-1.4,0-.01,0-.03,0-.04,0-.48.03-.96.07-1.45.18-2.2.9-6.29,1.59-10.25.51-2.91,1.09-6.2,1.18-7.31.05-.56.12-1.11.21-1.65.05-.28.11-.56.17-.84.05-.24.1-.47.16-.71.09-.37.19-.74.3-1.1.03-.11.07-.22.1-.33.14-.43.28-.85.45-1.26h0s-43.76,0-43.76,0v-55.42h-28.77v138.67h28.77v-56.91Z" style="fill:#fdda5a;"></path><path d="M367.51,264.24v13.63c.07.31.12.62.18.94.04.21.07.43.1.64.07.5.12.99.16,1.49.01.18.02.37.03.55.02.56.02,1.11,0,1.67,0,.14,0,.28-.02.42-.06,1.08-.21,2.16-.44,3.23v20.48c.2.06.39.14.58.2.36.12.71.25,1.06.39.23.09.45.19.68.29.32.14.64.3.96.45.2.1.41.2.61.31.49.27.96.55,1.43.85.1.06.19.13.28.2.39.27.77.55,1.15.84.15.12.31.25.46.38.32.27.63.55.94.83.13.13.27.25.4.38.42.42.83.85,1.22,1.31,3.61,4.25,5.35,9.66,4.9,15.22-.18,2.2-.9,6.29-1.59,10.25-.51,2.91-1.09,6.2-1.18,7.31-.04.51-.1,1.01-.18,1.5-.03.17-.06.34-.09.5-.06.32-.11.64-.19.96-.05.2-.1.4-.15.6-.07.27-.14.55-.22.81-.07.22-.14.43-.21.65-.08.24-.17.48-.26.72-.09.23-.18.45-.27.67-.09.22-.18.43-.28.64-.11.24-.22.47-.33.7-.09.18-.19.36-.29.55-.13.25-.27.49-.41.73-.08.14-.18.28-.26.42-.17.27-.34.54-.52.8-.05.07-.1.13-.15.2-1.27,1.78-2.8,3.34-4.56,4.64,0,0,0,0,0,0-.35.26-.72.51-1.09.75-.01,0-.03.02-.04.03-.37.24-.75.46-1.13.67-.01,0-.03.01-.04.02-.39.22-.79.42-1.2.61v8.95c1.6,1.75,2.88,3.76,3.8,5.92,0,.01.01.03.02.04.16.38.31.76.44,1.15.03.1.07.19.1.29.12.35.23.71.33,1.07.04.13.07.27.11.41.09.34.18.69.25,1.03.03.16.06.31.09.47.19,1.04.31,2.1.34,3.16,0,.28.02.57.02.85,0,.24-.02.47-.03.71-.01.3-.03.6-.06.9-.02.23-.04.45-.07.68-.04.32-.09.63-.14.95-.04.21-.07.42-.11.63-.07.35-.16.7-.25,1.05-.04.17-.08.35-.13.52-.15.52-.31,1.04-.51,1.56-.09.25-.21.53-.33.83-.04.1-.09.21-.13.32-.09.21-.17.42-.27.64-.06.14-.13.3-.2.44-.09.21-.18.41-.28.63-.08.17-.16.35-.24.52-.1.21-.19.42-.29.64-.09.2-.19.41-.29.61-.09.2-.19.4-.28.61-.11.23-.22.47-.33.71-.09.19-.18.38-.27.57-.12.26-.25.51-.37.77-.09.18-.17.36-.26.54-.16.32-.31.65-.47.97-.01.03-.03.06-.04.09h28.6v-138.67h-28.77Z" style="fill:#fdda5a;"></path><path d="M297.62,453.35s0,0,0,0c0,0,0-.02,0-.02,0,0,0,.02,0,.02Z" style="fill:#fdda5a;"></path><path d="M292.72,451.78s0,0,0,0c.03-.38.08-.76.14-1.14.01-.07.02-.15.03-.22.05-.34.12-.68.19-1.01.02-.12.05-.23.07-.35.07-.31.15-.61.23-.91.04-.15.08-.3.13-.45.08-.28.17-.55.26-.82.06-.18.13-.36.2-.54.09-.24.18-.49.29-.73.09-.21.19-.42.28-.63.1-.21.19-.42.29-.62.13-.26.27-.51.41-.76.09-.16.17-.32.26-.47.24-.41.49-.81.77-1.21,1.25-1.82,3.9-5.02,6.46-8.11.31-.38.63-.76.95-1.14.02-.03.05-.06.07-.09.32-.39.64-.78.96-1.16-42.43-12.35-73.44-51.51-73.44-97.93,0-36.15,18.81-67.91,47.18-86.02-1.73-6.25-3.75-14.28-4.7-16.85-.77-2.1-1.2-4.25-1.32-6.37-9.98,5.58-19.26,12.56-27.56,20.87-23.61,23.61-36.61,54.99-36.61,88.37s13,64.77,36.61,88.37c13.7,13.7,30.03,23.82,47.85,29.91Z" style="fill:#fdda5a;"></path><path d="M482.4,415.39l-7.09,12.11,8.27,4.73s-91.47,40.65-137.86,48.14v-22.51c28.67-2.82,55.25-15.35,75.89-35.99,23.61-23.61,36.61-54.99,36.61-88.37s-13-64.77-36.61-88.37c-23.61-23.61-54.99-36.61-88.37-36.61-7.28,0-14.47.62-21.51,1.83,1.14,1.58,2.1,3.32,2.81,5.24,1.18,3.21,3.18,11,4.77,16.88,4.55-.62,9.2-.95,13.93-.95,56.32,0,101.98,45.66,101.98,101.98,0,52.26-39.32,95.34-89.99,101.27-.11.01-.21.02-.32.03.03.12.05.24.08.36.08.33.15.66.21.99.03.17.06.34.09.5.05.35.1.7.14,1.06h0c.01.13.03.25.04.38,0,0,0,.01,0,.02.03.4.05.8.06,1.2,0,.16,0,.32,0,.49,0,.34,0,.68-.02,1.02,0,.12,0,.25-.02.37-.03.44-.07.88-.13,1.32-.02.14-.04.28-.06.42-.05.35-.11.69-.18,1.04-.03.13-.05.25-.08.38-.1.44-.21.89-.34,1.33-.02.06-.04.12-.06.19-.01.04-.03.09-.04.13-.11.36-.23.72-.37,1.07-.05.12-.09.24-.14.37-.17.44-.36.88-.56,1.31-.03.06-.07.13-.1.19-.18.38-.38.75-.59,1.12-.07.12-.13.23-.2.35-.25.42-.51.85-.79,1.26-.15.21-.31.45-.5.7-.06.09-.14.18-.2.27-.13.17-.25.34-.39.52-.09.11-.18.23-.27.34-.08.11-.17.22-.26.34-.05.07-.1.13-.16.2-.1.13-.21.26-.31.39-.14.18-.29.37-.44.55-.11.14-.23.28-.34.43-.15.19-.31.38-.46.57-.13.16-.25.31-.38.47-.11.14-.23.28-.34.41-.42.52-.86,1.04-1.3,1.57h0c-.37.45-.74.89-1.11,1.34-1.88,2.27-4.02,4.85-4.65,5.76-2.53,3.69-6.13,6.41-10.23,7.87v7c-3.52-.56-7.3-1.3-11.27-2.2l-.2.29-3.57-1.13-.61-.19c-49.1-12.02-123.43-44.64-123.43-44.64l9.43-5.6-7.97-12.7-49.16,27.97,9.75,14.84,14.4-9.53,175.37,112.61,174.56-112.24,14.77,8.86,8.57-13.88-48.73-27.47Z" style="fill:#fdda5a;"></path></g><g id="uuid-dd9de4c0-9fc8-4702-82c7-14b000a673c2"><path d="M850.05,413.03h-51.13v-164.75h51.13v164.75Z" style="fill:#fff;"></path><path d="M926.12,347.82v65.21h-49.4v-164.75h49.4v55.82h47.42v-55.82h49.4v164.75h-49.4v-65.21h-47.42Z" style="fill:#fff;"></path><path d="M1203.15,331.77c0,49.89-35.07,84.97-84.97,84.97s-84.72-35.07-84.72-86.2,34.58-85.95,84.72-85.95,84.97,34.83,84.97,87.19ZM1084.6,330.53c0,27.42,13.09,44.95,33.84,44.95s33.59-17.54,33.59-44.46-13.09-45.2-33.84-45.2-33.59,17.54-33.59,44.71Z" style="fill:#fff;"></path><path d="M1446.62,219.14v52.84h-5.03v-52.84h5.03Z" style="fill:#00154c;"></path><path d="M1464.53,233.79v6.59h.15c.89-2.32,2.47-4.18,4.74-5.59,2.27-1.41,4.76-2.11,7.47-2.11s4.9.35,6.7,1.04c1.8.69,3.24,1.67,4.33,2.92,1.08,1.26,1.85,2.8,2.29,4.62s.67,3.87.67,6.14v24.57h-4.66v-23.83c0-1.63-.15-3.14-.44-4.55s-.81-2.63-1.55-3.66-1.74-1.85-3-2.44-2.82-.89-4.7-.89-3.54.33-4.99,1c-1.46.67-2.69,1.58-3.7,2.74-1.01,1.16-1.8,2.54-2.37,4.14-.57,1.6-.88,3.34-.92,5.22v22.27h-4.66v-38.18h4.66Z" style="fill:#00154c;"></path><path d="M1518.03,233.79v3.92h-7.77v25.75c0,1.53.21,2.73.63,3.59.42.86,1.47,1.34,3.15,1.44,1.33,0,2.66-.07,4-.22v3.92c-.69,0-1.38.02-2.07.07-.69.05-1.38.07-2.07.07-3.11,0-5.28-.6-6.51-1.81-1.23-1.21-1.83-3.44-1.78-6.7v-26.12h-6.66v-3.92h6.66v-11.47h4.66v11.47h7.77Z" style="fill:#00154c;"></path><path d="M1531.38,259.36c.47,1.8,1.22,3.42,2.26,4.85,1.04,1.43,2.34,2.62,3.92,3.55,1.58.94,3.48,1.41,5.7,1.41,3.4,0,6.07-.89,7.99-2.66,1.92-1.78,3.26-4.14,4-7.1h4.66c-.99,4.34-2.8,7.7-5.44,10.06-2.64,2.37-6.38,3.55-11.21,3.55-3.01,0-5.61-.53-7.81-1.59-2.2-1.06-3.98-2.52-5.37-4.37-1.38-1.85-2.41-4-3.07-6.44-.67-2.44-1-5.02-1-7.73,0-2.52.33-4.98,1-7.4.67-2.42,1.69-4.58,3.07-6.47,1.38-1.9,3.17-3.43,5.37-4.59,2.19-1.16,4.8-1.74,7.81-1.74s5.67.62,7.84,1.85c2.17,1.23,3.93,2.85,5.29,4.85,1.36,2,2.33,4.29,2.92,6.88.59,2.59.84,5.22.74,7.88h-29.38c0,1.68.23,3.42.7,5.22ZM1554.47,245.11c-.57-1.63-1.37-3.07-2.4-4.33-1.04-1.26-2.29-2.27-3.77-3.03-1.48-.76-3.16-1.15-5.03-1.15s-3.63.38-5.11,1.15c-1.48.77-2.74,1.78-3.77,3.03s-1.86,2.71-2.48,4.37c-.62,1.65-1.02,3.34-1.22,5.07h24.72c-.05-1.78-.36-3.48-.92-5.11Z" style="fill:#00154c;"></path><path d="M1573.82,233.79v8.95h.15c1.18-3.11,3.02-5.5,5.51-7.18,2.49-1.68,5.46-2.44,8.92-2.29v4.66c-2.12-.1-4.04.18-5.77.85-1.73.67-3.22,1.62-4.48,2.85-1.26,1.23-2.23,2.7-2.92,4.4-.69,1.7-1.04,3.57-1.04,5.59v20.35h-4.66v-38.18h4.29Z" style="fill:#00154c;"></path><path d="M1601.94,233.79v6.59h.15c.89-2.32,2.47-4.18,4.74-5.59,2.27-1.41,4.76-2.11,7.47-2.11s4.9.35,6.7,1.04c1.8.69,3.24,1.67,4.33,2.92,1.08,1.26,1.85,2.8,2.29,4.62s.67,3.87.67,6.14v24.57h-4.66v-23.83c0-1.63-.15-3.14-.44-4.55s-.81-2.63-1.55-3.66-1.74-1.85-3-2.44-2.82-.89-4.7-.89-3.54.33-4.99,1c-1.46.67-2.69,1.58-3.7,2.74-1.01,1.16-1.8,2.54-2.37,4.14-.57,1.6-.88,3.34-.92,5.22v22.27h-4.66v-38.18h4.66Z" style="fill:#00154c;"></path><path d="M1641.23,239.71c.79-1.63,1.86-2.96,3.22-4,1.36-1.04,2.95-1.8,4.77-2.29,1.83-.49,3.85-.74,6.07-.74,1.68,0,3.35.16,5.03.48,1.68.32,3.18.92,4.51,1.81s2.42,2.13,3.26,3.74c.84,1.6,1.26,3.69,1.26,6.25v20.28c0,1.88.91,2.81,2.74,2.81.54,0,1.04-.1,1.48-.3v3.92c-.54.1-1.02.17-1.44.22-.42.05-.95.07-1.59.07-1.18,0-2.13-.16-2.85-.48-.72-.32-1.27-.78-1.67-1.37-.4-.59-.66-1.29-.78-2.11-.12-.81-.18-1.71-.18-2.7h-.15c-.84,1.23-1.69,2.33-2.55,3.29-.86.96-1.83,1.76-2.89,2.41-1.06.64-2.27,1.13-3.63,1.48-1.36.35-2.97.52-4.85.52-1.78,0-3.44-.21-5-.63s-2.91-1.08-4.07-2c-1.16-.91-2.07-2.07-2.74-3.48-.67-1.41-1-3.07-1-5,0-2.66.59-4.75,1.78-6.25,1.18-1.5,2.75-2.65,4.7-3.44,1.95-.79,4.14-1.34,6.59-1.67,2.44-.32,4.92-.63,7.44-.92.99-.1,1.85-.22,2.59-.37.74-.15,1.36-.41,1.85-.78s.88-.88,1.15-1.52c.27-.64.41-1.48.41-2.52,0-1.58-.26-2.87-.78-3.89-.52-1.01-1.23-1.81-2.15-2.41s-1.97-1-3.18-1.22c-1.21-.22-2.5-.33-3.88-.33-2.96,0-5.38.7-7.25,2.11-1.88,1.41-2.86,3.66-2.96,6.77h-4.66c.15-2.22.62-4.14,1.41-5.77ZM1664.54,251.1c-.3.54-.86.94-1.7,1.18-.84.25-1.58.42-2.22.52-1.97.35-4.01.65-6.11.92-2.1.27-4.01.68-5.73,1.22-1.73.54-3.15,1.32-4.25,2.33-1.11,1.01-1.67,2.46-1.67,4.33,0,1.18.23,2.23.7,3.14.47.91,1.1,1.7,1.89,2.37.79.67,1.7,1.17,2.74,1.52,1.04.35,2.1.52,3.18.52,1.78,0,3.48-.27,5.11-.81,1.63-.54,3.04-1.33,4.25-2.37,1.21-1.04,2.17-2.29,2.89-3.77.71-1.48,1.07-3.16,1.07-5.03v-6.07h-.15Z" style="fill:#00154c;"></path><path d="M1697.03,233.79v3.92h-7.77v25.75c0,1.53.21,2.73.63,3.59.42.86,1.47,1.34,3.15,1.44,1.33,0,2.66-.07,4-.22v3.92c-.69,0-1.38.02-2.07.07-.69.05-1.38.07-2.07.07-3.11,0-5.28-.6-6.51-1.81-1.23-1.21-1.83-3.44-1.78-6.7v-26.12h-6.66v-3.92h6.66v-11.47h4.66v11.47h7.77Z" style="fill:#00154c;"></path><path d="M1711.68,219.14v7.47h-4.66v-7.47h4.66ZM1711.68,233.79v38.18h-4.66v-38.18h4.66Z" style="fill:#00154c;"></path><path d="M1747.68,234.31c2.24,1.09,4.13,2.54,5.66,4.37,1.53,1.83,2.69,3.96,3.48,6.4.79,2.44,1.18,5.04,1.18,7.81s-.4,5.37-1.18,7.81c-.79,2.44-1.95,4.58-3.48,6.4-1.53,1.83-3.42,3.27-5.66,4.33-2.25,1.06-4.82,1.59-7.73,1.59s-5.49-.53-7.73-1.59c-2.25-1.06-4.13-2.5-5.66-4.33s-2.69-3.96-3.48-6.4c-.79-2.44-1.18-5.04-1.18-7.81s.39-5.37,1.18-7.81c.79-2.44,1.95-4.58,3.48-6.4s3.42-3.28,5.66-4.37c2.24-1.08,4.82-1.63,7.73-1.63s5.49.54,7.73,1.63ZM1734.1,238.01c-1.68.94-3.07,2.17-4.18,3.7s-1.95,3.27-2.52,5.22c-.57,1.95-.85,3.93-.85,5.96s.28,4.01.85,5.96c.57,1.95,1.41,3.69,2.52,5.22s2.5,2.76,4.18,3.7c1.68.94,3.63,1.41,5.85,1.41s4.17-.47,5.85-1.41c1.68-.94,3.07-2.17,4.18-3.7,1.11-1.53,1.95-3.27,2.52-5.22.57-1.95.85-3.93.85-5.96s-.28-4.01-.85-5.96c-.57-1.95-1.41-3.69-2.52-5.22-1.11-1.53-2.5-2.76-4.18-3.7-1.68-.94-3.63-1.41-5.85-1.41s-4.17.47-5.85,1.41Z" style="fill:#00154c;"></path><path d="M1772.73,233.79v6.59h.15c.89-2.32,2.47-4.18,4.74-5.59,2.27-1.41,4.76-2.11,7.47-2.11s4.9.35,6.7,1.04c1.8.69,3.24,1.67,4.33,2.92,1.08,1.26,1.85,2.8,2.29,4.62s.67,3.87.67,6.14v24.57h-4.66v-23.83c0-1.63-.15-3.14-.44-4.55s-.81-2.63-1.55-3.66-1.74-1.85-3-2.44-2.82-.89-4.7-.89-3.54.33-4.99,1c-1.46.67-2.69,1.58-3.7,2.74-1.01,1.16-1.8,2.54-2.37,4.14-.57,1.6-.88,3.34-.92,5.22v22.27h-4.66v-38.18h4.66Z" style="fill:#00154c;"></path><path d="M1812.02,239.71c.79-1.63,1.86-2.96,3.22-4,1.36-1.04,2.95-1.8,4.77-2.29,1.83-.49,3.85-.74,6.07-.74,1.68,0,3.35.16,5.03.48,1.68.32,3.18.92,4.51,1.81s2.42,2.13,3.26,3.74c.84,1.6,1.26,3.69,1.26,6.25v20.28c0,1.88.91,2.81,2.74,2.81.54,0,1.04-.1,1.48-.3v3.92c-.54.1-1.02.17-1.44.22-.42.05-.95.07-1.59.07-1.18,0-2.13-.16-2.85-.48-.72-.32-1.27-.78-1.67-1.37-.4-.59-.66-1.29-.78-2.11-.12-.81-.18-1.71-.18-2.7h-.15c-.84,1.23-1.69,2.33-2.55,3.29-.86.96-1.83,1.76-2.89,2.41-1.06.64-2.27,1.13-3.63,1.48-1.36.35-2.97.52-4.85.52-1.78,0-3.44-.21-5-.63s-2.91-1.08-4.07-2c-1.16-.91-2.07-2.07-2.74-3.48-.67-1.41-1-3.07-1-5,0-2.66.59-4.75,1.78-6.25,1.18-1.5,2.75-2.65,4.7-3.44,1.95-.79,4.14-1.34,6.59-1.67,2.44-.32,4.92-.63,7.44-.92.99-.1,1.85-.22,2.59-.37.74-.15,1.36-.41,1.85-.78s.88-.88,1.15-1.52c.27-.64.41-1.48.41-2.52,0-1.58-.26-2.87-.78-3.89-.52-1.01-1.23-1.81-2.15-2.41s-1.97-1-3.18-1.22c-1.21-.22-2.5-.33-3.88-.33-2.96,0-5.38.7-7.25,2.11-1.88,1.41-2.86,3.66-2.96,6.77h-4.66c.15-2.22.62-4.14,1.41-5.77ZM1835.33,251.1c-.3.54-.86.94-1.7,1.18-.84.25-1.58.42-2.22.52-1.97.35-4.01.65-6.11.92-2.1.27-4.01.68-5.73,1.22-1.73.54-3.15,1.32-4.25,2.33-1.11,1.01-1.67,2.46-1.67,4.33,0,1.18.23,2.23.7,3.14.47.91,1.1,1.7,1.89,2.37.79.67,1.7,1.17,2.74,1.52,1.04.35,2.1.52,3.18.52,1.78,0,3.48-.27,5.11-.81,1.63-.54,3.04-1.33,4.25-2.37,1.21-1.04,2.17-2.29,2.89-3.77.71-1.48,1.07-3.16,1.07-5.03v-6.07h-.15Z" style="fill:#00154c;"></path><path d="M1857.39,219.14v52.84h-4.66v-52.84h4.66Z" style="fill:#00154c;"></path><path d="M1446.25,315.14v22.94h31.38v-22.94h5.03v52.84h-5.03v-25.6h-31.38v25.6h-5.03v-52.84h5.03Z" style="fill:#00154c;"></path><path d="M1496.27,329.79l12.58,32.56,11.77-32.56h4.66l-16.58,43.96c-.69,1.63-1.33,2.97-1.92,4.03-.59,1.06-1.25,1.9-1.96,2.52-.72.62-1.55,1.06-2.52,1.33-.96.27-2.18.41-3.66.41-.94-.05-1.67-.09-2.18-.11-.52-.03-.97-.11-1.37-.26v-3.92c.54.1,1.07.19,1.59.26.52.07,1.05.11,1.59.11,1.04,0,1.89-.15,2.55-.44s1.25-.7,1.74-1.22c.49-.52.91-1.15,1.26-1.89.34-.74.71-1.55,1.11-2.44l1.63-4.29-15.24-38.04h4.96Z" style="fill:#00154c;"></path><path d="M1562.36,367.97v-7.25h-.15c-.49,1.23-1.22,2.37-2.18,3.4s-2.06,1.91-3.29,2.63c-1.23.72-2.55,1.27-3.96,1.67-1.41.39-2.8.59-4.18.59-2.91,0-5.44-.53-7.59-1.59-2.15-1.06-3.93-2.52-5.36-4.37-1.43-1.85-2.49-4-3.18-6.44-.69-2.44-1.04-5.02-1.04-7.73s.34-5.29,1.04-7.73c.69-2.44,1.75-4.59,3.18-6.44,1.43-1.85,3.22-3.32,5.36-4.4,2.15-1.08,4.67-1.63,7.59-1.63,1.43,0,2.82.17,4.18.52,1.36.35,2.63.88,3.81,1.59,1.18.72,2.23,1.59,3.15,2.63.91,1.04,1.62,2.25,2.11,3.63h.15v-21.9h4.66v52.84h-4.29ZM1536.79,354.76c.47,1.95,1.21,3.69,2.22,5.22,1.01,1.53,2.3,2.78,3.88,3.74,1.58.96,3.48,1.44,5.7,1.44,2.47,0,4.55-.48,6.25-1.44,1.7-.96,3.08-2.21,4.14-3.74,1.06-1.53,1.82-3.27,2.29-5.22.47-1.95.7-3.91.7-5.88s-.23-3.93-.7-5.88c-.47-1.95-1.23-3.69-2.29-5.22-1.06-1.53-2.44-2.77-4.14-3.74-1.7-.96-3.79-1.44-6.25-1.44-2.22,0-4.12.48-5.7,1.44-1.58.96-2.88,2.21-3.88,3.74-1.01,1.53-1.75,3.27-2.22,5.22-.47,1.95-.7,3.91-.7,5.88s.23,3.93.7,5.88Z" style="fill:#00154c;"></path><path d="M1583,329.79v8.95h.15c1.18-3.11,3.02-5.5,5.51-7.18,2.49-1.68,5.46-2.44,8.92-2.29v4.66c-2.12-.1-4.04.18-5.77.85-1.73.67-3.22,1.62-4.48,2.85-1.26,1.23-2.23,2.7-2.92,4.4-.69,1.7-1.04,3.56-1.04,5.59v20.35h-4.66v-38.18h4.29Z" style="fill:#00154c;"></path><path d="M1627.73,330.31c2.24,1.09,4.13,2.54,5.66,4.37,1.53,1.83,2.69,3.96,3.48,6.4.79,2.44,1.18,5.04,1.18,7.81s-.4,5.37-1.18,7.81c-.79,2.44-1.95,4.58-3.48,6.4-1.53,1.83-3.42,3.27-5.66,4.33-2.25,1.06-4.82,1.59-7.73,1.59s-5.49-.53-7.73-1.59c-2.25-1.06-4.13-2.5-5.66-4.33s-2.69-3.96-3.48-6.4c-.79-2.44-1.18-5.04-1.18-7.81s.39-5.37,1.18-7.81c.79-2.44,1.95-4.58,3.48-6.4s3.42-3.28,5.66-4.37c2.24-1.08,4.82-1.63,7.73-1.63s5.49.54,7.73,1.63ZM1614.15,334.01c-1.68.94-3.07,2.17-4.18,3.7s-1.95,3.27-2.52,5.22c-.57,1.95-.85,3.93-.85,5.96s.28,4.01.85,5.96c.57,1.95,1.41,3.69,2.52,5.22,1.11,1.53,2.5,2.76,4.18,3.7,1.68.94,3.63,1.41,5.85,1.41s4.17-.47,5.85-1.41c1.68-.94,3.07-2.17,4.18-3.7,1.11-1.53,1.95-3.27,2.52-5.22.57-1.95.85-3.93.85-5.96s-.28-4.01-.85-5.96c-.57-1.95-1.41-3.69-2.52-5.22-1.11-1.53-2.5-2.76-4.18-3.7-1.68-.94-3.63-1.41-5.85-1.41s-4.17.47-5.85,1.41Z" style="fill:#00154c;"></path><path d="M1679.53,372.49c-.62,2.27-1.59,4.19-2.92,5.77-1.33,1.58-3.07,2.79-5.22,3.63-2.15.84-4.77,1.26-7.88,1.26-1.92,0-3.8-.22-5.62-.67s-3.47-1.14-4.92-2.07c-1.46-.94-2.66-2.13-3.63-3.59s-1.52-3.19-1.67-5.22h4.66c.25,1.43.73,2.63,1.44,3.59.71.96,1.58,1.74,2.59,2.33,1.01.59,2.13,1.02,3.37,1.29,1.23.27,2.49.41,3.77.41,4.34,0,7.47-1.23,9.4-3.7,1.92-2.47,2.89-6.02,2.89-10.66v-5.18h-.15c-1.08,2.37-2.68,4.27-4.77,5.7-2.1,1.43-4.55,2.15-7.36,2.15-3.06,0-5.67-.5-7.84-1.52-2.17-1.01-3.96-2.41-5.37-4.18-1.41-1.78-2.43-3.86-3.07-6.25-.64-2.39-.96-4.95-.96-7.66s.38-5.09,1.15-7.44c.76-2.34,1.87-4.39,3.33-6.14,1.45-1.75,3.26-3.13,5.4-4.14,2.15-1.01,4.6-1.52,7.36-1.52,1.43,0,2.78.2,4.03.59,1.26.4,2.41.95,3.44,1.67,1.04.72,1.96,1.54,2.77,2.48.81.94,1.44,1.92,1.89,2.96h.15v-6.59h4.66v35.08c0,2.81-.31,5.35-.92,7.62ZM1668.84,362.31c1.53-.86,2.81-2,3.85-3.4,1.04-1.41,1.81-3.02,2.33-4.85.52-1.82.78-3.7.78-5.62s-.22-3.75-.67-5.62c-.44-1.87-1.16-3.58-2.15-5.11-.99-1.53-2.26-2.76-3.81-3.7-1.55-.94-3.44-1.41-5.66-1.41s-4.12.46-5.7,1.37c-1.58.91-2.89,2.11-3.92,3.59-1.04,1.48-1.79,3.17-2.26,5.07-.47,1.9-.7,3.84-.7,5.81s.25,3.8.74,5.62c.49,1.83,1.26,3.44,2.29,4.85,1.04,1.41,2.34,2.54,3.92,3.4,1.58.86,3.45,1.29,5.62,1.29,2.02,0,3.8-.43,5.33-1.29Z" style="fill:#00154c;"></path><path d="M1696.81,329.79v8.95h.15c1.18-3.11,3.02-5.5,5.51-7.18,2.49-1.68,5.46-2.44,8.92-2.29v4.66c-2.12-.1-4.04.18-5.77.85-1.73.67-3.22,1.62-4.48,2.85-1.26,1.23-2.23,2.7-2.92,4.4-.69,1.7-1.04,3.56-1.04,5.59v20.35h-4.66v-38.18h4.29Z" style="fill:#00154c;"></path><path d="M1719.97,335.71c.79-1.63,1.86-2.96,3.22-4,1.36-1.04,2.95-1.8,4.77-2.29,1.83-.49,3.85-.74,6.07-.74,1.68,0,3.35.16,5.03.48,1.68.32,3.18.92,4.51,1.81s2.42,2.13,3.26,3.74c.84,1.6,1.26,3.69,1.26,6.25v20.28c0,1.88.91,2.81,2.74,2.81.54,0,1.04-.1,1.48-.3v3.92c-.54.1-1.02.17-1.44.22-.42.05-.95.07-1.59.07-1.18,0-2.13-.16-2.85-.48-.72-.32-1.27-.78-1.67-1.37-.4-.59-.66-1.29-.78-2.11-.12-.81-.18-1.71-.18-2.7h-.15c-.84,1.23-1.69,2.33-2.55,3.29-.86.96-1.83,1.76-2.89,2.41-1.06.64-2.27,1.13-3.63,1.48-1.36.34-2.97.52-4.85.52-1.78,0-3.44-.21-5-.63-1.55-.42-2.91-1.08-4.07-2-1.16-.91-2.07-2.07-2.74-3.48-.67-1.41-1-3.07-1-5,0-2.66.59-4.75,1.78-6.25,1.18-1.5,2.75-2.65,4.7-3.44,1.95-.79,4.14-1.34,6.59-1.67,2.44-.32,4.92-.63,7.44-.92.99-.1,1.85-.22,2.59-.37.74-.15,1.36-.41,1.85-.78s.88-.88,1.15-1.52c.27-.64.41-1.48.41-2.52,0-1.58-.26-2.87-.78-3.88-.52-1.01-1.23-1.81-2.15-2.41-.91-.59-1.97-1-3.18-1.22-1.21-.22-2.5-.33-3.88-.33-2.96,0-5.38.7-7.25,2.11-1.88,1.41-2.86,3.66-2.96,6.77h-4.66c.15-2.22.62-4.14,1.41-5.77ZM1743.28,347.1c-.3.54-.86.94-1.7,1.18s-1.58.42-2.22.52c-1.97.35-4.01.65-6.11.92-2.1.27-4.01.68-5.73,1.22-1.73.54-3.15,1.32-4.25,2.33-1.11,1.01-1.67,2.46-1.67,4.33,0,1.18.23,2.23.7,3.15.47.91,1.1,1.7,1.89,2.37.79.67,1.7,1.17,2.74,1.52,1.04.35,2.1.52,3.18.52,1.78,0,3.48-.27,5.11-.81,1.63-.54,3.04-1.33,4.25-2.37,1.21-1.04,2.17-2.29,2.89-3.77.71-1.48,1.07-3.16,1.07-5.03v-6.07h-.15Z" style="fill:#00154c;"></path><path d="M1764.89,329.79v7.25h.15c1.08-2.66,2.85-4.72,5.29-6.18,2.44-1.45,5.22-2.18,8.33-2.18,2.91,0,5.44.54,7.58,1.63,2.15,1.09,3.93,2.55,5.37,4.4,1.43,1.85,2.49,4,3.18,6.44.69,2.44,1.04,5.02,1.04,7.73s-.35,5.29-1.04,7.73c-.69,2.44-1.75,4.59-3.18,6.44-1.43,1.85-3.22,3.31-5.37,4.37-2.15,1.06-4.67,1.59-7.58,1.59-1.38,0-2.76-.17-4.14-.52-1.38-.35-2.66-.86-3.85-1.55-1.18-.69-2.23-1.55-3.14-2.59-.91-1.04-1.62-2.24-2.11-3.63h-.15v21.31h-4.66v-52.24h4.29ZM1790.46,343c-.47-1.95-1.21-3.69-2.22-5.22-1.01-1.53-2.31-2.77-3.88-3.74-1.58-.96-3.48-1.44-5.7-1.44-2.57,0-4.71.44-6.44,1.33-1.73.89-3.11,2.07-4.14,3.55-1.04,1.48-1.76,3.21-2.18,5.18-.42,1.97-.63,4.04-.63,6.22,0,1.97.23,3.93.7,5.88.47,1.95,1.23,3.69,2.29,5.22,1.06,1.53,2.44,2.78,4.14,3.74s3.79,1.44,6.25,1.44c2.22,0,4.12-.48,5.7-1.44,1.58-.96,2.87-2.21,3.88-3.74,1.01-1.53,1.75-3.27,2.22-5.22.47-1.95.7-3.91.7-5.88s-.23-3.93-.7-5.88Z" style="fill:#00154c;"></path><path d="M1810.84,315.14v21.24h.15c.89-2.32,2.47-4.18,4.74-5.59,2.27-1.41,4.76-2.11,7.47-2.11s4.9.35,6.7,1.04c1.8.69,3.24,1.67,4.33,2.92,1.08,1.26,1.85,2.8,2.29,4.62.44,1.83.67,3.87.67,6.14v24.57h-4.66v-23.83c0-1.63-.15-3.14-.44-4.55s-.81-2.63-1.55-3.66-1.74-1.85-3-2.44c-1.26-.59-2.82-.89-4.7-.89s-3.54.33-4.99,1c-1.46.67-2.69,1.58-3.7,2.74-1.01,1.16-1.8,2.54-2.37,4.14-.57,1.6-.88,3.34-.92,5.22v22.27h-4.66v-52.84h4.66Z" style="fill:#00154c;"></path><path d="M1853.91,315.14v7.47h-4.66v-7.47h4.66ZM1853.91,329.79v38.18h-4.66v-38.18h4.66Z" style="fill:#00154c;"></path><path d="M1889.43,335.04c-1.73-1.63-4.14-2.44-7.25-2.44-2.22,0-4.17.47-5.85,1.41-1.68.94-3.07,2.17-4.18,3.7s-1.95,3.27-2.52,5.22c-.57,1.95-.85,3.93-.85,5.96s.28,4.01.85,5.96c.57,1.95,1.41,3.69,2.52,5.22,1.11,1.53,2.5,2.76,4.18,3.7,1.68.94,3.63,1.41,5.85,1.41,1.43,0,2.79-.27,4.07-.81,1.28-.54,2.42-1.29,3.4-2.26.99-.96,1.8-2.11,2.44-3.44.64-1.33,1.04-2.79,1.18-4.37h4.66c-.64,4.64-2.34,8.25-5.11,10.84-2.76,2.59-6.32,3.88-10.66,3.88-2.91,0-5.49-.53-7.73-1.59-2.25-1.06-4.13-2.5-5.66-4.33s-2.69-3.96-3.48-6.4c-.79-2.44-1.18-5.04-1.18-7.81s.39-5.37,1.18-7.81c.79-2.44,1.95-4.58,3.48-6.4s3.42-3.28,5.66-4.37c2.24-1.08,4.82-1.63,7.73-1.63,4.09,0,7.56,1.08,10.4,3.26,2.84,2.17,4.53,5.45,5.07,9.84h-4.66c-.64-2.86-1.83-5.11-3.55-6.73Z" style="fill:#00154c;"></path><path d="M1439.96,427.12c1.04-3.3,2.59-6.23,4.66-8.77,2.07-2.54,4.67-4.56,7.81-6.07,3.13-1.5,6.77-2.26,10.92-2.26s7.77.75,10.88,2.26c3.11,1.51,5.7,3.53,7.77,6.07,2.07,2.54,3.63,5.46,4.66,8.77,1.04,3.31,1.55,6.78,1.55,10.43s-.52,7.13-1.55,10.43c-1.04,3.31-2.59,6.22-4.66,8.73-2.07,2.52-4.66,4.53-7.77,6.03-3.11,1.5-6.73,2.26-10.88,2.26s-7.78-.75-10.92-2.26c-3.13-1.5-5.74-3.52-7.81-6.03-2.07-2.52-3.63-5.43-4.66-8.73-1.04-3.3-1.55-6.78-1.55-10.43s.52-7.13,1.55-10.43ZM1444.58,446.03c.76,2.79,1.95,5.28,3.55,7.47,1.6,2.2,3.66,3.96,6.18,5.29,2.52,1.33,5.52,2,9.03,2s6.5-.67,8.99-2c2.49-1.33,4.54-3.1,6.14-5.29,1.6-2.2,2.79-4.69,3.55-7.47.76-2.79,1.15-5.61,1.15-8.47s-.38-5.75-1.15-8.51-1.95-5.24-3.55-7.44c-1.6-2.19-3.65-3.96-6.14-5.29-2.49-1.33-5.49-2-8.99-2s-6.51.67-9.03,2c-2.52,1.33-4.58,3.1-6.18,5.29-1.6,2.2-2.79,4.67-3.55,7.44-.77,2.76-1.15,5.6-1.15,8.51s.38,5.69,1.15,8.47Z" style="fill:#00154c;"></path><path d="M1502.64,425.79v8.95h.15c1.18-3.11,3.02-5.5,5.51-7.18,2.49-1.68,5.46-2.44,8.92-2.29v4.66c-2.12-.1-4.04.18-5.77.85-1.73.67-3.22,1.62-4.48,2.85-1.26,1.23-2.23,2.7-2.92,4.4-.69,1.7-1.04,3.56-1.04,5.59v20.35h-4.66v-38.18h4.29Z" style="fill:#00154c;"></path><path d="M1556.18,468.49c-.62,2.27-1.59,4.19-2.92,5.77-1.33,1.58-3.07,2.79-5.22,3.63-2.15.84-4.77,1.26-7.88,1.26-1.92,0-3.8-.22-5.62-.67s-3.47-1.14-4.92-2.07c-1.46-.94-2.66-2.13-3.63-3.59s-1.52-3.19-1.67-5.22h4.66c.25,1.43.73,2.63,1.44,3.59.71.96,1.58,1.74,2.59,2.33,1.01.59,2.13,1.02,3.37,1.29,1.23.27,2.49.41,3.77.41,4.34,0,7.47-1.23,9.4-3.7,1.92-2.47,2.89-6.02,2.89-10.66v-5.18h-.15c-1.08,2.37-2.68,4.27-4.77,5.7-2.1,1.43-4.55,2.15-7.36,2.15-3.06,0-5.67-.5-7.84-1.52-2.17-1.01-3.96-2.41-5.37-4.18-1.41-1.78-2.43-3.86-3.07-6.25-.64-2.39-.96-4.95-.96-7.66s.38-5.09,1.15-7.44c.76-2.34,1.87-4.39,3.33-6.14,1.45-1.75,3.26-3.13,5.4-4.14,2.15-1.01,4.6-1.52,7.36-1.52,1.43,0,2.78.2,4.03.59,1.26.4,2.41.95,3.44,1.67,1.04.72,1.96,1.54,2.77,2.48.81.94,1.44,1.92,1.89,2.96h.15v-6.59h4.66v35.08c0,2.81-.31,5.35-.92,7.62ZM1545.48,458.31c1.53-.86,2.81-2,3.85-3.4,1.04-1.41,1.81-3.02,2.33-4.85.52-1.82.78-3.7.78-5.62s-.22-3.75-.67-5.62c-.44-1.87-1.16-3.58-2.15-5.11-.99-1.53-2.26-2.76-3.81-3.7-1.55-.94-3.44-1.41-5.66-1.41s-4.12.46-5.7,1.37c-1.58.91-2.89,2.11-3.92,3.59-1.04,1.48-1.79,3.17-2.26,5.07-.47,1.9-.7,3.84-.7,5.81s.25,3.8.74,5.62c.49,1.83,1.26,3.44,2.29,4.85,1.04,1.41,2.34,2.54,3.92,3.4,1.58.86,3.45,1.29,5.62,1.29,2.02,0,3.8-.43,5.33-1.29Z" style="fill:#00154c;"></path><path d="M1570.12,431.71c.79-1.63,1.86-2.96,3.22-4,1.36-1.04,2.95-1.8,4.77-2.29s3.85-.74,6.07-.74c1.68,0,3.35.16,5.03.48,1.68.32,3.18.93,4.51,1.81s2.42,2.13,3.26,3.74c.84,1.6,1.26,3.69,1.26,6.25v20.28c0,1.88.91,2.81,2.74,2.81.54,0,1.04-.1,1.48-.3v3.92c-.54.1-1.02.17-1.44.22-.42.05-.95.07-1.59.07-1.18,0-2.13-.16-2.85-.48-.72-.32-1.27-.78-1.67-1.37-.4-.59-.66-1.29-.78-2.11-.12-.81-.18-1.71-.18-2.7h-.15c-.84,1.23-1.69,2.33-2.55,3.29-.86.96-1.83,1.76-2.89,2.41-1.06.64-2.27,1.13-3.63,1.48-1.36.34-2.97.52-4.85.52-1.78,0-3.44-.21-5-.63-1.55-.42-2.91-1.08-4.07-2-1.16-.91-2.07-2.07-2.74-3.48-.67-1.41-1-3.07-1-5,0-2.66.59-4.75,1.78-6.25,1.18-1.5,2.75-2.65,4.7-3.44,1.95-.79,4.14-1.34,6.59-1.67,2.44-.32,4.92-.63,7.44-.92.99-.1,1.85-.22,2.59-.37.74-.15,1.36-.41,1.85-.78s.88-.88,1.15-1.52c.27-.64.41-1.48.41-2.52,0-1.58-.26-2.87-.78-3.88-.52-1.01-1.23-1.81-2.15-2.41-.91-.59-1.97-1-3.18-1.22-1.21-.22-2.5-.33-3.88-.33-2.96,0-5.38.7-7.25,2.11-1.88,1.41-2.86,3.66-2.96,6.77h-4.66c.15-2.22.62-4.14,1.41-5.77ZM1593.43,443.1c-.3.54-.86.94-1.7,1.18s-1.58.42-2.22.52c-1.97.35-4.01.65-6.11.92-2.1.27-4.01.68-5.73,1.22-1.73.54-3.15,1.32-4.25,2.33-1.11,1.01-1.67,2.46-1.67,4.33,0,1.18.23,2.23.7,3.15.47.91,1.1,1.7,1.89,2.37.79.67,1.7,1.17,2.74,1.52,1.04.35,2.1.52,3.18.52,1.78,0,3.48-.27,5.11-.81,1.63-.54,3.04-1.33,4.25-2.37,1.21-1.04,2.17-2.29,2.89-3.77.71-1.48,1.07-3.16,1.07-5.03v-6.07h-.15Z" style="fill:#00154c;"></path><path d="M1615.34,425.79v6.59h.15c.89-2.32,2.47-4.18,4.74-5.59,2.27-1.41,4.76-2.11,7.47-2.11s4.9.35,6.7,1.04c1.8.69,3.24,1.67,4.33,2.92,1.08,1.26,1.85,2.8,2.29,4.62.44,1.83.67,3.87.67,6.14v24.57h-4.66v-23.83c0-1.63-.15-3.14-.44-4.55s-.81-2.63-1.55-3.66-1.74-1.85-3-2.44c-1.26-.59-2.82-.89-4.7-.89s-3.54.33-4.99,1c-1.46.67-2.69,1.58-3.7,2.74-1.01,1.16-1.8,2.54-2.37,4.14-.57,1.6-.88,3.34-.92,5.22v22.27h-4.66v-38.18h4.66Z" style="fill:#00154c;"></path><path d="M1658.41,411.14v7.47h-4.66v-7.47h4.66ZM1658.41,425.79v38.18h-4.66v-38.18h4.66Z" style="fill:#00154c;"></path><path d="M1699.11,460.05v3.92h-31.89v-3.77l24.94-30.49h-23.24v-3.92h29.16v3.33l-25.23,30.93h26.27Z" style="fill:#00154c;"></path><path d="M1708.95,431.71c.79-1.63,1.86-2.96,3.22-4,1.36-1.04,2.95-1.8,4.77-2.29s3.85-.74,6.07-.74c1.68,0,3.35.16,5.03.48,1.68.32,3.18.93,4.51,1.81s2.42,2.13,3.26,3.74c.84,1.6,1.26,3.69,1.26,6.25v20.28c0,1.88.91,2.81,2.74,2.81.54,0,1.04-.1,1.48-.3v3.92c-.54.1-1.02.17-1.44.22-.42.05-.95.07-1.59.07-1.18,0-2.13-.16-2.85-.48-.72-.32-1.27-.78-1.67-1.37-.4-.59-.66-1.29-.78-2.11-.12-.81-.18-1.71-.18-2.7h-.15c-.84,1.23-1.69,2.33-2.55,3.29-.86.96-1.83,1.76-2.89,2.41-1.06.64-2.27,1.13-3.63,1.48-1.36.34-2.97.52-4.85.52-1.78,0-3.44-.21-5-.63-1.55-.42-2.91-1.08-4.07-2-1.16-.91-2.07-2.07-2.74-3.48-.67-1.41-1-3.07-1-5,0-2.66.59-4.75,1.78-6.25,1.18-1.5,2.75-2.65,4.7-3.44,1.95-.79,4.14-1.34,6.59-1.67,2.44-.32,4.92-.63,7.44-.92.99-.1,1.85-.22,2.59-.37.74-.15,1.36-.41,1.85-.78s.88-.88,1.15-1.52c.27-.64.41-1.48.41-2.52,0-1.58-.26-2.87-.78-3.88-.52-1.01-1.23-1.81-2.15-2.41-.91-.59-1.97-1-3.18-1.22-1.21-.22-2.5-.33-3.88-.33-2.96,0-5.38.7-7.25,2.11-1.88,1.41-2.86,3.66-2.96,6.77h-4.66c.15-2.22.62-4.14,1.41-5.77ZM1732.26,443.1c-.3.54-.86.94-1.7,1.18s-1.58.42-2.22.52c-1.97.35-4.01.65-6.11.92-2.1.27-4.01.68-5.73,1.22-1.73.54-3.15,1.32-4.25,2.33-1.11,1.01-1.67,2.46-1.67,4.33,0,1.18.23,2.23.7,3.15.47.91,1.1,1.7,1.89,2.37.79.67,1.7,1.17,2.74,1.52,1.04.35,2.1.52,3.18.52,1.78,0,3.48-.27,5.11-.81,1.63-.54,3.04-1.33,4.25-2.37,1.21-1.04,2.17-2.29,2.89-3.77.71-1.48,1.07-3.16,1.07-5.03v-6.07h-.15Z" style="fill:#00154c;"></path><path d="M1764.74,425.79v3.92h-7.77v25.75c0,1.53.21,2.73.63,3.59.42.86,1.47,1.34,3.15,1.44,1.33,0,2.66-.07,4-.22v3.92c-.69,0-1.38.02-2.07.07-.69.05-1.38.07-2.07.07-3.11,0-5.28-.6-6.51-1.81-1.23-1.21-1.83-3.44-1.78-6.7v-26.12h-6.66v-3.92h6.66v-11.47h4.66v11.47h7.77Z" style="fill:#00154c;"></path><path d="M1779.39,411.14v7.47h-4.66v-7.47h4.66ZM1779.39,425.79v38.18h-4.66v-38.18h4.66Z" style="fill:#00154c;"></path><path d="M1815.39,426.31c2.24,1.09,4.13,2.54,5.66,4.37,1.53,1.83,2.69,3.96,3.48,6.4.79,2.44,1.18,5.04,1.18,7.81s-.4,5.37-1.18,7.81c-.79,2.44-1.95,4.58-3.48,6.4-1.53,1.83-3.42,3.27-5.66,4.33-2.25,1.06-4.82,1.59-7.73,1.59s-5.49-.53-7.73-1.59c-2.25-1.06-4.13-2.5-5.66-4.33s-2.69-3.96-3.48-6.4c-.79-2.44-1.18-5.04-1.18-7.81s.39-5.37,1.18-7.81c.79-2.44,1.95-4.58,3.48-6.4s3.42-3.28,5.66-4.37c2.24-1.08,4.82-1.63,7.73-1.63s5.49.54,7.73,1.63ZM1801.82,430.01c-1.68.94-3.07,2.17-4.18,3.7s-1.95,3.27-2.52,5.22c-.57,1.95-.85,3.93-.85,5.96s.28,4.01.85,5.96c.57,1.95,1.41,3.69,2.52,5.22,1.11,1.53,2.5,2.76,4.18,3.7,1.68.94,3.63,1.41,5.85,1.41s4.17-.47,5.85-1.41c1.68-.94,3.07-2.17,4.18-3.7,1.11-1.53,1.95-3.27,2.52-5.22.57-1.95.85-3.93.85-5.96s-.28-4.01-.85-5.96c-.57-1.95-1.41-3.69-2.52-5.22-1.11-1.53-2.5-2.76-4.18-3.7-1.68-.94-3.63-1.41-5.85-1.41s-4.17.47-5.85,1.41Z" style="fill:#00154c;"></path><path d="M1840.44,425.79v6.59h.15c.89-2.32,2.47-4.18,4.74-5.59,2.27-1.41,4.76-2.11,7.47-2.11s4.9.35,6.7,1.04c1.8.69,3.24,1.67,4.33,2.92,1.08,1.26,1.85,2.8,2.29,4.62.44,1.83.67,3.87.67,6.14v24.57h-4.66v-23.83c0-1.63-.15-3.14-.44-4.55s-.81-2.63-1.55-3.66-1.74-1.85-3-2.44c-1.26-.59-2.82-.89-4.7-.89s-3.54.33-4.99,1c-1.46.67-2.69,1.58-3.7,2.74-1.01,1.16-1.8,2.54-2.37,4.14-.57,1.6-.88,3.34-.92,5.22v22.27h-4.66v-38.18h4.66Z" style="fill:#00154c;"></path></g></svg>
+        </div>
+      </div>
+
+      
+
+
+      <div class="coverpage-tc-name">
+        <span>ircc</span>
+      </div>
+    </div>
+
+    <div class="wrapper-top-bottom"></div>
+
+    <div class="WordSection11">
+      <div class="coverpage-stage-block">
+        <span class="coverpage-stage" id="standard">IHO Standard</span>
+      </div>
+
+      <div class="coverpage-stage-block">
+        <p><span class="coverpage-maturity" id="in-force"></span></p>
+      </div>
+
+      
+
+      
+
+      
+
+      <div class="info-section">
+        <div class="copyright">
+          <div class="year">
+            <div class="boilerplate-copyright">
+
+<div id="_bed0e904-f6a8-f317-2afe-bcc8f103b4fb"><p id="_89655b6b-412a-120f-5b41-4a631dc97240" style="text-align:center;">© Copyright International Hydrographic Organization 2016</p>
+
+<p id="_35726360-327e-c49d-2f7e-c50beded05fd">This work is copyright. Apart from any use permitted in accordance with the Berne Convention for the Protection of Literary and Artistic Works (1886), and except in the circumstances described below, no part may be translated, reproduced by any process, adapted, communicated or commercially exploited without prior written permission from the International Hydrographic Organization (IHO). Copyright in some of the material in this publication may be owned by another party and permission for the translation and/or reproduction of that material must be obtained from the owner.</p>
+</div>
+</div>
+          </div>
+
+          <div class="message">
+            <div class="boilerplate-license">
+
+<div id="_9bf48a27-fa65-370b-071d-801df0a5d200"><p id="_6807bae6-fe35-6fba-59f5-44090fd3231e">This document or partial material from this document may be translated, reproduced or distributed for general information, on no more than a cost recovery basis. Copies may not be sold or distributed for profit or gain without prior written agreement of the IHO Secretariat and any other copyright holders.</p>
+
+<p id="_4ba6434a-5a09-56da-5a40-3c4ba0295e25">In the event that this document or partial material from this document is reproduced, translated or distributed under the terms described above, the following statements are to be included:</p>
+
+<div class="Quote" id="_a9c0213c-1c06-9f17-9d04-bd3d5081a897"><p id="_e6ef4d42-bf58-6248-1241-4243b4959dc4">“Material from IHO publication [reference to extract: Title, Edition] is reproduced with the permission of the IHO Secretariat (Permission No ……./…) acting for the International Hydrographic Organization (IHO), which does not accept responsibility for the correctness of the material as reproduced: in case of doubt, the IHO’s authentic text shall prevail. The incorporation of material sourced from IHO shall not be construed as constituting an endorsement by IHO of this product.”</p>
+
+<p id="_6dab5d20-3f67-a559-e529-ef6119963249">“This [document/publication] is a translation of IHO [document/publication] [name]. The IHO has not checked this translation and therefore takes no responsibility for its accuracy. In case of doubt the source version of [name] in [language] should be consulted.”</p>
+</div>
+
+<p id="_62703033-d11a-d519-507c-480ef5a726c5">The IHO Logo or other identifiers shall not be used in any derived product without prior written permission from the IHO Secretariat.</p>
+</div>
+</div>
+          </div>
+
+          <div class="contact-info">
+            <div class="boilerplate-feedback">
+
+<p id="_97e42f9b-3105-52f2-2d0d-02ccff68dfbb">Published by the<br /> International Hydrographic Organization<br /> 4b quai Antoine 1<sup>er</sup><br /> Principauté de Monaco<br /> Tel: (377) 93.10.81.00<br /> Fax: (377) 93.10.81.40<br /> info@iho.int<br /> \www.iho.int<br /></p>
+</div>
+            </div>
+          </div>
+
+          <div class="rule"></div>
+        </div>
+      </div>
+
+
+</div>
+</header></div><br /><div class="prefatory-section"><nav>
+  <div id="toc"><h1 class="IntroTitle"><a class="anchor" href="#_13d7055e-30fc-845a-c60e-8972faf092d9"></a><a class="header" href="#_13d7055e-30fc-845a-c60e-8972faf092d9">Contents</a></h1><ul><li class="h1"><a href="#sec_1">      
+  
+  Introduction
+</a></li>
+<li class="h2"><a href="#sec_1.1">      
+  
+  Scope
+</a></li>
+<li class="h2"><a href="#sec_1.2">      
+  
+  Conformance
+</a></li>
+<li class="h2"><a href="#sec_1.3">      
+  
+  References
+</a></li>
+<li class="h2"><a href="#sec_1.4">      
+  
+  Terms, definitions and abbreviations
+</a></li>
+<li class="h2"><a href="#sec_1.5">      
+  
+  Use of language
+</a></li>
+<li class="h2"><a href="#sec_1.6">      
+  
+  General description
+</a></li>
+<li class="h2"><a href="#sec_1.7">      
+  
+  Specification metadata and maintenance
+</a></li>
+<li class="h1"><a href="#_416dbda5-5ce6-f35a-ea76-a513592289ef">      
+  
+  Document History
+</a></li>
+<li class="h1"><a href="#_cc40a747-da7c-dd0c-16c2-44c097ac9d80">      
+  
+  Summary of Substantive Changes in Edition x.x
+</a></li>
+<li class="h1"><a href="#sec_2">      
+  
+  1  Check Structure
+</a></li>
+<li class="h1"><a href="#sec_3">      
+  
+  2  Check Syntax
+</a></li>
+<li class="h1"><a href="#sec_4">      
+  
+  3  Organisation
+</a></li>
+<li class="h1"><a href="#sec_5">      
+  
+  4  Other Applicable Checks
+</a></li>
+<li class="h2"><a href="#sec_5.1">      
+  
+  4.1  Generic S-100 checks
+</a></li>
+<li class="h2"><a href="#sec_5.2">      
+  
+  4.2  Interoperability checks
+</a></li>
+<li class="h1"><a href="#sec_6">      
+  
+  5  Check Application Sequence
+</a></li>
+<li class="h1"><a href="#sec_7">      
+  
+  6  Check Classification
+</a></li>
+<li class="h1"><a href="#sec_8">      
+  
+  7  Geometry and Spatial Operators
+</a></li>
+<li class="h1"><a href="#sec_9">      
+  
+  8  Other Components of this Specification
+</a></li></ul></div>
+
+</nav>
+
+
+<div class="rule toc"></div>
+</div><br /><main class="main-section"><button onclick="topFunction()" id="myBtn" title="Go to top">Top</button><div class="authority">
+
+
+
+
+</div><br /><br /><div class="Section3" id="sec_1"><h1 class="IntroTitle" id="_2581dfae-06ec-4297-a7cd-6ad271c8ab93"><a class="anchor" href="#sec_1"></a><a class="header" href="#sec_1">Introduction</a></h1><p id="_6c1bfd81-f649-8312-b10c-1718104a89ac">This document specifies a set of checks that producers of S-102 Bathymetric Surface validation tools must implement in their validation software. Validation software is used to ensure that S-102 data are compliant with the S-102 Product Specification. The initial list of checks for S-102 was compiled by the IHO S-102 Project Team of the IHO S-100 Working Group.</p><p id="_354e7993-b4fd-569b-19a4-0dad0108a393">The checks listed in this document are product-specific. They supplement but do not replace the generic S-100 validation checks applicable to all S-100 products which are defined in a separate IHO publication (S-158:100 — Universal Hydrographic Model Validation Checks).</p><div id="sec_1.1"><h2 id="_d78bef1c-ece3-4fc2-9b14-5774b9697567"><a class="anchor" href="#sec_1.1"></a><a class="header" href="#sec_1.1">Scope</a></h2>
+
+<p id="_a6742f16-d60f-72dc-e5dd-8957dd001ddd">This document, designated as “S-158:102” by the IHO, specifies validation checks for data products conforming to Edition(s) 3.0.x of the S-102 (Bathymetric Surface) Product Specification.</p>
+
+<p id="_7e19b390-166f-6f8c-0232-8096dc3db3b4">This document specifies product-specific validation checks for both S-102 datasets and exchange sets containing S-102 datasets.</p>
+
+<p id="_18d85d8c-ded4-1f8b-ac31-decdacb8c294">The checks specified in this document supplement the checks described in Edition 1.0.0 of S-158:100 (Universal Hydrographic Data Model Validation Checks). Both sets of validation checks, those described in S-158:100 as well as those defined in S-158:102, must be applied to test the validity of S-102 datasets and exchange sets. For datasets and exchange sets intended for use on ECDIS, additional cross-product checks, defined in S-158:98, must also be applied.</p>
+
+<p id="_ddfb0901-d1f8-5092-f6f8-f30231ca3a58">The checks described are intended for production systems designed to produce S-102 datasets. The checks can be administered at any time during the production phase.</p>
+</div><div id="sec_1.2"><h2 id="_e0bec3a5-5f1e-4056-a522-ee2ef7a0f677"><a class="anchor" href="#sec_1.2"></a><a class="header" href="#sec_1.2">Conformance</a></h2>
+
+<p id="_c6501557-5904-ff98-d1b0-c1d9d457cd66">This specification conforms to Edition 1.0.0 of IHO specification S-158 (Validation Checks — Introduction and Structure).</p>
+
+<p id="_a305f57c-9bcf-7221-9897-a4bb3390442b">The validation checks described herein conform to Edition(s) 3.0.x of IHO Product Specification S-102 (Bathymetric Surface).</p>
+</div><div id="sec_1.3"><h2 id="_df1250c8-36cc-4891-956c-e4e1e30d72ba"><a class="anchor" href="#sec_1.3"></a><a class="header" href="#sec_1.3">References</a></h2>
+
+<div><h3 class="Section3"><a class="anchor" href="#sec_1.3"></a><a class="header" href="#sec_1.3">Normative references</a></h3>
+
+<p id="S_98" class="Biblio">[1]  S-98 edition 1.0.0: Data Product Interoperability in S-100 Navigation Systems, International Hydrographic Organization, committee, International Hydrographic Organization (<a href="http://registry.iho.int/beta/guidance/list.do">http://registry.iho.int/beta/guidance/list.do</a>).</p>
+<p id="S_100" class="Biblio">[2]  S-100 edition 5.2.0: IHO Universal Hydrographic Data Model, International Hydrographic Organization, committee, International Hydrographic Organization (<a href="https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf">https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf</a>).</p>
+<p id="S_102" class="Biblio">[3]  S-102 edition 1.0.0: Bathymetric Surface Product Specification, International Hydrographic Organization, committee, International Hydrographic Organization (<a href="https://registry.iho.int/productspec/view.do?idx=199&product_ID=S-102">https://registry.iho.int/productspec/view.do?idx=199&#x26;product_ID=S-102</a>).</p>
+<p id="S_158" class="Biblio">[4]  S-158 edition 1.0.0: Validation Checks — Introduction and Structure, International Hydrographic Organization, committee, International Hydrographic Organization (<a href="https://iho.int/uploads/user/pubs/standards/S-158/S-158_Validation_Checks_Introduction_and_Structure_Ed_1.0.0.pdf">https://iho.int/uploads/user/pubs/standards/S-158/S-158_Validation_Checks_Introduction_and_Structure_Ed_1.0.0.pdf</a>).</p>
+<p id="S_158_100" class="Biblio">[5]  S-158:100 edition 1.0.0: Universal Hydrographic Data Model Validation Checks, International Hydrographic Organization, committee, International Hydrographic Organization (<a href="https://iho.int/uploads/user/pubs/standards/S-158_100/S-158-100_Validation_Checks_Ed_1.0.0.zip">https://iho.int/uploads/user/pubs/standards/S-158_100/S-158-100_Validation_Checks_Ed_1.0.0.zip</a>).</p>
+</div>
+
+<div><h3 class="Section3"><a class="anchor" href="#sec_1.3"></a><a class="header" href="#sec_1.3">Informative references</a></h3>
+<p id="ISO_19157_2013" class="Biblio">[1]  ISO 19157:2013: Geographic information  — Data quality, International Organization for Standardization, committee, International Organization for Standardization (<a href="https://www.iso.org/standard/32575.html">https://www.iso.org/standard/32575.html</a>).</p>
+
+</div>
+</div><div id="sec_1.4"><h2 id="_1b59da56-53aa-4311-885d-c0013189650a"><a class="anchor" href="#sec_1.4"></a><a class="header" href="#sec_1.4">Terms, definitions and abbreviations</a></h2>
+
+<div id="sec_1.4.1"><h3><a class="anchor" href="#sec_1.4.1"></a><a class="header" href="#sec_1.4.1">Terms and definitions</a></h3>
+
+<p id="_8cfbfb43-2b7f-a244-c951-7fa2e21c0ff2">The terms and definitions listed in S-158 apply to this document. In addition, the following terms and definitions are used:</p>
+
+<p class="Terms" style="text-align:left;" id="term-enumeration"><span class="TermNum"></span> <b><dfn>enumeration</dfn></b></p>
+<p id="_ff84806f-b692-7640-ff33-a3b80d3cee60">a fixed list of valid identifiers of named literal values. Attributes of an enumerated type may only take values from this list [???]</p>
+
+
+<p class="Terms" style="text-align:left;" id="term-exterior"><span class="TermNum"></span> <b><dfn>exterior</dfn></b></p>
+<p id="_1522e16a-2532-70bf-c9f5-b9e4dbaa2043">difference between the universe and the closure</p>[<a href="https://www.iso.org/standard/26012.html">ISO 19107</a>]
+
+
+
+
+ <div id="_d0c8c7c6-da66-a8ed-9ac1-baa8aeadb364" class="Note"><p><span class="termnote_label">Note 1 to entry: </span>The concept of exterior is applicable to both topological and geometric complexes</p></div>
+
+<p class="Terms" style="text-align:left;" id="term-feature-attribute"><span class="TermNum"></span> <b><dfn>feature attribute</dfn></b></p>
+<p id="_44d05824-9c16-809d-3afe-c2c3a38d6eaa">characteristic of a feature</p>[<a href="https://www.iso.org/standard/26002.html">ISO 19101</a>]
+
+
+
+
+
+
+
+
+
+
+
+
+ <div id="_bf69a5ee-95d6-3b80-e131-77cbda986206" class="Note"><p><span class="termnote_label">Note 1 to entry: </span>A feature attribute may occur as a type or an instance. Feature attribute type or feature attribute instance is used when only one is meant.</p></div><div id="_b308a443-faee-20a5-9be3-d8b46a920223" class="Note"><p><span class="termnote_label">Note 2 to entry: </span>A feature attribute type has a name, a data type and a domain associated to it. A feature attribute instance has an attribute value taken from the value domain of the feature attribute type.</p></div><div id="_31681494-5579-7086-c19f-deb533b9d18c" class="Note"><p><span class="termnote_label">Note 3 to entry: </span>In a Feature Catalogue, a feature attribute may include a value domain but does not specify attribute values for feature instances.</p></div><div id="_c0998276-bd1e-a0c6-f3c9-4b30612b9a41" class="example"><p class="example-title">EXAMPLE 1</p><p id="_caf2e0b5-2fef-2d70-0983-156665f5e5e9">A feature attribute named communication channel may have an attribute value VHF0007 which belongs to the data type text</p>
+</div><div id="_860f88c6-48b8-b143-6a74-d2e6ce9abf56" class="example"><p class="example-title">EXAMPLE 2</p><p id="_af13ea0a-c5b5-1e1f-1fcd-c74ef397e2ea">A feature attribute named length may have an attribute value 82.4 which belongs to the data type real</p>
+</div>
+
+<p class="Terms" style="text-align:left;" id="term-multiplicity"><span class="TermNum"></span> <b><dfn>multiplicity</dfn></b></p>
+<p id="_77e19026-959d-8821-38de-cbc15dd15b43">specification of the number of possible occurrences of a property, or the number of allowable elements that may participate in a given relationship [ISO 19103]</p>[<a href="https://www.iso.org/standard/56734.html">ISO 19103</a>]
+
+
+
+
+ <div id="_3f817451-b6bb-9309-d86d-fab00cc7f26f" class="example"><p class="example-title">EXAMPLE</p><p id="_1a77ebfb-e1ff-ca7a-69ad-ac31926bb0ff">1..* (one to many); 1 (exactly one); 0..1 (zero or one)</p>
+</div>
+</div>
+
+<div id="sec_1.4.2"><h3><a class="anchor" href="#sec_1.4.2"></a><a class="header" href="#sec_1.4.2">Abbreviated terms</a></h3>
+
+<p id="_714535fe-d261-b70c-31d9-1893e8e17fbb">This Specification uses the abbreviated terms defined in S-158.</p>
+
+<div class="figdl"><dl id="_a68ab7c1-ccf0-cf87-a532-76aa2ea7a1b4"><dt id="symbol-FDG"><p>FDG</p></dt><dd id="_a23dc120-483d-98fc-961d-125ce473bc42"><p id="_ea14a671-e013-0c51-2ce2-81110d61f845">Feature Data Group. The values group specified in S-100 Part 10c and represented by Level 3 and Level 4 in S-102 Figure 10 (Hierarchy of S-102 product).</p>
+</dd><dt id="symbol-FIDS"><p>FIDS</p></dt><dd id="_0beaf9e9-c9e0-9fce-8028-276974ab6911"><p id="_202e1ea3-8c8f-b71e-4569-268b724c7884">Feature Information Dataset in “Group_F” — see S-100 Part 10c. See <a href="#S_102">S-102,  Figure 10</a> (Hierarchy of S-102 product) and  <a href="#S_102">S-102,  Clause 10.2.3</a>.</p>
+</dd><dt id="symbol-FINST"><p>FINST</p></dt><dd id="_fa06740f-e39a-6ba3-9d00-130077e03cd3"><p id="_5685ae57-7332-ffc3-6572-230ffb960647">Feature Instance. Instance of BathymetryCoverage in S-102 3.0.0. Represents the BathymetryCoverage.nn groups within the BathymetryCoverage feature type group.</p>
+</dd><dt id="symbol-FTYPE"><p>FTYPE</p></dt><dd id="_53b21f78-f8d4-7156-5f2f-3660c85c807f"><p id="_a6391282-5c3d-2df5-7be0-fdb81e5ae94e">Feature Type. Represents the container group BathymetryCoverage in S-102. See Level 1 of Figure 10 (Hierarchy of S-102 product).</p>
+</dd><dt id="symbol-FTYPE.N"><p>FTYPE.N</p></dt><dd id="_721066e3-466a-e529-db31-28050f3fdffd"><p id="_469425c1-3ecb-e6ea-55d2-6cf3a7c4af18">Feature instance groups. “N” denotes the N-th Feature instance group in the dataset. See Level 2 of Figure 10 (Hierarchy of S-102 product).</p>
+</dd><dt id="symbol-QINST"><p>QINST</p></dt><dd id="_1c107a9a-41f5-726d-e229-71706bf9a4e6"><p id="_7e9d3c13-9cf7-e68c-677e-7c6a60501f08">Quality feature instance. Instance of QualityOfBathymetryCoverage in S-102 3.0.0. Represents the BathymetryCoverage.nn groups within the BathymetryCoverage feature type group.</p>
+</dd><dt id="symbol-QTYPE"><p>QTYPE</p></dt><dd id="_44a20b0d-4303-b6ca-dc3a-b5c5cc42b468"><p id="_9993cd10-c1e5-418c-4768-045c9dc21ff0">Quality Feature Type. Represents the container group for QualityOfBathymetryCoverage in S-102 (ed. 3.0.0). See Level 1 of Figure 10 (Hierarchy of S-102 product).</p>
+</dd><dt id="symbol-QTYPE.N"><p>QTYPE.N</p></dt><dd id="_c682b8b6-450b-6830-0f72-488c7bcbf676"><p id="_422b392a-432e-7c2c-6339-560a5f08598d">Instance groups for the quality features. “N” denotes the N-th Quality feature instance group in the dataset. See Level 2 of Figure 10 (Hierarchy of S-102 product).</p>
+</dd></dl></div>
+</div>
+<div id="sec_1.4.3"><h3><a class="anchor" href="#sec_1.4.3"></a><a class="header" href="#sec_1.4.3">Symbols</a></h3>
+
+<p id="_2f7ffbec-bd43-5cb2-dcd7-7494acf9008f">The symbols used in logical and spatial expressions are defined in <a href="#S_158">S-158,  Clause 1.3.3</a> (Symbols).</p>
+</div></div><div id="sec_1.5"><h2 id="_18c19eb2-3824-426e-8d9a-68a3db80aded"><a class="anchor" href="#sec_1.5"></a><a class="header" href="#sec_1.5">Use of language</a></h2>
+
+<p id="_35a0ae43-613c-0395-909d-cd26ef4a0106">Within this document:</p>
+
+<div class="ul_wrap"><ul id="_0113decb-e114-f381-4448-71e0b7839282"><li id="_fb15c1f9-a6eb-4c9a-e31f-07b2f6118783"><p id="_54e9585a-ba9b-3fc0-a6df-b78327e4b285">“Must” indicates a mandatory requirement.</p>
+</li>
+<li id="_9d3c4f21-ca37-c781-e528-d3bbfa787b05"><p id="_cd72a283-16bd-d9f0-b767-1cc4d57c7ec3">“Should” indicates an optional requirement, that is the recommended process to be followed, but is not mandatory.</p>
+</li>
+<li id="_8a5c0b84-9146-a75c-78e6-f2e014620aea"><p id="_faa915f7-f814-40f7-3124-abf9b5f3a4fe">“May” means “allowed to” or “could possibly”, and is not mandatory.</p>
+</li>
+</ul></div>
+</div><div id="sec_1.6"><h2 id="_2b01bb03-20b4-4b99-9cd4-b20b3f6b3957"><a class="anchor" href="#sec_1.6"></a><a class="header" href="#sec_1.6">General description</a></h2>
+
+<p id="_f9c9ed61-ccf0-218a-bb94-6b01d79087ea">S-158:102 is a specification describing product-specific validation checks for S-102 products. There are no data products based directly on this edition of S-158:102 and therefore no general information applicable to data products conforming to it.</p>
+
+<p id="_1fcfe52b-03a0-e704-5696-f2eb47b31346">The validation checks are intended for production systems designed to produce S-102 Bathymetric Surface datasets. The checks can be administered at any time during the production phase.</p>
+
+<p id="_a4537d20-fd28-6bf3-499a-802e0365d43d"><s>General information about data products conforming to this specification.</s></p>
+
+<p id="_f938159e-b5a5-023b-8041-b03b11819da2"><s><b>Title:</b> S-158:102 Bathymetric Surface Validation Checks</s></p>
+
+<p id="_b5defabb-102b-221a-c47c-8d2e486edbb9"><s><b>Abstract:</b> This document describes validation checks for S-102 data products.</s></p>
+
+<p id="_9d7860ad-92dd-ce42-5713-2257dd9a2fa3"><s><b>Content:</b> Not applicable</s></p>
+
+<p id="_e02390cb-2670-8ea3-6dd9-b59709a7acc5"><s><b>Spatial Extent:</b> N/A</s></p>
+
+<p id="_72ad7005-3fab-cbbb-8c14-80e84cb000ad"><s><b>Temporal Extent:</b> N/A</s></p>
+
+<p id="_2effcbf3-1af4-f8f3-edf6-252785b2f5c4"><s><b>Specific Purpose:</b> Validation of S-102 datasets and exchange sets.</s></p>
+</div><div id="sec_1.7"><h2 id="_fb7cd206-b64e-46da-be57-ccfc3a751c49"><a class="anchor" href="#sec_1.7"></a><a class="header" href="#sec_1.7">Specification metadata and maintenance</a></h2>
+
+<div id="sec_1.7.1"><h3><a class="anchor" href="#sec_1.7.1"></a><a class="header" href="#sec_1.7.1">Specification metadata</a></h3>
+
+<p id="_d48355be-4a0f-9eae-c6ae-ba342e544c43">This information uniquely identifies this Specification and provides information about its creation and maintenance.</p>
+
+<div class="figdl"><dl id="_6764a2f5-3e52-1ff0-2df6-9105f4557b07"><dt><b>Title:</b></dt><dd id="_20768ae2-342a-e03e-f34f-0facf9632e8d"><p id="_dd353c01-1632-58d6-7966-8321f2aeed4e">Bathymetric Surface Validation Checks</p>
+</dd><dt><b>Version:</b></dt><dd id="_9cb7d25c-a64c-1e12-7b4f-ba79cc9c31ef"><p id="_9ec06f09-3a46-1d5c-842b-efdf6ad62624">0.2.0</p>
+</dd><dt><b>Date:</b></dt><dd id="_55bee112-5a5b-ed9b-7097-3c67a2459064"><p id="_12eeca03-206d-07da-f988-d47ad251d42a">2024-11-18</p>
+</dd><dt><b>Language:</b></dt><dd id="_bcce6c19-2f3d-aacb-a2e8-0404d8130833"><p id="_cea567e3-48f1-61ad-9a6f-af7e6b5f18ed">English</p>
+</dd><dt><b>Classification:</b></dt><dd id="_6cbd1665-2d53-a82c-72ba-656ef4742b61"><p id="_4aeeb01d-3383-03ca-4a8d-0bbea041199f">Unclassified</p>
+</dd><dt><b>Contact:</b></dt><dd id="_d5667474-b987-01a2-90b3-6f1dd87a2916"><p id="_c254079f-b551-a7b1-dd30-fc34dc794ad8">International Hydrographic Organization.</p>
+<p id="_86a441b8-4255-a2d4-4431-31296acc86a6">4 quai Antoine 1er,<br /> B.P.445 MC 98011 MONACO CEDEX<br /> Telephone: +377 93 10 81 00<br /> B.P. 445 Fax: + 377 93 10 81 40<br /> Email:  <a href="mailto:info@iho.int">info@iho.int</a></p>
+</dd><dt><b>Role:</b></dt><dd id="_0aa90f93-9a0f-9598-972b-752bd685d60f"><p id="_778a6820-a9e0-978b-3265-39915682a6cb">Owner</p>
+</dd><dt><b>URL:</b></dt><dd id="_33e9bbf6-68e8-c892-71f4-20a682ddb03a"><p id="_6dc68168-a8b4-6a12-fab5-400ac43a6cd3"><a href="https://registry.iho.int/">https://registry.iho.int</a></p>
+</dd><dt><b>Identifier:</b></dt><dd id="_b381dabe-2049-63e7-78b1-858674c86b2f"><p id="_9bc7d016-fab1-a703-9770-21566cb72ef4">S-158:102</p>
+</dd><dt><b>Maintenance:</b></dt><dd id="_1ea4de80-0db5-6e4b-2c76-ae44f0490c6b"><p id="_c63e2eb0-5389-6879-1c61-e929c50632a5">Changes to this Specification are coordinated by the IHO S-102 Project Team of the IHO S-100 Working Group and made available via the IHO Publications website. Maintenance of the Product Specification must conform to IHO Technical Resolution 2/2007 (revised 2010). For reporting issues which need correction, use the contact information.</p>
+</dd></dl></div>
+</div>
+
+<div id="sec_1.7.2"><h3><a class="anchor" href="#sec_1.7.2"></a><a class="header" href="#sec_1.7.2">Specification maintenance</a></h3>
+
+<div id="sec_1.7.2.1"><h4><a class="anchor" href="#sec_1.7.2.1"></a><a class="header" href="#sec_1.7.2.1">Introduction</a></h4>
+
+<p id="_b89f3c4f-ed41-ef53-7a9b-c6e8a753d4dc">Changes to S-158:102 will be released by the IHO as a New Edition, revision, or clarification.</p>
+
+<p id="_95bdb16e-765f-c297-8d96-e279ed0c2054">The list of checks, which accompanies this document is considered part of this Specification and changes to it are considered changes to this Specification.</p>
+
+<p id="_3c670ad4-a051-3c16-cc1c-512062c85955">S-158:102 is not accompanied by separate artefacts such as an XML Schema, Feature or Portrayal Catalogue and therefore this clause does not address the question of changes to such derived artefacts.</p>
+
+<div id="_3ca0ec1b-2212-58eb-4a51-c01b1aa58bfa" class="Admonition AdmonitionEditorial"><p class="AdmonitionTitle AdmonitionEditorial" style="text-align:center;">EDITORIAL NOTE</p><p id="_fa11f1a1-9010-3de1-9f77-e15cb6d3e6dd">Designation of an S-158:1xx publication as new edition, revision, or clarification are under review by the S-100 Validation Checks subgroup as of November 2018. Project Teams should await the conclusion of this work before amending the following sub-clauses.</p>
+</div></div>
+
+<div id="sec_1.7.2.2"><h4><a class="anchor" href="#sec_1.7.2.2"></a><a class="header" href="#sec_1.7.2.2">New Edition</a></h4>
+
+<p id="_631e1f11-7f07-b6db-6c63-d285278a3a67"><i>New Editions</i> of S-158:102 introduce significant changes. <i>New Editions</i> enable new concepts, such as the ability to support new functions or applications, the introduction of new constructs or data types, or significant changes to the basic information or check structure arising from a new edition of S-158.  <i>New Editions</i> are likely to have a significant impact on either existing users or future users of S-102 and S-158:102. All cumulative  <i>revisions</i> and <i>clarifications</i> must be included with the release of approved New Editions.</p>
+</div>
+
+<div id="sec_1.7.2.3"><h4><a class="anchor" href="#sec_1.7.2.3"></a><a class="header" href="#sec_1.7.2.3">Revision</a></h4>
+
+<p id="_2465b701-135b-fb92-ef6d-33f181bbf491"><i>Revisions</i> are defined as substantive semantic changes to S-158:102. Typically, <i>revision</i>s will change S-158:102 to correct factual errors or introduce necessary changes that have become evident as a result of practical experience or changing circumstances, including support for new revisions of S-158. A  <i>revision</i> must not be classified as a clarification.  <i>Revisions</i> could have an impact on either existing users or future users of S-158:102. All cumulative  <i>clarifications</i> must be included with the release of approved revisions.</p>
+
+<p id="_02c6c65d-be54-a57c-1197-c6e554cf54ec">Changes in a revision of S-158:102 may or may not correspond to the same revision+edition number of S-102.</p>
+</div>
+
+<div id="sec_1.7.2.4"><h4><a class="anchor" href="#sec_1.7.2.4"></a><a class="header" href="#sec_1.7.2.4">Clarification</a></h4>
+
+<p id="_ece72963-613e-ab2a-e2bd-1453ac489d10"><i>Clarifications</i> are changes to S-158:102 arising from non-substantive reasons or from introduction of a new edition or revision of S-102.</p>
+
+<p id="_27432f7f-d1b1-9111-b0d7-5faf25e256e8">Typically clarifications for non-substantive reasons remove ambiguity; correct grammatical and spelling errors; amend or update cross references; revise check messages or clarify check descriptions; or revise classifications of checks as critical/error/warning. A  <i>clarification</i> must not cause any substantive semantic change to S-158:102.</p>
+
+<p id="_a02a6216-40b6-c662-f9d4-b9675a25c699">Clarifications to S-158:102 for alignment to a new edition or revision of S-102 may update validation checks or add new validation checks. Validation checks for older but still active editions or revisions of S-102 wil be retained but may be marked as  <i>Deleted</i> for the new edition/revision of S-102.</p>
+</div>
+
+<div id="sec_1.7.2.5"><h4><a class="anchor" href="#sec_1.7.2.5"></a><a class="header" href="#sec_1.7.2.5">Version numbers</a></h4>
+
+<p id="_0abd5074-a998-3d8a-6197-fa03735ba53d">The associated version control numbering to identify changes (n) to S-158:102 must be as follows:</p>
+
+<p id="_18ccd241-5151-d58f-414a-5ab689c6478d">New Editions denoted as <b>n</b>.0.0</p>
+
+<p id="_170bfc9d-4f75-bdc3-0806-b4a234eb6428">Revisions denoted as n.<b>n</b>.0</p>
+
+<p id="_a54e603c-3a30-c2b8-9fb0-f749776e6f1f">Clarifications denoted as n.n.<b>n</b></p>
+</div>
+</div>
+</div></div><br /><div id="_416dbda5-5ce6-f35a-ea76-a513592289ef" class="Section3"><h1 class="IntroTitle" id="_f274fc25-a196-4810-8279-cc58a1eb50e5"><a class="anchor" href="#_416dbda5-5ce6-f35a-ea76-a513592289ef"></a><a class="header" href="#_416dbda5-5ce6-f35a-ea76-a513592289ef">Document History</a></h1><p id="_973c33be-e3f1-dbd1-2bd6-21236ca201eb">Changes to this Specification are coordinated by the IHO S-100 Working Group S-102 Project Team. New editions will be made available via the IHO web site. Maintenance of the Specification shall conform to IHO Resolution 2/2007 (as amended).</p><table id="_28fccc71-49e1-339c-5ab8-70798491143f" class="MsoISOTable" style="border-width:1px;border-spacing:0;"><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Version Number</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Date</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Author/Editor</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Purpose</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">0.1.0</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">2024-10-15</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">RM</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Initial draft for S100 Validation Checks GitHub repository. This is based on the August 2023 checks from the S-102 PT, which are aligned to the unpublished S-102 Edition 2.3.0.</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">0.2.0</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">2024-11-18</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">RM</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Editorial updates agreed at S-100 WG9. Continues to based on the August 2023 checks.</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;"></td></tr></tbody></table></div><br /><div id="_cc40a747-da7c-dd0c-16c2-44c097ac9d80" class="Section3"><h1 class="IntroTitle" id="_f5fb1495-9023-42e4-93ca-18807cd209e9"><a class="anchor" href="#_cc40a747-da7c-dd0c-16c2-44c097ac9d80"></a><a class="header" href="#_cc40a747-da7c-dd0c-16c2-44c097ac9d80">Summary of Substantive Changes in Edition x.x</a></h1><p id="_3f044c01-deb9-4be6-66aa-58cf7bdda2ad">Bold references in the Clauses Affected column indicate the principal sections/clauses that are affected by the described change.</p><table id="_83025636-531b-dd0d-f9f2-21b606b7435c" class="MsoISOTable" style="border-width:1px;border-spacing:0;"><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Change Summary</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Clauses Affected</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">(To be populated for editions following Edition 1.0.0)</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"></td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;"></td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;"></td></tr></tbody></table></div><div id="sec_2"><h1 id="_408832c4-904d-44e5-9cac-4d47e9afc195"><a class="anchor" href="#sec_2"></a><a class="header" href="#sec_2">1  Check Structure</a></h1><p id="_b3a9e98c-fcfd-7cf4-5522-da43df23a7a9">Check structure in S-158:102 includes the fields specified in S-158 plus the additional fields specified in  <a href="#table-2-1">Table 1-1</a>.</p><table id="table-2-1" class="MsoISOTable" style="border-width:1px;border-spacing:0;"><caption>Table 1-1 — Extensions to check structure</caption><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Column Name</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Description</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Prerequisites</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Checks which must succeed (check condition evaluates to FALSE) before this check can be executed. Trivial prerequisites are omitted from this column (such as requiring the presence of an attribute before using it in a condition).</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">Terminate if failure</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">Whether failure of the check (the check condition evaluates to TRUE) will force termination of check processing before all validation checks can be executed. Valid values are TRUE and FALSE. The default is FALSE.The HDF5 format is hierarchical and the validity or even the existence of certain parts of the dataset depends on structure or content required to be provided in the dataset. Validation checks for such fundamental structure or content have this field set to TRUE so that subsequent checks which depend on that structure or content are not unnecessarily attempted if the fundamental structure or content fails its own validation check.For example, checks on groups which are members of another group are not attempted if the container group is missing.</td></tr></tbody></table><p id="_be1f5cfb-0686-e22c-7b80-6dd112ef5ac6">Termination of check processing need not be immediate, but is recommended at the end of the validation phase during which the failure occurs. Validation phases are explained in  <a href="#sec_4">Section 3</a>.</p></div><div id="sec_3"><h1 id="_f5347001-ce56-4912-8fcd-a9ea4ba524aa"><a class="anchor" href="#sec_3"></a><a class="header" href="#sec_3">2  Check Syntax</a></h1><p id="_e29faf07-2d77-c336-092b-5f3ec85337fe">The check syntax conforms to the syntax and operators for product-specific checks described in  <a href="#S_158">S-158,  Clause 4.2</a>.</p></div><div id="sec_4"><h1 id="_4bc260ac-d854-4c4a-8406-c4a20b9216fa"><a class="anchor" href="#sec_4"></a><a class="header" href="#sec_4">3  Organisation</a></h1><p id="_8888a379-6474-7d64-0893-70a2e03b59c1">The list of validation checks for this edition of S-158:102 is available separately (see  <a href="#sec_9">Section 8</a>). The list of checks accompanies this specification and forms an integral part of it.</p><p id="_7c4510bb-1f79-37d1-b1ac-b45bd044833d">The numeric component of the check ID is a 4-digit number whose first digit indicates the phase to which the check belongs (see  <a href="#table-4-1">Table 3-1</a> below).</p><table id="table-4-1" class="MsoISOTable" style="border-width:1px;border-spacing:0;"><caption>Table 3-1 — Division of product-specific checks into processing phases*</caption><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Phase</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Check Numbers</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Name</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Description</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">1</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">102_Dev1xxx</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Validate Dataset Root and Feature Information</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Validation of root group of HDF5 file and feature type information.</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">2</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">102_Dev2xxx</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Validate Feature Container Groups</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Validation of metadata and structure for each feature type (“Feature Container”). In S-102 there are two feature containers (one for the bathymetry data and another for survey information), so this set of checks is executed only once for each.</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">3</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">102_Dev3xxx</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Validate Feature Instance Groups</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Validation of feature instances. This set of checks, along with Phase 4 checks, must be executed once for each feature instance group contained within a feature container.</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">4</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">N/A</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Validate Positioning Groups</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">There are no Phase 4 checks for S-102, which does not use positioning groups. This phase is mentioned in this table only for compatibility with S-158:1xx for coverages which do use positioning groups.</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">5</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">102_Dev5xxx</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Validate Values Datasets</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Validation of bathymetry data values. This set of checks is applied to the values group in a feature instance group.</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">6</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">102_Dev9xxx</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">Validate Exchange Catalogue</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">This set of checks relates to product-specific requirements for exchange catalogues</td></tr></tbody></table><p id="_dd205636-09d6-c4fb-433e-f0229f2efaf3">Dataset validation checks the structure and content of individual HDF5 data files. The checks for each HDF5 dataset file are divided into four phases</p></div><div id="sec_5"><h1 id="_8d8db295-159e-4be6-83f9-2b75d91a8cc1"><a class="anchor" href="#sec_5"></a><a class="header" href="#sec_5">4  Other Applicable Checks</a></h1><div id="sec_5.1"><h2 id="_5f051913-0582-4ac4-8486-01e409e5371d"><a class="anchor" href="#sec_5.1"></a><a class="header" href="#sec_5.1">4.1  Generic S-100 checks</a></h2>
+
+<p id="_edc821f5-52e7-668c-5c20-76d715332bd2">S-102 datasets and exchange sets must also be validated using the following subset of the generic S-100 validation checks defined in S-158:100:</p>
+
+<table id="_4e9dd61e-3c88-7ad0-4371-ddc7fb01e378" class="MsoISOTable" style="border-width:1px;border-spacing:0;"><caption>Table 4-1</caption><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Document reference in S-158:100 list</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Checks</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Apply to</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Remarks</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Part 1</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">All</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Product Specification</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">No direct implementation on datasets or exchange sets</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 2 / 2a</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">All</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Product Specification</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">No direct implementation on datasets or exchange sets</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 4a</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">All</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Exchange catalogue</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 4b</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">All</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Product Specification</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">No direct implementation on datasets or exchange sets</td></tr><tr><td rowspan="2" style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 5 / 5a</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">100_Dev0069</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Product Specification</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">No direct implementation on datasets or exchange sets</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">100_Dev0077 100_Dev0468 100_Dev0161 100_Dev0162 100_Dev0163 100_Dev0164 100_Dev0165 100_Dev0166 100_Dev0167</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Datasets</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Inapplicable: 100_Dev0168 100_Dev0169 100_Dev0170 100_Dev0171</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 6</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">100_Dev0172100_Dev0173100_Dev0174</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Datasets</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 7</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Only checks for polygons</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Domain extent polygons</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-102 uses vector geometry only for domain extent polygons. Note also that domain extent polygons as used in S-102 do not have interior boundaries.</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 8</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Only checks applicable to regular grid coverages</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Dataset</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 9 / 9a / 13</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">?</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Product Specitication</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Validation checks for Portrayal Catalogue</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 10a</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">None</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">N/A</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-102 does not use the ISO 8211 format</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 10b</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">None</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">N/A</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-102 does not use the S-100 GML format</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 10c</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Only checks applicable to regular grid coverages</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Dataset</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-102 uses only the regular grid coverage type</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 11</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">100_Dev0466</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Dataset</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">There is only one Part 11 generic check, for dataset size</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Part 15</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">100_Dev0476 through 100_Dev0490</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Exchange catalogueExchange set</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;"></td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">Part 17</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">All checks except those applying to metadata elements not used in S-102</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">Exchange catalogueExchange set</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;"></td></tr></tbody></table>
+</div><div id="sec_5.2"><h2 id="_96b7ebff-ab43-4668-bfcb-1a1750f55a69"><a class="anchor" href="#sec_5.2"></a><a class="header" href="#sec_5.2">4.2  Interoperability checks</a></h2>
+
+<p id="_2b964055-2781-91c0-7e5e-9f9640f87862">S-102 datasets and exchange sets intended for use on ECDIS must also pass the applicable interoperability checks from those listed in S-158:98.</p>
+</div></div><div id="sec_6"><h1 id="_2b88015e-722f-4c54-ae55-969a26c1a788"><a class="anchor" href="#sec_6"></a><a class="header" href="#sec_6">5  Check Application Sequence</a></h1><p id="_d603d69e-914e-4da2-3402-9837eb721ba5">The check application sequence expands and modifies the application sequence described in  <a href="#S_158">S-158</a>.</p><table id="table-6-1" class="MsoISOTable" style="border-width:1px;border-spacing:0;"><caption>Table 5-1 — Suggested application order of validation checks</caption><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Order</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Check Collection</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Defined in</th><th style="font-weight:bold;text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Apply to</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">1</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">S-100 generic checks for datasets</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">S-158:100</td><td style="text-align:left;vertical-align:top;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Dataset, in isolation</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">2</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Product-specific checks for datasets</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-158:102</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Dataset, in isolation</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">2.1</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Root group checks</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-158:102 checks numbered 102_Dev1xxx</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Dataset, in isolation</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">2.2</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Feature Container group checks</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-158:102 checks numbered 102_Dev2xxx</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Dataset, in isolation</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">2.3</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Feature Instance group checks</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-158:102 checks numbered 102_Dev3xxx</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Dataset, in isolation</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">2.4</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Values group checks</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-158:102 checks numbered 102_Dev5xxx</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Dataset, in isolation</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">3</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Interoperability checks for single S-102 dataset</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-158:98</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Dataset, in isolation</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">4</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Inter-dataset, intra-product checks</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-158:102 checks numbered Nxxx</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Adjacent or intersecting datasets</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">?</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Inter-version checks(?)</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-158:102 checked numbered Nxxx</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Related datasets for different versions of S-102</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">5</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Interoperability checks for combinations of datasets from different products</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-158:98</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-102 dataset in combination with relevant datasets from other products (e.g., S-102)</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">6</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-100 generic checks for exchange sets</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-158:100</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Exchange set</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">7</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Product-specific checks for exchange sets</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">S-158:102 checks numbered 102_Dev9xxx</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.0pt;">Exchange set</td></tr><tr><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">8</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">Product catalogue checks</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">S-158:128</td><td style="text-align:left;vertical-align:top;border-top:none;border-bottom:solid windowtext 1.5pt;">S-128 datasets describing S-102 datasets</td></tr></tbody></table></div><div id="sec_7"><h1 id="_6ae675e3-908a-46fd-ba50-cc60b780bd07"><a class="anchor" href="#sec_7"></a><a class="header" href="#sec_7">6  Check Classification</a></h1><p id="_58af04d0-f1f5-2c15-bf8c-5f781d81543f">The check classification conforms to the scheme described in <a href="#S_158">S-158</a>.</p></div><div id="sec_8"><h1 id="_6ca32121-80c0-4fc6-a01f-3746c132a7b5"><a class="anchor" href="#sec_8"></a><a class="header" href="#sec_8">7  Geometry and Spatial Operators</a></h1><p id="_c140061a-dcfa-cd6c-3d55-492db8a4a239">S-102 Edition 3.0.0 datasets use vector geometry only for domain extent polygons. Any spatial operators mentioned in checks on domain extent polygons conform to the operators for vector products described in S-158.</p><p id="_a79e7ff9-1f47-76c7-4e8f-b41cf0c799b7">For all spatial operators a default tolerance of [??? — PT to decide] should be applied in validation software.</p></div><div id="sec_9"><h1 id="_d7f7834a-d2d0-4c4b-ae91-34ae3e710f6c"><a class="anchor" href="#sec_9"></a><a class="header" href="#sec_9">8  Other Components of this Specification</a></h1><p id="_69137e6b-696f-9459-3cb0-2441a514a7ef">The other components of this Specification listed below are provided as separate documents or artefacts accompanying this document and form an integral part of this Specification.</p><div class="ol_wrap"><ol type="1" id="_f26f2fa7-ce1a-4677-5c06-e1834c588dd0"><li id="_a6c11732-784f-b1a8-291c-56787144c8f4"><p id="_febed3a7-e2eb-ef1f-2d7c-a2f8b4e8edf3">Spreadsheet of S-102 validation checks named S158_102_0_2_0_YYYYMMDD of the latest build date. (The build date is the YYYYMMDD suffix in the file name.)</p>
+</li>
+</ol></div></div></main><script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "STIX",
+      linebreaks: {
+        automatic: true,
+        width: "container"  // or specify something like "90%"/"30em"
+      }
+    },
+    MathML: {
+      linebreaks: {
+        automatic: true
+      }
+    },
+    asciimath2jax: { delimiters: [['(#(', ')#)']] }
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=MML_HTMLorMML-full" async="async"></script>
+  <script>
+    $("#toc").on('click', 'li', function(e) {
+    $(this).parent().find('li.toc-active').removeClass('toc-active');
+    $(this).addClass('toc-active');
+});
+  </script>
+
+  <script>
+    //TOC toggle animation
+    (function() {
+      const jqNav = $('nav');
+      const jqBody = $('body');
+      const jqToggle = $('#toggle');
+      const animationSpeed = 'slow';
+
+      if(!jqNav.length || !jqToggle.length) {
+        return;
+      }
+
+      const navWidthExpanded = jqNav.outerWidth();
+      const bodyPaddingLeftExpanded =
+        parseFloat(jqBody.css('paddingLeft')) > 0 ?
+          jqBody.css('paddingLeft') : navWidthExpanded + 'px';
+      const expandedToggleLeft = navWidthExpanded + 'px';
+      let bandWidth = 0;
+
+      $('.document-stage-band:visible, .document-type-band:visible')
+        .each(function() {
+          const bounds = this.getBoundingClientRect();
+          bandWidth = Math.max(bandWidth, bounds.right);
+        });
+
+      const toggleWidth = jqToggle.outerWidth();
+      const collapsedToggleLeft = bandWidth + 'px';
+      const collapsedBodyPaddingLeft = bandWidth + toggleWidth + 'px';
+      jqToggle.css({
+        'left': jqNav.is(':visible') ? expandedToggleLeft : collapsedToggleLeft,
+        'top': '0px'
+      });
+
+      jqToggle.on('click', function() {
+        const isNavVisible = jqNav.is(':visible');
+        const navLeft = isNavVisible ? '-' + navWidthExpanded + 'px' : '0px';
+        const bodyPaddingLeft =
+          isNavVisible ? collapsedBodyPaddingLeft : bodyPaddingLeftExpanded;
+        const toggleLeft =
+          isNavVisible ? collapsedToggleLeft : expandedToggleLeft;
+
+        jqNav.stop(true, true);
+        jqBody.stop(true, true);
+        jqToggle.stop(true, true);
+
+        if(!isNavVisible) {
+          jqNav.show();
+        }
+        jqNav.animate({'left': navLeft}, animationSpeed, function() {
+          if(isNavVisible) {jqNav.hide()}
+        });
+        jqBody.animate({'paddingLeft': bodyPaddingLeft}, animationSpeed);
+        jqToggle.animate({'left': toggleLeft}, animationSpeed);
+      });
+    })();
+  </script>
+
+<script>
+    // Scroll to top button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+<script>
+/*
+  $(document).ready(function() {
+	  $('[id^=toc]').each(function ()
+	  {
+	     var currentToc = $(this);
+       var url = window.location.href;
+            currentToc.wrap("<a href='" + url + "#" + currentToc.attr("id") + "'></a>");
+	  });
+});
+*/
+</script>
+
+  <script>
+    document.querySelectorAll('*|svg a').forEach(function(item) {
+      var loc = item.getAttribute('href');
+      if (loc !== null && loc.startsWith('#')) {
+  item.setAttribute('href', location.pathname + loc);
+      }
+});
+  </script>
+
+
+<script>
+
+// jQuery Inline Footnotes v1.0.3
+// Copyright (c) 2011 Vesa Vänskä, released under the MIT License.
+
+// Generated by CoffeeScript 1.6.1
+(function() {
+
+  (function($) {
+    $.inlineFootnote = function(el, options) {
+      var _this = this;
+      this.el = $(el);
+      this.el.data("inlineFootnote", this);
+      this.initialize = function() {
+        this.options = $.extend({}, $.inlineFootnote.defaultOptions, options);
+        this.footnoteId = this.el.attr("href").match(/#(.*)/)[1];
+        if (this.footnoteId) {
+          this.el.mouseenter(this.openBox);
+          return $("body").mousemove(this.closeBox);
+        }
+      };
+      this.openBox = function(event) {
+        var footnoteContent, linkOffset;
+        if (!_this.box) {
+          footnoteContent = $("[id='" + _this.footnoteId + "']").children().filter(":not('" + _this.options.hideFromContent + "')");
+          linkOffset = _this.el.offset();
+          _this.box = $("<div ></div>", {
+            id: _this.options.boxId,
+            html: footnoteContent.clone().find(_this.options.hideFromContent).remove().end(),
+            css: {
+              position: "absolute",
+              top: linkOffset.top,
+              left: linkOffset.left + _this.el.outerWidth()
+            }
+          }).appendTo("body");
+          return _this.positionBox();
+        }
+      };
+      this.closeBox = function(event) {
+        if (_this.box) {
+          if (_this.isHoveringFootnote(event)) {
+            clearTimeout(_this.closeTimeout);
+            return _this.closeTimeout = null;
+          } else {
+            if (!_this.closeTimeout) {
+              return _this.closeTimeout = setTimeout((function() {
+                _this.box.remove();
+                return _this.box = null;
+              }), _this.options.hideDelay);
+            }
+          }
+        }
+      };
+      this.isHoveringFootnote = function(event) {
+        return this.box.is(event.target) || $(event.target).closest(this.box).length > 0 || event.target === this.el[0];
+      };
+      this.positionBox = function() {
+        var boxHorizontalPadding, boxLeft, boxWidth, linkLeftOffset, windowWidth;
+        boxHorizontalPadding = parseInt(this.box.css("padding-left")) + parseInt(this.box.css("padding-right"));
+        linkLeftOffset = this.el.offset().left;
+        windowWidth = $(window).width();
+        if ((windowWidth / 2) > linkLeftOffset) {
+          boxLeft = linkLeftOffset + 20;
+          boxWidth = windowWidth - boxLeft - boxHorizontalPadding - this.options.boxMargin * 2;
+          if (boxWidth > this.options.maximumBoxWidth) {
+            boxWidth = this.options.maximumBoxWidth;
+          }
+        } else {
+          boxWidth = linkLeftOffset - boxHorizontalPadding - this.options.boxMargin * 2;
+          if (boxWidth > this.options.maximumBoxWidth) {
+            boxWidth = this.options.maximumBoxWidth;
+          }
+          boxLeft = linkLeftOffset - boxWidth - this.options.boxMargin * 2;
+        }
+        return this.box.css({
+          width: boxWidth,
+          left: boxLeft
+        });
+      };
+      return this.initialize();
+    };
+    $.inlineFootnote.defaultOptions = {
+      boxMargin: 20,
+      hideDelay: 200,
+      hideFromContent: "[rel=footnote]",
+      maximumBoxWidth: 500,
+      boxId: "footnote_box"
+    };
+    return $.fn.inlineFootnote = function(options) {
+      return this.each(function() {
+        return new $.inlineFootnote(this, options);
+      });
+    };
+  })(jQuery);
+
+}).call(this);
+</script>
+
+<script>
+      $(function() {
+        $("[rel=footnote]").inlineFootnote();
+        });
+</script>
+  <script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.2.2 - 2020-04-20
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2020 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function f(A){A.icon=A.hasOwnProperty("icon")?A.icon:"",A.visible=A.hasOwnProperty("visible")?A.visible:"hover",A.placement=A.hasOwnProperty("placement")?A.placement:"right",A.ariaLabel=A.hasOwnProperty("ariaLabel")?A.ariaLabel:"Anchor",A.class=A.hasOwnProperty("class")?A.class:"",A.base=A.hasOwnProperty("base")?A.base:"",A.truncate=A.hasOwnProperty("truncate")?Math.floor(A.truncate):64,A.titleText=A.hasOwnProperty("titleText")?A.titleText:""}function p(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new Error("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],f(this.options),this.isTouchDevice=function(){return!!("ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,i,n,o,s,a,r,c,h,l,u,d=[];if(f(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=p(A=A||"h2, h3, h4, h5, h6")).length)return this;for(!function(){if(null!==document.head.querySelector("style.anchorjs"))return;var A,e=document.createElement("style");e.className="anchorjs",e.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(e):document.head.insertBefore(e,A);e.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",e.sheet.cssRules.length),e.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",e.sheet.cssRules.length),e.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",e.sheet.cssRules.length),e.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',e.sheet.cssRules.length)}(),t=document.querySelectorAll("[id]"),i=[].map.call(t,function(A){return A.id}),o=0;o<e.length;o++)if(this.hasAnchorJSLink(e[o]))d.push(o);else{if(e[o].hasAttribute("id"))n=e[o].getAttribute("id");else if(e[o].hasAttribute("data-anchor-id"))n=e[o].getAttribute("data-anchor-id");else{for(c=r=this.urlify(e[o].textContent),a=0;void 0!==s&&(c=r+"-"+a),a+=1,-1!==(s=i.indexOf(c)););s=void 0,i.push(c),e[o].setAttribute("id",c),n=c}(h=document.createElement("a")).className="anchorjs-link "+this.options.class,h.setAttribute("aria-label",this.options.ariaLabel),h.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(h.title=this.options.titleText),u=document.querySelector("base")?window.location.pathname+window.location.search:"",u=this.options.base||u,h.href=u+"#"+n,"always"===l&&(h.style.opacity="1"),""===this.options.icon&&(h.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(h.style.lineHeight="inherit")),"left"===this.options.placement?(h.style.position="absolute",h.style.marginLeft="-1em",h.style.paddingRight="0.5em",e[o].insertBefore(h,e[o].firstChild)):(h.style.paddingLeft="0.375em",e[o].appendChild(h))}for(o=0;o<d.length;o++)e.splice(d[o]-o,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,i=p(A),n=0;n<i.length;n++)(t=i[n].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(i[n]))&&this.elements.splice(e,1),i[n].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){return this.options.truncate||f(this.options),A.trim().replace(/\'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]\.\/\(\)\*\\\n\t\b\v]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),t=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||t||!1}}});
+// @license-end
+  </script>
+    <script>
+  anchors.options = {
+  placement: 'left'
+};
+anchors.add('h1, h2, h3, h4');
+</script>
+
+<script>
+// use .collapsible element to toggle visibility of element following it
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
+</body></html>

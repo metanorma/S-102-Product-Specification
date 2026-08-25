@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="1.3.9" schema-version="v2.1.6" flavor="iho">
+<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="1.4.0" schema-version="v2.2.0" flavor="iho">
 <bibdata type="standard">
 <title language="en" type="main">Bathymetric Surface Product Specification</title>
 <docidentifier primary="true" type="IHO">S-102</docidentifier><docnumber>102</docnumber><date type="published"><on>2023-04</on></date><contributor><role type="author"/><organization>
@@ -225,7 +225,7 @@
 
 </clause></preface><sections>
 
-<clause id="_cc0b85ee-dc0a-52b1-2da5-e2e77518f930" anchor="sec-overview" obligation="normative">
+<clause id="_69bbc851-d665-3548-b0e5-36d69b524251" anchor="sec-overview" obligation="normative">
 <title id="_6a13218d-655a-ce5a-a75b-2a8f4a2affc3">Overview</title>
 <p id="_63d21965-446c-02b9-fecb-699d6e8faa7a">With the advent of electronic navigation and the technological progress of surveying systems and production capabilities, the ability to enhance maritime navigation with the portrayal of high-resolution bathymetry has become a requirement. The provision and utilization of such data in a standardized format is essential to support the safe and precise navigation of marine vessels, and furthermore an important basis for many other maritime applications.</p>
 
@@ -234,10 +234,10 @@
 <p id="_b83bc247-8615-c795-0bf2-b55449a37e69">This document describes an S-100 compliant product specification for a bathymetric surface product. Incorporating aspects of the navigation surface concept <eref type="inline" bibitemid="NavigationSurface" citeas="The Navigation Surface"><display-text>[Smith et al, 2002]</display-text></eref>, an S-102 bathymetric surface product is a digital elevation model which represents the seafloor in a regular grid structure. It can be used alone or as an important element/source for future S-100 conformant ECDIS navigation. The product specification is based on the IHO S-100 framework specification and the ISO 19100 series of standards. It comprises the content model (spatial structure and metadata), encoding structure, portrayal and exchange file format for a bathymetric surface product.</p>
 </clause>
 
-<references id="_13f7f9cb-04b2-3ef4-7819-75e978de70eb" normative="true" obligation="informative">
+<references id="_ebfb04b5-7b6d-0812-95f9-4e078cd699a9" normative="true" obligation="informative">
 <title id="_72654c3d-2b1e-ad22-df33-e3b55e043dfd">References</title>
-<bibitem id="_1ab30e4d-9625-f078-d7bb-b486b48ae749" type="standard" schema-version="v1.5.6" anchor="iho-s100">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_c2ba1166-8bab-0dc4-dbf8-70ee6f18e8ea" type="standard" schema-version="v1.5.6" anchor="iho-s100">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" type="main">IHO Universal Hydrographic Data Model</title>
 
@@ -317,8 +317,8 @@
     <validityBegins>2024-06-07T00:00:00Z</validityBegins>
   </validity>
 </bibitem>
-<bibitem id="_b7367c9f-d2c9-8407-df12-ff38c1b08007" type="standard" schema-version="v1.5.6" anchor="iho-s44">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_60bbcd39-3e4e-e55f-29c9-9477386c95ed" type="standard" schema-version="v1.5.6" anchor="iho-s44">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" type="main">IHO Standards for Hydrographic Surveys</title>
 
@@ -409,8 +409,8 @@
     <validityBegins>2008-02-01T00:00:00Z</validityBegins>
   </validity>
 </bibitem>
-<bibitem id="_d2a3a2bb-9259-0ce6-82a7-9295596e5766" type="standard" schema-version="v1.5.6" anchor="iho-s4">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_800561fc-85da-ffaf-771e-5b5d7196c7fc" type="standard" schema-version="v1.5.6" anchor="iho-s4">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" type="main">Regulations for International (INT) Charts and Chart Specifications of the IHO</title>
 
@@ -494,8 +494,8 @@
     <validityBegins>2018-10-01T00:00:00Z</validityBegins>
   </validity>
 </bibitem>
-<bibitem id="_f1180cab-5d98-cfbd-825f-3ed911c0afad" type="standard" schema-version="v1.5.6" anchor="iho-s32">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_3f3c0afd-d161-dfde-c0ba-e406fae13d1a" type="standard" schema-version="v1.5.6" anchor="iho-s32">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" type="main">Hydrographic Dictionary — Glossary of ECDIS Related Terms</title>
 
@@ -585,8 +585,8 @@
     <validityBegins>1994-01-01T00:00:00Z</validityBegins>
   </validity>
 </bibitem>
-<bibitem id="_3de7cc69-f535-5c34-c914-577a0edfc8a8" type="standard" schema-version="v1.5.6" anchor="iso-8601">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_5348e973-5236-50ac-d319-4249660a446b" type="standard" schema-version="v1.5.6" anchor="iso-8601">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Data elements and interchange formats</title>
 
@@ -700,8 +700,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_3b58fe5a-f9e5-dc87-c629-1a2bb20933e6" type="standard" schema-version="v1.5.6" anchor="iso-639-2">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_a5af4477-d879-58cd-9297-a8bc3bfbf113" type="standard" schema-version="v1.5.6" anchor="iso-639-2">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-main">Codes for the representation of names of languages</title>
 
@@ -789,8 +789,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_88f996fd-26a8-ed0e-4acc-9c757ebcd878" type="standard" schema-version="v1.5.6" anchor="iso-19103">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_fb28e585-d890-dfae-14e7-fc19ae1627ee" type="standard" schema-version="v1.5.6" anchor="iso-19103">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -888,8 +888,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_518f0f7e-03df-e9e1-58e5-62a4865efdf9" type="standard" schema-version="v1.5.6" anchor="iso-19111">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_1a9e942f-01c2-cdc0-6cfa-b9a0e6f63ea9" type="standard" schema-version="v1.5.6" anchor="iso-19111">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -995,8 +995,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_78fd678c-cfa0-ed87-9b2b-9c707165ef75" type="standard" schema-version="v1.5.6" anchor="iso-19115-1">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_f4167cfb-abcb-e2ee-b8c0-d0950f7caffd" type="standard" schema-version="v1.5.6" anchor="iso-19115-1">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1097,8 +1097,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_fb4f5079-c74f-7f92-2f4b-a8abc81005ad" type="standard" schema-version="v1.5.6" anchor="iso-19115-2">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_7be0a6be-c593-8c27-2ef9-f90647926b63" type="standard" schema-version="v1.5.6" anchor="iso-19115-2">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1193,8 +1193,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_a97efaa7-685b-9825-3a4e-93e3e19d9e57" type="standard" schema-version="v1.5.6" anchor="iso-19115-3">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_23ba4969-3e21-1353-9f69-8e6145f4c2cc" type="standard" schema-version="v1.5.6" anchor="iso-19115-3">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1288,8 +1288,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_aa34747f-75ac-6a7c-3d9e-8061adb509dd" type="standard" schema-version="v1.5.6" anchor="iso-19123">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_3b551cc0-fc72-25b4-fe3c-95dbd085509e" type="standard" schema-version="v1.5.6" anchor="iso-19123">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1385,8 +1385,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_9827d572-b44d-3514-aa90-f509804100a8" type="standard" schema-version="v1.5.6" anchor="iso-ts-19129">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_576d9983-9e4f-d7c0-c3fc-3b7baa89d68e" type="standard" schema-version="v1.5.6" anchor="iso-ts-19129">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1466,8 +1466,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_50d589e6-6e65-c794-60da-24288f8af876" type="standard" schema-version="v1.5.6" anchor="iso-19131">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_fa17c8d3-3af9-acb2-3e1b-3b17368f905d" type="standard" schema-version="v1.5.6" anchor="iso-19131">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1578,8 +1578,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_23bd46ff-885f-8e95-d939-093252495a79" type="standard" schema-version="v1.5.6" anchor="iso-iec-19501">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_bd1d11a2-23a8-0e42-04f9-43a9ad61868c" type="standard" schema-version="v1.5.6" anchor="iso-iec-19501">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Information technology</title>
 
@@ -1673,8 +1673,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_1901973d-2369-7e61-0d69-ca3f4f815be9" type="standard" schema-version="v1.5.6" anchor="iso3166">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_ec3afd5a-0edc-12d0-d887-3debed8532a9" type="standard" schema-version="v1.5.6" anchor="iso3166">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-main">Codes for the representation of names of countries and their subdivisions</title>
 
@@ -1773,8 +1773,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_b4c71d8f-29f0-3daf-38e2-91ca23bff6ba" type="standard" schema-version="v1.5.6" anchor="iso-ts-19130">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_1dc1c413-ddd4-0a6e-63a7-34a1eda5102a" type="standard" schema-version="v1.5.6" anchor="iso-ts-19130">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1862,8 +1862,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_5a16df80-85c9-967a-9569-82617c8b7f2d" type="standard" schema-version="v1.5.6" anchor="iso-ts-19130-2">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_06f7855c-7a94-7053-7730-c51b8f587310" type="standard" schema-version="v1.5.6" anchor="iso-ts-19130-2">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1955,8 +1955,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_e09ccd65-d001-875a-1603-ce23691a0972" type="standard" schema-version="v1.5.6" anchor="iso-19139-1">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_13933218-3f6f-5331-eebb-edb5fdff82fa" type="standard" schema-version="v1.5.6" anchor="iso-19139-1">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -2050,8 +2050,8 @@
     <city>Geneva</city>
   </place>
 </bibitem>
-<bibitem id="_28158021-9134-705f-d73f-95452d6fdd28" type="standard" schema-version="v1.5.6" anchor="iso-10646-1">
-  <fetched>2026-07-12</fetched>
+<bibitem id="_136da92d-9764-ffbc-46c8-0c52995fc454" type="standard" schema-version="v1.5.6" anchor="iso-10646-1">
+  <fetched>2026-08-25</fetched>
   
 <title language="en" script="Latn" type="title-intro">Information technology</title>
 
@@ -7119,7 +7119,7 @@ International Hydrographic Review.
 </clause>
 </clause>
 </annex>
-<annotation-container><annotation id="_e1f82255-7de2-6f21-7861-3a37997b56fd" reviewer="Lawrence Haynes Haselmaier" from="lhh1-start1" to="lhh1-end1" type="review" date="2026-07-12T00:00:00Z"><p id="_83f606e5-26b8-e391-e390-5ab71dda1313">From J. Le Deunf – It would be helpful to specify and/or indicate the amended §</p>
-</annotation><annotation id="_04187b1b-7bc7-e962-d414-d0c1fda83ff8" reviewer="Lawrence Haynes Haselmaier" from="itd" to="conlev" type="review" date="2026-07-12T00:00:00Z"><p id="_4ef9826f-2696-6d36-8ea5-d7dbfe03e75b">After Andy/Anthony/Lawrence meeting: UKHO — added this in as discussed. Looking in S-44 section 2.7 as a guide to how confidence level and SD interact it is more complicated when we get to the horizontal uncertainty as technically this is a 2D quantity and should be 2.45 sigma. So I stated here that we consider uncertainty to be 1 dimensional. We may need to revisit this when the Raster Attribute Table is implemented and we add horizontal uncertainty.</p>
-</annotation><annotation id="_658934df-2faf-eb43-8b2c-6faac9ad7f06" reviewer="Lawrence Haynes Haselmaier" from="classtart" to="classend" type="review" date="2026-07-12T00:00:00Z"><p id="_894ec5fe-4297-ba74-6c59-5f49a6dffd57">Chair has action to draft a request to S-100 to add an “Other” designation. Selection of “Other” would be accompanied by a free text description of the not-otherwise-specified designation.</p>
+<annotation-container><annotation id="_e1f82255-7de2-6f21-7861-3a37997b56fd" reviewer="Lawrence Haynes Haselmaier" from="lhh1-start1" to="lhh1-end1" type="review" date="2026-08-25T00:00:00Z"><p id="_83f606e5-26b8-e391-e390-5ab71dda1313">From J. Le Deunf – It would be helpful to specify and/or indicate the amended §</p>
+</annotation><annotation id="_04187b1b-7bc7-e962-d414-d0c1fda83ff8" reviewer="Lawrence Haynes Haselmaier" from="itd" to="conlev" type="review" date="2026-08-25T00:00:00Z"><p id="_4ef9826f-2696-6d36-8ea5-d7dbfe03e75b">After Andy/Anthony/Lawrence meeting: UKHO — added this in as discussed. Looking in S-44 section 2.7 as a guide to how confidence level and SD interact it is more complicated when we get to the horizontal uncertainty as technically this is a 2D quantity and should be 2.45 sigma. So I stated here that we consider uncertainty to be 1 dimensional. We may need to revisit this when the Raster Attribute Table is implemented and we add horizontal uncertainty.</p>
+</annotation><annotation id="_658934df-2faf-eb43-8b2c-6faac9ad7f06" reviewer="Lawrence Haynes Haselmaier" from="classtart" to="classend" type="review" date="2026-08-25T00:00:00Z"><p id="_894ec5fe-4297-ba74-6c59-5f49a6dffd57">Chair has action to draft a request to S-100 to add an “Other” designation. Selection of “Other” would be accompanied by a free text description of the not-otherwise-specified designation.</p>
 </annotation></annotation-container></metanorma>
