@@ -1,0 +1,1663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="1.4.0" schema-version="v2.2.0" flavor="iho">
+<bibdata type="standard">
+<title language="en" type="main">Bathymetric Surface Validation Checks</title>
+<docidentifier primary="true" type="IHO">S-158:102</docidentifier><docnumber>158:102</docnumber><date type="published"/><contributor><role type="author"/><organization>
+<name>International Hydrographic Organization</name>
+<abbreviation>IHO</abbreviation></organization></contributor><contributor><role type="author"><description>committee</description></role><organization>
+<name>International Hydrographic Organization</name>
+<subdivision type="Committee">
+<name>ircc</name>
+</subdivision><subdivision type="Workgroup">
+<name>ibsc</name>
+</subdivision></organization></contributor><contributor><role type="publisher"/><organization>
+<name>International Hydrographic Organization</name>
+<abbreviation>IHO</abbreviation></organization></contributor><edition>0.2.0</edition><language>en</language><script>Latn</script><status><stage>in-force</stage></status><copyright><from>2016</from><owner><organization>
+<name>International Hydrographic Organization</name>
+<abbreviation>IHO</abbreviation></organization></owner></copyright><series type="main">
+<title>Standards and Specifications</title>
+<abbreviation>S</abbreviation></series><ext><doctype>standard</doctype><flavor>iho</flavor><structuredidentifier><docnumber>158:102</docnumber></structuredidentifier></ext></bibdata><metanorma-extension><semantic-metadata><stage-published>true</stage-published></semantic-metadata>
+<presentation-metadata><toc-heading-levels>2</toc-heading-levels><html-toc-heading-levels>2</html-toc-heading-levels><doc-toc-heading-levels>2</doc-toc-heading-levels><pdf-toc-heading-levels>2</pdf-toc-heading-levels></presentation-metadata></metanorma-extension>
+<boilerplate><copyright-statement>
+
+<clause id="_bed0e904-f6a8-f317-2afe-bcc8f103b4fb" obligation="normative"><p id="_89655b6b-412a-120f-5b41-4a631dc97240" align="center">© Copyright International Hydrographic Organization 2016</p>
+
+<p id="_35726360-327e-c49d-2f7e-c50beded05fd">This work is copyright. Apart from any use permitted in accordance with the Berne Convention for the Protection of Literary and Artistic Works (1886), and except in the circumstances described below, no part may be translated, reproduced by any process, adapted, communicated or commercially exploited without prior written permission from the International Hydrographic Organization (IHO). Copyright in some of the material in this publication may be owned by another party and permission for the translation and/or reproduction of that material must be obtained from the owner.</p>
+</clause>
+</copyright-statement>
+
+<license-statement>
+
+<clause id="_9bf48a27-fa65-370b-071d-801df0a5d200" obligation="normative"><p id="_6807bae6-fe35-6fba-59f5-44090fd3231e">This document or partial material from this document may be translated, reproduced or distributed for general information, on no more than a cost recovery basis. Copies may not be sold or distributed for profit or gain without prior written agreement of the IHO Secretariat and any other copyright holders.</p>
+
+<p id="_4ba6434a-5a09-56da-5a40-3c4ba0295e25">In the event that this document or partial material from this document is reproduced, translated or distributed under the terms described above, the following statements are to be included:</p>
+
+<quote id="_a9c0213c-1c06-9f17-9d04-bd3d5081a897"><p id="_e6ef4d42-bf58-6248-1241-4243b4959dc4">“Material from IHO publication [reference to extract: Title, Edition] is reproduced with the permission of the IHO Secretariat (Permission No ……./…) acting for the International Hydrographic Organization (IHO), which does not accept responsibility for the correctness of the material as reproduced: in case of doubt, the IHO’s authentic text shall prevail. The incorporation of material sourced from IHO shall not be construed as constituting an endorsement by IHO of this product.”</p>
+
+<p id="_6dab5d20-3f67-a559-e529-ef6119963249">“This [document/publication] is a translation of IHO [document/publication] [name]. The IHO has not checked this translation and therefore takes no responsibility for its accuracy. In case of doubt the source version of [name] in [language] should be consulted.”</p>
+</quote>
+
+<p id="_62703033-d11a-d519-507c-480ef5a726c5">The IHO Logo or other identifiers shall not be used in any derived product without prior written permission from the IHO Secretariat.</p>
+</clause>
+</license-statement>
+
+<feedback-statement>
+
+<p id="_97e42f9b-3105-52f2-2d0d-02ccff68dfbb">Published by the<br/> International Hydrographic Organization<br/> 4b quai Antoine 1<sup>er</sup><br/> Principauté de Monaco<br/> Tel: (377) 93.10.81.00<br/> Fax: (377) 93.10.81.40<br/> info@iho.int<br/> \www.iho.int<br/></p>
+</feedback-statement>
+</boilerplate><preface><introduction id="_9837ec58-d318-490e-4661-ef697e49a9e9" anchor="sec_1" obligation="informative">
+<title id="_2b2e98d1-114a-3da4-8556-01ae0a724280">Introduction</title>
+<p id="_6c1bfd81-f649-8312-b10c-1718104a89ac">This document specifies a set of checks that producers of S-102 Bathymetric Surface validation tools must implement in their validation software. Validation software is used to ensure that S-102 data are compliant with the S-102 Product Specification. The initial list of checks for S-102 was compiled by the IHO S-102 Project Team of the IHO S-100 Working Group.</p>
+
+<p id="_354e7993-b4fd-569b-19a4-0dad0108a393">The checks listed in this document are product-specific. They supplement but do not replace the generic S-100 validation checks applicable to all S-100 products which are defined in a separate IHO publication (S-158:100 — Universal Hydrographic Model Validation Checks).</p>
+
+<clause id="_8676501d-65c7-ab2a-2bad-7950efbb7aee" anchor="sec_1.1" obligation="informative">
+<title id="_2543ebe2-c602-0347-2b1d-18b4dcdfe989">Scope</title>
+<p id="_a6742f16-d60f-72dc-e5dd-8957dd001ddd">This document, designated as “S-158:102” by the IHO, specifies validation checks for data products conforming to Edition(s) 3.0.x of the S-102 (Bathymetric Surface) Product Specification.</p>
+
+<p id="_7e19b390-166f-6f8c-0232-8096dc3db3b4">This document specifies product-specific validation checks for both S-102 datasets and exchange sets containing S-102 datasets.</p>
+
+<p id="_18d85d8c-ded4-1f8b-ac31-decdacb8c294">The checks specified in this document supplement the checks described in Edition 1.0.0 of S-158:100 (Universal Hydrographic Data Model Validation Checks). Both sets of validation checks, those described in S-158:100 as well as those defined in S-158:102, must be applied to test the validity of S-102 datasets and exchange sets. For datasets and exchange sets intended for use on ECDIS, additional cross-product checks, defined in S-158:98, must also be applied.</p>
+
+<p id="_ddfb0901-d1f8-5092-f6f8-f30231ca3a58">The checks described are intended for production systems designed to produce S-102 datasets. The checks can be administered at any time during the production phase.</p>
+</clause>
+
+<clause id="_b1d3c108-17b1-051e-1a5d-00c7e203cf68" anchor="sec_1.2" obligation="informative">
+<title id="_696d49db-7393-0a71-cad8-6da82b7b4e82">Conformance</title>
+<p id="_c6501557-5904-ff98-d1b0-c1d9d457cd66">This specification conforms to Edition 1.0.0 of IHO specification S-158 (Validation Checks — Introduction and Structure).</p>
+
+<p id="_a305f57c-9bcf-7221-9897-a4bb3390442b">The validation checks described herein conform to Edition(s) 3.0.x of IHO Product Specification S-102 (Bathymetric Surface).</p>
+</clause>
+
+<clause id="_2f951734-d5d9-5986-5bb0-37abee1049da" anchor="sec_1.3" obligation="informative">
+<title id="_405d7e76-c420-1ba1-fa0d-60626febc31e">References</title>
+<references id="_06ccdbe4-5396-2305-2c26-3cae24bca17e" anchor="sec_1.3.1" normative="true" obligation="informative">
+<title id="_747142f9-64e9-61a7-c6f5-2f2245874721">Normative references</title>
+<bibitem id="_df361a49-3cb1-353d-89b9-85de498a3e7b" type="standard" schema-version="v1.5.6" anchor="S_98">
+  <fetched>2026-09-30</fetched>
+  
+<title language="en" type="main">Data Product Interoperability in S-100 Navigation Systems</title>
+
+  <uri type="pdf">http://registry.iho.int/beta/guidance/list.do</uri>
+  <docidentifier type="IHO" primary="true">S-98</docidentifier>
+  <docnumber>98</docnumber>
+  <date type="published">
+    <from>2022-05-23</from>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <abbreviation>IHO</abbreviation>
+      <uri>www.iho.int</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <subdivision type="technical-committee">
+        
+<name>Hydrographic Services and Standards Committee</name>
+
+        <identifier>HSSC</identifier>
+      </subdivision>
+      <abbreviation>IHO</abbreviation>
+    </organization>
+  </contributor>
+  <edition>1.0.0</edition>
+  <version>2022-05-23</version>
+  <language>en</language>
+  <script>Latn</script>
+  <status>
+    <stage>in-force</stage>
+  </status>
+  <copyright>
+    <from>2022</from>
+    <owner>
+      <organization>
+        
+<name>International Hydrographic Organization</name>
+
+        <abbreviation>IHO</abbreviation>
+        <uri>www.iho.int</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <series type="main">
+    
+<title language="en" script="Latn" type="original">Standards and Specifications</title>
+
+    <place>
+      <formattedPlace>Monaco</formattedPlace>
+    </place>
+    <organization>International Hydrographic Organization</organization>
+    <number>S</number>
+  </series>
+  <place>
+    <formattedPlace>Monaco</formattedPlace>
+  </place>
+  <validity>
+    <validityBegins>2022-05-23T00:00:00Z</validityBegins>
+  </validity>
+</bibitem>
+<bibitem id="_ba1863ae-8031-a7f1-654a-b4dada455d6f" type="standard" schema-version="v1.5.6" anchor="S_100">
+  <fetched>2026-09-30</fetched>
+  
+<title language="en" type="main">IHO Universal Hydrographic Data Model</title>
+
+  
+<title language="fr" type="main">Modèle universel de données hydrographiques de l’OHI</title>
+
+  <uri type="pdf">https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf</uri>
+  <docidentifier type="IHO" primary="true">S-100</docidentifier>
+  <docnumber>100</docnumber>
+  <date type="published">
+    <from>2024-06-07</from>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <abbreviation>IHO</abbreviation>
+      <uri>www.iho.int</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <subdivision type="technical-committee">
+        
+<name>Hydrographic Services and Standards Committee</name>
+
+        <identifier>HSSC</identifier>
+      </subdivision>
+      <abbreviation>IHO</abbreviation>
+    </organization>
+  </contributor>
+  <edition>5.2.0</edition>
+  <version>2024-06-07</version>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <status>
+    <stage>in-force</stage>
+  </status>
+  <copyright>
+    <from>2023</from>
+    <owner>
+      <organization>
+        
+<name>International Hydrographic Organization</name>
+
+        <abbreviation>IHO</abbreviation>
+        <uri>www.iho.int</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <series type="main">
+    
+<title language="en" script="Latn" type="original">Standards and Specifications</title>
+
+    
+<title language="fr" script="Latn" type="original">Normes et Spécifications</title>
+
+    <place>
+      <formattedPlace>Monaco</formattedPlace>
+    </place>
+    <organization>International Hydrographic Organization</organization>
+    <number>S</number>
+  </series>
+  <place>
+    <formattedPlace>Monaco</formattedPlace>
+  </place>
+  <validity>
+    <validityBegins>2024-06-07T00:00:00Z</validityBegins>
+  </validity>
+</bibitem>
+<bibitem id="_c2c2b846-4b9a-879d-b293-73d7e8665586" type="standard" schema-version="v1.5.6" anchor="S_102">
+  <fetched>2026-09-30</fetched>
+  
+<title language="en" type="main">Bathymetric Surface Product Specification</title>
+
+  
+<title language="fr" type="main">Spécification de produit pour la surface bathymétrique</title>
+
+  <uri type="pdf">https://registry.iho.int/productspec/view.do?idx=199&amp;product_ID=S-102</uri>
+  <docidentifier type="IHO" primary="true">S-102</docidentifier>
+  <docnumber>102</docnumber>
+  <date type="published">
+    <from>2012-04-30</from>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <abbreviation>IHO</abbreviation>
+      <uri>www.iho.int</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <subdivision type="technical-committee">
+        
+<name>Hydrographic Services and Standards Committee</name>
+
+        <identifier>HSSC</identifier>
+      </subdivision>
+      <abbreviation>IHO</abbreviation>
+    </organization>
+  </contributor>
+  <edition>1.0.0</edition>
+  <version>2012-04-30</version>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <status>
+    <stage>in-force</stage>
+  </status>
+  <copyright>
+    <from>2012</from>
+    <owner>
+      <organization>
+        
+<name>International Hydrographic Organization</name>
+
+        <abbreviation>IHO</abbreviation>
+        <uri>www.iho.int</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <series type="main">
+    
+<title language="en" script="Latn" type="original">Standards and Specifications</title>
+
+    
+<title language="fr" script="Latn" type="original">Normes et Spécifications</title>
+
+    <place>
+      <formattedPlace>Monaco</formattedPlace>
+    </place>
+    <organization>International Hydrographic Organization</organization>
+    <number>S</number>
+  </series>
+  <place>
+    <formattedPlace>Monaco</formattedPlace>
+  </place>
+  <validity>
+    <validityBegins>2012-04-30T00:00:00Z</validityBegins>
+  </validity>
+</bibitem>
+<bibitem id="_cc41df09-b8e1-611a-fb07-0e52d51b5b96" type="standard" schema-version="v1.5.6" anchor="S_158">
+  <fetched>2026-09-30</fetched>
+  
+<title language="en" type="main">Validation Checks — Introduction and Structure</title>
+
+  
+<title language="fr" type="main">Contrôles de validation — Introduction et structure</title>
+
+  <uri type="pdf">https://iho.int/uploads/user/pubs/standards/S-158/S-158_Validation_Checks_Introduction_and_Structure_Ed_1.0.0.pdf</uri>
+  <docidentifier type="IHO" primary="true">S-158</docidentifier>
+  <docnumber>158</docnumber>
+  <date type="published">
+    <from>2025-02-01</from>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <abbreviation>IHO</abbreviation>
+      <uri>www.iho.int</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <subdivision type="technical-committee">
+        
+<name>Hydrographic Services and Standards Committee</name>
+
+        <identifier>HSSC</identifier>
+      </subdivision>
+      <abbreviation>IHO</abbreviation>
+    </organization>
+  </contributor>
+  <edition>1.0.0</edition>
+  <version>2025-02-01</version>
+  <language>en</language>
+  <script>Latn</script>
+  <status>
+    <stage>in-force</stage>
+  </status>
+  <copyright>
+    <from>2025</from>
+    <owner>
+      <organization>
+        
+<name>International Hydrographic Organization</name>
+
+        <abbreviation>IHO</abbreviation>
+        <uri>www.iho.int</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <series type="main">
+    
+<title language="en" script="Latn" type="original">Standards and Specifications</title>
+
+    
+<title language="fr" script="Latn" type="original">Normes et Spécifications</title>
+
+    <place>
+      <formattedPlace>Monaco</formattedPlace>
+    </place>
+    <organization>International Hydrographic Organization</organization>
+    <number>S</number>
+  </series>
+  <place>
+    <formattedPlace>Monaco</formattedPlace>
+  </place>
+  <validity>
+    <validityBegins>2025-02-01T00:00:00Z</validityBegins>
+  </validity>
+</bibitem>
+<bibitem id="_8130d909-4907-3246-3c88-689a11a16540" type="standard" schema-version="v1.5.6" anchor="S_158_100">
+  <fetched>2026-09-30</fetched>
+  
+<title language="en" type="main">Universal Hydrographic Data Model Validation Checks</title>
+
+  
+<title language="fr" type="main">Vérifications de validation du Modèle universel de données hydrographiques</title>
+
+  <uri type="pdf">https://iho.int/uploads/user/pubs/standards/S-158_100/S-158-100_Validation_Checks_Ed_1.0.0.zip</uri>
+  <docidentifier type="IHO" primary="true">S-158:100</docidentifier>
+  <docnumber>158:100</docnumber>
+  <date type="published">
+    <from>2025-02-01</from>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <abbreviation>IHO</abbreviation>
+      <uri>www.iho.int</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Hydrographic Organization</name>
+
+      <subdivision type="technical-committee">
+        
+<name>Hydrographic Services and Standards Committee</name>
+
+        <identifier>HSSC</identifier>
+      </subdivision>
+      <abbreviation>IHO</abbreviation>
+    </organization>
+  </contributor>
+  <edition>1.0.0</edition>
+  <version>2025-02-01</version>
+  <language>en</language>
+  <script>Latn</script>
+  <status>
+    <stage>in-force</stage>
+  </status>
+  <copyright>
+    <from>2025</from>
+    <owner>
+      <organization>
+        
+<name>International Hydrographic Organization</name>
+
+        <abbreviation>IHO</abbreviation>
+        <uri>www.iho.int</uri>
+      </organization>
+    </owner>
+  </copyright>
+  <series type="main">
+    
+<title language="en" script="Latn" type="original">Standards and Specifications</title>
+
+    
+<title language="fr" script="Latn" type="original">Normes et Spécifications</title>
+
+    <place>
+      <formattedPlace>Monaco</formattedPlace>
+    </place>
+    <organization>International Hydrographic Organization</organization>
+    <number>S</number>
+  </series>
+  <place>
+    <formattedPlace>Monaco</formattedPlace>
+  </place>
+  <validity>
+    <validityBegins>2025-02-01T00:00:00Z</validityBegins>
+  </validity>
+</bibitem>
+</references>
+
+<references id="_52a5804c-5c0f-fd57-556c-fc6990253364" anchor="sec_1.3.2" normative="false" obligation="informative">
+<title id="_0d315bc8-26fe-c81b-e7a2-bc44ec2e00e6">Informative references</title><bibitem id="_f825e2a2-f20e-f833-c506-f03888ed408c" type="standard" schema-version="v1.5.6" anchor="ISO_19157_2013">
+  <fetched>2026-09-30</fetched>
+  
+<title language="en" script="Latn" type="title-intro">Geographic information </title>
+
+  
+<title language="en" script="Latn" type="title-main">Data quality</title>
+
+  
+<title language="en" script="Latn" type="main">Geographic information  — Data quality</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Qualité des données</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Qualité des données</title>
+
+  <uri type="src">https://www.iso.org/standard/32575.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:32575:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/03/25/32575.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19157:2013</docidentifier>
+  <docidentifier type="iso-undated">ISO 19157</docidentifier>
+  <docidentifier type="iso-reference">ISO 19157:2013(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19157:stage-90.92</docidentifier>
+  <docnumber>19157</docnumber>
+  <date type="published">
+    <on>2013-12-06</on>
+  </date>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier>ISO/TC 211</identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <abstract language="en" script="Latn"><title id="_c8c56ad3-9ed9-147d-d94a-beb706669e61">Abstract</title>﻿ISO 19157:2013 establishes the principles for describing the quality of geographic data. It — defines components for describing data quality; — specifies components and content structure of a register for data quality measures; — describes general procedures for evaluating the quality of geographic data; — establishes principles for reporting data quality. ISO 19157:2013 also defines a set of data quality measures for use in evaluating and reporting data quality. It is applicable to data producers providing quality information to describe and assess how well a data set conforms to its product specification and to data users attempting to determine whether or not specific geographic data are of sufficient quality for their particular application. ISO 19157:2013 does not attempt to define minimum acceptable levels of quality for geographic data.</abstract>
+  <status>
+    <stage>90</stage>
+    <substage>92</substage>
+  </status>
+  <copyright>
+    <from>2013</from>
+    <owner>
+      <organization>
+        
+<name>ISO</name>
+
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO 19113:2002</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19113:2002</docidentifier>
+      <date type="published">
+        <on>2002-11-20</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/TS 19138:2006</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/TS 19138:2006</docidentifier>
+      <date type="published">
+        <on>2006-11-22</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO 19114:2003</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19114:2003</docidentifier>
+      <date type="published">
+        <on>2003-09-04</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO 19114:2003/Cor 1:2005</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19114:2003/Cor 1:2005</docidentifier>
+      <date type="published">
+        <on>2005-09-15</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO/WD 19157-3</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/WD 19157-3</docidentifier>
+    </bibitem>
+
+  </relation>
+  <place>
+    <city>Geneva</city>
+  </place>
+</bibitem>
+
+</references>
+</clause>
+
+<clause id="_b999483d-9634-40e8-10d4-59219a09a03f" anchor="sec_1.4" obligation="informative">
+<title id="_cb23800f-74b0-1f76-8ef3-90c7cc4eb4d2">Terms, definitions and abbreviations</title>
+<terms id="_97078a88-b1db-d861-11dd-685134e213eb" anchor="sec_1.4.1" obligation="normative">
+<title id="_cd4fdebc-0759-75f8-dca5-7c161faa7ae5">Terms and definitions</title>
+<p id="_8cfbfb43-2b7f-a244-c951-7fa2e21c0ff2">The terms and definitions listed in S-158 apply to this document. In addition, the following terms and definitions are used:</p>
+
+<term id="_d5fb9e4c-7b55-4efc-f694-52fc62aea16b" anchor="term-enumeration"><preferred><expression>
+<name>enumeration</name>
+</expression>
+</preferred>
+<definition id="_56456e0a-6461-3ead-8834-9f66436607a3"><verbal-definition id="_6915f086-3ae9-65f8-71d3-a14578d6a74a"><p id="_ff84806f-b692-7640-ff33-a3b80d3cee60">a fixed list of valid identifiers of named literal values. Attributes of an enumerated type may only take values from this list [???]</p></verbal-definition></definition>
+ </term>
+
+<term id="_10080cad-c99d-2210-933c-ab37b4af94c5" anchor="term-exterior"><preferred><expression>
+<name>exterior</name>
+</expression>
+</preferred>
+<definition id="_59384db7-f9aa-0c23-c5bb-2d83fd0c8aff"><verbal-definition id="_67af0faf-c9b9-8ac5-4bd8-701f6ef592e1"><p id="_1522e16a-2532-70bf-c9f5-b9e4dbaa2043">difference between the universe and the closure</p></verbal-definition></definition>
+
+
+
+
+ <termnote id="_d0c8c7c6-da66-a8ed-9ac1-baa8aeadb364"><p id="_bfa55fb0-7f8d-640e-3562-cb6db1a42ef0">The concept of exterior is applicable to both topological and geometric complexes</p>
+</termnote><source status="identical" type="authoritative"><origin bibitemid="ISO_19107" type="inline" citeas="ISO 19107"/></source></term>
+
+<term id="_e077b858-cfb0-7ca3-6605-e411a044ebf4" anchor="term-feature-attribute"><preferred><expression>
+<name>feature attribute</name>
+</expression>
+</preferred>
+<definition id="_4befeefc-2c7a-881e-10a2-35143249bc88"><verbal-definition id="_b67ee9a1-24b5-80ca-8b47-fb53b57741bf"><p id="_44d05824-9c16-809d-3afe-c2c3a38d6eaa">characteristic of a feature</p></verbal-definition></definition>
+
+
+
+
+
+
+
+
+
+
+
+
+ <termnote id="_bf69a5ee-95d6-3b80-e131-77cbda986206"><p id="_e6411f7f-335d-d89f-3354-93395badeb71">A feature attribute may occur as a type or an instance. Feature attribute type or feature attribute instance is used when only one is meant.</p>
+</termnote><termnote id="_b308a443-faee-20a5-9be3-d8b46a920223"><p id="_8d37fec1-dc26-f0ea-bbbf-b2c04acf7f59">A feature attribute type has a name, a data type and a domain associated to it. A feature attribute instance has an attribute value taken from the value domain of the feature attribute type.</p>
+</termnote><termnote id="_31681494-5579-7086-c19f-deb533b9d18c"><p id="_1cf2fe9b-2748-9f04-da7a-162eb224740f">In a Feature Catalogue, a feature attribute may include a value domain but does not specify attribute values for feature instances.</p>
+</termnote><termexample id="_c0998276-bd1e-a0c6-f3c9-4b30612b9a41"><p id="_caf2e0b5-2fef-2d70-0983-156665f5e5e9">A feature attribute named communication channel may have an attribute value VHF0007 which belongs to the data type text</p>
+</termexample><termexample id="_860f88c6-48b8-b143-6a74-d2e6ce9abf56"><p id="_af13ea0a-c5b5-1e1f-1fcd-c74ef397e2ea">A feature attribute named length may have an attribute value 82.4 which belongs to the data type real</p>
+</termexample><source status="identical" type="authoritative"><origin bibitemid="ISO_19101" type="inline" citeas="ISO 19101"/></source></term>
+
+<term id="_c4edd78f-fc15-cf73-db85-b15170a0e164" anchor="term-multiplicity"><preferred><expression>
+<name>multiplicity</name>
+</expression>
+</preferred>
+<definition id="_8e2e77fe-21b9-9857-beef-7615bd3114a8"><verbal-definition id="_d51b1b1a-f6ce-8328-dc27-fa7924f35b6f"><p id="_77e19026-959d-8821-38de-cbc15dd15b43">specification of the number of possible occurrences of a property, or the number of allowable elements that may participate in a given relationship [ISO 19103]</p></verbal-definition></definition>
+
+
+
+
+ <termexample id="_3f817451-b6bb-9309-d86d-fab00cc7f26f"><p id="_1a77ebfb-e1ff-ca7a-69ad-ac31926bb0ff">1..* (one to many); 1 (exactly one); 0..1 (zero or one)</p>
+</termexample><source status="identical" type="authoritative"><origin bibitemid="ISO_19103" type="inline" citeas="ISO 19103"/></source></term>
+</terms>
+
+<definitions id="_e09eec38-103f-446d-c22c-86206ebbc272" anchor="sec_1.4.2" type="abbreviated_terms" obligation="normative">
+<title id="_7afc9bff-8712-0f4e-affb-f340df627119">Abbreviated terms</title>
+<p id="_714535fe-d261-b70c-31d9-1893e8e17fbb">This Specification uses the abbreviated terms defined in S-158.</p>
+
+<dl id="_a68ab7c1-ccf0-cf87-a532-76aa2ea7a1b4"><dt anchor="symbol-FDG" id="_d203d579-7fe4-570f-1f37-d3b1802347ba">FDG</dt><dd id="_a23dc120-483d-98fc-961d-125ce473bc42"><p id="_ea14a671-e013-0c51-2ce2-81110d61f845">Feature Data Group. The values group specified in S-100 Part 10c and represented by Level 3 and Level 4 in S-102 Figure 10 (Hierarchy of S-102 product).</p>
+</dd>
+<dt anchor="symbol-FIDS" id="_33ebc407-b098-82e6-d75a-12018ac57f07">FIDS</dt><dd id="_0beaf9e9-c9e0-9fce-8028-276974ab6911"><p id="_202e1ea3-8c8f-b71e-4569-268b724c7884">Feature Information Dataset in “Group_F” — see S-100 Part 10c. See <eref type="inline" bibitemid="S_102" citeas="S-102"><localityStack><locality type="figure"><referenceFrom>10</referenceFrom></locality></localityStack></eref> (Hierarchy of S-102 product) and  <eref type="inline" bibitemid="S_102" citeas="S-102"><localityStack><locality type="clause"><referenceFrom>10.2.3</referenceFrom></locality></localityStack></eref>.</p>
+</dd>
+<dt anchor="symbol-FINST" id="_c3fa3331-ce3f-33db-d508-f5bebdf1b44c">FINST</dt><dd id="_fa06740f-e39a-6ba3-9d00-130077e03cd3"><p id="_5685ae57-7332-ffc3-6572-230ffb960647">Feature Instance. Instance of BathymetryCoverage in S-102 3.0.0. Represents the BathymetryCoverage.nn groups within the BathymetryCoverage feature type group.</p>
+</dd>
+<dt anchor="symbol-FTYPE" id="_d9b35899-8be0-5b1c-84c6-ed7675357336">FTYPE</dt><dd id="_53b21f78-f8d4-7156-5f2f-3660c85c807f"><p id="_a6391282-5c3d-2df5-7be0-fdb81e5ae94e">Feature Type. Represents the container group BathymetryCoverage in S-102. See Level 1 of Figure 10 (Hierarchy of S-102 product).</p>
+</dd>
+<dt anchor="symbol-FTYPE.N" id="_521b5074-f2f1-5d31-c203-add33b525686">FTYPE.N</dt><dd id="_721066e3-466a-e529-db31-28050f3fdffd"><p id="_469425c1-3ecb-e6ea-55d2-6cf3a7c4af18">Feature instance groups. “N” denotes the N-th Feature instance group in the dataset. See Level 2 of Figure 10 (Hierarchy of S-102 product).</p>
+</dd>
+<dt anchor="symbol-QINST" id="_3fabb208-3342-68b5-fc70-91eccb19da85">QINST</dt><dd id="_1c107a9a-41f5-726d-e229-71706bf9a4e6"><p id="_7e9d3c13-9cf7-e68c-677e-7c6a60501f08">Quality feature instance. Instance of QualityOfBathymetryCoverage in S-102 3.0.0. Represents the BathymetryCoverage.nn groups within the BathymetryCoverage feature type group.</p>
+</dd>
+<dt anchor="symbol-QTYPE" id="_ae77c15f-d7be-43ca-e69d-9ea642ddad50">QTYPE</dt><dd id="_44a20b0d-4303-b6ca-dc3a-b5c5cc42b468"><p id="_9993cd10-c1e5-418c-4768-045c9dc21ff0">Quality Feature Type. Represents the container group for QualityOfBathymetryCoverage in S-102 (ed. 3.0.0). See Level 1 of Figure 10 (Hierarchy of S-102 product).</p>
+</dd>
+<dt anchor="symbol-QTYPE.N" id="_dcaee0e6-16e0-7e36-d013-7b2e118ed340">QTYPE.N</dt><dd id="_c682b8b6-450b-6830-0f72-488c7bcbf676"><p id="_422b392a-432e-7c2c-6339-560a5f08598d">Instance groups for the quality features. “N” denotes the N-th Quality feature instance group in the dataset. See Level 2 of Figure 10 (Hierarchy of S-102 product).</p>
+</dd></dl>
+</definitions>
+<definitions id="_041b74e4-455e-2f01-bff0-13ec7e44614f" anchor="sec_1.4.3" type="symbols" obligation="normative">
+<title id="_0b7f8487-2700-d7ba-f167-879cdbcdfa05">Symbols</title>
+<p id="_2f7ffbec-bd43-5cb2-dcd7-7494acf9008f">The symbols used in logical and spatial expressions are defined in <eref type="inline" bibitemid="S_158" citeas="S-158"><localityStack><locality type="clause"><referenceFrom>1.3.3</referenceFrom></locality></localityStack></eref> (Symbols).</p>
+</definitions></clause>
+
+<clause id="_a976fb7b-c8ef-8276-5d3f-b0ab25ddcc14" anchor="sec_1.5" obligation="informative">
+<title id="_1e738dc2-171c-5a52-d4d3-6db16b1be7dc">Use of language</title>
+<p id="_35a0ae43-613c-0395-909d-cd26ef4a0106">Within this document:</p>
+
+<ul id="_0113decb-e114-f381-4448-71e0b7839282"><li><p id="_54e9585a-ba9b-3fc0-a6df-b78327e4b285">“Must” indicates a mandatory requirement.</p>
+</li>
+<li><p id="_cd72a283-16bd-d9f0-b767-1cc4d57c7ec3">“Should” indicates an optional requirement, that is the recommended process to be followed, but is not mandatory.</p>
+</li>
+<li><p id="_faa915f7-f814-40f7-3124-abf9b5f3a4fe">“May” means “allowed to” or “could possibly”, and is not mandatory.</p>
+</li>
+</ul>
+</clause>
+
+<clause id="_61237379-eb5a-3e71-579c-c041e4586ab3" anchor="sec_1.6" obligation="informative">
+<title id="_2ea0d054-4d1c-9110-0b23-5756bdcf4c0c">General description</title>
+<p id="_f9c9ed61-ccf0-218a-bb94-6b01d79087ea">S-158:102 is a specification describing product-specific validation checks for S-102 products. There are no data products based directly on this edition of S-158:102 and therefore no general information applicable to data products conforming to it.</p>
+
+<p id="_1fcfe52b-03a0-e704-5696-f2eb47b31346">The validation checks are intended for production systems designed to produce S-102 Bathymetric Surface datasets. The checks can be administered at any time during the production phase.</p>
+
+<p id="_a4537d20-fd28-6bf3-499a-802e0365d43d"><strike>General information about data products conforming to this specification.</strike></p>
+
+<p id="_f938159e-b5a5-023b-8041-b03b11819da2"><strike><strong>Title:</strong> S-158:102 Bathymetric Surface Validation Checks</strike></p>
+
+<p id="_b5defabb-102b-221a-c47c-8d2e486edbb9"><strike><strong>Abstract:</strong> This document describes validation checks for S-102 data products.</strike></p>
+
+<p id="_9d7860ad-92dd-ce42-5713-2257dd9a2fa3"><strike><strong>Content:</strong> Not applicable</strike></p>
+
+<p id="_e02390cb-2670-8ea3-6dd9-b59709a7acc5"><strike><strong>Spatial Extent:</strong> N/A</strike></p>
+
+<p id="_72ad7005-3fab-cbbb-8c14-80e84cb000ad"><strike><strong>Temporal Extent:</strong> N/A</strike></p>
+
+<p id="_2effcbf3-1af4-f8f3-edf6-252785b2f5c4"><strike><strong>Specific Purpose:</strong> Validation of S-102 datasets and exchange sets.</strike></p>
+</clause>
+
+<clause id="_c1c3575e-34e0-f054-1bae-0d8544bcda1b" anchor="sec_1.7" obligation="informative">
+<title id="_101248b8-d4f9-c12c-a086-229c08eab268">Specification metadata and maintenance</title>
+<clause id="_83b500eb-6f68-ec7a-3e5d-199821f71729" anchor="sec_1.7.1" obligation="informative">
+<title id="_58afdd10-d001-a23d-7440-3beb6d03c21e">Specification metadata</title>
+<p id="_d48355be-4a0f-9eae-c6ae-ba342e544c43">This information uniquely identifies this Specification and provides information about its creation and maintenance.</p>
+
+<dl id="_6764a2f5-3e52-1ff0-2df6-9105f4557b07"><dt><strong>Title:</strong></dt>
+<dd id="_20768ae2-342a-e03e-f34f-0facf9632e8d"><p id="_dd353c01-1632-58d6-7966-8321f2aeed4e">Bathymetric Surface Validation Checks</p>
+</dd>
+<dt><strong>Version:</strong></dt>
+<dd id="_9cb7d25c-a64c-1e12-7b4f-ba79cc9c31ef"><p id="_9ec06f09-3a46-1d5c-842b-efdf6ad62624">0.2.0</p>
+</dd>
+<dt><strong>Date:</strong></dt>
+<dd id="_55bee112-5a5b-ed9b-7097-3c67a2459064"><p id="_12eeca03-206d-07da-f988-d47ad251d42a">2024-11-18</p>
+</dd>
+<dt><strong>Language:</strong></dt>
+<dd id="_bcce6c19-2f3d-aacb-a2e8-0404d8130833"><p id="_cea567e3-48f1-61ad-9a6f-af7e6b5f18ed">English</p>
+</dd>
+<dt><strong>Classification:</strong></dt>
+<dd id="_6cbd1665-2d53-a82c-72ba-656ef4742b61"><p id="_4aeeb01d-3383-03ca-4a8d-0bbea041199f">Unclassified</p>
+</dd>
+<dt><strong>Contact:</strong></dt>
+<dd id="_d5667474-b987-01a2-90b3-6f1dd87a2916"><p id="_c254079f-b551-a7b1-dd30-fc34dc794ad8">International Hydrographic Organization.</p>
+<p id="_86a441b8-4255-a2d4-4431-31296acc86a6">4 quai Antoine 1er,<br/> B.P.445 MC 98011 MONACO CEDEX<br/> Telephone: +377 93 10 81 00<br/> B.P. 445 Fax: + 377 93 10 81 40<br/> Email:  <link target="mailto:info@iho.int">info@iho.int</link></p>
+</dd>
+<dt><strong>Role:</strong></dt>
+<dd id="_0aa90f93-9a0f-9598-972b-752bd685d60f"><p id="_778a6820-a9e0-978b-3265-39915682a6cb">Owner</p>
+</dd>
+<dt><strong>URL:</strong></dt>
+<dd id="_33e9bbf6-68e8-c892-71f4-20a682ddb03a"><p id="_6dc68168-a8b4-6a12-fab5-400ac43a6cd3"><link target="https://registry.iho.int/">https://registry.iho.int</link></p>
+</dd>
+<dt><strong>Identifier:</strong></dt>
+<dd id="_b381dabe-2049-63e7-78b1-858674c86b2f"><p id="_9bc7d016-fab1-a703-9770-21566cb72ef4">S-158:102</p>
+</dd>
+<dt><strong>Maintenance:</strong></dt>
+<dd id="_1ea4de80-0db5-6e4b-2c76-ae44f0490c6b"><p id="_c63e2eb0-5389-6879-1c61-e929c50632a5">Changes to this Specification are coordinated by the IHO S-102 Project Team of the IHO S-100 Working Group and made available via the IHO Publications website. Maintenance of the Product Specification must conform to IHO Technical Resolution 2/2007 (revised 2010). For reporting issues which need correction, use the contact information.</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_5f546ba8-ebb1-d094-62d0-3ab86fb57c06" anchor="sec_1.7.2" obligation="informative">
+<title id="_c7edd68b-898a-4225-6102-bf98ce6fb164">Specification maintenance</title>
+<clause id="_d40b0b8d-b68c-cf68-84ae-7d9be59f9bf5" anchor="sec_1.7.2.1" obligation="informative">
+<title id="_4f391deb-4433-9d2a-cac9-1a7a4fb7aeae">Introduction</title>
+<p id="_b89f3c4f-ed41-ef53-7a9b-c6e8a753d4dc">Changes to S-158:102 will be released by the IHO as a New Edition, revision, or clarification.</p>
+
+<p id="_95bdb16e-765f-c297-8d96-e279ed0c2054">The list of checks, which accompanies this document is considered part of this Specification and changes to it are considered changes to this Specification.</p>
+
+<p id="_3c670ad4-a051-3c16-cc1c-512062c85955">S-158:102 is not accompanied by separate artefacts such as an XML Schema, Feature or Portrayal Catalogue and therefore this clause does not address the question of changes to such derived artefacts.</p>
+
+<admonition id="_3ca0ec1b-2212-58eb-4a51-c01b1aa58bfa" type="editorial"><p id="_fa11f1a1-9010-3de1-9f77-e15cb6d3e6dd">Designation of an S-158:1xx publication as new edition, revision, or clarification are under review by the S-100 Validation Checks subgroup as of November 2018. Project Teams should await the conclusion of this work before amending the following sub-clauses.</p>
+</admonition></clause>
+
+<clause id="_29216b94-b47f-cd13-19b8-85bd29292826" anchor="sec_1.7.2.2" obligation="informative">
+<title id="_b64c9e8f-a328-427b-e8e7-ddedec38a21e">New Edition</title>
+<p id="_631e1f11-7f07-b6db-6c63-d285278a3a67"><em>New Editions</em> of S-158:102 introduce significant changes. <em>New Editions</em> enable new concepts, such as the ability to support new functions or applications, the introduction of new constructs or data types, or significant changes to the basic information or check structure arising from a new edition of S-158.  <em>New Editions</em> are likely to have a significant impact on either existing users or future users of S-102 and S-158:102. All cumulative  <em>revisions</em> and <em>clarifications</em> must be included with the release of approved New Editions.</p>
+</clause>
+
+<clause id="_c530975f-79d9-cb60-b862-5d0152dc13ce" anchor="sec_1.7.2.3" obligation="informative">
+<title id="_d732eef6-5d5f-df33-7ef1-4b6b23f02156">Revision</title>
+<p id="_2465b701-135b-fb92-ef6d-33f181bbf491"><em>Revisions</em> are defined as substantive semantic changes to S-158:102. Typically, <em>revision</em>s will change S-158:102 to correct factual errors or introduce necessary changes that have become evident as a result of practical experience or changing circumstances, including support for new revisions of S-158. A  <em>revision</em> must not be classified as a clarification.  <em>Revisions</em> could have an impact on either existing users or future users of S-158:102. All cumulative  <em>clarifications</em> must be included with the release of approved revisions.</p>
+
+<p id="_02c6c65d-be54-a57c-1197-c6e554cf54ec">Changes in a revision of S-158:102 may or may not correspond to the same revision+edition number of S-102.</p>
+</clause>
+
+<clause id="_23fbb5d3-563e-ea45-754b-59252e5b107c" anchor="sec_1.7.2.4" obligation="informative">
+<title id="_59858a06-4a74-23bf-894e-4c88457d7403">Clarification</title>
+<p id="_ece72963-613e-ab2a-e2bd-1453ac489d10"><em>Clarifications</em> are changes to S-158:102 arising from non-substantive reasons or from introduction of a new edition or revision of S-102.</p>
+
+<p id="_27432f7f-d1b1-9111-b0d7-5faf25e256e8">Typically clarifications for non-substantive reasons remove ambiguity; correct grammatical and spelling errors; amend or update cross references; revise check messages or clarify check descriptions; or revise classifications of checks as critical/error/warning. A  <em>clarification</em> must not cause any substantive semantic change to S-158:102.</p>
+
+<p id="_a02a6216-40b6-c662-f9d4-b9675a25c699">Clarifications to S-158:102 for alignment to a new edition or revision of S-102 may update validation checks or add new validation checks. Validation checks for older but still active editions or revisions of S-102 wil be retained but may be marked as  <em>Deleted</em> for the new edition/revision of S-102.</p>
+</clause>
+
+<clause id="_13b7f7e3-414c-a13a-e63f-df8775ed49d3" anchor="sec_1.7.2.5" obligation="informative">
+<title id="_4dd81461-3382-9fc4-4575-6dce2282bb8b">Version numbers</title>
+<p id="_0abd5074-a998-3d8a-6197-fa03735ba53d">The associated version control numbering to identify changes (n) to S-158:102 must be as follows:</p>
+
+<p id="_18ccd241-5151-d58f-414a-5ab689c6478d">New Editions denoted as <strong>n</strong>.0.0</p>
+
+<p id="_170bfc9d-4f75-bdc3-0806-b4a234eb6428">Revisions denoted as n.<strong>n</strong>.0</p>
+
+<p id="_a54e603c-3a30-c2b8-9fb0-f749776e6f1f">Clarifications denoted as n.n.<strong>n</strong></p>
+</clause>
+</clause>
+</clause>
+</introduction><clause id="_416dbda5-5ce6-f35a-ea76-a513592289ef" obligation="informative">
+<title id="_f482e726-0676-e254-4e7a-0ceccf436582">Document History</title>
+<p id="_973c33be-e3f1-dbd1-2bd6-21236ca201eb">Changes to this Specification are coordinated by the IHO S-100 Working Group S-102 Project Team. New editions will be made available via the IHO web site. Maintenance of the Specification shall conform to IHO Resolution 2/2007 (as amended).</p>
+
+<table id="_28fccc71-49e1-339c-5ab8-70798491143f" unnumbered="true"><thead><tr id="_0b2f6be9-3b2b-4100-b09f-4e634195f4f6"><th id="_4ba153f7-5898-fa62-cd02-77faad3262b6" valign="top" align="left">Version Number</th>
+<th id="_abae6440-2f0a-2ad2-a2e6-bf33e64f4c3e" valign="top" align="left">Date</th>
+<th id="_f70805c8-d3cc-c69c-88c0-26665ce05d6f" valign="top" align="left">Author/Editor</th>
+<th id="_d1ebaad4-fd6d-d793-8a87-7a150e4c8769" valign="top" align="left">Purpose</th>
+</tr></thead>
+<tbody><tr id="_e5a0ba34-3123-cb1e-57bc-939071fe491b"><td id="_c7197cd6-b7cc-98b7-708b-2f90d6efcd87" valign="top" align="left">0.1.0</td>
+<td id="_b2f7627e-3981-c7b1-003e-2ccfada00fb1" valign="top" align="left">2024-10-15</td>
+<td id="_4875ca6b-b145-3a4e-4081-ee3343ad9a90" valign="top" align="left">RM</td>
+<td id="_8c18bb55-e661-2fbc-5089-fac0ce4fe984" valign="top" align="left">Initial draft for S100 Validation Checks GitHub repository. This is based on the August 2023 checks from the S-102 PT, which are aligned to the unpublished S-102 Edition 2.3.0.</td>
+</tr><tr id="_d5ee6166-80c8-ad29-0f50-5ea997d80ffd"><td id="_d82e343e-2a75-a23c-62c6-8f72d679b2b2" valign="top" align="left">0.2.0</td>
+<td id="_2d400893-706e-dc87-02fe-512c8125c3e2" valign="top" align="left">2024-11-18</td>
+<td id="_8f2f112c-590f-f516-c754-ab816055fdb2" valign="top" align="left">RM</td>
+<td id="_bbe321ac-0360-cacb-3524-599d9dd41f85" valign="top" align="left">Editorial updates agreed at S-100 WG9. Continues to based on the August 2023 checks.</td>
+</tr><tr id="_e0dea14b-6ff2-7b6f-acc6-0769b868af54"><td id="_9d5ec0cd-e4c5-9544-65fd-81edcfa516cd" valign="top" align="left"/><td id="_a110181d-7f8e-3f1f-2b86-a330cd3c59dd" valign="top" align="left"/><td id="_87942ac8-370b-c759-12fb-406e291faa1c" valign="top" align="left"/><td id="_7f987ffb-5462-2665-4ee0-17ec71ca67c6" valign="top" align="left"/></tr><tr id="_4a4fc768-b19a-238b-4709-34c67930d89b"><td id="_eb4b5fe9-6324-b294-5b2e-df9f6c3187f6" valign="top" align="left"/><td id="_a0bacd84-def3-602f-bbb1-774a642331fc" valign="top" align="left"/><td id="_a666e01d-236b-6609-96b1-0e938ef5e550" valign="top" align="left"/><td id="_ce1a8b54-0c19-569e-8763-f6c9e50a83d5" valign="top" align="left"/></tr><tr id="_865fad6f-6f60-8180-ed19-ed583a79960e"><td id="_003e3774-9c55-3601-17e5-6c7712c27814" valign="top" align="left"/><td id="_09d6141b-3a4b-edb6-b3f7-37ae01460f65" valign="top" align="left"/><td id="_083b609e-d2e3-567e-1b9e-106de1c2a635" valign="top" align="left"/><td id="_ecc4b447-750b-6cb9-bf6a-cdb7b02e23f0" valign="top" align="left"/></tr><tr id="_f80b8de0-4eaf-a63c-61f0-7f6e263b811f"><td id="_04a05301-3a8f-e3bd-93aa-167fbaba80cb" valign="top" align="left"/><td id="_e13d5f61-fe7f-60f8-75a4-d29c97413d1b" valign="top" align="left"/><td id="_04881853-128c-4883-f393-c9038842580b" valign="top" align="left"/><td id="_47c7102a-7f30-dce6-bd5b-f0dd7bef18b1" valign="top" align="left"/></tr><tr id="_280c6f55-0f2c-825f-6132-d93451937d3e"><td id="_66924135-a11a-edcf-25a6-83906398b543" valign="top" align="left"/><td id="_2ade8a2c-8c74-289f-60cb-bed666ea1091" valign="top" align="left"/><td id="_a9415e18-2b8a-4254-c286-ff26f3a664e8" valign="top" align="left"/><td id="_c920b3e9-ee23-b113-6d42-18c04dfde669" valign="top" align="left"/></tr></tbody>
+</table>
+</clause><clause id="_cc40a747-da7c-dd0c-16c2-44c097ac9d80" obligation="informative">
+<title id="_96b4c695-4449-759f-bfc5-ef7904cb09e6">Summary of Substantive Changes in Edition x.x</title>
+<p id="_3f044c01-deb9-4be6-66aa-58cf7bdda2ad">Bold references in the Clauses Affected column indicate the principal sections/clauses that are affected by the described change.</p>
+
+<table id="_83025636-531b-dd0d-f9f2-21b606b7435c" unnumbered="true"><thead><tr id="_b608262a-94a3-0c37-3dec-09cab9eb255e"><th id="_968e0f03-6660-ec0e-f35c-8ef3b2a4cddb" valign="top" align="left">Change Summary</th>
+<th id="_6e4167ad-336d-9db8-cd0b-510a815018cb" valign="top" align="left">Clauses Affected</th>
+</tr></thead>
+<tbody><tr id="_5c604ba3-3ce4-5d90-9de6-18533f89975f"><td id="_e2abdc0c-148f-b1da-4edf-fbd1f76f9040" valign="top" align="left">(To be populated for editions following Edition 1.0.0)</td>
+<td id="_aedccfd1-069e-ec5d-9132-a3f6a6d2c54a" valign="top" align="left"/></tr><tr id="_13598cd4-db11-673e-d537-de96647f688d"><td id="_aa2c8956-3c8b-ef8e-9c74-e05dd72b238f" valign="top" align="left"/><td id="_e6dd41da-9900-c23b-1a3f-d300498120e2" valign="top" align="left"/></tr><tr id="_21f1aa79-d557-7ce3-c8c0-aafa9ba1845a"><td id="_fe9f346c-acca-1085-4215-7b0c9080df89" valign="top" align="left"/><td id="_3ebc796e-15e4-82d9-f7bb-298a3b216949" valign="top" align="left"/></tr></tbody>
+</table>
+</clause></preface><sections>
+
+
+
+
+<clause id="_2268fdbb-a697-2dbc-af7e-eafe2cdcdb4a" anchor="sec_2" obligation="normative">
+<title id="_8454583d-8aa9-4042-c819-01ca1c6f4360">Check Structure</title>
+<p id="_b3a9e98c-fcfd-7cf4-5522-da43df23a7a9">Check structure in S-158:102 includes the fields specified in S-158 plus the additional fields specified in  <xref target="table-2-1"/>.</p>
+
+<table id="_8c5402b3-9d12-e5f5-c716-96f42eccce35" anchor="table-2-1">
+<name id="_7ed5a285-3654-33e1-0849-6332f92ec834">Extensions to check structure</name>
+<thead><tr id="_5390fecc-cb0f-cfc9-0ef8-21dc65e3a445"><th id="_da214caa-eec6-db5d-f582-4a5c58c3571e" valign="top" align="left">Column Name</th>
+<th id="_0408ec72-569c-5120-3201-d82fff4392c0" valign="top" align="left">Description</th>
+</tr></thead>
+<tbody><tr id="_6c1530bc-678a-7ac9-011c-6e33d96fbb57"><td id="_58671fe4-7840-1c09-2153-b37f5ac39c0a" valign="top" align="left">Prerequisites</td>
+<td id="_afe84304-a35d-9942-43b4-71b4c8ada6c9" valign="top" align="left">Checks which must succeed (check condition evaluates to FALSE) before this check can be executed. Trivial prerequisites are omitted from this column (such as requiring the presence of an attribute before using it in a condition).</td>
+</tr><tr id="_4641b587-8d4c-3ac3-28e0-618c5180a83b"><td id="_7aa2ef13-e453-1b73-2407-7b9e7f4e9f4d" valign="top" align="left">Terminate if failure</td>
+<td id="_b7cc45cf-7d3b-d6df-d3b6-78036a57ad35" valign="top" align="left">Whether failure of the check (the check condition evaluates to TRUE) will force termination of check processing before all validation checks can be executed. Valid values are TRUE and FALSE. The default is FALSE.The HDF5 format is hierarchical and the validity or even the existence of certain parts of the dataset depends on structure or content required to be provided in the dataset. Validation checks for such fundamental structure or content have this field set to TRUE so that subsequent checks which depend on that structure or content are not unnecessarily attempted if the fundamental structure or content fails its own validation check.For example, checks on groups which are members of another group are not attempted if the container group is missing.</td>
+</tr></tbody>
+</table>
+
+<p id="_be1f5cfb-0686-e22c-7b80-6dd112ef5ac6">Termination of check processing need not be immediate, but is recommended at the end of the validation phase during which the failure occurs. Validation phases are explained in  <xref target="sec_4"/>.</p>
+</clause>
+
+<clause id="_abf10776-4bb2-ad86-4706-4b7f3ddfddab" anchor="sec_3" obligation="normative">
+<title id="_8a993423-b6ca-8eef-3097-3c87cede0d1c">Check Syntax</title>
+<p id="_e29faf07-2d77-c336-092b-5f3ec85337fe">The check syntax conforms to the syntax and operators for product-specific checks described in  <eref type="inline" bibitemid="S_158" citeas="S-158"><localityStack><locality type="clause"><referenceFrom>4.2</referenceFrom></locality></localityStack></eref>.</p>
+</clause>
+
+<clause id="_5e970a96-28d4-fd54-c15d-feb30f8cc28e" anchor="sec_4" obligation="normative">
+<title id="_1e5a2601-589d-d75b-1556-69e60c25d4b9">Organisation</title>
+<p id="_8888a379-6474-7d64-0893-70a2e03b59c1">The list of validation checks for this edition of S-158:102 is available separately (see  <xref target="sec_9"/>). The list of checks accompanies this specification and forms an integral part of it.</p>
+
+<p id="_7c4510bb-1f79-37d1-b1ac-b45bd044833d">The numeric component of the check ID is a 4-digit number whose first digit indicates the phase to which the check belongs (see  <xref target="table-4-1"/> below).</p>
+
+<table id="_34087430-5dec-27f6-0f41-214d56701240" anchor="table-4-1">
+<name id="_f3b873bc-e394-0c59-4923-bed4924b9ebd">Division of product-specific checks into processing phases*</name>
+<thead><tr id="_57f386ff-f7b1-93e1-69de-5841ebc00baf"><th id="_aac12754-6fea-79b7-0872-7923802fba53" valign="top" align="left">Phase</th>
+<th id="_3d1258b9-7cb4-c143-444c-5055a18d7e36" valign="top" align="left">Check Numbers</th>
+<th id="_d9dd27cb-7178-261f-d4db-8b4f4b24a54e" valign="top" align="left">Name</th>
+<th id="_11685971-be3b-9cca-274d-16813387d8a2" valign="top" align="left">Description</th>
+</tr></thead>
+<tbody><tr id="_d8884032-9821-dab6-87a7-11109db35df4"><td id="_01370423-e408-ab91-9b96-803437b6a687" valign="top" align="left">1</td>
+<td id="_2b993b79-15ca-650b-6273-623709936993" valign="top" align="left">102_Dev1xxx</td>
+<td id="_3afc9b70-3cf2-3268-b45b-14063c4ec573" valign="top" align="left">Validate Dataset Root and Feature Information</td>
+<td id="_902be1e6-e3e9-9ccf-2285-e733967777f9" valign="top" align="left">Validation of root group of HDF5 file and feature type information.</td>
+</tr><tr id="_4203aeab-f659-89e0-b3b2-72b805fdec0e"><td id="_ac101797-5e7b-cf36-88fb-989c922c6165" valign="top" align="left">2</td>
+<td id="_82961218-3d57-be8d-3401-25a551401d1f" valign="top" align="left">102_Dev2xxx</td>
+<td id="_e555c132-efc8-ac67-2b48-74a08cc09345" valign="top" align="left">Validate Feature Container Groups</td>
+<td id="_fae6a989-307d-6dac-24f1-7ab81e543d4e" valign="top" align="left">Validation of metadata and structure for each feature type (“Feature Container”). In S-102 there are two feature containers (one for the bathymetry data and another for survey information), so this set of checks is executed only once for each.</td>
+</tr><tr id="_8311a31e-8e87-58b1-6533-cc476bacad4e"><td id="_9d76ccfd-4fd3-7670-a77f-b4e7a95c4d5c" valign="top" align="left">3</td>
+<td id="_3ec26b01-6f98-c21b-7a0b-91753f6813f1" valign="top" align="left">102_Dev3xxx</td>
+<td id="_00159615-4d56-1407-a3ee-9c337e0ec050" valign="top" align="left">Validate Feature Instance Groups</td>
+<td id="_dbfaee35-1d15-1863-ec98-ebd9845ee80e" valign="top" align="left">Validation of feature instances. This set of checks, along with Phase 4 checks, must be executed once for each feature instance group contained within a feature container.</td>
+</tr><tr id="_94ed0d7c-6bb7-d64e-b105-badfe56e2fa5"><td id="_49bed3ef-719c-0d53-1d23-aa0134b52db8" valign="top" align="left">4</td>
+<td id="_44b4bc4e-eeda-2324-6c4a-cfb44bc8cdc5" valign="top" align="left">N/A</td>
+<td id="_341e3b25-0ce0-7af2-c114-1aa6ceca8dbf" valign="top" align="left">Validate Positioning Groups</td>
+<td id="_061bedcd-3a4d-dc6d-266a-b2efe24d7a15" valign="top" align="left">There are no Phase 4 checks for S-102, which does not use positioning groups. This phase is mentioned in this table only for compatibility with S-158:1xx for coverages which do use positioning groups.</td>
+</tr><tr id="_d2141c9f-6703-529c-848f-d301a0b0a1f8"><td id="_fbc542c8-626a-0199-55b3-7c1b8416e8a2" valign="top" align="left">5</td>
+<td id="_c0bd52cc-8bd1-9a5d-7fe8-520c7b1a5cb1" valign="top" align="left">102_Dev5xxx</td>
+<td id="_40b68f40-393c-ff07-2bfa-4f0f7c100320" valign="top" align="left">Validate Values Datasets</td>
+<td id="_00ea0aae-9122-8450-2e04-52576e9795c6" valign="top" align="left">Validation of bathymetry data values. This set of checks is applied to the values group in a feature instance group.</td>
+</tr><tr id="_e67b0c6f-940b-5739-26a2-9847643bb799"><td id="_117910eb-871c-8c3a-7b88-41f03d0d0bdc" valign="top" align="left">6</td>
+<td id="_d83752ac-e5e4-d051-d361-2c3cdb38f51f" valign="top" align="left">102_Dev9xxx</td>
+<td id="_0e106c3d-a062-fbcb-f844-ab4d4cf77d09" valign="top" align="left">Validate Exchange Catalogue</td>
+<td id="_577f617e-42a2-212d-5e7e-9e1d55db10e1" valign="top" align="left">This set of checks relates to product-specific requirements for exchange catalogues</td>
+</tr></tbody>
+</table>
+
+<p id="_dd205636-09d6-c4fb-433e-f0229f2efaf3">Dataset validation checks the structure and content of individual HDF5 data files. The checks for each HDF5 dataset file are divided into four phases</p>
+</clause>
+
+<clause id="_6cce105e-d56d-0b18-3e46-6d92344532b0" anchor="sec_5" obligation="normative">
+<title id="_7be422ff-af7a-0425-b83b-02d16650553c">Other Applicable Checks</title>
+<clause id="_8b7a898f-4186-dd02-80d2-9d2e0d9036a9" anchor="sec_5.1" obligation="normative">
+<title id="_a3bed0c8-1d4b-9db1-23f9-27a2cde817cc">Generic S-100 checks</title>
+<p id="_edc821f5-52e7-668c-5c20-76d715332bd2">S-102 datasets and exchange sets must also be validated using the following subset of the generic S-100 validation checks defined in S-158:100:</p>
+
+<table id="_4e9dd61e-3c88-7ad0-4371-ddc7fb01e378"><thead><tr id="_14ef651e-9e6f-f80b-7c71-b98d58ddf724"><th id="_b5a0d874-b5e5-36ba-78ab-e3956692c66d" valign="top" align="left">Document reference in S-158:100 list</th>
+<th id="_8639a775-6b23-d71e-2e3d-e7b2fc79e269" valign="top" align="left">Checks</th>
+<th id="_90760c6c-a16c-7d27-4b50-832b1a933364" valign="top" align="left">Apply to</th>
+<th id="_3fcad481-1883-cca5-14f7-245c5359e722" valign="top" align="left">Remarks</th>
+</tr></thead>
+<tbody><tr id="_427a20ac-bbe5-3fbe-aebc-0d5ac9ea6d18"><td id="_a567b2ca-4efa-3b66-d9cf-da5689cfc085" valign="top" align="left">Part 1</td>
+<td id="_2955124b-8ed5-9caa-5e48-1cd7eda33f9b" valign="top" align="left">All</td>
+<td id="_9c244305-0908-b632-0674-335f850ef2ac" valign="top" align="left">Product Specification</td>
+<td id="_a7c1fceb-b1f4-44ce-ad9e-61c2b4d26c35" valign="top" align="left">No direct implementation on datasets or exchange sets</td>
+</tr><tr id="_9bf1ff0b-1ba5-1a23-30b8-36f6fb638429"><td id="_c33ccebb-f691-bfb7-94e6-6a2fb9f3d39d" valign="top" align="left">Part 2 / 2a</td>
+<td id="_91462501-c458-c763-95be-424e8f732576" valign="top" align="left">All</td>
+<td id="_ab9c50ec-91d0-8231-7aed-2979e3de6f72" valign="top" align="left">Product Specification</td>
+<td id="_27a2223d-5e97-81ca-0e85-ed749f0118ac" valign="top" align="left">No direct implementation on datasets or exchange sets</td>
+</tr><tr id="_94f4cfe4-3a1d-9773-73b0-2b9733d99f32"><td id="_9d5face1-4eff-263f-dcd6-ffa6e1bd1b3f" valign="top" align="left">Part 4a</td>
+<td id="_bb4931ac-8f6c-2938-dcf0-58c291d02000" valign="top" align="left">All</td>
+<td id="_9e52b898-0494-05d1-a374-930c122ddc70" valign="top" align="left">Exchange catalogue</td>
+<td id="_2f232dcf-3ade-714a-7975-22805551042e" valign="top" align="left"/></tr><tr id="_c1414070-eb35-e3d7-dfa1-3ce95ab07356"><td id="_b473ebeb-4aa6-5f6e-1c22-fe0ffcc22756" valign="top" align="left">Part 4b</td>
+<td id="_fdd4485a-b84a-364d-5246-fad2a9269a57" valign="top" align="left">All</td>
+<td id="_550fc197-d5fb-5575-6ad3-fd01b400df6e" valign="top" align="left">Product Specification</td>
+<td id="_33b926f0-b1e2-6b66-9b1b-404ad529117d" valign="top" align="left">No direct implementation on datasets or exchange sets</td>
+</tr><tr id="_b9e55e41-d092-1f30-4e90-a2ac6325538e"><td id="_23a945c7-8a15-d000-d88f-d7edb0fdd7c9" valign="top" rowspan="2" align="left">Part 5 / 5a</td>
+<td id="_d4adf9cb-42f7-26b0-c31e-bfa17847814e" valign="top" align="left">100_Dev0069</td>
+<td id="_79aa75a6-8aa2-b4cb-b7d4-6c2665e7582b" valign="top" align="left">Product Specification</td>
+<td id="_8d3dfc15-cf5f-ba75-e7c2-d7b2e9f1e325" valign="top" align="left">No direct implementation on datasets or exchange sets</td>
+</tr><tr id="_9553fefc-c0e8-aab2-b9c1-a6b8b4d572f7"><td id="_856a7c8c-ed4d-2798-9581-340e9647d874" valign="top" align="left">100_Dev0077 100_Dev0468 100_Dev0161 100_Dev0162 100_Dev0163 100_Dev0164 100_Dev0165 100_Dev0166 100_Dev0167</td>
+<td id="_509ab578-e07b-af2a-c717-269ec6ff9ef6" valign="top" align="left">Datasets</td>
+<td id="_0818d39d-bf0a-6b68-f403-92e1b8743ebe" valign="top" align="left">Inapplicable: 100_Dev0168 100_Dev0169 100_Dev0170 100_Dev0171</td>
+</tr><tr id="_e888ff4d-af04-e824-dd96-2cc31e142437"><td id="_31576254-4cfb-a0a1-4613-3a1ae7ffc909" valign="top" align="left">Part 6</td>
+<td id="_d98ff27a-16dc-d52b-d0ca-5df34e3e1cc3" valign="top" align="left">100_Dev0172100_Dev0173100_Dev0174</td>
+<td id="_f6121c45-0fcc-420d-2bb2-891c8ba174d2" valign="top" align="left">Datasets</td>
+<td id="_22680ff4-00f4-5352-a987-12dd8d675419" valign="top" align="left"/></tr><tr id="_380bbac3-d4d7-17c6-e780-d146b24fa6be"><td id="_107f82ea-120e-dd20-7b59-fd83bdeb428b" valign="top" align="left">Part 7</td>
+<td id="_1da7768a-bb28-0ac3-6800-272f44460f01" valign="top" align="left">Only checks for polygons</td>
+<td id="_2783e0cf-c963-560f-954a-12d4e7028e7c" valign="top" align="left">Domain extent polygons</td>
+<td id="_eb773447-ec09-2481-28e3-0bfc54c97d8b" valign="top" align="left">S-102 uses vector geometry only for domain extent polygons. Note also that domain extent polygons as used in S-102 do not have interior boundaries.</td>
+</tr><tr id="_fbe99ca9-dc54-ed29-905a-2503756dc4c0"><td id="_4833d545-7d1e-9640-30d8-b6cfafe0ba39" valign="top" align="left">Part 8</td>
+<td id="_23f41c30-df9a-fdcb-fc3f-8ee892248673" valign="top" align="left">Only checks applicable to regular grid coverages</td>
+<td id="_cf89ebf9-1ade-3ebd-d5b8-77f3afeccaa7" valign="top" align="left">Dataset</td>
+<td id="_0064a929-ecb6-7024-9bf7-73c8b6531cba" valign="top" align="left"/></tr><tr id="_4f0fa2cd-b04b-0553-c8a2-70190b328308"><td id="_4091043e-5c2f-8a55-7ddc-e2426d90543e" valign="top" align="left">Part 9 / 9a / 13</td>
+<td id="_464029e8-ef23-0730-ef5e-61cba755520a" valign="top" align="left">?</td>
+<td id="_c13622f7-0704-6407-0090-6fee64437412" valign="top" align="left">Product Specitication</td>
+<td id="_08b7245b-2a02-0917-a0eb-9aff72bbfb7c" valign="top" align="left">Validation checks for Portrayal Catalogue</td>
+</tr><tr id="_1e609402-5eea-5b7f-e1ad-1c1b50fc7aad"><td id="_00086252-e75d-dbed-2f8d-7a90c7e93dec" valign="top" align="left">Part 10a</td>
+<td id="_273dbc7c-b3cd-956a-9f6a-77bd08622968" valign="top" align="left">None</td>
+<td id="_b647a12c-bf30-eb30-902f-19db1a9ca601" valign="top" align="left">N/A</td>
+<td id="_718623d0-c746-45d9-f38d-27534ecdde9a" valign="top" align="left">S-102 does not use the ISO 8211 format</td>
+</tr><tr id="_facf8235-2b72-8cd6-3c4e-f1a938723050"><td id="_25d8a33d-1390-3503-3e47-f9691a9b8bdc" valign="top" align="left">Part 10b</td>
+<td id="_af66319f-c682-5d8a-64c4-781b97b4348c" valign="top" align="left">None</td>
+<td id="_389278df-04f2-2189-63bb-13d6b539668f" valign="top" align="left">N/A</td>
+<td id="_8d14b12d-823e-860e-6042-b040c47049b4" valign="top" align="left">S-102 does not use the S-100 GML format</td>
+</tr><tr id="_62e2b906-c6ee-669f-d5d4-3b98d56b78fe"><td id="_e8f68325-a4e2-8d5e-50ff-bf1ae3ce304e" valign="top" align="left">Part 10c</td>
+<td id="_0e55d228-5e13-b5c7-d579-27af187bfb3c" valign="top" align="left">Only checks applicable to regular grid coverages</td>
+<td id="_9ea7302f-b769-5c02-213b-934d30fd6f83" valign="top" align="left">Dataset</td>
+<td id="_4feedacd-3a22-95d0-9de7-077bcc664bf1" valign="top" align="left">S-102 uses only the regular grid coverage type</td>
+</tr><tr id="_b1af71e5-883b-b0ab-2489-0d807ebc2726"><td id="_4124f15e-98d9-15cf-4c3b-970796a7bfe9" valign="top" align="left">Part 11</td>
+<td id="_d2fdf027-4888-8f9b-ff95-43973078fc05" valign="top" align="left">100_Dev0466</td>
+<td id="_b05880f5-d122-5a63-98b9-732e8cfe8c65" valign="top" align="left">Dataset</td>
+<td id="_1b182af8-9c1a-0be8-aa31-cb52fde40aa3" valign="top" align="left">There is only one Part 11 generic check, for dataset size</td>
+</tr><tr id="_555ed202-652a-6879-11f8-7598e194a2d6"><td id="_771dbbfc-b20d-a957-e570-49ddde1c4d59" valign="top" align="left">Part 15</td>
+<td id="_ea84e343-158a-82cb-00ca-c4312b4016c5" valign="top" align="left">100_Dev0476 through 100_Dev0490</td>
+<td id="_db04e614-28f9-e0cc-fb95-f0a87cd4d224" valign="top" align="left">Exchange catalogueExchange set</td>
+<td id="_91398fa6-9558-66d7-9d3b-7570aad3be78" valign="top" align="left"/></tr><tr id="_a7560616-579d-6011-0f43-b2338ce3be61"><td id="_e02795d9-a6b4-3243-1d0c-2137f66ad188" valign="top" align="left">Part 17</td>
+<td id="_61bb0990-65f7-df25-dca0-dadc539206fa" valign="top" align="left">All checks except those applying to metadata elements not used in S-102</td>
+<td id="_44916a19-2a53-b5ef-7b80-fb4bf19eda9d" valign="top" align="left">Exchange catalogueExchange set</td>
+<td id="_efc48fb7-ea8b-b57f-85a8-3772143b51cc" valign="top" align="left"/></tr></tbody>
+</table>
+</clause>
+
+<clause id="_4431b08a-d6ff-0471-8494-623c7b843f35" anchor="sec_5.2" obligation="normative">
+<title id="_56c36038-b44c-01a0-65a7-95cb310b4b43">Interoperability checks</title>
+<p id="_2b964055-2781-91c0-7e5e-9f9640f87862">S-102 datasets and exchange sets intended for use on ECDIS must also pass the applicable interoperability checks from those listed in S-158:98.</p>
+</clause>
+</clause>
+
+<clause id="_ff5bb0a1-ff6d-228c-d318-d000bba5163a" anchor="sec_6" obligation="normative">
+<title id="_64dfb0b3-89cb-7b70-3bf6-f403e1520bb1">Check Application Sequence</title>
+<p id="_d603d69e-914e-4da2-3402-9837eb721ba5">The check application sequence expands and modifies the application sequence described in  <eref type="inline" bibitemid="S_158" citeas="S-158"/>.</p>
+
+<table id="_b8ed97ae-7d9e-dbd6-f113-0a86eae52d49" anchor="table-6-1">
+<name id="_4484ead8-eeb8-ff86-25a7-12b7b05a0f44">Suggested application order of validation checks</name>
+<thead><tr id="_e456219b-7ea5-9858-2042-eb93555f6a3b"><th id="_b76b4985-bcdf-1402-92f0-cfc39f7693cf" valign="top" align="left">Order</th>
+<th id="_b7e3c51f-cbe8-1c33-2db4-bb2a45919e74" valign="top" align="left">Check Collection</th>
+<th id="_90ccabab-100e-be77-e078-60250b7da451" valign="top" align="left">Defined in</th>
+<th id="_565a8560-863a-9a38-1fa3-6a02780c8552" valign="top" align="left">Apply to</th>
+</tr></thead>
+<tbody><tr id="_3eca575b-2178-516a-91d3-dfe5a2d922fa"><td id="_913f391b-17fa-a6a3-5f47-e8375216d8bc" valign="top" align="left">1</td>
+<td id="_685149a9-d1dd-a0a8-01ee-da351961a015" valign="top" align="left">S-100 generic checks for datasets</td>
+<td id="_926439fe-4bed-1d8e-3378-a4abec7a8852" valign="top" align="left">S-158:100</td>
+<td id="_74b19063-0408-51d6-14a7-d3937cc705a7" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_9140de7f-bbfd-8b7f-5f71-0a10df35f8ab"><td id="_2ca6edfb-7ff8-b04a-f19d-a1306f8f0bf5" valign="top" align="left">2</td>
+<td id="_c77b839f-6319-0a70-60b7-565659a94866" valign="top" align="left">Product-specific checks for datasets</td>
+<td id="_6ca72534-a9cc-a3c0-ab6a-8eb115ef56b7" valign="top" align="left">S-158:102</td>
+<td id="_810fbe12-e123-b39f-4edc-214528b4cff1" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_d406094e-d391-a418-1ab0-55802383c625"><td id="_76958f0f-8f10-80a6-9dda-b944f40f3933" valign="top" align="left">2.1</td>
+<td id="_5ca814ba-89f3-2767-709f-235c071df5b2" valign="top" align="left">Root group checks</td>
+<td id="_95104809-b741-c7c4-9b28-3ec400b310e3" valign="top" align="left">S-158:102 checks numbered 102_Dev1xxx</td>
+<td id="_74cee92f-889f-a04f-b2de-56238a3165a1" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_2e4d66a5-6991-042d-3657-d7cdb38fe325"><td id="_30ca686a-a6c8-d43b-3b05-e7d7e24c9c4d" valign="top" align="left">2.2</td>
+<td id="_d672ffaf-0818-e43a-236b-53332d6c6e83" valign="top" align="left">Feature Container group checks</td>
+<td id="_d5b447f0-b200-ec92-d7f4-8fb1448e9038" valign="top" align="left">S-158:102 checks numbered 102_Dev2xxx</td>
+<td id="_389627a2-e128-97b7-b62a-3a0505cccde4" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_bd8b3bef-7e2a-fea5-5dd3-177a5b77f8a1"><td id="_c1fcad73-b383-bdaf-a544-54ecae083775" valign="top" align="left">2.3</td>
+<td id="_9cd56aae-3ff6-1311-35eb-00f73dbd2c6a" valign="top" align="left">Feature Instance group checks</td>
+<td id="_4bfcf11d-a524-4c68-1c66-6b98af932c17" valign="top" align="left">S-158:102 checks numbered 102_Dev3xxx</td>
+<td id="_7c9e19ae-2a4c-7142-b5b1-6f66aef0897d" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_2da61b89-0be5-dcc0-5341-6fcc7db2d631"><td id="_48d58552-2d8b-db31-8147-2f4a88d946a7" valign="top" align="left">2.4</td>
+<td id="_120d87de-d0bc-be16-c252-a6843526301b" valign="top" align="left">Values group checks</td>
+<td id="_585b9ca2-80e1-eb84-fac8-f1f461a8cac0" valign="top" align="left">S-158:102 checks numbered 102_Dev5xxx</td>
+<td id="_646e5fb2-d9e9-98b1-91b7-3690fda94f72" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_f9297990-c088-4ac9-437b-a5bb5c0d4707"><td id="_2bbc6743-ba38-4054-251e-20669d25c9ad" valign="top" align="left">3</td>
+<td id="_26b1e5e1-976c-4350-bbd9-b0f71f8e46f1" valign="top" align="left">Interoperability checks for single S-102 dataset</td>
+<td id="_8edb2ee5-e9cc-b7a7-e929-ebdd31e35716" valign="top" align="left">S-158:98</td>
+<td id="_eb748296-e2a6-74d2-9647-60462137c442" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_05a20da1-aeff-4b8f-47ad-b2b4e0510ae8"><td id="_e2d9de11-39c2-3543-97fa-7048d35f2e2c" valign="top" align="left">4</td>
+<td id="_f000edcb-bc94-cac3-e0db-88526cd288fe" valign="top" align="left">Inter-dataset, intra-product checks</td>
+<td id="_65cb9363-8d2f-ffdc-c209-6df1d23ab491" valign="top" align="left">S-158:102 checks numbered Nxxx</td>
+<td id="_74c322e4-6f50-1ef3-3608-cea8640ded89" valign="top" align="left">Adjacent or intersecting datasets</td>
+</tr><tr id="_5933c764-71cc-7889-b8c1-2e7fb1f54caa"><td id="_5c72f0fd-3302-8c33-37b2-82dedf93977a" valign="top" align="left">?</td>
+<td id="_2477bf2e-a1f8-335a-cb76-09f3c03c9fcd" valign="top" align="left">Inter-version checks(?)</td>
+<td id="_148b728e-9f32-1c07-8716-7d4a718981a9" valign="top" align="left">S-158:102 checked numbered Nxxx</td>
+<td id="_648de266-0965-c69c-3853-ee2398a5ee7b" valign="top" align="left">Related datasets for different versions of S-102</td>
+</tr><tr id="_4ce38324-722d-534c-ff72-dcd78a8b9fc9"><td id="_2655ca63-3388-6ffa-1397-d8c904b71e12" valign="top" align="left">5</td>
+<td id="_d692747a-568b-cd67-8c94-64bded2d0362" valign="top" align="left">Interoperability checks for combinations of datasets from different products</td>
+<td id="_27880d69-4dfd-dc03-74c5-7949270389a4" valign="top" align="left">S-158:98</td>
+<td id="_ad91257f-01d7-3682-0a76-4deed78102fc" valign="top" align="left">S-102 dataset in combination with relevant datasets from other products (e.g., S-102)</td>
+</tr><tr id="_9e007ef7-ecb1-c3e2-9338-d3f11cf7577f"><td id="_e2d43dc1-25c3-2f39-ace2-7f16ca85061f" valign="top" align="left">6</td>
+<td id="_7fcb9139-042a-d366-9204-38a317e8e3dd" valign="top" align="left">S-100 generic checks for exchange sets</td>
+<td id="_2fcb2906-7fba-fd5e-73b7-bd29add40ea1" valign="top" align="left">S-158:100</td>
+<td id="_6d779c8d-cc4f-666e-5434-27428a055e9d" valign="top" align="left">Exchange set</td>
+</tr><tr id="_f54da02d-e691-8582-9f5c-e4c5cfd7742a"><td id="_3faa0a80-12f3-73d5-0e67-0373e5fc28af" valign="top" align="left">7</td>
+<td id="_eeb369c3-d749-a7f4-e8f7-3502ef9a64f5" valign="top" align="left">Product-specific checks for exchange sets</td>
+<td id="_6401c529-a171-54f9-8af3-e785c6cba736" valign="top" align="left">S-158:102 checks numbered 102_Dev9xxx</td>
+<td id="_51491e94-e3d9-08df-f8b0-629a274b811e" valign="top" align="left">Exchange set</td>
+</tr><tr id="_d54dd6ae-f485-b430-9333-2be6675e2cab"><td id="_38217f2f-7c69-bc2d-8cb4-eedc953e864f" valign="top" align="left">8</td>
+<td id="_3d82e4f9-0bd8-8132-8689-f91d905e3597" valign="top" align="left">Product catalogue checks</td>
+<td id="_d4975c7a-88c7-6a1e-f75e-ce1500d92fc5" valign="top" align="left">S-158:128</td>
+<td id="_daeb7dfe-66c4-b998-d272-3cade076c701" valign="top" align="left">S-128 datasets describing S-102 datasets</td>
+</tr></tbody>
+</table>
+</clause>
+
+<clause id="_b95e7e77-3e22-fb81-4983-be7a9e696d4f" anchor="sec_7" obligation="normative">
+<title id="_f9aef338-ae60-92c6-543a-dcf8dc5ef0e9">Check Classification</title>
+<p id="_58af04d0-f1f5-2c15-bf8c-5f781d81543f">The check classification conforms to the scheme described in <eref type="inline" bibitemid="S_158" citeas="S-158"/>.</p>
+</clause>
+
+<clause id="_22ccbd90-fea8-9cdd-2bfa-389b7c2f3f38" anchor="sec_8" obligation="normative">
+<title id="_f5e87630-81ac-d23d-ab27-f55aaa495f79">Geometry and Spatial Operators</title>
+<p id="_c140061a-dcfa-cd6c-3d55-492db8a4a239">S-102 Edition 3.0.0 datasets use vector geometry only for domain extent polygons. Any spatial operators mentioned in checks on domain extent polygons conform to the operators for vector products described in S-158.</p>
+
+<p id="_a79e7ff9-1f47-76c7-4e8f-b41cf0c799b7">For all spatial operators a default tolerance of [??? — PT to decide] should be applied in validation software.</p>
+</clause>
+
+<clause id="_5a9485dc-dca6-1cd1-5d1c-6f897f40baf8" anchor="sec_9" obligation="normative">
+<title id="_7bdd1193-badc-8d69-d079-c762f88bbc45">Other Components of this Specification</title>
+<p id="_69137e6b-696f-9459-3cb0-2441a514a7ef">The other components of this Specification listed below are provided as separate documents or artefacts accompanying this document and form an integral part of this Specification.</p>
+
+<ol id="_f26f2fa7-ce1a-4677-5c06-e1834c588dd0" type="arabic"><li><p id="_febed3a7-e2eb-ef1f-2d7c-a2f8b4e8edf3">Spreadsheet of S-102 validation checks named S158_102_0_2_0_YYYYMMDD of the latest build date. (The build date is the YYYYMMDD suffix in the file name.)</p>
+</li>
+</ol>
+</clause>
+
+<clause id="_07ff92e5-07fa-a525-386d-6b0f27dc64b6" anchor="sec_10" obligation="normative">
+<title id="_6fcc9dae-3444-ec3d-0b3b-16f0a3d9c315">Product-specific Validation Checks</title>
+<p id="_1fc0f939-0063-71d7-2735-f9eb7299582d">The product-specific validation checks defined in this document are listed in this clause. The same checks are also provided as a spreadsheet, as described in  <xref target="sec_9"/>.</p>
+
+<sourcecode id="_713b559f-e3e7-9aed-4c37-677de0f4e7e9" linenums="true"><body>{% for check in s158.S158Checks.checks -%}
+=== {{ check.dev_id }}
+
+Classification:: {{ check.classification }}
+{%- if check.check_message %}
+
+Check message:: {{ check.check_message }}
+{% endif -%}
+{%- if check.check_description %}
+
+Check description:: {{ check.check_description }}
+{% endif -%}
+{%- if check.check_solution %}
+
+Solution:: {{ check.check_solution }}
+{% endif -%}
+{%- if check.standards_document_reference or check.clause_reference %}
+
+Reference:: {{ check.standards_document_reference }}{%- if check.standards_document_reference and check.clause_reference %}, {% endif %}{{ check.clause_reference }}
+{% endif -%}
+{%- if check.data_quality_measure %}
+
+Data quality measures:: {{ check.data_quality_measure | join: "; " }}
+{% endif -%}
+{%- if check.introduced %}
+
+Introduced:: {{ check.introduced }}
+{% endif -%}
+{%- if check.modified %}
+
+Modified:: {{ check.modified }}
+{% endif -%}
+{%- if check.deleted %}
+
+Deleted:: {{ check.deleted }}
+{% endif -%}
+{%- if check.prerequisites %}
+
+Prerequisites:: {{ check.prerequisites | join: "; " }}
+{% endif -%}
+{%- if check.terminate_if_failure %}
+Terminate if failure:: {{ check.terminate_if_failure }}
+{% else %}
+Terminate if failure:: false
+{% endif -%}
+{%- if check.old_dev_id %}
+
+Old Dev ID:: {{ check.old_dev_id }}
+{% endif -%}
+{%- if check.notes %}
+
+Notes:: {{ check.notes }}
+{% endif %}
+
+{% endfor %}</body></sourcecode>
+
+</clause>
+
+
+</sections><bibliography><references id="_9f5e74af-b79e-a830-63f5-8e03ccf3f8cf" normative="false" obligation="informative">
+<title id="_2b4ed339-a7ed-1bbb-9576-55fcbc1ace3a">Bibliography</title><bibitem id="_bbc1c161-97f2-38a5-ded9-0b99cd732374" type="standard" schema-version="v1.5.6" anchor="ISO_19101" hidden="true">
+  <fetched>2026-09-30</fetched>
+  
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
+
+  
+<title language="en" script="Latn" type="title-main">Reference model</title>
+
+  
+<title language="en" script="Latn" type="main">Geographic information — Reference model</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Modèle de référence</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Modèle de référence</title>
+
+  <uri type="src">https://www.iso.org/standard/26002.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:26002:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/02/60/26002.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19101</docidentifier>
+  <docidentifier type="iso-undated">ISO 19101</docidentifier>
+  <docidentifier type="iso-reference">ISO 19101(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19101:stage-95.99</docidentifier>
+  <docnumber>19101</docnumber>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier>ISO/TC 211</identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <script>Latn</script>
+  <status>
+    <stage>95</stage>
+    <substage>99</substage>
+  </status>
+  <copyright>
+    <from>2002</from>
+    <owner>
+      <organization>
+        
+<name>ISO</name>
+
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO 19101-1:2014</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19101-1:2014</docidentifier>
+      <date type="published">
+        <on>2014-11-12</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="instanceOf">
+    <bibitem type="standard">
+      
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
+
+      
+<title language="en" script="Latn" type="title-main">Reference model</title>
+
+      
+<title language="en" script="Latn" type="main">Geographic information — Reference model</title>
+
+      
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+      
+<title language="fr" script="Latn" type="title-main">Modèle de référence</title>
+
+      
+<title language="fr" script="Latn" type="main">Information géographique — Modèle de référence</title>
+
+      <uri type="src">https://www.iso.org/standard/26002.html</uri>
+      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:26002:en</uri>
+      <uri type="rss">https://www.iso.org/contents/data/standard/02/60/26002.detail.rss</uri>
+      <docidentifier type="ISO" primary="true">ISO 19101:2002</docidentifier>
+      <docidentifier type="iso-undated">ISO 19101</docidentifier>
+      <docidentifier type="iso-reference">ISO 19101:2002(E)</docidentifier>
+      <docidentifier type="URN">urn:iso:std:iso:19101:stage-95.99</docidentifier>
+      <docnumber>19101</docnumber>
+      <date type="published">
+        <on>2002-07-04</on>
+      </date>
+      <contributor>
+        <role type="publisher"/>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <abbreviation>ISO</abbreviation>
+          <uri>www.iso.org</uri>
+        </organization>
+      </contributor>
+      <contributor>
+        <role type="author">
+          <description>committee</description>
+        </role>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <subdivision type="technical-committee" subtype="TC">
+            
+<name>Geographic information/Geomatics</name>
+
+            <identifier>ISO/TC 211</identifier>
+          </subdivision>
+          <abbreviation>ISO</abbreviation>
+        </organization>
+      </contributor>
+      <edition>1</edition>
+      <language>en</language>
+      <script>Latn</script>
+      <abstract language="en" script="Latn">This International Standard defines the framework for standardization in the field of geographic information and sets forth the basic principles by which this standardization takes place. This framework identifies the scope of the standardization activity being undertaken and the context in which it takes place. The framework provides the method by which what is to be standardized can be determined and describes how the contents of the standards are related. Although structured in the context of information technology and information technology standards, this International Standard is independent of any application development method or technology implementation approach.</abstract>
+      <status>
+        <stage>95</stage>
+        <substage>99</substage>
+      </status>
+      <copyright>
+        <from>2002</from>
+        <owner>
+          <organization>
+            
+<name>ISO</name>
+
+          </organization>
+        </owner>
+      </copyright>
+      <relation type="obsoletedBy">
+        <bibitem>
+          <formattedref>ISO 19101-1:2014</formattedref>
+          <docidentifier type="ISO" primary="true">ISO 19101-1:2014</docidentifier>
+          <date type="published">
+            <on>2014-11-12</on>
+          </date>
+        </bibitem>
+
+      </relation>
+      <place>
+        <city>Geneva</city>
+      </place>
+    </bibitem>
+
+  </relation>
+  <place>
+    <city>Geneva</city>
+  </place>
+</bibitem><bibitem id="_09e0e473-8528-b3c7-8deb-87f712c7c8d3" type="standard" schema-version="v1.5.6" anchor="ISO_19107" hidden="true">
+  <fetched>2026-09-30</fetched>
+  
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
+
+  
+<title language="en" script="Latn" type="title-main">Spatial schema</title>
+
+  
+<title language="en" script="Latn" type="main">Geographic information — Spatial schema</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Schéma spatial</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Schéma spatial</title>
+
+  <uri type="src">https://www.iso.org/standard/26012.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:26012:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/02/60/26012.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19107</docidentifier>
+  <docidentifier type="iso-undated">ISO 19107</docidentifier>
+  <docidentifier type="iso-reference">ISO 19107(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19107:stage-95.99</docidentifier>
+  <docnumber>19107</docnumber>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier>ISO/TC 211</identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <script>Latn</script>
+  <status>
+    <stage>60</stage>
+    <substage>60</substage>
+  </status>
+  <copyright>
+    <from>2003</from>
+    <owner>
+      <organization>
+        
+<name>ISO</name>
+
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="instanceOf">
+    <bibitem type="standard">
+      
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
+
+      
+<title language="en" script="Latn" type="title-main">Spatial schema</title>
+
+      
+<title language="en" script="Latn" type="main">Geographic information — Spatial schema</title>
+
+      
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+      
+<title language="fr" script="Latn" type="title-main">Schéma spatial</title>
+
+      
+<title language="fr" script="Latn" type="main">Information géographique — Schéma spatial</title>
+
+      <uri type="src">https://www.iso.org/standard/26012.html</uri>
+      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:26012:en</uri>
+      <uri type="rss">https://www.iso.org/contents/data/standard/02/60/26012.detail.rss</uri>
+      <docidentifier type="ISO" primary="true">ISO 19107:2003</docidentifier>
+      <docidentifier type="iso-undated">ISO 19107</docidentifier>
+      <docidentifier type="iso-reference">ISO 19107:2003(E)</docidentifier>
+      <docidentifier type="URN">urn:iso:std:iso:19107:stage-95.99</docidentifier>
+      <docnumber>19107</docnumber>
+      <date type="published">
+        <on>2003-05-08</on>
+      </date>
+      <contributor>
+        <role type="publisher"/>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <abbreviation>ISO</abbreviation>
+          <uri>www.iso.org</uri>
+        </organization>
+      </contributor>
+      <contributor>
+        <role type="author">
+          <description>committee</description>
+        </role>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <subdivision type="technical-committee" subtype="TC">
+            
+<name>Geographic information/Geomatics</name>
+
+            <identifier>ISO/TC 211</identifier>
+          </subdivision>
+          <abbreviation>ISO</abbreviation>
+        </organization>
+      </contributor>
+      <edition>1</edition>
+      <language>en</language>
+      <script>Latn</script>
+      <abstract language="en" script="Latn">ISO 19107:2003 specifies conceptual schemas for describing the spatial characteristics of geographic features, and a set of spatial operations consistent with these schemas. It treats vector geometry and topology up to three dimensions. It defines standard spatial operations for use in access, query, management, processing, and data exchange of geographic information for spatial (geometric and topological) objects of up to three topological dimensions embedded in coordinate spaces of up to three axes.</abstract>
+      <status>
+        <stage>60</stage>
+        <substage>60</substage>
+      </status>
+      <copyright>
+        <from>2003</from>
+        <owner>
+          <organization>
+            
+<name>ISO</name>
+
+          </organization>
+        </owner>
+      </copyright>
+      <place>
+        <city>Geneva</city>
+      </place>
+    </bibitem>
+
+  </relation>
+  <place>
+    <city>Geneva</city>
+  </place>
+</bibitem><bibitem id="_9be910a1-940f-d4d2-918d-83191903dfb7" type="standard" schema-version="v1.5.6" anchor="ISO_19103" hidden="true">
+  <fetched>2026-09-30</fetched>
+  
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
+
+  
+<title language="en" script="Latn" type="title-main">Conceptual schema language</title>
+
+  
+<title language="en" script="Latn" type="main">Geographic information — Conceptual schema language</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Langage de schéma conceptuel</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Langage de schéma conceptuel</title>
+
+  <uri type="src">https://www.iso.org/standard/56734.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:56734:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/05/67/56734.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19103</docidentifier>
+  <docidentifier type="iso-undated">ISO 19103</docidentifier>
+  <docidentifier type="iso-reference">ISO 19103(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19103:stage-95.99</docidentifier>
+  <docnumber>19103</docnumber>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier>ISO/TC 211</identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <script>Latn</script>
+  <status>
+    <stage>60</stage>
+    <substage>60</substage>
+  </status>
+  <copyright>
+    <from>2015</from>
+    <owner>
+      <organization>
+        
+<name>ISO</name>
+
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO/TS 19103:2005</formattedref>
+      <docidentifier type="ISO" primary="true">ISO/TS 19103:2005</docidentifier>
+      <date type="published">
+        <on>2005-07-18</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="instanceOf">
+    <bibitem type="standard">
+      
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
+
+      
+<title language="en" script="Latn" type="title-main">Conceptual schema language</title>
+
+      
+<title language="en" script="Latn" type="main">Geographic information — Conceptual schema language</title>
+
+      
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+      
+<title language="fr" script="Latn" type="title-main">Langage de schéma conceptuel</title>
+
+      
+<title language="fr" script="Latn" type="main">Information géographique — Langage de schéma conceptuel</title>
+
+      <uri type="src">https://www.iso.org/standard/56734.html</uri>
+      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:56734:en</uri>
+      <uri type="rss">https://www.iso.org/contents/data/standard/05/67/56734.detail.rss</uri>
+      <docidentifier type="ISO" primary="true">ISO 19103:2015</docidentifier>
+      <docidentifier type="iso-undated">ISO 19103</docidentifier>
+      <docidentifier type="iso-reference">ISO 19103:2015(E)</docidentifier>
+      <docidentifier type="URN">urn:iso:std:iso:19103:stage-95.99</docidentifier>
+      <docnumber>19103</docnumber>
+      <date type="published">
+        <on>2015-12-02</on>
+      </date>
+      <contributor>
+        <role type="publisher"/>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <abbreviation>ISO</abbreviation>
+          <uri>www.iso.org</uri>
+        </organization>
+      </contributor>
+      <contributor>
+        <role type="author">
+          <description>committee</description>
+        </role>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <subdivision type="technical-committee" subtype="TC">
+            
+<name>Geographic information/Geomatics</name>
+
+            <identifier>ISO/TC 211</identifier>
+          </subdivision>
+          <abbreviation>ISO</abbreviation>
+        </organization>
+      </contributor>
+      <edition>1</edition>
+      <language>en</language>
+      <script>Latn</script>
+      <abstract language="en" script="Latn">ISO 19103:2015 provides rules and guidelines for the use of a conceptual schema language within the context of geographic information. The chosen conceptual schema language is the Unified Modeling Language (UML). ISO 19103.2015 provides a profile of the Unified Modelling Language (UML). The standardization target type of this standard is UML schemas describing geographic information.</abstract>
+      <status>
+        <stage>60</stage>
+        <substage>60</substage>
+      </status>
+      <copyright>
+        <from>2015</from>
+        <owner>
+          <organization>
+            
+<name>ISO</name>
+
+          </organization>
+        </owner>
+      </copyright>
+      <relation type="obsoletes">
+        <bibitem>
+          <formattedref>ISO/TS 19103:2005</formattedref>
+          <docidentifier type="ISO" primary="true">ISO/TS 19103:2005</docidentifier>
+          <date type="published">
+            <on>2005-07-18</on>
+          </date>
+        </bibitem>
+
+      </relation>
+      <place>
+        <city>Geneva</city>
+      </place>
+    </bibitem>
+
+  </relation>
+  <place>
+    <city>Geneva</city>
+  </place>
+</bibitem>
+
+
+
+</references></bibliography>
+</metanorma>
