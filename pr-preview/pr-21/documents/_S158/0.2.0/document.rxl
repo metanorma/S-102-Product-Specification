@@ -5,9 +5,9 @@
 <abbreviation>IHO</abbreviation></organization></contributor><contributor><role type="author"><description>committee</description></role><organization>
 <name>International Hydrographic Organization</name>
 <subdivision type="Committee">
-<name>ircc</name>
+<name>hssc</name>
 </subdivision><subdivision type="Workgroup">
-<name>ibsc</name>
+<name>s100wg</name>
 </subdivision></organization></contributor><contributor><role type="publisher"/><organization>
 <name>International Hydrographic Organization</name>
 <abbreviation>IHO</abbreviation></organization></contributor><edition>0.2.0</edition><language>en</language><script>Latn</script><status><stage>in-force</stage></status><copyright><from>2016</from><owner><organization>
