@@ -5,8 +5,8 @@
 :edition: 0.2.0
 :language: en
 :published-date:
-:copyright-year: 2016
-:draft:
+:copyright-year: 2024
+:status: draft-development
 :committee: hssc
 :workgroup: s100wg
 :mn-document-class: iho
