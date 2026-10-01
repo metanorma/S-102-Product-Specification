@@ -93,7 +93,7 @@ sourcecode .nt {
 <p id="_97e42f9b-3105-52f2-2d0d-02ccff68dfbb" semx-id="_97e42f9b-3105-52f2-2d0d-02ccff68dfbb">Published by the<br/> International Hydrographic Organization<br/> 4b quai Antoine 1<sup>er</sup><br/> Principauté de Monaco<br/> Tel: (377) 93.10.81.00<br/> Fax: (377) 93.10.81.40<br/> info@iho.int<br/> \www.iho.int<br/></p>
 </feedback-statement>
 </boilerplate><preface><clause type="toc" id="_13d7055e-30fc-845a-c60e-8972faf092d9" displayorder="1"><fmt-title depth="1" id="_b7371af6-75a1-52fa-2891-5c5f9a06aa7c">Contents</fmt-title></clause>
-<introduction id="sec_1" anchor="sec_1" obligation="informative" semx-id="_9837ec58-d318-490e-4661-ef697e49a9e9" displayorder="2">
+<introduction id="sec_1" anchor="sec_1" obligation="informative" semx-id="_a959fb8b-7553-56bc-02e8-cdc7b81163b9" displayorder="2">
 <title id="_b38ada55-dbb2-ab1b-c2a6-8df84683ce4d" semx-id="_2b2e98d1-114a-3da4-8556-01ae0a724280">Introduction</title><fmt-title depth="1" id="_bbacb8dc-03a0-2e46-32b5-ff25b5f76dc6"><semx element="title" source="_b38ada55-dbb2-ab1b-c2a6-8df84683ce4d">Introduction</semx></fmt-title>
 <p id="_6c1bfd81-f649-8312-b10c-1718104a89ac" semx-id="_6c1bfd81-f649-8312-b10c-1718104a89ac">This document specifies a set of checks that producers of S-102 Bathymetric Surface validation tools must implement in their validation software. Validation software is used to ensure that S-102 data are compliant with the S-102 Product Specification. The initial list of checks for S-102 was compiled by the IHO S-102 Project Team of the IHO S-100 Working Group.</p>
 
@@ -117,544 +117,41 @@ sourcecode .nt {
 <p id="_a305f57c-9bcf-7221-9897-a4bb3390442b" semx-id="_a305f57c-9bcf-7221-9897-a4bb3390442b">The validation checks described herein conform to Edition(s) 3.0.x of IHO Product Specification S-102 (Bathymetric Surface).</p>
 </clause>
 
-<clause id="sec_1.3" anchor="sec_1.3" obligation="informative" semx-id="_2f951734-d5d9-5986-5bb0-37abee1049da">
+<clause id="sec_1.3" anchor="sec_1.3" obligation="informative" semx-id="_a39e0d68-a439-f378-bdbf-dca212aa2bb6">
 <title id="_a3ada455-2500-f757-194f-338f62f1b105" semx-id="_405d7e76-c420-1ba1-fa0d-60626febc31e">References</title><fmt-title depth="2" id="_7ff3da0d-16e1-2c0f-d7d3-0fe2e7fff58b"><semx element="title" source="_a3ada455-2500-f757-194f-338f62f1b105">References</semx></fmt-title>
-<references id="sec_1.3.1" anchor="sec_1.3.1" normative="true" obligation="informative" semx-id="_06ccdbe4-5396-2305-2c26-3cae24bca17e">
+<references id="sec_1.3.1" anchor="sec_1.3.1" normative="true" obligation="informative" semx-id="_0935b917-5ae0-eadb-1cd2-286230b1c867">
 <title id="_7da89ea1-ebee-4630-c67f-00ba3dd53b0e" semx-id="_747142f9-64e9-61a7-c6f5-2f2245874721">Normative references</title><fmt-title depth="3" id="_f5fb1f9d-41f7-780d-ae4d-1248f2524418"><semx element="title" source="_7da89ea1-ebee-4630-c67f-00ba3dd53b0e">Normative references</semx></fmt-title>
-<bibitem id="S_98" type="standard" schema-version="v1.5.6" anchor="S_98" semx-id="_df361a49-3cb1-353d-89b9-85de498a3e7b"><biblio-tag>[1]<tab/></biblio-tag><formattedref>S-98 edition 1.0.0: Data Product Interoperability in S-100 Navigation Systems, International Hydrographic Organization, committee, International Hydrographic Organization (<fmt-link target="http://registry.iho.int/beta/guidance/list.do">http://registry.iho.int/beta/guidance/list.do</fmt-link>).</formattedref>
-  <fetched>2026-09-30</fetched>
-  
-<title language="en" type="main">Data Product Interoperability in S-100 Navigation Systems</title>
-
-  <uri type="pdf">http://registry.iho.int/beta/guidance/list.do</uri>
-  <docidentifier type="IHO" primary="true">S-98</docidentifier><docidentifier scope="biblio-tag">S-98</docidentifier>
-  <docnumber>98</docnumber>
-  <date type="published">
-    <from>2022-05-23</from>
-  </date>
-  <contributor>
-    <role type="publisher"/>
-    <organization>
-      
-<name>International Hydrographic Organization</name>
-
-      <abbreviation>IHO</abbreviation>
-      <uri>www.iho.int</uri>
-    </organization>
-  </contributor>
-  <contributor>
-    <role type="author">
-      <description>committee</description>
-    </role>
-    <organization>
-      
-<name>International Hydrographic Organization</name>
-
-      <subdivision type="technical-committee">
-        
-<name>Hydrographic Services and Standards Committee</name>
-
-        <identifier id="_035c6a12-8643-686d-a959-56015579d162">HSSC</identifier><fmt-identifier><tt><semx element="identifier" source="_035c6a12-8643-686d-a959-56015579d162">HSSC</semx></tt></fmt-identifier>
-      </subdivision>
-      <abbreviation>IHO</abbreviation>
-    </organization>
-  </contributor>
-  <edition>1.0.0</edition>
-  <version>2022-05-23</version>
-  <language>en</language>
-  <script>Latn</script>
-  <status>
-    <stage>in-force</stage>
-  </status>
-  <copyright>
-    <from>2022</from>
-    <owner>
-      <organization>
-        
-<name>International Hydrographic Organization</name>
-
-        <abbreviation>IHO</abbreviation>
-        <uri>www.iho.int</uri>
-      </organization>
-    </owner>
-  </copyright>
-  <series type="main">
-    
-<title language="en" script="Latn" type="original">Standards and Specifications</title>
-
-    <place>
-      <formattedPlace>Monaco</formattedPlace>
-    </place>
-    <organization>International Hydrographic Organization</organization>
-    <number>S</number>
-  </series>
-  <place>
-    <formattedPlace>Monaco</formattedPlace>
-  </place>
-  <validity>
-    <validityBegins>2022-05-23T00:00:00Z</validityBegins>
-  </validity>
-</bibitem>
-<bibitem id="S_100" type="standard" schema-version="v1.5.6" anchor="S_100" semx-id="_ba1863ae-8031-a7f1-654a-b4dada455d6f"><biblio-tag>[2]<tab/></biblio-tag><formattedref>S-100 edition 5.2.0: IHO Universal Hydrographic Data Model, International Hydrographic Organization, committee, International Hydrographic Organization (<fmt-link target="https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf">https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf</fmt-link>).</formattedref>
-  <fetched>2026-09-30</fetched>
-  
-<title language="en" type="main">IHO Universal Hydrographic Data Model</title>
-
-  
-<title language="fr" type="main">Modèle universel de données hydrographiques de l’OHI</title>
-
-  <uri type="pdf">https://iho.int/uploads/user/pubs/standards/s-100/S-100_5.2.0_Final_Clean.pdf</uri>
-  <docidentifier type="IHO" primary="true">S-100</docidentifier><docidentifier scope="biblio-tag">S-100</docidentifier>
-  <docnumber>100</docnumber>
-  <date type="published">
-    <from>2024-06-07</from>
-  </date>
-  <contributor>
-    <role type="publisher"/>
-    <organization>
-      
-<name>International Hydrographic Organization</name>
-
-      <abbreviation>IHO</abbreviation>
-      <uri>www.iho.int</uri>
-    </organization>
-  </contributor>
-  <contributor>
-    <role type="author">
-      <description>committee</description>
-    </role>
-    <organization>
-      
-<name>International Hydrographic Organization</name>
-
-      <subdivision type="technical-committee">
-        
-<name>Hydrographic Services and Standards Committee</name>
-
-        <identifier id="_7f1cbe5c-eac5-1d32-9623-428f770ce599">HSSC</identifier><fmt-identifier><tt><semx element="identifier" source="_7f1cbe5c-eac5-1d32-9623-428f770ce599">HSSC</semx></tt></fmt-identifier>
-      </subdivision>
-      <abbreviation>IHO</abbreviation>
-    </organization>
-  </contributor>
-  <edition>5.2.0</edition>
-  <version>2024-06-07</version>
-  <language>en</language>
-  <language>fr</language>
-  <script>Latn</script>
-  <status>
-    <stage>in-force</stage>
-  </status>
-  <copyright>
-    <from>2023</from>
-    <owner>
-      <organization>
-        
-<name>International Hydrographic Organization</name>
-
-        <abbreviation>IHO</abbreviation>
-        <uri>www.iho.int</uri>
-      </organization>
-    </owner>
-  </copyright>
-  <series type="main">
-    
-<title language="en" script="Latn" type="original">Standards and Specifications</title>
-
-    
-<title language="fr" script="Latn" type="original">Normes et Spécifications</title>
-
-    <place>
-      <formattedPlace>Monaco</formattedPlace>
-    </place>
-    <organization>International Hydrographic Organization</organization>
-    <number>S</number>
-  </series>
-  <place>
-    <formattedPlace>Monaco</formattedPlace>
-  </place>
-  <validity>
-    <validityBegins>2024-06-07T00:00:00Z</validityBegins>
-  </validity>
-</bibitem>
-<bibitem id="S_102" type="standard" schema-version="v1.5.6" anchor="S_102" semx-id="_c2c2b846-4b9a-879d-b293-73d7e8665586"><biblio-tag>[3]<tab/></biblio-tag><formattedref>S-102 edition 1.0.0: Bathymetric Surface Product Specification, International Hydrographic Organization, committee, International Hydrographic Organization (<fmt-link target="https://registry.iho.int/productspec/view.do?idx=199&amp;product_ID=S-102">https://registry.iho.int/productspec/view.do?idx=199&amp;product_ID=S-102</fmt-link>).</formattedref>
-  <fetched>2026-09-30</fetched>
-  
-<title language="en" type="main">Bathymetric Surface Product Specification</title>
-
-  
-<title language="fr" type="main">Spécification de produit pour la surface bathymétrique</title>
-
-  <uri type="pdf">https://registry.iho.int/productspec/view.do?idx=199&amp;product_ID=S-102</uri>
-  <docidentifier type="IHO" primary="true">S-102</docidentifier><docidentifier scope="biblio-tag">S-102</docidentifier>
-  <docnumber>102</docnumber>
-  <date type="published">
-    <from>2012-04-30</from>
-  </date>
-  <contributor>
-    <role type="publisher"/>
-    <organization>
-      
-<name>International Hydrographic Organization</name>
-
-      <abbreviation>IHO</abbreviation>
-      <uri>www.iho.int</uri>
-    </organization>
-  </contributor>
-  <contributor>
-    <role type="author">
-      <description>committee</description>
-    </role>
-    <organization>
-      
-<name>International Hydrographic Organization</name>
-
-      <subdivision type="technical-committee">
-        
-<name>Hydrographic Services and Standards Committee</name>
-
-        <identifier id="_70cbbf45-66d8-2a5f-8f13-7415db893a03">HSSC</identifier><fmt-identifier><tt><semx element="identifier" source="_70cbbf45-66d8-2a5f-8f13-7415db893a03">HSSC</semx></tt></fmt-identifier>
-      </subdivision>
-      <abbreviation>IHO</abbreviation>
-    </organization>
-  </contributor>
-  <edition>1.0.0</edition>
-  <version>2012-04-30</version>
-  <language>en</language>
-  <language>fr</language>
-  <script>Latn</script>
-  <status>
-    <stage>in-force</stage>
-  </status>
-  <copyright>
-    <from>2012</from>
-    <owner>
-      <organization>
-        
-<name>International Hydrographic Organization</name>
-
-        <abbreviation>IHO</abbreviation>
-        <uri>www.iho.int</uri>
-      </organization>
-    </owner>
-  </copyright>
-  <series type="main">
-    
-<title language="en" script="Latn" type="original">Standards and Specifications</title>
-
-    
-<title language="fr" script="Latn" type="original">Normes et Spécifications</title>
-
-    <place>
-      <formattedPlace>Monaco</formattedPlace>
-    </place>
-    <organization>International Hydrographic Organization</organization>
-    <number>S</number>
-  </series>
-  <place>
-    <formattedPlace>Monaco</formattedPlace>
-  </place>
-  <validity>
-    <validityBegins>2012-04-30T00:00:00Z</validityBegins>
-  </validity>
-</bibitem>
-<bibitem id="S_158" type="standard" schema-version="v1.5.6" anchor="S_158" semx-id="_cc41df09-b8e1-611a-fb07-0e52d51b5b96"><biblio-tag>[4]<tab/></biblio-tag><formattedref>S-158 edition 1.0.0: Validation Checks — Introduction and Structure, International Hydrographic Organization, committee, International Hydrographic Organization (<fmt-link target="https://iho.int/uploads/user/pubs/standards/S-158/S-158_Validation_Checks_Introduction_and_Structure_Ed_1.0.0.pdf">https://iho.int/uploads/user/pubs/standards/S-158/S-158_Validation_Checks_Introduction_and_Structure_Ed_1.0.0.pdf</fmt-link>).</formattedref>
-  <fetched>2026-09-30</fetched>
-  
-<title language="en" type="main">Validation Checks — Introduction and Structure</title>
-
-  
-<title language="fr" type="main">Contrôles de validation — Introduction et structure</title>
-
-  <uri type="pdf">https://iho.int/uploads/user/pubs/standards/S-158/S-158_Validation_Checks_Introduction_and_Structure_Ed_1.0.0.pdf</uri>
-  <docidentifier type="IHO" primary="true">S-158</docidentifier><docidentifier scope="biblio-tag">S-158</docidentifier>
-  <docnumber>158</docnumber>
-  <date type="published">
-    <from>2025-02-01</from>
-  </date>
-  <contributor>
-    <role type="publisher"/>
-    <organization>
-      
-<name>International Hydrographic Organization</name>
-
-      <abbreviation>IHO</abbreviation>
-      <uri>www.iho.int</uri>
-    </organization>
-  </contributor>
-  <contributor>
-    <role type="author">
-      <description>committee</description>
-    </role>
-    <organization>
-      
-<name>International Hydrographic Organization</name>
-
-      <subdivision type="technical-committee">
-        
-<name>Hydrographic Services and Standards Committee</name>
-
-        <identifier id="_ad2d8058-a1a6-7594-476b-b18dddb8e4e5">HSSC</identifier><fmt-identifier><tt><semx element="identifier" source="_ad2d8058-a1a6-7594-476b-b18dddb8e4e5">HSSC</semx></tt></fmt-identifier>
-      </subdivision>
-      <abbreviation>IHO</abbreviation>
-    </organization>
-  </contributor>
-  <edition>1.0.0</edition>
-  <version>2025-02-01</version>
-  <language>en</language>
-  <script>Latn</script>
-  <status>
-    <stage>in-force</stage>
-  </status>
-  <copyright>
-    <from>2025</from>
-    <owner>
-      <organization>
-        
-<name>International Hydrographic Organization</name>
-
-        <abbreviation>IHO</abbreviation>
-        <uri>www.iho.int</uri>
-      </organization>
-    </owner>
-  </copyright>
-  <series type="main">
-    
-<title language="en" script="Latn" type="original">Standards and Specifications</title>
-
-    
-<title language="fr" script="Latn" type="original">Normes et Spécifications</title>
-
-    <place>
-      <formattedPlace>Monaco</formattedPlace>
-    </place>
-    <organization>International Hydrographic Organization</organization>
-    <number>S</number>
-  </series>
-  <place>
-    <formattedPlace>Monaco</formattedPlace>
-  </place>
-  <validity>
-    <validityBegins>2025-02-01T00:00:00Z</validityBegins>
-  </validity>
-</bibitem>
-<bibitem id="S_158_100" type="standard" schema-version="v1.5.6" anchor="S_158_100" semx-id="_8130d909-4907-3246-3c88-689a11a16540"><biblio-tag>[5]<tab/></biblio-tag><formattedref>S-158:100 edition 1.0.0: Universal Hydrographic Data Model Validation Checks, International Hydrographic Organization, committee, International Hydrographic Organization (<fmt-link target="https://iho.int/uploads/user/pubs/standards/S-158_100/S-158-100_Validation_Checks_Ed_1.0.0.zip">https://iho.int/uploads/user/pubs/standards/S-158_100/S-158-100_Validation_Checks_Ed_1.0.0.zip</fmt-link>).</formattedref>
-  <fetched>2026-09-30</fetched>
-  
-<title language="en" type="main">Universal Hydrographic Data Model Validation Checks</title>
-
-  
-<title language="fr" type="main">Vérifications de validation du Modèle universel de données hydrographiques</title>
-
-  <uri type="pdf">https://iho.int/uploads/user/pubs/standards/S-158_100/S-158-100_Validation_Checks_Ed_1.0.0.zip</uri>
-  <docidentifier type="IHO" primary="true">S-158:100</docidentifier><docidentifier scope="biblio-tag">S-158:100</docidentifier>
-  <docnumber>158:100</docnumber>
-  <date type="published">
-    <from>2025-02-01</from>
-  </date>
-  <contributor>
-    <role type="publisher"/>
-    <organization>
-      
-<name>International Hydrographic Organization</name>
-
-      <abbreviation>IHO</abbreviation>
-      <uri>www.iho.int</uri>
-    </organization>
-  </contributor>
-  <contributor>
-    <role type="author">
-      <description>committee</description>
-    </role>
-    <organization>
-      
-<name>International Hydrographic Organization</name>
-
-      <subdivision type="technical-committee">
-        
-<name>Hydrographic Services and Standards Committee</name>
-
-        <identifier id="_13b62fd5-3599-ffbf-7737-db4e935156b3">HSSC</identifier><fmt-identifier><tt><semx element="identifier" source="_13b62fd5-3599-ffbf-7737-db4e935156b3">HSSC</semx></tt></fmt-identifier>
-      </subdivision>
-      <abbreviation>IHO</abbreviation>
-    </organization>
-  </contributor>
-  <edition>1.0.0</edition>
-  <version>2025-02-01</version>
-  <language>en</language>
-  <script>Latn</script>
-  <status>
-    <stage>in-force</stage>
-  </status>
-  <copyright>
-    <from>2025</from>
-    <owner>
-      <organization>
-        
-<name>International Hydrographic Organization</name>
-
-        <abbreviation>IHO</abbreviation>
-        <uri>www.iho.int</uri>
-      </organization>
-    </owner>
-  </copyright>
-  <series type="main">
-    
-<title language="en" script="Latn" type="original">Standards and Specifications</title>
-
-    
-<title language="fr" script="Latn" type="original">Normes et Spécifications</title>
-
-    <place>
-      <formattedPlace>Monaco</formattedPlace>
-    </place>
-    <organization>International Hydrographic Organization</organization>
-    <number>S</number>
-  </series>
-  <place>
-    <formattedPlace>Monaco</formattedPlace>
-  </place>
-  <validity>
-    <validityBegins>2025-02-01T00:00:00Z</validityBegins>
-  </validity>
-</bibitem>
+<bibitem anchor="S_98" id="S_98" semx-id="_9858840f-420c-b755-1da8-d9eb8e146132"><biblio-tag>[1]<tab/></biblio-tag><formattedref format="application/x-isodoc+xml"><em>Data Product Interoperability in S-100 Navigation
+Systems</em>, IHO Publication S-98, Edition 2.0.0, ??? 2024. In Preparation.</formattedref><docidentifier type="IHO">IHO S-98</docidentifier><docidentifier scope="biblio-tag">IHO S-98</docidentifier><docnumber>98</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem anchor="S_100" id="S_100" semx-id="_cf205be5-a200-849d-2003-2d9bb94ec54f"><biblio-tag>[2]<tab/></biblio-tag><formattedref format="application/x-isodoc+xml"><em>IHO Universal Hydrographic Data Model</em>, Edition
+5.2.0, June 2024.</formattedref><docidentifier type="IHO">IHO S-100</docidentifier><docidentifier scope="biblio-tag">IHO S-100</docidentifier><docnumber>100</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem anchor="S_102" id="S_102" semx-id="_bac92bfb-de6e-2501-68fb-fa685afdd0dd"><biblio-tag>[3]<tab/></biblio-tag><formattedref format="application/x-isodoc+xml"><em>Bathymetric Surface Product Specification</em>, Edition
+3.0.0, ??? 2024. In preparation.</formattedref><docidentifier type="IHO">IHO S-102</docidentifier><docidentifier scope="biblio-tag">IHO S-102</docidentifier><docnumber>102</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem anchor="S_158" id="S_158" semx-id="_33ee29b0-4bb4-3ce2-3e96-ef3dbf11857a"><biblio-tag>[4]<tab/></biblio-tag><formattedref format="application/x-isodoc+xml"><em>Validation Checks — Introduction and Structure</em>,
+Edition 1.0.0, ??? 2024. In preparation.</formattedref><docidentifier type="IHO">IHO S-158</docidentifier><docidentifier scope="biblio-tag">IHO S-158</docidentifier><docnumber>158</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem anchor="S_158_100" id="S_158_100" semx-id="_f7417508-0226-9fb9-3013-ec1fa9486674"><biblio-tag>[5]<tab/></biblio-tag><formattedref format="application/x-isodoc+xml"><em>Universal Hydrographic Data Model Validation
+Checks</em>, Edition 1.0.0, ??? 2024. In preparation.</formattedref><docidentifier type="IHO">IHO S-158:100</docidentifier><docidentifier scope="biblio-tag">IHO S-158:100</docidentifier><docnumber>158:100</docnumber><language>en</language><script>Latn</script></bibitem>
 </references>
 
-<references id="sec_1.3.2" anchor="sec_1.3.2" normative="false" obligation="informative" semx-id="_52a5804c-5c0f-fd57-556c-fc6990253364">
-<title id="_4e93912e-57af-2b50-dd1c-d7669d148eab" semx-id="_0d315bc8-26fe-c81b-e7a2-bc44ec2e00e6">Informative references</title><fmt-title depth="3" id="_cf4561ee-7368-6a74-2bd8-281bd159ee73"><semx element="title" source="_4e93912e-57af-2b50-dd1c-d7669d148eab">Informative references</semx></fmt-title><bibitem id="ISO_19157_2013" type="standard" schema-version="v1.5.6" anchor="ISO_19157_2013" semx-id="_f825e2a2-f20e-f833-c506-f03888ed408c"><biblio-tag>[1]<tab/></biblio-tag><formattedref>ISO 19157:2013: Geographic information  — Data quality, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/32575.html">https://www.iso.org/standard/32575.html</fmt-link>).</formattedref>
-  <fetched>2026-09-30</fetched>
-  
-<title language="en" script="Latn" type="title-intro">Geographic information </title>
-
-  
-<title language="en" script="Latn" type="title-main">Data quality</title>
-
-  
-<title language="en" script="Latn" type="main">Geographic information  — Data quality</title>
-
-  
-<title language="fr" script="Latn" type="title-intro">Information géographique</title>
-
-  
-<title language="fr" script="Latn" type="title-main">Qualité des données</title>
-
-  
-<title language="fr" script="Latn" type="main">Information géographique — Qualité des données</title>
-
-  <uri type="src">https://www.iso.org/standard/32575.html</uri>
-  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:32575:en</uri>
-  <uri type="rss">https://www.iso.org/contents/data/standard/03/25/32575.detail.rss</uri><docidentifier type="metanorma-ordinal">[1]</docidentifier>
-  <docidentifier type="ISO" primary="true">ISO 19157:2013</docidentifier>
-  <docidentifier type="iso-undated">iso-undated ISO 19157</docidentifier>
-  <docidentifier type="iso-reference">iso-reference ISO 19157:2013(E)</docidentifier>
-  <docidentifier type="URN">URN urn:iso:std:iso:19157:stage-90.92</docidentifier><docidentifier scope="biblio-tag">ISO 19157:2013</docidentifier>
+<references id="sec_1.3.2" anchor="sec_1.3.2" normative="false" obligation="informative" semx-id="_d5341dcb-6745-d7d7-0c38-ea03e6472f4e">
+<title id="_4e93912e-57af-2b50-dd1c-d7669d148eab" semx-id="_0d315bc8-26fe-c81b-e7a2-bc44ec2e00e6">Informative references</title><fmt-title depth="3" id="_cf4561ee-7368-6a74-2bd8-281bd159ee73"><semx element="title" source="_4e93912e-57af-2b50-dd1c-d7669d148eab">Informative references</semx></fmt-title><bibitem anchor="ISO_19157_2013" id="ISO_19157_2013" semx-id="_f910da59-e8b9-0dde-c8e1-fa9c1fe5c839"><biblio-tag>[1]<tab/></biblio-tag>
+  <formattedref format="application/x-isodoc+xml"><em>Geographic information — Data Quality</em>.
+As amended by Amendment 1, 2018.</formattedref><docidentifier type="metanorma-ordinal">[1]</docidentifier>
+  <docidentifier type="ISO">ISO 19157:2013</docidentifier><docidentifier scope="biblio-tag">ISO 19157:2013</docidentifier>
   <docnumber>19157</docnumber>
   <date type="published">
-    <on>2013-12-06</on>
+    <on>2013</on>
   </date>
-  <contributor>
-    <role type="publisher"/>
-    <organization>
-      
-<name>International Organization for Standardization</name>
-
-      <abbreviation>ISO</abbreviation>
-      <uri>www.iso.org</uri>
-    </organization>
-  </contributor>
-  <contributor>
-    <role type="author">
-      <description>committee</description>
-    </role>
-    <organization>
-      
-<name>International Organization for Standardization</name>
-
-      <subdivision type="technical-committee" subtype="TC">
-        
-<name>Geographic information/Geomatics</name>
-
-        <identifier id="_fa4262ff-41ca-8f91-07e1-e71cc00bf547">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_fa4262ff-41ca-8f91-07e1-e71cc00bf547">ISO/TC 211</semx></tt></fmt-identifier>
-      </subdivision>
-      <abbreviation>ISO</abbreviation>
-    </organization>
-  </contributor>
-  <edition>1</edition>
   <language>en</language>
-  <language>fr</language>
   <script>Latn</script>
-  <abstract language="en" script="Latn"><title id="_c8c56ad3-9ed9-147d-d94a-beb706669e61" semx-id="_c8c56ad3-9ed9-147d-d94a-beb706669e61">Abstract</title>﻿ISO 19157:2013 establishes the principles for describing the quality of geographic data. It — defines components for describing data quality; — specifies components and content structure of a register for data quality measures; — describes general procedures for evaluating the quality of geographic data; — establishes principles for reporting data quality. ISO 19157:2013 also defines a set of data quality measures for use in evaluating and reporting data quality. It is applicable to data producers providing quality information to describe and assess how well a data set conforms to its product specification and to data users attempting to determine whether or not specific geographic data are of sufficient quality for their particular application. ISO 19157:2013 does not attempt to define minimum acceptable levels of quality for geographic data.</abstract>
-  <status>
-    <stage>90</stage>
-    <substage>92</substage>
-  </status>
-  <copyright>
-    <from>2013</from>
-    <owner>
-      <organization>
-        
-<name>ISO</name>
-
-      </organization>
-    </owner>
-  </copyright>
-  <relation type="obsoletes">
-    <bibitem>
-      <formattedref>ISO 19113:2002</formattedref>
-      <docidentifier type="ISO" primary="true">ISO 19113:2002</docidentifier>
-      <date type="published">
-        <on>2002-11-20</on>
-      </date>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem>
-      <formattedref>ISO/TS 19138:2006</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/TS 19138:2006</docidentifier>
-      <date type="published">
-        <on>2006-11-22</on>
-      </date>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem>
-      <formattedref>ISO 19114:2003</formattedref>
-      <docidentifier type="ISO" primary="true">ISO 19114:2003</docidentifier>
-      <date type="published">
-        <on>2003-09-04</on>
-      </date>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletes">
-    <bibitem>
-      <formattedref>ISO 19114:2003/Cor 1:2005</formattedref>
-      <docidentifier type="ISO" primary="true">ISO 19114:2003/Cor 1:2005</docidentifier>
-      <date type="published">
-        <on>2005-09-15</on>
-      </date>
-    </bibitem>
-
-  </relation>
-  <relation type="obsoletedBy">
-    <bibitem>
-      <formattedref>ISO/WD 19157-3</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/WD 19157-3</docidentifier>
-    </bibitem>
-
-  </relation>
-  <place>
-    <city>Geneva</city>
-  </place>
 </bibitem>
 
 </references>
 </clause>
 
-<clause id="sec_1.4" anchor="sec_1.4" obligation="informative" semx-id="_b999483d-9634-40e8-10d4-59219a09a03f">
+<clause id="sec_1.4" anchor="sec_1.4" obligation="informative" semx-id="_101260f9-53c8-92d2-fce9-bc3bedd21e7b">
 <title id="_57170d72-9756-d1a3-5cd3-4cea75fa9bb8" semx-id="_cb23800f-74b0-1f76-8ef3-90c7cc4eb4d2">Terms, definitions and abbreviations</title><fmt-title depth="2" id="_98f6681e-8d60-0851-a065-1bf507297bae"><semx element="title" source="_57170d72-9756-d1a3-5cd3-4cea75fa9bb8">Terms, definitions and abbreviations</semx></fmt-title>
-<terms id="sec_1.4.1" anchor="sec_1.4.1" obligation="normative" semx-id="_97078a88-b1db-d861-11dd-685134e213eb">
+<terms id="sec_1.4.1" anchor="sec_1.4.1" obligation="normative" semx-id="_917fe970-88d9-9edd-beeb-a6040431ce4b">
 <title id="_887ff0b7-6f47-adfc-cace-c12381d66d2b" semx-id="_cd4fdebc-0759-75f8-dca5-7c161faa7ae5">Terms and definitions</title><fmt-title depth="3" id="_fbb5bb37-eda2-e482-6839-7203d3c099ef"><semx element="title" source="_887ff0b7-6f47-adfc-cace-c12381d66d2b">Terms and definitions</semx></fmt-title>
 <p id="_8cfbfb43-2b7f-a244-c951-7fa2e21c0ff2" semx-id="_8cfbfb43-2b7f-a244-c951-7fa2e21c0ff2">The terms and definitions listed in S-158 apply to this document. In addition, the following terms and definitions are used:</p>
 
@@ -701,11 +198,11 @@ sourcecode .nt {
 </termexample><termexample id="_860f88c6-48b8-b143-6a74-d2e6ce9abf56" semx-id="_860f88c6-48b8-b143-6a74-d2e6ce9abf56" autonum="2"><fmt-name id="_5e4a8ce3-5200-99f6-352e-0b7141502084"><span class="fmt-caption-label"><span class="fmt-element-name">EXAMPLE</span> <semx element="autonum" source="_860f88c6-48b8-b143-6a74-d2e6ce9abf56">2</semx></span></fmt-name><fmt-xref-label><span class="fmt-element-name">Example</span> <semx element="autonum" source="_860f88c6-48b8-b143-6a74-d2e6ce9abf56">2</semx></fmt-xref-label><fmt-xref-label container="term-feature-attribute"><span class="fmt-xref-container"><semx element="terms" source="sec_1.4.1">Terms and definitions</semx> <semx element="autonum" source="term-feature-attribute">3</semx></span><span class="fmt-comma">,</span> <span class="fmt-element-name">Example</span> <semx element="autonum" source="_860f88c6-48b8-b143-6a74-d2e6ce9abf56">2</semx></fmt-xref-label><p id="_af13ea0a-c5b5-1e1f-1fcd-c74ef397e2ea" semx-id="_af13ea0a-c5b5-1e1f-1fcd-c74ef397e2ea">A feature attribute named length may have an attribute value 82.4 which belongs to the data type real</p>
 </termexample><source status="identical" type="authoritative" id="_642d0cfe-c759-caab-1a79-4a20a7dcf09d"><origin bibitemid="ISO_19101" type="inline" citeas="ISO 19101"/></source></term>
 
-<term id="term-multiplicity" anchor="term-multiplicity" semx-id="_c4edd78f-fc15-cf73-db85-b15170a0e164"><preferred id="_a376165c-8f42-0c23-c75b-45c6ef20cf17"><expression>
+<term id="term-multiplicity" anchor="term-multiplicity" semx-id="_65c588e5-acfa-5cab-9d2c-84eb6b43d2e2"><preferred id="_a376165c-8f42-0c23-c75b-45c6ef20cf17"><expression>
 <name id="_5b9b0d0f-a6b9-72ca-e1c9-5308c725f493">multiplicity</name>
 </expression>
 </preferred><fmt-preferred><p><semx element="preferred" source="_a376165c-8f42-0c23-c75b-45c6ef20cf17"><strong><semx element="expression/name" source="_5b9b0d0f-a6b9-72ca-e1c9-5308c725f493">multiplicity</semx></strong></semx></p></fmt-preferred>
-<definition id="_8e2e77fe-21b9-9857-beef-7615bd3114a8" semx-id="_8e2e77fe-21b9-9857-beef-7615bd3114a8"><verbal-definition semx-id="_d51b1b1a-f6ce-8328-dc27-fa7924f35b6f" id="_d51b1b1a-f6ce-8328-dc27-fa7924f35b6f"><p semx-id="_77e19026-959d-8821-38de-cbc15dd15b43" original-id="_77e19026-959d-8821-38de-cbc15dd15b43">specification of the number of possible occurrences of a property, or the number of allowable elements that may participate in a given relationship [ISO 19103]</p></verbal-definition></definition><fmt-definition id="_e2ed930d-7f24-c7ba-46f9-f4b1536ea780"><semx element="definition" source="_8e2e77fe-21b9-9857-beef-7615bd3114a8"><p id="_77e19026-959d-8821-38de-cbc15dd15b43" semx-id="_77e19026-959d-8821-38de-cbc15dd15b43">specification of the number of possible occurrences of a property, or the number of allowable elements that may participate in a given relationship [ISO 19103]</p>[<semx element="source" source="_2c3ef2e5-c89e-d64f-b43d-4b6111b24b78"><origin bibitemid="ISO_19103" type="inline" citeas="ISO 19103" id="_7d8d9d85-4650-ace8-e554-7225aa13fa55"/><semx element="origin" source="_7d8d9d85-4650-ace8-e554-7225aa13fa55"><fmt-link target="https://www.iso.org/standard/56734.html">ISO 19103</fmt-link></semx></semx>]</semx></fmt-definition>
+<definition id="_700c3330-b176-53a4-09ce-ad8dabdaba3d" semx-id="_700c3330-b176-53a4-09ce-ad8dabdaba3d"><verbal-definition semx-id="_036d78f5-1dd4-ef49-1ec2-9ac5663f94bd" id="_036d78f5-1dd4-ef49-1ec2-9ac5663f94bd"><p semx-id="_6016be66-d1d8-c80e-eb04-0770d973ca4e" original-id="_6016be66-d1d8-c80e-eb04-0770d973ca4e">specification of the number of possible occurrences of a property, or the number of allowable elements that may participate in a given relationship</p></verbal-definition></definition><fmt-definition id="_b9bb2232-d9b0-c13c-e439-4adabaeba661"><semx element="definition" source="_700c3330-b176-53a4-09ce-ad8dabdaba3d"><p id="_6016be66-d1d8-c80e-eb04-0770d973ca4e" semx-id="_6016be66-d1d8-c80e-eb04-0770d973ca4e">specification of the number of possible occurrences of a property, or the number of allowable elements that may participate in a given relationship</p>[<semx element="source" source="_2c3ef2e5-c89e-d64f-b43d-4b6111b24b78"><origin bibitemid="ISO_19103" type="inline" citeas="ISO 19103" id="_7d8d9d85-4650-ace8-e554-7225aa13fa55"/><semx element="origin" source="_7d8d9d85-4650-ace8-e554-7225aa13fa55"><fmt-link target="https://www.iso.org/standard/56734.html">ISO 19103</fmt-link></semx></semx>]</semx></fmt-definition>
 
 
 
@@ -714,13 +211,13 @@ sourcecode .nt {
 </termexample><source status="identical" type="authoritative" id="_2c3ef2e5-c89e-d64f-b43d-4b6111b24b78"><origin bibitemid="ISO_19103" type="inline" citeas="ISO 19103"/></source></term>
 </terms>
 
-<definitions id="sec_1.4.2" anchor="sec_1.4.2" type="abbreviated_terms" obligation="normative" semx-id="_e09eec38-103f-446d-c22c-86206ebbc272">
+<definitions id="sec_1.4.2" anchor="sec_1.4.2" type="abbreviated_terms" obligation="normative" semx-id="_cdfef337-79db-3a2c-e371-a4854ccc8eff">
 <title id="_dede4c36-98e4-9c13-e082-5d487f636daf" semx-id="_7afc9bff-8712-0f4e-affb-f340df627119">Abbreviated terms</title><fmt-title depth="3" id="_6b1d3cc9-827a-1342-5499-6b44f12de601"><semx element="title" source="_dede4c36-98e4-9c13-e082-5d487f636daf">Abbreviated terms</semx></fmt-title>
-<p id="_714535fe-d261-b70c-31d9-1893e8e17fbb" semx-id="_714535fe-d261-b70c-31d9-1893e8e17fbb">This Specification uses the abbreviated terms defined in S-158.</p>
+<p id="_af4e57bf-9dcd-fe4a-fce3-6c44e5715a21" semx-id="_af4e57bf-9dcd-fe4a-fce3-6c44e5715a21">This Specification uses the abbreviated terms defined in S-158. In addition, this Specification uses the following abbreviated terms:</p>
 
 <dl id="_a68ab7c1-ccf0-cf87-a532-76aa2ea7a1b4" semx-id="_a68ab7c1-ccf0-cf87-a532-76aa2ea7a1b4"><dt anchor="symbol-FDG" id="symbol-FDG" semx-id="_d203d579-7fe4-570f-1f37-d3b1802347ba">FDG</dt><dd id="_a23dc120-483d-98fc-961d-125ce473bc42" semx-id="_a23dc120-483d-98fc-961d-125ce473bc42"><p id="_ea14a671-e013-0c51-2ce2-81110d61f845" semx-id="_ea14a671-e013-0c51-2ce2-81110d61f845">Feature Data Group. The values group specified in S-100 Part 10c and represented by Level 3 and Level 4 in S-102 Figure 10 (Hierarchy of S-102 product).</p>
 </dd>
-<dt anchor="symbol-FIDS" id="symbol-FIDS" semx-id="_33ebc407-b098-82e6-d75a-12018ac57f07">FIDS</dt><dd id="_0beaf9e9-c9e0-9fce-8028-276974ab6911" semx-id="_0beaf9e9-c9e0-9fce-8028-276974ab6911"><p id="_202e1ea3-8c8f-b71e-4569-268b724c7884" semx-id="_202e1ea3-8c8f-b71e-4569-268b724c7884">Feature Information Dataset in “Group_F” — see S-100 Part 10c. See <eref type="inline" bibitemid="S_102" citeas="S-102" id="_90489160-8179-3bf5-ee76-370b7ae366d6"><localityStack><locality type="figure"><referenceFrom>10</referenceFrom></locality></localityStack></eref><semx element="eref" source="_90489160-8179-3bf5-ee76-370b7ae366d6"><fmt-xref type="inline" target="S_102">S-102,  Figure 10</fmt-xref></semx> (Hierarchy of S-102 product) and  <eref type="inline" bibitemid="S_102" citeas="S-102" id="_449e7f2e-2974-f7b5-5695-c16cd1e0d466"><localityStack><locality type="clause"><referenceFrom>10.2.3</referenceFrom></locality></localityStack></eref><semx element="eref" source="_449e7f2e-2974-f7b5-5695-c16cd1e0d466"><fmt-xref type="inline" target="S_102">S-102,  Clause 10.2.3</fmt-xref></semx>.</p>
+<dt anchor="symbol-FIDS" id="symbol-FIDS" semx-id="_33ebc407-b098-82e6-d75a-12018ac57f07">FIDS</dt><dd id="_0beaf9e9-c9e0-9fce-8028-276974ab6911" semx-id="_0beaf9e9-c9e0-9fce-8028-276974ab6911"><p id="_202e1ea3-8c8f-b71e-4569-268b724c7884" semx-id="_202e1ea3-8c8f-b71e-4569-268b724c7884">Feature Information Dataset in “Group_F” — see S-100 Part 10c. See <eref type="inline" bibitemid="S_102" citeas="IHO S-102" id="_90489160-8179-3bf5-ee76-370b7ae366d6"><localityStack><locality type="figure"><referenceFrom>10</referenceFrom></locality></localityStack></eref><semx element="eref" source="_90489160-8179-3bf5-ee76-370b7ae366d6"><fmt-xref type="inline" target="S_102">IHO S-102,  Figure 10</fmt-xref></semx> (Hierarchy of S-102 product) and  <eref type="inline" bibitemid="S_102" citeas="IHO S-102" id="_449e7f2e-2974-f7b5-5695-c16cd1e0d466"><localityStack><locality type="clause"><referenceFrom>10.2.3</referenceFrom></locality></localityStack></eref><semx element="eref" source="_449e7f2e-2974-f7b5-5695-c16cd1e0d466"><fmt-xref type="inline" target="S_102">IHO S-102,  Clause 10.2.3</fmt-xref></semx>.</p>
 </dd>
 <dt anchor="symbol-FINST" id="symbol-FINST" semx-id="_c3fa3331-ce3f-33db-d508-f5bebdf1b44c">FINST</dt><dd id="_fa06740f-e39a-6ba3-9d00-130077e03cd3" semx-id="_fa06740f-e39a-6ba3-9d00-130077e03cd3"><p id="_5685ae57-7332-ffc3-6572-230ffb960647" semx-id="_5685ae57-7332-ffc3-6572-230ffb960647">Feature Instance. Instance of BathymetryCoverage in S-102 3.0.0. Represents the BathymetryCoverage.nn groups within the BathymetryCoverage feature type group.</p>
 </dd>
@@ -737,7 +234,7 @@ sourcecode .nt {
 </definitions>
 <definitions id="sec_1.4.3" anchor="sec_1.4.3" type="symbols" obligation="normative" semx-id="_041b74e4-455e-2f01-bff0-13ec7e44614f">
 <title id="_5e96b242-6617-5c85-e534-a3f0d0c1dd73" semx-id="_0b7f8487-2700-d7ba-f167-879cdbcdfa05">Symbols</title><fmt-title depth="3" id="_0beae6e3-4f97-0168-f0e3-5c4c83a303cc"><semx element="title" source="_5e96b242-6617-5c85-e534-a3f0d0c1dd73">Symbols</semx></fmt-title>
-<p id="_2f7ffbec-bd43-5cb2-dcd7-7494acf9008f" semx-id="_2f7ffbec-bd43-5cb2-dcd7-7494acf9008f">The symbols used in logical and spatial expressions are defined in <eref type="inline" bibitemid="S_158" citeas="S-158" id="_77eff04d-d8ce-4282-506c-a6914ad4fe4a"><localityStack><locality type="clause"><referenceFrom>1.3.3</referenceFrom></locality></localityStack></eref><semx element="eref" source="_77eff04d-d8ce-4282-506c-a6914ad4fe4a"><fmt-xref type="inline" target="S_158">S-158,  Clause 1.3.3</fmt-xref></semx> (Symbols).</p>
+<p id="_2f7ffbec-bd43-5cb2-dcd7-7494acf9008f" semx-id="_2f7ffbec-bd43-5cb2-dcd7-7494acf9008f">The symbols used in logical and spatial expressions are defined in <eref type="inline" bibitemid="S_158" citeas="IHO S-158" id="_77eff04d-d8ce-4282-506c-a6914ad4fe4a"><localityStack><locality type="clause"><referenceFrom>1.3.3</referenceFrom></locality></localityStack></eref><semx element="eref" source="_77eff04d-d8ce-4282-506c-a6914ad4fe4a"><fmt-xref type="inline" target="S_158">IHO S-158,  Clause 1.3.3</fmt-xref></semx> (Symbols).</p>
 </definitions></clause>
 
 <clause id="sec_1.5" anchor="sec_1.5" obligation="informative" semx-id="_a976fb7b-c8ef-8276-5d3f-b0ab25ddcc14">
@@ -894,19 +391,19 @@ sourcecode .nt {
 
 
 
-<clause id="sec_2" anchor="sec_2" obligation="normative" semx-id="_2268fdbb-a697-2dbc-af7e-eafe2cdcdb4a" displayorder="5">
+<clause id="sec_2" anchor="sec_2" obligation="normative" semx-id="_a69c32b1-760a-04fb-bbbd-6d35d9a00e0e" displayorder="5">
 <title id="_7002e1d8-2b13-8420-e835-ba568b4321e5" semx-id="_8454583d-8aa9-4042-c819-01ca1c6f4360">Check Structure</title><fmt-title depth="1" id="_731a372c-df2c-4957-ae58-f52688156b14"><span class="fmt-caption-label"><semx element="autonum" source="sec_2">1</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_7002e1d8-2b13-8420-e835-ba568b4321e5">Check Structure</semx></fmt-title><fmt-xref-label><span class="fmt-element-name">Section</span> <semx element="autonum" source="sec_2">1</semx></fmt-xref-label>
 <p id="_b3a9e98c-fcfd-7cf4-5522-da43df23a7a9" semx-id="_b3a9e98c-fcfd-7cf4-5522-da43df23a7a9">Check structure in S-158:102 includes the fields specified in S-158 plus the additional fields specified in  <xref target="table-2-1" id="_d7f9754b-c86d-9442-b59f-c7cbfa2837de"/><semx element="xref" source="_d7f9754b-c86d-9442-b59f-c7cbfa2837de"><fmt-xref target="table-2-1"><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_2">1</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="table-2-1">1</semx></fmt-xref></semx>.</p>
 
-<table id="table-2-1" anchor="table-2-1" semx-id="_8c5402b3-9d12-e5f5-c716-96f42eccce35" autonum="1-1">
+<table id="table-2-1" anchor="table-2-1" semx-id="_337430ff-66a5-44df-4d61-f4b02b25f631" autonum="1-1">
 <name id="_ae4de47d-f7ab-9431-6407-cd76711a7129" semx-id="_7ed5a285-3654-33e1-0849-6332f92ec834">Extensions to check structure</name><fmt-name id="_b530e104-758b-ae65-d6ee-c4c601ed928d"><span class="fmt-caption-label"><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_2">1</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="table-2-1">1</semx></span><span class="fmt-caption-delim"> — </span><semx element="name" source="_ae4de47d-f7ab-9431-6407-cd76711a7129">Extensions to check structure</semx></fmt-name><fmt-xref-label><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_2">1</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="table-2-1">1</semx></fmt-xref-label>
 <thead><tr id="_5390fecc-cb0f-cfc9-0ef8-21dc65e3a445" semx-id="_5390fecc-cb0f-cfc9-0ef8-21dc65e3a445"><th id="_da214caa-eec6-db5d-f582-4a5c58c3571e" valign="top" align="left" semx-id="_da214caa-eec6-db5d-f582-4a5c58c3571e">Column Name</th>
 <th id="_0408ec72-569c-5120-3201-d82fff4392c0" valign="top" align="left" semx-id="_0408ec72-569c-5120-3201-d82fff4392c0">Description</th>
 </tr></thead>
 <tbody><tr id="_6c1530bc-678a-7ac9-011c-6e33d96fbb57" semx-id="_6c1530bc-678a-7ac9-011c-6e33d96fbb57"><td id="_58671fe4-7840-1c09-2153-b37f5ac39c0a" valign="top" align="left" semx-id="_58671fe4-7840-1c09-2153-b37f5ac39c0a">Prerequisites</td>
 <td id="_afe84304-a35d-9942-43b4-71b4c8ada6c9" valign="top" align="left" semx-id="_afe84304-a35d-9942-43b4-71b4c8ada6c9">Checks which must succeed (check condition evaluates to FALSE) before this check can be executed. Trivial prerequisites are omitted from this column (such as requiring the presence of an attribute before using it in a condition).</td>
-</tr><tr id="_4641b587-8d4c-3ac3-28e0-618c5180a83b" semx-id="_4641b587-8d4c-3ac3-28e0-618c5180a83b"><td id="_7aa2ef13-e453-1b73-2407-7b9e7f4e9f4d" valign="top" align="left" semx-id="_7aa2ef13-e453-1b73-2407-7b9e7f4e9f4d">Terminate if failure</td>
-<td id="_b7cc45cf-7d3b-d6df-d3b6-78036a57ad35" valign="top" align="left" semx-id="_b7cc45cf-7d3b-d6df-d3b6-78036a57ad35">Whether failure of the check (the check condition evaluates to TRUE) will force termination of check processing before all validation checks can be executed. Valid values are TRUE and FALSE. The default is FALSE.The HDF5 format is hierarchical and the validity or even the existence of certain parts of the dataset depends on structure or content required to be provided in the dataset. Validation checks for such fundamental structure or content have this field set to TRUE so that subsequent checks which depend on that structure or content are not unnecessarily attempted if the fundamental structure or content fails its own validation check.For example, checks on groups which are members of another group are not attempted if the container group is missing.</td>
+</tr><tr id="_47dd2751-cd50-08c1-6c4f-81a8bef0a1b3" semx-id="_47dd2751-cd50-08c1-6c4f-81a8bef0a1b3"><td id="_7aa2ef13-e453-1b73-2407-7b9e7f4e9f4d" valign="top" align="left" semx-id="_7aa2ef13-e453-1b73-2407-7b9e7f4e9f4d">Terminate if failure</td>
+<td id="_7040dc86-8db8-4dad-d4b5-b3de59bb0ac5" valign="top" align="left" semx-id="_7040dc86-8db8-4dad-d4b5-b3de59bb0ac5">Whether failure of the check (the check condition evaluates to TRUE) will force termination of check processing before all validation checks can be executed. Valid values are TRUE and FALSE. The default is FALSE. The HDF5 format is hierarchical and the validity or even the existence of certain parts of the dataset depends on structure or content required to be provided in the dataset. Validation checks for such fundamental structure or content have this field set to TRUE so that subsequent checks which depend on that structure or content are not unnecessarily attempted if the fundamental structure or content fails its own validation check. For example, checks on groups which are members of another group are not attempted if the container group is missing.</td>
 </tr></tbody>
 </table>
 
@@ -915,17 +412,17 @@ sourcecode .nt {
 
 <clause id="sec_3" anchor="sec_3" obligation="normative" semx-id="_abf10776-4bb2-ad86-4706-4b7f3ddfddab" displayorder="6">
 <title id="_770f4cee-f5fd-169a-2bf1-eface0a98c71" semx-id="_8a993423-b6ca-8eef-3097-3c87cede0d1c">Check Syntax</title><fmt-title depth="1" id="_12091d2b-8c23-6508-c78e-12a7546df14e"><span class="fmt-caption-label"><semx element="autonum" source="sec_3">2</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_770f4cee-f5fd-169a-2bf1-eface0a98c71">Check Syntax</semx></fmt-title><fmt-xref-label><span class="fmt-element-name">Section</span> <semx element="autonum" source="sec_3">2</semx></fmt-xref-label>
-<p id="_e29faf07-2d77-c336-092b-5f3ec85337fe" semx-id="_e29faf07-2d77-c336-092b-5f3ec85337fe">The check syntax conforms to the syntax and operators for product-specific checks described in  <eref type="inline" bibitemid="S_158" citeas="S-158" id="_9a611336-0309-ec22-558f-19e92373e87d"><localityStack><locality type="clause"><referenceFrom>4.2</referenceFrom></locality></localityStack></eref><semx element="eref" source="_9a611336-0309-ec22-558f-19e92373e87d"><fmt-xref type="inline" target="S_158">S-158,  Clause 4.2</fmt-xref></semx>.</p>
+<p id="_e29faf07-2d77-c336-092b-5f3ec85337fe" semx-id="_e29faf07-2d77-c336-092b-5f3ec85337fe">The check syntax conforms to the syntax and operators for product-specific checks described in  <eref type="inline" bibitemid="S_158" citeas="IHO S-158" id="_9a611336-0309-ec22-558f-19e92373e87d"><localityStack><locality type="clause"><referenceFrom>4.2</referenceFrom></locality></localityStack></eref><semx element="eref" source="_9a611336-0309-ec22-558f-19e92373e87d"><fmt-xref type="inline" target="S_158">IHO S-158,  Clause 4.2</fmt-xref></semx>.</p>
 </clause>
 
-<clause id="sec_4" anchor="sec_4" obligation="normative" semx-id="_5e970a96-28d4-fd54-c15d-feb30f8cc28e" displayorder="7">
+<clause id="sec_4" anchor="sec_4" obligation="normative" semx-id="_fc16bb91-b486-4668-8731-1f5d39e70892" displayorder="7">
 <title id="_870bcac8-b387-29ad-7ff4-5340550dc13a" semx-id="_1e5a2601-589d-d75b-1556-69e60c25d4b9">Organisation</title><fmt-title depth="1" id="_decee99a-7462-1d54-3d47-84a4c9a3612d"><span class="fmt-caption-label"><semx element="autonum" source="sec_4">3</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_870bcac8-b387-29ad-7ff4-5340550dc13a">Organisation</semx></fmt-title><fmt-xref-label><span class="fmt-element-name">Section</span> <semx element="autonum" source="sec_4">3</semx></fmt-xref-label>
 <p id="_8888a379-6474-7d64-0893-70a2e03b59c1" semx-id="_8888a379-6474-7d64-0893-70a2e03b59c1">The list of validation checks for this edition of S-158:102 is available separately (see  <xref target="sec_9" id="_706fa49d-c54f-6bd6-5126-17c6a30f8d94"/><semx element="xref" source="_706fa49d-c54f-6bd6-5126-17c6a30f8d94"><fmt-xref target="sec_9"><span class="fmt-element-name">Section</span> <semx element="autonum" source="sec_9">8</semx></fmt-xref></semx>). The list of checks accompanies this specification and forms an integral part of it.</p>
 
 <p id="_7c4510bb-1f79-37d1-b1ac-b45bd044833d" semx-id="_7c4510bb-1f79-37d1-b1ac-b45bd044833d">The numeric component of the check ID is a 4-digit number whose first digit indicates the phase to which the check belongs (see  <xref target="table-4-1" id="_ca08e801-99bb-f086-7f8d-99a7c4c09ef9"/><semx element="xref" source="_ca08e801-99bb-f086-7f8d-99a7c4c09ef9"><fmt-xref target="table-4-1"><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_4">3</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="table-4-1">1</semx></fmt-xref></semx> below).</p>
 
-<table id="table-4-1" anchor="table-4-1" semx-id="_34087430-5dec-27f6-0f41-214d56701240" autonum="3-1">
-<name id="_349da465-59f3-ca50-5521-49e68b2d6bbc" semx-id="_f3b873bc-e394-0c59-4923-bed4924b9ebd">Division of product-specific checks into processing phases*</name><fmt-name id="_ce711290-fa10-9c0b-e02b-0391bcfcf8d6"><span class="fmt-caption-label"><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_4">3</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="table-4-1">1</semx></span><span class="fmt-caption-delim"> — </span><semx element="name" source="_349da465-59f3-ca50-5521-49e68b2d6bbc">Division of product-specific checks into processing phases*</semx></fmt-name><fmt-xref-label><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_4">3</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="table-4-1">1</semx></fmt-xref-label>
+<table id="table-4-1" anchor="table-4-1" semx-id="_6a30e14d-d252-7832-6b71-b75b68d32c1d" autonum="3-1">
+<name id="_d64f7133-805d-3279-4b7e-22f05dcf0f83" semx-id="_893444fa-bce7-1aa1-e48a-1d25fd2a290e">Division of product-specific checks into processing phases</name><fmt-name id="_e38081cf-0b7a-8f77-db18-b5b9b178b9bf"><span class="fmt-caption-label"><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_4">3</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="table-4-1">1</semx></span><span class="fmt-caption-delim"> — </span><semx element="name" source="_d64f7133-805d-3279-4b7e-22f05dcf0f83">Division of product-specific checks into processing phases</semx></fmt-name><fmt-xref-label><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_4">3</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="table-4-1">1</semx></fmt-xref-label>
 <thead><tr id="_57f386ff-f7b1-93e1-69de-5841ebc00baf" semx-id="_57f386ff-f7b1-93e1-69de-5841ebc00baf"><th id="_aac12754-6fea-79b7-0872-7923802fba53" valign="top" align="left" semx-id="_aac12754-6fea-79b7-0872-7923802fba53">Phase</th>
 <th id="_3d1258b9-7cb4-c143-444c-5055a18d7e36" valign="top" align="left" semx-id="_3d1258b9-7cb4-c143-444c-5055a18d7e36">Check Numbers</th>
 <th id="_d9dd27cb-7178-261f-d4db-8b4f4b24a54e" valign="top" align="left" semx-id="_d9dd27cb-7178-261f-d4db-8b4f4b24a54e">Name</th>
@@ -961,13 +458,13 @@ sourcecode .nt {
 <p id="_dd205636-09d6-c4fb-433e-f0229f2efaf3" semx-id="_dd205636-09d6-c4fb-433e-f0229f2efaf3">Dataset validation checks the structure and content of individual HDF5 data files. The checks for each HDF5 dataset file are divided into four phases</p>
 </clause>
 
-<clause id="sec_5" anchor="sec_5" obligation="normative" semx-id="_6cce105e-d56d-0b18-3e46-6d92344532b0" displayorder="8">
+<clause id="sec_5" anchor="sec_5" obligation="normative" semx-id="_a5f471b8-ff12-d777-b891-40dd0961c19b" displayorder="8">
 <title id="_c980d7cc-df74-1bd4-d438-a1301f558b56" semx-id="_7be422ff-af7a-0425-b83b-02d16650553c">Other Applicable Checks</title><fmt-title depth="1" id="_b15c6927-c608-1cdd-d331-379ac5a1493a"><span class="fmt-caption-label"><semx element="autonum" source="sec_5">4</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_c980d7cc-df74-1bd4-d438-a1301f558b56">Other Applicable Checks</semx></fmt-title><fmt-xref-label><span class="fmt-element-name">Section</span> <semx element="autonum" source="sec_5">4</semx></fmt-xref-label>
-<clause id="sec_5.1" anchor="sec_5.1" obligation="normative" semx-id="_8b7a898f-4186-dd02-80d2-9d2e0d9036a9">
+<clause id="sec_5.1" anchor="sec_5.1" obligation="normative" semx-id="_bcb4443e-7ce2-3764-d0b7-c7358afb2ae5">
 <title id="_b46cee66-129d-7e51-f618-a754a1a92f50" semx-id="_a3bed0c8-1d4b-9db1-23f9-27a2cde817cc">Generic S-100 checks</title><fmt-title depth="2" id="_ba208e29-88fe-d5aa-0c70-578c53c8e073"><span class="fmt-caption-label"><semx element="autonum" source="sec_5">4</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="sec_5.1">1</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_b46cee66-129d-7e51-f618-a754a1a92f50">Generic S-100 checks</semx></fmt-title><fmt-xref-label><span class="fmt-element-name">Clause</span> <semx element="autonum" source="sec_5">4</semx><span class="fmt-autonum-delim">.</span><semx element="autonum" source="sec_5.1">1</semx></fmt-xref-label>
 <p id="_edc821f5-52e7-668c-5c20-76d715332bd2" semx-id="_edc821f5-52e7-668c-5c20-76d715332bd2">S-102 datasets and exchange sets must also be validated using the following subset of the generic S-100 validation checks defined in S-158:100:</p>
 
-<table id="_4e9dd61e-3c88-7ad0-4371-ddc7fb01e378" semx-id="_4e9dd61e-3c88-7ad0-4371-ddc7fb01e378" autonum="4-1"><fmt-name id="_7bb5d01c-e303-3a20-1f20-7109ca43e168"><span class="fmt-caption-label"><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_5">4</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="_4e9dd61e-3c88-7ad0-4371-ddc7fb01e378">1</semx></span></fmt-name><fmt-xref-label><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_5">4</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="_4e9dd61e-3c88-7ad0-4371-ddc7fb01e378">1</semx></fmt-xref-label><thead><tr id="_14ef651e-9e6f-f80b-7c71-b98d58ddf724" semx-id="_14ef651e-9e6f-f80b-7c71-b98d58ddf724"><th id="_b5a0d874-b5e5-36ba-78ab-e3956692c66d" valign="top" align="left" semx-id="_b5a0d874-b5e5-36ba-78ab-e3956692c66d">Document reference in S-158:100 list</th>
+<table id="_08219c3e-1125-9b88-dd0f-d4da50388ce8" semx-id="_08219c3e-1125-9b88-dd0f-d4da50388ce8" autonum="4-1"><fmt-name id="_7bb5d01c-e303-3a20-1f20-7109ca43e168"><span class="fmt-caption-label"><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_5">4</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="_08219c3e-1125-9b88-dd0f-d4da50388ce8">1</semx></span></fmt-name><fmt-xref-label><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_5">4</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="_08219c3e-1125-9b88-dd0f-d4da50388ce8">1</semx></fmt-xref-label><thead><tr id="_14ef651e-9e6f-f80b-7c71-b98d58ddf724" semx-id="_14ef651e-9e6f-f80b-7c71-b98d58ddf724"><th id="_b5a0d874-b5e5-36ba-78ab-e3956692c66d" valign="top" align="left" semx-id="_b5a0d874-b5e5-36ba-78ab-e3956692c66d">Document reference in S-158:100 list</th>
 <th id="_8639a775-6b23-d71e-2e3d-e7b2fc79e269" valign="top" align="left" semx-id="_8639a775-6b23-d71e-2e3d-e7b2fc79e269">Checks</th>
 <th id="_90760c6c-a16c-7d27-4b50-832b1a933364" valign="top" align="left" semx-id="_90760c6c-a16c-7d27-4b50-832b1a933364">Apply to</th>
 <th id="_3fcad481-1883-cca5-14f7-245c5359e722" valign="top" align="left" semx-id="_3fcad481-1883-cca5-14f7-245c5359e722">Remarks</th>
@@ -994,8 +491,8 @@ sourcecode .nt {
 </tr><tr id="_9553fefc-c0e8-aab2-b9c1-a6b8b4d572f7" semx-id="_9553fefc-c0e8-aab2-b9c1-a6b8b4d572f7"><td id="_856a7c8c-ed4d-2798-9581-340e9647d874" valign="top" align="left" semx-id="_856a7c8c-ed4d-2798-9581-340e9647d874">100_Dev0077 100_Dev0468 100_Dev0161 100_Dev0162 100_Dev0163 100_Dev0164 100_Dev0165 100_Dev0166 100_Dev0167</td>
 <td id="_509ab578-e07b-af2a-c717-269ec6ff9ef6" valign="top" align="left" semx-id="_509ab578-e07b-af2a-c717-269ec6ff9ef6">Datasets</td>
 <td id="_0818d39d-bf0a-6b68-f403-92e1b8743ebe" valign="top" align="left" semx-id="_0818d39d-bf0a-6b68-f403-92e1b8743ebe">Inapplicable: 100_Dev0168 100_Dev0169 100_Dev0170 100_Dev0171</td>
-</tr><tr id="_e888ff4d-af04-e824-dd96-2cc31e142437" semx-id="_e888ff4d-af04-e824-dd96-2cc31e142437"><td id="_31576254-4cfb-a0a1-4613-3a1ae7ffc909" valign="top" align="left" semx-id="_31576254-4cfb-a0a1-4613-3a1ae7ffc909">Part 6</td>
-<td id="_d98ff27a-16dc-d52b-d0ca-5df34e3e1cc3" valign="top" align="left" semx-id="_d98ff27a-16dc-d52b-d0ca-5df34e3e1cc3">100_Dev0172100_Dev0173100_Dev0174</td>
+</tr><tr id="_688d9639-db67-46f7-6eab-a58570280507" semx-id="_688d9639-db67-46f7-6eab-a58570280507"><td id="_31576254-4cfb-a0a1-4613-3a1ae7ffc909" valign="top" align="left" semx-id="_31576254-4cfb-a0a1-4613-3a1ae7ffc909">Part 6</td>
+<td id="_0a0dbfad-4e78-c81a-6d14-5bff886ae302" valign="top" align="left" semx-id="_0a0dbfad-4e78-c81a-6d14-5bff886ae302">100_Dev0172 100_Dev0173 100_Dev0174</td>
 <td id="_f6121c45-0fcc-420d-2bb2-891c8ba174d2" valign="top" align="left" semx-id="_f6121c45-0fcc-420d-2bb2-891c8ba174d2">Datasets</td>
 <td id="_22680ff4-00f4-5352-a987-12dd8d675419" valign="top" align="left" semx-id="_22680ff4-00f4-5352-a987-12dd8d675419"/></tr><tr id="_380bbac3-d4d7-17c6-e780-d146b24fa6be" semx-id="_380bbac3-d4d7-17c6-e780-d146b24fa6be"><td id="_107f82ea-120e-dd20-7b59-fd83bdeb428b" valign="top" align="left" semx-id="_107f82ea-120e-dd20-7b59-fd83bdeb428b">Part 7</td>
 <td id="_1da7768a-bb28-0ac3-6800-272f44460f01" valign="top" align="left" semx-id="_1da7768a-bb28-0ac3-6800-272f44460f01">Only checks for polygons</td>
@@ -1024,12 +521,12 @@ sourcecode .nt {
 <td id="_d2fdf027-4888-8f9b-ff95-43973078fc05" valign="top" align="left" semx-id="_d2fdf027-4888-8f9b-ff95-43973078fc05">100_Dev0466</td>
 <td id="_b05880f5-d122-5a63-98b9-732e8cfe8c65" valign="top" align="left" semx-id="_b05880f5-d122-5a63-98b9-732e8cfe8c65">Dataset</td>
 <td id="_1b182af8-9c1a-0be8-aa31-cb52fde40aa3" valign="top" align="left" semx-id="_1b182af8-9c1a-0be8-aa31-cb52fde40aa3">There is only one Part 11 generic check, for dataset size</td>
-</tr><tr id="_555ed202-652a-6879-11f8-7598e194a2d6" semx-id="_555ed202-652a-6879-11f8-7598e194a2d6"><td id="_771dbbfc-b20d-a957-e570-49ddde1c4d59" valign="top" align="left" semx-id="_771dbbfc-b20d-a957-e570-49ddde1c4d59">Part 15</td>
+</tr><tr id="_1430db00-fdf1-41cb-97fd-65bcd334a88c" semx-id="_1430db00-fdf1-41cb-97fd-65bcd334a88c"><td id="_771dbbfc-b20d-a957-e570-49ddde1c4d59" valign="top" align="left" semx-id="_771dbbfc-b20d-a957-e570-49ddde1c4d59">Part 15</td>
 <td id="_ea84e343-158a-82cb-00ca-c4312b4016c5" valign="top" align="left" semx-id="_ea84e343-158a-82cb-00ca-c4312b4016c5">100_Dev0476 through 100_Dev0490</td>
-<td id="_db04e614-28f9-e0cc-fb95-f0a87cd4d224" valign="top" align="left" semx-id="_db04e614-28f9-e0cc-fb95-f0a87cd4d224">Exchange catalogueExchange set</td>
-<td id="_91398fa6-9558-66d7-9d3b-7570aad3be78" valign="top" align="left" semx-id="_91398fa6-9558-66d7-9d3b-7570aad3be78"/></tr><tr id="_a7560616-579d-6011-0f43-b2338ce3be61" semx-id="_a7560616-579d-6011-0f43-b2338ce3be61"><td id="_e02795d9-a6b4-3243-1d0c-2137f66ad188" valign="top" align="left" semx-id="_e02795d9-a6b4-3243-1d0c-2137f66ad188">Part 17</td>
+<td id="_b6becd1b-48f1-9c04-18ee-1f56d755430e" valign="top" align="left" semx-id="_b6becd1b-48f1-9c04-18ee-1f56d755430e">Exchange catalogue<br/> Exchange set</td>
+<td id="_91398fa6-9558-66d7-9d3b-7570aad3be78" valign="top" align="left" semx-id="_91398fa6-9558-66d7-9d3b-7570aad3be78"/></tr><tr id="_289510d3-c30a-a264-ff3c-45367b12a160" semx-id="_289510d3-c30a-a264-ff3c-45367b12a160"><td id="_e02795d9-a6b4-3243-1d0c-2137f66ad188" valign="top" align="left" semx-id="_e02795d9-a6b4-3243-1d0c-2137f66ad188">Part 17</td>
 <td id="_61bb0990-65f7-df25-dca0-dadc539206fa" valign="top" align="left" semx-id="_61bb0990-65f7-df25-dca0-dadc539206fa">All checks except those applying to metadata elements not used in S-102</td>
-<td id="_44916a19-2a53-b5ef-7b80-fb4bf19eda9d" valign="top" align="left" semx-id="_44916a19-2a53-b5ef-7b80-fb4bf19eda9d">Exchange catalogueExchange set</td>
+<td id="_06f75002-d05b-9b26-7d31-fbefad1f92f4" valign="top" align="left" semx-id="_06f75002-d05b-9b26-7d31-fbefad1f92f4">Exchange catalogue<br/> Exchange set</td>
 <td id="_efc48fb7-ea8b-b57f-85a8-3772143b51cc" valign="top" align="left" semx-id="_efc48fb7-ea8b-b57f-85a8-3772143b51cc"/></tr></tbody>
 </table>
 </clause>
@@ -1042,7 +539,7 @@ sourcecode .nt {
 
 <clause id="sec_6" anchor="sec_6" obligation="normative" semx-id="_ff5bb0a1-ff6d-228c-d318-d000bba5163a" displayorder="9">
 <title id="_56e2f5fc-7391-da84-de15-ff94562be6b4" semx-id="_64dfb0b3-89cb-7b70-3bf6-f403e1520bb1">Check Application Sequence</title><fmt-title depth="1" id="_db4486bf-7d99-34d8-f9e2-356390637c46"><span class="fmt-caption-label"><semx element="autonum" source="sec_6">5</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_56e2f5fc-7391-da84-de15-ff94562be6b4">Check Application Sequence</semx></fmt-title><fmt-xref-label><span class="fmt-element-name">Section</span> <semx element="autonum" source="sec_6">5</semx></fmt-xref-label>
-<p id="_d603d69e-914e-4da2-3402-9837eb721ba5" semx-id="_d603d69e-914e-4da2-3402-9837eb721ba5">The check application sequence expands and modifies the application sequence described in  <eref type="inline" bibitemid="S_158" citeas="S-158" id="_7be33bad-34e4-a32e-3e34-571d5e31bc11"/><semx element="eref" source="_7be33bad-34e4-a32e-3e34-571d5e31bc11"><fmt-xref type="inline" target="S_158">S-158</fmt-xref></semx>.</p>
+<p id="_d603d69e-914e-4da2-3402-9837eb721ba5" semx-id="_d603d69e-914e-4da2-3402-9837eb721ba5">The check application sequence expands and modifies the application sequence described in  <eref type="inline" bibitemid="S_158" citeas="IHO S-158" id="_7be33bad-34e4-a32e-3e34-571d5e31bc11"/><semx element="eref" source="_7be33bad-34e4-a32e-3e34-571d5e31bc11"><fmt-xref type="inline" target="S_158">IHO S-158</fmt-xref></semx>.</p>
 
 <table id="table-6-1" anchor="table-6-1" semx-id="_b8ed97ae-7d9e-dbd6-f113-0a86eae52d49" autonum="5-1">
 <name id="_66ffbfa3-8e91-9d57-1039-3c552a345f4e" semx-id="_4484ead8-eeb8-ff86-25a7-12b7b05a0f44">Suggested application order of validation checks</name><fmt-name id="_3eff745e-1f4e-8295-2655-19a8047e567d"><span class="fmt-caption-label"><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_6">5</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="table-6-1">1</semx></span><span class="fmt-caption-delim"> — </span><semx element="name" source="_66ffbfa3-8e91-9d57-1039-3c552a345f4e">Suggested application order of validation checks</semx></fmt-name><fmt-xref-label><span class="fmt-element-name">Table</span> <semx element="autonum" source="sec_6">5</semx><span class="fmt-autonum-delim">-</span><semx element="autonum" source="table-6-1">1</semx></fmt-xref-label>
@@ -1109,7 +606,7 @@ sourcecode .nt {
 
 <clause id="sec_7" anchor="sec_7" obligation="normative" semx-id="_b95e7e77-3e22-fb81-4983-be7a9e696d4f" displayorder="10">
 <title id="_fe069f4f-7f75-7988-a1af-863cf9c3c68c" semx-id="_f9aef338-ae60-92c6-543a-dcf8dc5ef0e9">Check Classification</title><fmt-title depth="1" id="_a7846224-11f6-e3bb-7e0d-741fe66e6ca3"><span class="fmt-caption-label"><semx element="autonum" source="sec_7">6</semx></span><span class="fmt-caption-delim"><tab/></span><semx element="title" source="_fe069f4f-7f75-7988-a1af-863cf9c3c68c">Check Classification</semx></fmt-title><fmt-xref-label><span class="fmt-element-name">Section</span> <semx element="autonum" source="sec_7">6</semx></fmt-xref-label>
-<p id="_58af04d0-f1f5-2c15-bf8c-5f781d81543f" semx-id="_58af04d0-f1f5-2c15-bf8c-5f781d81543f">The check classification conforms to the scheme described in <eref type="inline" bibitemid="S_158" citeas="S-158" id="_4a9b1cc3-2825-7e15-1d43-a2650bf1e611"/><semx element="eref" source="_4a9b1cc3-2825-7e15-1d43-a2650bf1e611"><fmt-xref type="inline" target="S_158">S-158</fmt-xref></semx>.</p>
+<p id="_58af04d0-f1f5-2c15-bf8c-5f781d81543f" semx-id="_58af04d0-f1f5-2c15-bf8c-5f781d81543f">The check classification conforms to the scheme described in <eref type="inline" bibitemid="S_158" citeas="IHO S-158" id="_4a9b1cc3-2825-7e15-1d43-a2650bf1e611"/><semx element="eref" source="_4a9b1cc3-2825-7e15-1d43-a2650bf1e611"><fmt-xref type="inline" target="S_158">IHO S-158</fmt-xref></semx>.</p>
 </clause>
 
 <clause id="sec_8" anchor="sec_8" obligation="normative" semx-id="_22ccbd90-fea8-9cdd-2bfa-389b7c2f3f38" displayorder="11">
@@ -1191,9 +688,9 @@ Notes:: {{ check.notes }}
 </clause>
 
 
-</sections><bibliography><references id="_9f5e74af-b79e-a830-63f5-8e03ccf3f8cf" normative="false" obligation="informative" semx-id="_9f5e74af-b79e-a830-63f5-8e03ccf3f8cf" hidden="true" displayorder="14">
-<title id="_79a2af9e-6853-19a3-fcb8-27eb8dad0c44" semx-id="_2b4ed339-a7ed-1bbb-9576-55fcbc1ace3a">Bibliography</title><fmt-title depth="1" id="_2da55403-b11b-078e-f7e8-f49a7def2e71"><semx element="title" source="_79a2af9e-6853-19a3-fcb8-27eb8dad0c44">Bibliography</semx></fmt-title><bibitem id="ISO_19101" type="standard" schema-version="v1.5.6" anchor="ISO_19101" hidden="true" semx-id="_bbc1c161-97f2-38a5-ded9-0b99cd732374"><formattedref>ISO 19101: Geographic information — Reference model, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/26002.html">https://www.iso.org/standard/26002.html</fmt-link>).</formattedref>
-  <fetched>2026-09-30</fetched>
+</sections><bibliography><references id="_4c96de2c-3a4f-278b-7c4a-d2cee5752094" normative="false" obligation="informative" semx-id="_4c96de2c-3a4f-278b-7c4a-d2cee5752094" hidden="true" displayorder="14">
+<title id="_79a2af9e-6853-19a3-fcb8-27eb8dad0c44" semx-id="_2b4ed339-a7ed-1bbb-9576-55fcbc1ace3a">Bibliography</title><fmt-title depth="1" id="_2da55403-b11b-078e-f7e8-f49a7def2e71"><semx element="title" source="_79a2af9e-6853-19a3-fcb8-27eb8dad0c44">Bibliography</semx></fmt-title><bibitem id="ISO_19101" type="standard" schema-version="v1.5.6" anchor="ISO_19101" hidden="true" semx-id="_be9e3566-f83e-a2c1-352e-060fcb2656b4"><formattedref>ISO 19101: Geographic information — Reference model, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/26002.html">https://www.iso.org/standard/26002.html</fmt-link>).</formattedref>
+  <fetched>2026-10-01</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1215,11 +712,7 @@ Notes:: {{ check.notes }}
   <uri type="src">https://www.iso.org/standard/26002.html</uri>
   <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:26002:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/02/60/26002.detail.rss</uri>
-  <docidentifier type="ISO" primary="true">ISO 19101</docidentifier>
-  <docidentifier type="iso-undated">iso-undated ISO 19101</docidentifier>
-  <docidentifier type="iso-reference">iso-reference ISO 19101(E)</docidentifier>
-  <docidentifier type="URN">URN urn:iso:std:iso:19101:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO 19101</docidentifier>
-  <docnumber>19101</docnumber>
+  <docidentifier type="ISO" primary="true">ISO 19101</docidentifier><docidentifier scope="biblio-tag">ISO 19101</docidentifier>
   <contributor>
     <role type="publisher"/>
     <organization>
@@ -1242,7 +735,7 @@ Notes:: {{ check.notes }}
         
 <name>Geographic information/Geomatics</name>
 
-        <identifier id="_f0b7f6c8-53cb-3afd-3bae-10af9f8771b3">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_f0b7f6c8-53cb-3afd-3bae-10af9f8771b3">ISO/TC 211</semx></tt></fmt-identifier>
+        <identifier id="_7548fab0-d086-a0e1-64a8-598029386381">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_7548fab0-d086-a0e1-64a8-598029386381">ISO/TC 211</semx></tt></fmt-identifier>
       </subdivision>
       <abbreviation>ISO</abbreviation>
     </organization>
@@ -1298,10 +791,6 @@ Notes:: {{ check.notes }}
       <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:26002:en</uri>
       <uri type="rss">https://www.iso.org/contents/data/standard/02/60/26002.detail.rss</uri>
       <docidentifier type="ISO" primary="true">ISO 19101:2002</docidentifier>
-      <docidentifier type="iso-undated">ISO 19101</docidentifier>
-      <docidentifier type="iso-reference">ISO 19101:2002(E)</docidentifier>
-      <docidentifier type="URN">urn:iso:std:iso:19101:stage-95.99</docidentifier>
-      <docnumber>19101</docnumber>
       <date type="published">
         <on>2002-07-04</on>
       </date>
@@ -1327,7 +816,7 @@ Notes:: {{ check.notes }}
             
 <name>Geographic information/Geomatics</name>
 
-            <identifier id="_cdd2af8c-8e2d-69d3-c609-1042dc642e6d">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_cdd2af8c-8e2d-69d3-c609-1042dc642e6d">ISO/TC 211</semx></tt></fmt-identifier>
+            <identifier id="_933b0d90-d041-f80a-78cf-1e8f9e747a82">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_933b0d90-d041-f80a-78cf-1e8f9e747a82">ISO/TC 211</semx></tt></fmt-identifier>
           </subdivision>
           <abbreviation>ISO</abbreviation>
         </organization>
@@ -1369,8 +858,8 @@ Notes:: {{ check.notes }}
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="ISO_19107" type="standard" schema-version="v1.5.6" anchor="ISO_19107" hidden="true" semx-id="_09e0e473-8528-b3c7-8deb-87f712c7c8d3"><formattedref>ISO 19107: Geographic information — Spatial schema, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/26012.html">https://www.iso.org/standard/26012.html</fmt-link>).</formattedref>
-  <fetched>2026-09-30</fetched>
+</bibitem><bibitem id="ISO_19107" type="standard" schema-version="v1.5.6" anchor="ISO_19107" hidden="true" semx-id="_947e2f42-6d5f-ebbf-1300-1e3724a763db"><formattedref>ISO 19107: Geographic information — Spatial schema, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/26012.html">https://www.iso.org/standard/26012.html</fmt-link>).</formattedref>
+  <fetched>2026-10-01</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1392,11 +881,7 @@ Notes:: {{ check.notes }}
   <uri type="src">https://www.iso.org/standard/26012.html</uri>
   <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:26012:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/02/60/26012.detail.rss</uri>
-  <docidentifier type="ISO" primary="true">ISO 19107</docidentifier>
-  <docidentifier type="iso-undated">iso-undated ISO 19107</docidentifier>
-  <docidentifier type="iso-reference">iso-reference ISO 19107(E)</docidentifier>
-  <docidentifier type="URN">URN urn:iso:std:iso:19107:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO 19107</docidentifier>
-  <docnumber>19107</docnumber>
+  <docidentifier type="ISO" primary="true">ISO 19107</docidentifier><docidentifier scope="biblio-tag">ISO 19107</docidentifier>
   <contributor>
     <role type="publisher"/>
     <organization>
@@ -1419,7 +904,7 @@ Notes:: {{ check.notes }}
         
 <name>Geographic information/Geomatics</name>
 
-        <identifier id="_f749cc60-f8d9-5241-6e8e-cb17b8b357fd">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_f749cc60-f8d9-5241-6e8e-cb17b8b357fd">ISO/TC 211</semx></tt></fmt-identifier>
+        <identifier id="_36088258-ee29-2c17-b861-4200ef2a1761">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_36088258-ee29-2c17-b861-4200ef2a1761">ISO/TC 211</semx></tt></fmt-identifier>
       </subdivision>
       <abbreviation>ISO</abbreviation>
     </organization>
@@ -1465,10 +950,6 @@ Notes:: {{ check.notes }}
       <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:26012:en</uri>
       <uri type="rss">https://www.iso.org/contents/data/standard/02/60/26012.detail.rss</uri>
       <docidentifier type="ISO" primary="true">ISO 19107:2003</docidentifier>
-      <docidentifier type="iso-undated">ISO 19107</docidentifier>
-      <docidentifier type="iso-reference">ISO 19107:2003(E)</docidentifier>
-      <docidentifier type="URN">urn:iso:std:iso:19107:stage-95.99</docidentifier>
-      <docnumber>19107</docnumber>
       <date type="published">
         <on>2003-05-08</on>
       </date>
@@ -1494,7 +975,7 @@ Notes:: {{ check.notes }}
             
 <name>Geographic information/Geomatics</name>
 
-            <identifier id="_17387ef9-658b-f2c4-cd23-a9a136547c59">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_17387ef9-658b-f2c4-cd23-a9a136547c59">ISO/TC 211</semx></tt></fmt-identifier>
+            <identifier id="_e081a264-1f4e-06f7-4bc0-896eb8e502f4">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_e081a264-1f4e-06f7-4bc0-896eb8e502f4">ISO/TC 211</semx></tt></fmt-identifier>
           </subdivision>
           <abbreviation>ISO</abbreviation>
         </organization>
@@ -1526,8 +1007,8 @@ Notes:: {{ check.notes }}
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="ISO_19103" type="standard" schema-version="v1.5.6" anchor="ISO_19103" hidden="true" semx-id="_9be910a1-940f-d4d2-918d-83191903dfb7"><formattedref>ISO 19103: Geographic information — Conceptual schema language, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/56734.html">https://www.iso.org/standard/56734.html</fmt-link>).</formattedref>
-  <fetched>2026-09-30</fetched>
+</bibitem><bibitem id="ISO_19103" type="standard" schema-version="v1.5.6" anchor="ISO_19103" hidden="true" semx-id="_30ecfc87-3ad8-5b5b-428f-09913fbc75f8"><formattedref>ISO 19103: Geographic information — Conceptual schema language, International Organization for Standardization, committee, International Organization for Standardization (<fmt-link target="https://www.iso.org/standard/56734.html">https://www.iso.org/standard/56734.html</fmt-link>).</formattedref>
+  <fetched>2026-10-01</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
 
@@ -1549,11 +1030,7 @@ Notes:: {{ check.notes }}
   <uri type="src">https://www.iso.org/standard/56734.html</uri>
   <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:56734:en</uri>
   <uri type="rss">https://www.iso.org/contents/data/standard/05/67/56734.detail.rss</uri>
-  <docidentifier type="ISO" primary="true">ISO 19103</docidentifier>
-  <docidentifier type="iso-undated">iso-undated ISO 19103</docidentifier>
-  <docidentifier type="iso-reference">iso-reference ISO 19103(E)</docidentifier>
-  <docidentifier type="URN">URN urn:iso:std:iso:19103:stage-95.99</docidentifier><docidentifier scope="biblio-tag">ISO 19103</docidentifier>
-  <docnumber>19103</docnumber>
+  <docidentifier type="ISO" primary="true">ISO 19103</docidentifier><docidentifier scope="biblio-tag">ISO 19103</docidentifier>
   <contributor>
     <role type="publisher"/>
     <organization>
@@ -1576,7 +1053,7 @@ Notes:: {{ check.notes }}
         
 <name>Geographic information/Geomatics</name>
 
-        <identifier id="_7669000e-f04d-5483-9a02-e8f985a90d5f">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_7669000e-f04d-5483-9a02-e8f985a90d5f">ISO/TC 211</semx></tt></fmt-identifier>
+        <identifier id="_21d79c54-46ff-15ca-885c-06242b1db7d2">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_21d79c54-46ff-15ca-885c-06242b1db7d2">ISO/TC 211</semx></tt></fmt-identifier>
       </subdivision>
       <abbreviation>ISO</abbreviation>
     </organization>
@@ -1632,10 +1109,6 @@ Notes:: {{ check.notes }}
       <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:56734:en</uri>
       <uri type="rss">https://www.iso.org/contents/data/standard/05/67/56734.detail.rss</uri>
       <docidentifier type="ISO" primary="true">ISO 19103:2015</docidentifier>
-      <docidentifier type="iso-undated">ISO 19103</docidentifier>
-      <docidentifier type="iso-reference">ISO 19103:2015(E)</docidentifier>
-      <docidentifier type="URN">urn:iso:std:iso:19103:stage-95.99</docidentifier>
-      <docnumber>19103</docnumber>
       <date type="published">
         <on>2015-12-02</on>
       </date>
@@ -1661,7 +1134,7 @@ Notes:: {{ check.notes }}
             
 <name>Geographic information/Geomatics</name>
 
-            <identifier id="_d5dc2bfc-3bb2-e0d2-de07-ce5c6b91e53e">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_d5dc2bfc-3bb2-e0d2-de07-ce5c6b91e53e">ISO/TC 211</semx></tt></fmt-identifier>
+            <identifier id="_9fcaad52-1c3e-0805-9020-40dec1356859">ISO/TC 211</identifier><fmt-identifier><tt><semx element="identifier" source="_9fcaad52-1c3e-0805-9020-40dec1356859">ISO/TC 211</semx></tt></fmt-identifier>
           </subdivision>
           <abbreviation>ISO</abbreviation>
         </organization>
