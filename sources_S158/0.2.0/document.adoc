@@ -7,8 +7,8 @@
 :published-date:
 :copyright-year: 2016
 :draft:
-:committee: ircc
-:workgroup: ibsc
+:committee: hssc
+:workgroup: s100wg
 :mn-document-class: iho
 :mn-output-extensions: xml,html,doc,pdf,rxl
 :local-cache-only:
