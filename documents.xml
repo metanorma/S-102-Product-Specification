@@ -156,10 +156,10 @@
     <organization>
       <name>International Hydrographic Organization</name>
       <subdivision type="Committee">
-        <name>ircc</name>
+        <name>hssc</name>
       </subdivision>
       <subdivision type="Workgroup">
-        <name>ibsc</name>
+        <name>tsmad</name>
       </subdivision>
     </organization>
   </contributor>
@@ -174,10 +174,10 @@
   <language>en</language>
   <script>Latn</script>
   <status>
-    <stage>in-force</stage>
+    <stage>draft-development</stage>
   </status>
   <copyright>
-    <from>2016</from>
+    <from>2024</from>
     <owner>
       <organization>
         <name>International Hydrographic Organization</name>
