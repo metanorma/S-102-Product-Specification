@@ -10,7 +10,7 @@ The numeric component of the check ID is a 4-digit number whose first digit indi
 the phase to which the check belongs (see <<table-4-1>> below).
 
 [[table-4-1]]
-.Division of product-specific checks into processing phases*
+.Division of product-specific checks into processing phases
 [cols="4",options="header"]
 |===
 | Phase | Check Numbers | Name | Description
