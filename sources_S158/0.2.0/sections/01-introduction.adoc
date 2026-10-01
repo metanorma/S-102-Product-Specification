@@ -49,21 +49,27 @@ Specification S-102 (Bathymetric Surface).
 [bibliography]
 ==== Normative references
 
-* [[[S_98,IHO S-98]]]
+* [[[S_98,nofetch(IHO S-98)]]] _Data Product Interoperability in S-100 Navigation
+Systems_, IHO Publication S-98, Edition 2.0.0, ??? 2024. In Preparation.
 
-* [[[S_100,IHO S-100]]]
+* [[[S_100,nofetch(IHO S-100)]]] _IHO Universal Hydrographic Data Model_, Edition
+5.2.0, June 2024.
 
-* [[[S_102,IHO S-102]]]
+* [[[S_102,nofetch(IHO S-102)]]] _Bathymetric Surface Product Specification_, Edition
+3.0.0, ??? 2024. In preparation.
 
-* [[[S_158,IHO S-158]]]
+* [[[S_158,nofetch(IHO S-158)]]] _Validation Checks — Introduction and Structure_,
+Edition 1.0.0, ??? 2024. In preparation.
 
-* [[[S_158_100,IHO S-158:100]]]
+* [[[S_158_100,nofetch(IHO S-158:100)]]] _Universal Hydrographic Data Model Validation
+Checks_, Edition 1.0.0, ??? 2024. In preparation.
 
 [[sec_1.3.2]]
 [bibliography]
 ==== Informative references
 
-* [[[ISO_19157_2013,ISO 19157:2013]]]
+* [[[ISO_19157_2013,nofetch(ISO 19157:2013)]]] _Geographic information — Data Quality_.
+As amended by Amendment 1, 2018.
 
 [[sec_1.4]]
 === Terms, definitions and abbreviations
@@ -117,7 +123,7 @@ the data type real
 ===== multiplicity
 
 specification of the number of possible occurrences of a property, or the number
-of allowable elements that may participate in a given relationship [ISO 19103]
+of allowable elements that may participate in a given relationship
 
 [example]
 1..++*++ (one to many); 1 (exactly one); 0..1 (zero or one)
@@ -129,6 +135,7 @@ of allowable elements that may participate in a given relationship [ISO 19103]
 ==== Abbreviations
 
 This Specification uses the abbreviated terms defined in S-158.
+In addition, this Specification uses the following abbreviated terms:
 
 FDG:: Feature Data Group. The values group specified in S-100 Part 10c and represented
 by Level 3 and Level 4 in S-102 Figure 10 (Hierarchy of S-102 product).
