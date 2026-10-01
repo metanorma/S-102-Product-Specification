@@ -159,7 +159,7 @@
         <name>hssc</name>
       </subdivision>
       <subdivision type="Workgroup">
-        <name>s100wg</name>
+        <name>tsmad</name>
       </subdivision>
     </organization>
   </contributor>
@@ -174,10 +174,10 @@
   <language>en</language>
   <script>Latn</script>
   <status>
-    <stage>in-force</stage>
+    <stage>draft-development</stage>
   </status>
   <copyright>
-    <from>2016</from>
+    <from>2024</from>
     <owner>
       <organization>
         <name>International Hydrographic Organization</name>

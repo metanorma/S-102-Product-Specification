@@ -9,18 +9,18 @@
 <subdivision type="Committee">
 <name>hssc</name>
 </subdivision><subdivision type="Workgroup">
-<name>s100wg</name>
+<name>tsmad</name>
 </subdivision></organization></contributor><contributor><role type="publisher"/><organization>
 <name>International Hydrographic Organization</name>
-<abbreviation>IHO</abbreviation></organization></contributor><edition>0.2.0</edition><language>en</language><script>Latn</script><status><stage>in-force</stage></status><copyright><from>2016</from><owner><organization>
+<abbreviation>IHO</abbreviation></organization></contributor><edition>0.2.0</edition><language>en</language><script>Latn</script><status><stage>draft-development</stage></status><copyright><from>2024</from><owner><organization>
 <name>International Hydrographic Organization</name>
 <abbreviation>IHO</abbreviation></organization></owner></copyright><series type="main">
 <title>Standards and Specifications</title>
-<abbreviation>S</abbreviation></series><ext><doctype>standard</doctype><flavor>iho</flavor><structuredidentifier><docnumber>158:102</docnumber></structuredidentifier></ext></bibdata><metanorma-extension><semantic-metadata><stage-published>true</stage-published></semantic-metadata>
+<abbreviation>S</abbreviation></series><ext><doctype>standard</doctype><flavor>iho</flavor><structuredidentifier><docnumber>158:102</docnumber></structuredidentifier></ext></bibdata><metanorma-extension><semantic-metadata><stage-published>false</stage-published></semantic-metadata>
 <presentation-metadata><toc-heading-levels>2</toc-heading-levels><html-toc-heading-levels>2</html-toc-heading-levels><doc-toc-heading-levels>2</doc-toc-heading-levels><pdf-toc-heading-levels>2</pdf-toc-heading-levels></presentation-metadata></metanorma-extension>
 <boilerplate><copyright-statement>
 
-<clause id="_bed0e904-f6a8-f317-2afe-bcc8f103b4fb" obligation="normative"><p id="_89655b6b-412a-120f-5b41-4a631dc97240" align="center">© Copyright International Hydrographic Organization 2016</p>
+<clause id="_506ac248-2bf1-856c-1771-fdb76ab58bf6" obligation="normative"><p id="_f739f17f-4d93-1e2b-1471-90ab5108444d" align="center">© Copyright International Hydrographic Organization 2024</p>
 
 <p id="_35726360-327e-c49d-2f7e-c50beded05fd">This work is copyright. Apart from any use permitted in accordance with the Berne Convention for the Protection of Literary and Artistic Works (1886), and except in the circumstances described below, no part may be translated, reproduced by any process, adapted, communicated or commercially exploited without prior written permission from the International Hydrographic Organization (IHO). Copyright in some of the material in this publication may be owned by another party and permission for the translation and/or reproduction of that material must be obtained from the owner.</p>
 </clause>
@@ -640,7 +640,7 @@ Notes:: {{ check.notes }}
 </clause>
 
 
-</sections><bibliography><references id="_4c96de2c-3a4f-278b-7c4a-d2cee5752094" normative="false" obligation="informative">
+</sections><bibliography><references id="_3cdd5b2e-2d6f-172d-ae1a-9edc38d98277" normative="false" obligation="informative">
 <title id="_2b4ed339-a7ed-1bbb-9576-55fcbc1ace3a">Bibliography</title><bibitem id="_be9e3566-f83e-a2c1-352e-060fcb2656b4" type="standard" schema-version="v1.5.6" anchor="ISO_19101" hidden="true">
   <fetched>2026-10-01</fetched>
   
@@ -810,7 +810,7 @@ Notes:: {{ check.notes }}
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="_947e2f42-6d5f-ebbf-1300-1e3724a763db" type="standard" schema-version="v1.5.6" anchor="ISO_19107" hidden="true">
+</bibitem><bibitem id="_ed6fc76d-3f83-b130-b0dc-c482847fa6d2" type="standard" schema-version="v1.5.6" anchor="ISO_19107" hidden="true">
   <fetched>2026-10-01</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
@@ -830,9 +830,9 @@ Notes:: {{ check.notes }}
   
 <title language="fr" script="Latn" type="main">Information géographique — Schéma spatial</title>
 
-  <uri type="src">https://www.iso.org/standard/26012.html</uri>
-  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:26012:en</uri>
-  <uri type="rss">https://www.iso.org/contents/data/standard/02/60/26012.detail.rss</uri>
+  <uri type="src">https://www.iso.org/standard/66175.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:66175:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/06/61/66175.detail.rss</uri>
   <docidentifier type="ISO" primary="true">ISO 19107</docidentifier>
   <contributor>
     <role type="publisher"/>
@@ -861,15 +861,16 @@ Notes:: {{ check.notes }}
       <abbreviation>ISO</abbreviation>
     </organization>
   </contributor>
-  <edition>1</edition>
+  <edition>2</edition>
   <language>en</language>
+  <language>fr</language>
   <script>Latn</script>
   <status>
-    <stage>60</stage>
-    <substage>60</substage>
+    <stage>90</stage>
+    <substage>93</substage>
   </status>
   <copyright>
-    <from>2003</from>
+    <from>2019</from>
     <owner>
       <organization>
         
@@ -878,6 +879,16 @@ Notes:: {{ check.notes }}
       </organization>
     </owner>
   </copyright>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO 19107:2003</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19107:2003</docidentifier>
+      <date type="published">
+        <on>2003-05-08</on>
+      </date>
+    </bibitem>
+
+  </relation>
   <relation type="instanceOf">
     <bibitem type="standard">
       
@@ -898,12 +909,12 @@ Notes:: {{ check.notes }}
       
 <title language="fr" script="Latn" type="main">Information géographique — Schéma spatial</title>
 
-      <uri type="src">https://www.iso.org/standard/26012.html</uri>
-      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:26012:en</uri>
-      <uri type="rss">https://www.iso.org/contents/data/standard/02/60/26012.detail.rss</uri>
-      <docidentifier type="ISO" primary="true">ISO 19107:2003</docidentifier>
+      <uri type="src">https://www.iso.org/standard/66175.html</uri>
+      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:66175:en</uri>
+      <uri type="rss">https://www.iso.org/contents/data/standard/06/61/66175.detail.rss</uri>
+      <docidentifier type="ISO" primary="true">ISO 19107:2019</docidentifier>
       <date type="published">
-        <on>2003-05-08</on>
+        <on>2019-12-02</on>
       </date>
       <contributor>
         <role type="publisher"/>
@@ -932,16 +943,17 @@ Notes:: {{ check.notes }}
           <abbreviation>ISO</abbreviation>
         </organization>
       </contributor>
-      <edition>1</edition>
+      <edition>2</edition>
       <language>en</language>
+      <language>fr</language>
       <script>Latn</script>
-      <abstract language="en" script="Latn">ISO 19107:2003 specifies conceptual schemas for describing the spatial characteristics of geographic features, and a set of spatial operations consistent with these schemas. It treats vector geometry and topology up to three dimensions. It defines standard spatial operations for use in access, query, management, processing, and data exchange of geographic information for spatial (geometric and topological) objects of up to three topological dimensions embedded in coordinate spaces of up to three axes.</abstract>
+      <abstract language="en" script="Latn">This document specifies conceptual schemas for describing the spatial characteristics of geographic entities, and a set of spatial operations consistent with these schemas. It treats “vector” geometry and topology. It defines standard spatial operations for use in access, query, management, processing and data exchange of geographic information for spatial (geometric and topological) objects. Because of the nature of geographic information, these geometric coordinate spaces will normally have up to three spatial dimensions, one temporal dimension and any number of other spatially dependent parameters as needed by the applications. In general, the topological dimension of the spatial projections of the geometric objects will be at most three.</abstract>
       <status>
-        <stage>60</stage>
-        <substage>60</substage>
+        <stage>90</stage>
+        <substage>93</substage>
       </status>
       <copyright>
-        <from>2003</from>
+        <from>2019</from>
         <owner>
           <organization>
             
@@ -950,6 +962,16 @@ Notes:: {{ check.notes }}
           </organization>
         </owner>
       </copyright>
+      <relation type="obsoletes">
+        <bibitem>
+          <formattedref>ISO 19107:2003</formattedref>
+          <docidentifier type="ISO" primary="true">ISO 19107:2003</docidentifier>
+          <date type="published">
+            <on>2003-05-08</on>
+          </date>
+        </bibitem>
+
+      </relation>
       <place>
         <city>Geneva</city>
       </place>
@@ -959,7 +981,7 @@ Notes:: {{ check.notes }}
   <place>
     <city>Geneva</city>
   </place>
-</bibitem><bibitem id="_30ecfc87-3ad8-5b5b-428f-09913fbc75f8" type="standard" schema-version="v1.5.6" anchor="ISO_19103" hidden="true">
+</bibitem><bibitem id="_42f777d6-cd5f-aa96-a159-734910a61473" type="standard" schema-version="v1.5.6" anchor="ISO_19103" hidden="true">
   <fetched>2026-10-01</fetched>
   
 <title language="en" script="Latn" type="title-intro">Geographic information</title>
@@ -979,9 +1001,9 @@ Notes:: {{ check.notes }}
   
 <title language="fr" script="Latn" type="main">Information géographique — Langage de schéma conceptuel</title>
 
-  <uri type="src">https://www.iso.org/standard/56734.html</uri>
-  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:56734:en</uri>
-  <uri type="rss">https://www.iso.org/contents/data/standard/05/67/56734.detail.rss</uri>
+  <uri type="src">https://www.iso.org/standard/83454.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:83454:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/08/34/83454.detail.rss</uri>
   <docidentifier type="ISO" primary="true">ISO 19103</docidentifier>
   <contributor>
     <role type="publisher"/>
@@ -1010,15 +1032,16 @@ Notes:: {{ check.notes }}
       <abbreviation>ISO</abbreviation>
     </organization>
   </contributor>
-  <edition>1</edition>
+  <edition>2</edition>
   <language>en</language>
+  <language>fr</language>
   <script>Latn</script>
   <status>
     <stage>60</stage>
     <substage>60</substage>
   </status>
   <copyright>
-    <from>2015</from>
+    <from>2024</from>
     <owner>
       <organization>
         
@@ -1029,10 +1052,10 @@ Notes:: {{ check.notes }}
   </copyright>
   <relation type="obsoletes">
     <bibitem>
-      <formattedref>ISO/TS 19103:2005</formattedref>
-      <docidentifier type="ISO" primary="true">ISO/TS 19103:2005</docidentifier>
+      <formattedref>ISO 19103:2015</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19103:2015</docidentifier>
       <date type="published">
-        <on>2005-07-18</on>
+        <on>2015-12-02</on>
       </date>
     </bibitem>
 
@@ -1057,12 +1080,12 @@ Notes:: {{ check.notes }}
       
 <title language="fr" script="Latn" type="main">Information géographique — Langage de schéma conceptuel</title>
 
-      <uri type="src">https://www.iso.org/standard/56734.html</uri>
-      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:56734:en</uri>
-      <uri type="rss">https://www.iso.org/contents/data/standard/05/67/56734.detail.rss</uri>
-      <docidentifier type="ISO" primary="true">ISO 19103:2015</docidentifier>
+      <uri type="src">https://www.iso.org/standard/83454.html</uri>
+      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:83454:en</uri>
+      <uri type="rss">https://www.iso.org/contents/data/standard/08/34/83454.detail.rss</uri>
+      <docidentifier type="ISO" primary="true">ISO 19103:2024</docidentifier>
       <date type="published">
-        <on>2015-12-02</on>
+        <on>2024-09-27</on>
       </date>
       <contributor>
         <role type="publisher"/>
@@ -1091,16 +1114,17 @@ Notes:: {{ check.notes }}
           <abbreviation>ISO</abbreviation>
         </organization>
       </contributor>
-      <edition>1</edition>
+      <edition>2</edition>
       <language>en</language>
+      <language>fr</language>
       <script>Latn</script>
-      <abstract language="en" script="Latn">ISO 19103:2015 provides rules and guidelines for the use of a conceptual schema language within the context of geographic information. The chosen conceptual schema language is the Unified Modeling Language (UML). ISO 19103.2015 provides a profile of the Unified Modelling Language (UML). The standardization target type of this standard is UML schemas describing geographic information.</abstract>
+      <abstract language="en" script="Latn">This document specifies provisions for the use of a conceptual schema language within the context of modelling geographic information. The chosen conceptual schema language is a subset of the Unified Modeling Language (UML). This document specifies a UML profile for modelling geographic information. This document specifies a set of core data types for use in conceptual schemas. The standardization target type of this document is conceptual schemas describing geographic information.</abstract>
       <status>
         <stage>60</stage>
         <substage>60</substage>
       </status>
       <copyright>
-        <from>2015</from>
+        <from>2024</from>
         <owner>
           <organization>
             
@@ -1111,10 +1135,10 @@ Notes:: {{ check.notes }}
       </copyright>
       <relation type="obsoletes">
         <bibitem>
-          <formattedref>ISO/TS 19103:2005</formattedref>
-          <docidentifier type="ISO" primary="true">ISO/TS 19103:2005</docidentifier>
+          <formattedref>ISO 19103:2015</formattedref>
+          <docidentifier type="ISO" primary="true">ISO 19103:2015</docidentifier>
           <date type="published">
-            <on>2005-07-18</on>
+            <on>2015-12-02</on>
           </date>
         </bibitem>
 

@@ -7,10 +7,10 @@
 <subdivision type="Committee">
 <name>hssc</name>
 </subdivision><subdivision type="Workgroup">
-<name>s100wg</name>
+<name>tsmad</name>
 </subdivision></organization></contributor><contributor><role type="publisher"/><organization>
 <name>International Hydrographic Organization</name>
-<abbreviation>IHO</abbreviation></organization></contributor><edition>0.2.0</edition><language>en</language><script>Latn</script><status><stage>in-force</stage></status><copyright><from>2016</from><owner><organization>
+<abbreviation>IHO</abbreviation></organization></contributor><edition>0.2.0</edition><language>en</language><script>Latn</script><status><stage>draft-development</stage></status><copyright><from>2024</from><owner><organization>
 <name>International Hydrographic Organization</name>
 <abbreviation>IHO</abbreviation></organization></owner></copyright><series type="main">
 <title>Standards and Specifications</title>
