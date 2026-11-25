@@ -169,8 +169,8 @@
       <uri type="doc">./documents/_S158/1.0.0/document.doc</uri>
       <uri type="html">./documents/_S158/1.0.0/document.html</uri>
       <uri type="rxl">./documents/_S158/1.0.0/document.rxl</uri>
-      <docidentifier primary="true" type="IHO">S-158:102</docidentifier>
-      <docnumber>158:102</docnumber>
+      <docidentifier primary="true" type="IHO">S-158</docidentifier>
+      <docnumber>158</docnumber>
       <date type="published">
         <on>2025-12-31</on>
       </date>      <contributor>
@@ -210,7 +210,7 @@
         <doctype>specification</doctype>
         <flavor>iho</flavor>
         <structuredidentifier>
-          <docnumber>158:102</docnumber>
+          <docnumber>158</docnumber>
         </structuredidentifier>      </ext>    </bibdata>
   </relation>
 </relaton-collection>
