@@ -1,0 +1,2696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="1.4.8" schema-version="v2.3.0" flavor="iho">
+<bibdata type="standard">
+<title language="en" type="main">Bathymetric Surface Validation Checks</title>
+<docidentifier primary="true" type="IHO">S-158:102</docidentifier><docnumber>158:102</docnumber><date type="published"><on>2025-12-31</on></date><contributor><role type="author"/><organization>
+<name>International Hydrographic Organization</name>
+<abbreviation>IHO</abbreviation></organization></contributor><contributor><role type="author"><description>committee</description></role><organization>
+<name>International Hydrographic Organization</name>
+<subdivision type="Committee">
+<name>hssc</name>
+</subdivision><subdivision type="Workgroup">
+<name>tsmad</name>
+</subdivision></organization></contributor><contributor><role type="publisher"/><organization>
+<name>International Hydrographic Organization</name>
+<abbreviation>IHO</abbreviation></organization></contributor><edition>1.0.0</edition><language>en</language><script>Latn</script><status><stage>in-force</stage></status><copyright><from>2024</from><owner><organization>
+<name>International Hydrographic Organization</name>
+<abbreviation>IHO</abbreviation></organization></owner></copyright><series type="main">
+<title>Standards and Specifications</title>
+<abbreviation>S</abbreviation></series><ext><doctype>specification</doctype><flavor>iho</flavor><structuredidentifier><docnumber>158:102</docnumber></structuredidentifier><editorialgroup><committee><abbreviation>HSSC</abbreviation></committee><workgroup><abbreviation>TSMAD</abbreviation></workgroup></editorialgroup></ext></bibdata><metanorma-extension><semantic-metadata><stage-published>true</stage-published></semantic-metadata>
+<presentation-metadata><output-extensions>xml,html,doc,pdf,rxl</output-extensions><toc-heading-levels>2</toc-heading-levels><html-toc-heading-levels>2</html-toc-heading-levels><doc-toc-heading-levels>2</doc-toc-heading-levels><pdf-toc-heading-levels>2</pdf-toc-heading-levels></presentation-metadata></metanorma-extension>
+<boilerplate><copyright-statement>
+
+<clause id="_506ac248-2bf1-856c-1771-fdb76ab58bf6" obligation="normative"><p id="_f739f17f-4d93-1e2b-1471-90ab5108444d" align="center">© Copyright International Hydrographic Organization 2024</p>
+
+<p id="_35726360-327e-c49d-2f7e-c50beded05fd">This work is copyright. Apart from any use permitted in accordance with the Berne Convention for the Protection of Literary and Artistic Works (1886), and except in the circumstances described below, no part may be translated, reproduced by any process, adapted, communicated or commercially exploited without prior written permission from the International Hydrographic Organization (IHO). Copyright in some of the material in this publication may be owned by another party and permission for the translation and/or reproduction of that material must be obtained from the owner.</p>
+</clause>
+</copyright-statement>
+
+<license-statement>
+
+<clause id="_9bf48a27-fa65-370b-071d-801df0a5d200" obligation="normative"><p id="_6807bae6-fe35-6fba-59f5-44090fd3231e">This document or partial material from this document may be translated, reproduced or distributed for general information, on no more than a cost recovery basis. Copies may not be sold or distributed for profit or gain without prior written agreement of the IHO Secretariat and any other copyright holders.</p>
+
+<p id="_4ba6434a-5a09-56da-5a40-3c4ba0295e25">In the event that this document or partial material from this document is reproduced, translated or distributed under the terms described above, the following statements are to be included:</p>
+
+<quote id="_a9c0213c-1c06-9f17-9d04-bd3d5081a897"><p id="_e6ef4d42-bf58-6248-1241-4243b4959dc4">“Material from IHO publication [reference to extract: Title, Edition] is reproduced with the permission of the IHO Secretariat (Permission No ……./…) acting for the International Hydrographic Organization (IHO), which does not accept responsibility for the correctness of the material as reproduced: in case of doubt, the IHO’s authentic text shall prevail. The incorporation of material sourced from IHO shall not be construed as constituting an endorsement by IHO of this product.”</p>
+
+<p id="_6dab5d20-3f67-a559-e529-ef6119963249">“This [document/publication] is a translation of IHO [document/publication] [name]. The IHO has not checked this translation and therefore takes no responsibility for its accuracy. In case of doubt the source version of [name] in [language] should be consulted.”</p>
+</quote>
+
+<p id="_62703033-d11a-d519-507c-480ef5a726c5">The IHO Logo or other identifiers shall not be used in any derived product without prior written permission from the IHO Secretariat.</p>
+</clause>
+</license-statement>
+
+<feedback-statement>
+
+<p id="_f4237cd5-78af-6f99-7140-f119acdf9d0e">Published by the<br/> International Hydrographic Organization<br/> 4b quai Antoine 1<sup>er</sup><br/> Principauté de Monaco<br/> Tel: (377) 93.10.81.00<br/> Fax: (377) 93.10.81.40<br/> <link target="mailto:info@iho.int">info@iho.int</link><br/> <link target="https://www.iho.int">www.iho.int</link><br/></p>
+</feedback-statement>
+</boilerplate><preface><introduction id="_b8df6199-faf2-4179-e554-7f704ff8c501" anchor="sec_1" obligation="informative">
+<title id="_2b2e98d1-114a-3da4-8556-01ae0a724280">Introduction</title>
+<p id="_6c1bfd81-f649-8312-b10c-1718104a89ac">This document specifies a set of checks that producers of S-102 Bathymetric Surface validation tools must implement in their validation software. Validation software is used to ensure that S-102 data are compliant with the S-102 Product Specification. The initial list of checks for S-102 was compiled by the IHO S-102 Project Team of the IHO S-100 Working Group.</p>
+
+<p id="_354e7993-b4fd-569b-19a4-0dad0108a393">The checks listed in this document are product-specific. They supplement but do not replace the generic S-100 validation checks applicable to all S-100 products which are defined in a separate IHO publication (S-158:100 — Universal Hydrographic Model Validation Checks).</p>
+
+<clause id="_8676501d-65c7-ab2a-2bad-7950efbb7aee" anchor="sec_1.1" obligation="informative">
+<title id="_2543ebe2-c602-0347-2b1d-18b4dcdfe989">Scope</title>
+<p id="_a6742f16-d60f-72dc-e5dd-8957dd001ddd">This document, designated as “S-158:102” by the IHO, specifies validation checks for data products conforming to Edition(s) 3.0.x of the S-102 (Bathymetric Surface) Product Specification.</p>
+
+<p id="_7e19b390-166f-6f8c-0232-8096dc3db3b4">This document specifies product-specific validation checks for both S-102 datasets and exchange sets containing S-102 datasets.</p>
+
+<p id="_18d85d8c-ded4-1f8b-ac31-decdacb8c294">The checks specified in this document supplement the checks described in Edition 1.0.0 of S-158:100 (Universal Hydrographic Data Model Validation Checks). Both sets of validation checks, those described in S-158:100 as well as those defined in S-158:102, must be applied to test the validity of S-102 datasets and exchange sets. For datasets and exchange sets intended for use on ECDIS, additional cross-product checks, defined in S-158:98, must also be applied.</p>
+
+<p id="_ddfb0901-d1f8-5092-f6f8-f30231ca3a58">The checks described are intended for production systems designed to produce S-102 datasets. The checks can be administered at any time during the production phase.</p>
+</clause>
+
+<clause id="_b1d3c108-17b1-051e-1a5d-00c7e203cf68" anchor="sec_1.2" obligation="informative">
+<title id="_696d49db-7393-0a71-cad8-6da82b7b4e82">Conformance</title>
+<p id="_c6501557-5904-ff98-d1b0-c1d9d457cd66">This specification conforms to Edition 1.0.0 of IHO specification S-158 (Validation Checks — Introduction and Structure).</p>
+
+<p id="_a305f57c-9bcf-7221-9897-a4bb3390442b">The validation checks described herein conform to Edition(s) 3.0.x of IHO Product Specification S-102 (Bathymetric Surface).</p>
+</clause>
+
+<clause id="_81308f84-5ebc-c6ff-bfaa-03388130d568" anchor="sec_1.3" obligation="informative">
+<title id="_405d7e76-c420-1ba1-fa0d-60626febc31e">References</title>
+<references id="_cf2f5be0-2f77-a6c5-be42-b074826f6b74" anchor="sec_1.3.1" normative="true" obligation="informative">
+<title id="_747142f9-64e9-61a7-c6f5-2f2245874721">Normative references</title>
+<bibitem anchor="S_98" id="_9858840f-420c-b755-1da8-d9eb8e146132"><formattedref format="application/x-isodoc+xml"><em>Data Product Interoperability in S-100 Navigation
+Systems</em>, IHO Publication S-98, Edition 2.0.0, ??? 2024. In Preparation.</formattedref><docidentifier type="IHO">IHO S-98</docidentifier><docnumber>98</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem anchor="S_100" id="_cf205be5-a200-849d-2003-2d9bb94ec54f"><formattedref format="application/x-isodoc+xml"><em>IHO Universal Hydrographic Data Model</em>, Edition
+5.2.0, June 2024.</formattedref><docidentifier type="IHO">IHO S-100</docidentifier><docnumber>100</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem anchor="S_102" id="_28d57b10-aa4c-8d7a-57c6-79abbf45dbc3"><formattedref format="application/x-isodoc+xml"><em>Bathymetric Surface Product Specification</em>, Edition
+3.0.0, January 2025.</formattedref><docidentifier type="IHO">IHO S-102</docidentifier><docnumber>102</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem anchor="S_158" id="_fee6d0fc-75cd-3b0c-6523-525335b32d64"><formattedref format="application/x-isodoc+xml"><em>Validation Checks — Introduction and Structure</em>,
+Edition 1.0.0, February 2025.</formattedref><docidentifier type="IHO">IHO S-158</docidentifier><docnumber>158</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem anchor="S_158_100" id="_5a2c5b61-afed-7b0c-045a-7daaa843928c"><formattedref format="application/x-isodoc+xml"><em>Universal Hydrographic Data Model Validation
+Checks</em>, Edition 1.0.0, February 2025.</formattedref><docidentifier type="IHO">IHO S-158:100</docidentifier><docnumber>158:100</docnumber><language>en</language><script>Latn</script></bibitem>
+</references>
+
+<references id="_d5341dcb-6745-d7d7-0c38-ea03e6472f4e" anchor="sec_1.3.2" normative="false" obligation="informative">
+<title id="_0d315bc8-26fe-c81b-e7a2-bc44ec2e00e6">Informative references</title><bibitem anchor="ISO_19157_2013" id="_f910da59-e8b9-0dde-c8e1-fa9c1fe5c839">
+  <formattedref format="application/x-isodoc+xml"><em>Geographic information — Data Quality</em>.
+As amended by Amendment 1, 2018.</formattedref>
+  <docidentifier type="ISO">ISO 19157:2013</docidentifier>
+  <docnumber>19157</docnumber>
+  <date type="published">
+    <on>2013</on>
+  </date>
+  <language>en</language>
+  <script>Latn</script>
+</bibitem>
+
+</references>
+</clause>
+
+<clause id="_ec69cd11-da98-56c8-8e0b-14a3cc425287" anchor="sec_1.4" obligation="informative">
+<title id="_cb23800f-74b0-1f76-8ef3-90c7cc4eb4d2">Terms, definitions and abbreviations</title>
+<terms id="_0c285c5c-2f49-a4be-e478-f45bfaa910bf" anchor="sec_1.4.1" obligation="normative">
+<title id="_cd4fdebc-0759-75f8-dca5-7c161faa7ae5">Terms and definitions</title>
+<p id="_8cfbfb43-2b7f-a244-c951-7fa2e21c0ff2">The terms and definitions listed in S-158 apply to this document. In addition, the following terms and definitions are used:</p>
+
+<term id="_daeb0af1-9e4c-2226-5fcf-ef04371402e1" anchor="term-enumeration"><preferred><expression>
+<name>enumeration</name>
+</expression>
+</preferred>
+<definition id="_c433a759-e6cc-645c-321b-4b1be9947253"><verbal-definition id="_730b98d6-524f-3bd7-cee9-0c94e2f760f3"><p id="_7246df19-14c1-2bd7-e1f1-c9ecc2529c21">a fixed list of valid identifiers of named literal values. Attributes of an enumerated type may only take values from this list.</p></verbal-definition></definition>
+ </term>
+
+<term id="_10080cad-c99d-2210-933c-ab37b4af94c5" anchor="term-exterior"><preferred><expression>
+<name>exterior</name>
+</expression>
+</preferred>
+<definition id="_59384db7-f9aa-0c23-c5bb-2d83fd0c8aff"><verbal-definition id="_67af0faf-c9b9-8ac5-4bd8-701f6ef592e1"><p id="_1522e16a-2532-70bf-c9f5-b9e4dbaa2043">difference between the universe and the closure</p></verbal-definition></definition>
+
+
+
+
+ <termnote id="_d0c8c7c6-da66-a8ed-9ac1-baa8aeadb364"><p id="_bfa55fb0-7f8d-640e-3562-cb6db1a42ef0">The concept of exterior is applicable to both topological and geometric complexes</p>
+</termnote><source status="identical" type="authoritative"><origin bibitemid="ISO_19107" type="inline" citeas="ISO 19107"/></source></term>
+
+<term id="_e077b858-cfb0-7ca3-6605-e411a044ebf4" anchor="term-feature-attribute"><preferred><expression>
+<name>feature attribute</name>
+</expression>
+</preferred>
+<definition id="_4befeefc-2c7a-881e-10a2-35143249bc88"><verbal-definition id="_b67ee9a1-24b5-80ca-8b47-fb53b57741bf"><p id="_44d05824-9c16-809d-3afe-c2c3a38d6eaa">characteristic of a feature</p></verbal-definition></definition>
+
+
+
+
+
+
+
+
+
+
+
+
+ <termnote id="_bf69a5ee-95d6-3b80-e131-77cbda986206"><p id="_e6411f7f-335d-d89f-3354-93395badeb71">A feature attribute may occur as a type or an instance. Feature attribute type or feature attribute instance is used when only one is meant.</p>
+</termnote><termnote id="_b308a443-faee-20a5-9be3-d8b46a920223"><p id="_8d37fec1-dc26-f0ea-bbbf-b2c04acf7f59">A feature attribute type has a name, a data type and a domain associated to it. A feature attribute instance has an attribute value taken from the value domain of the feature attribute type.</p>
+</termnote><termnote id="_31681494-5579-7086-c19f-deb533b9d18c"><p id="_1cf2fe9b-2748-9f04-da7a-162eb224740f">In a Feature Catalogue, a feature attribute may include a value domain but does not specify attribute values for feature instances.</p>
+</termnote><termexample id="_c0998276-bd1e-a0c6-f3c9-4b30612b9a41"><p id="_caf2e0b5-2fef-2d70-0983-156665f5e5e9">A feature attribute named communication channel may have an attribute value VHF0007 which belongs to the data type text</p>
+</termexample><termexample id="_860f88c6-48b8-b143-6a74-d2e6ce9abf56"><p id="_af13ea0a-c5b5-1e1f-1fcd-c74ef397e2ea">A feature attribute named length may have an attribute value 82.4 which belongs to the data type real</p>
+</termexample><source status="identical" type="authoritative"><origin bibitemid="ISO_19101" type="inline" citeas="ISO 19101"/></source></term>
+
+<term id="_65c588e5-acfa-5cab-9d2c-84eb6b43d2e2" anchor="term-multiplicity"><preferred><expression>
+<name>multiplicity</name>
+</expression>
+</preferred>
+<definition id="_700c3330-b176-53a4-09ce-ad8dabdaba3d"><verbal-definition id="_036d78f5-1dd4-ef49-1ec2-9ac5663f94bd"><p id="_6016be66-d1d8-c80e-eb04-0770d973ca4e">specification of the number of possible occurrences of a property, or the number of allowable elements that may participate in a given relationship</p></verbal-definition></definition>
+
+
+
+
+ <termexample id="_3f817451-b6bb-9309-d86d-fab00cc7f26f"><p id="_1a77ebfb-e1ff-ca7a-69ad-ac31926bb0ff">1..* (one to many); 1 (exactly one); 0..1 (zero or one)</p>
+</termexample><source status="identical" type="authoritative"><origin bibitemid="ISO_19103" type="inline" citeas="ISO 19103"/></source></term>
+</terms>
+
+<definitions id="_cdfef337-79db-3a2c-e371-a4854ccc8eff" anchor="sec_1.4.2" type="abbreviated_terms" obligation="normative">
+<title id="_7afc9bff-8712-0f4e-affb-f340df627119">Abbreviated terms</title>
+<p id="_af4e57bf-9dcd-fe4a-fce3-6c44e5715a21">This Specification uses the abbreviated terms defined in S-158. In addition, this Specification uses the following abbreviated terms:</p>
+
+<dl id="_a68ab7c1-ccf0-cf87-a532-76aa2ea7a1b4"><dt anchor="symbol-FDG" id="_d203d579-7fe4-570f-1f37-d3b1802347ba">FDG</dt><dd id="_a23dc120-483d-98fc-961d-125ce473bc42"><p id="_ea14a671-e013-0c51-2ce2-81110d61f845">Feature Data Group. The values group specified in S-100 Part 10c and represented by Level 3 and Level 4 in S-102 Figure 10 (Hierarchy of S-102 product).</p>
+</dd>
+<dt anchor="symbol-FIDS" id="_33ebc407-b098-82e6-d75a-12018ac57f07">FIDS</dt><dd id="_0beaf9e9-c9e0-9fce-8028-276974ab6911"><p id="_202e1ea3-8c8f-b71e-4569-268b724c7884">Feature Information Dataset in “Group_F” — see S-100 Part 10c. See <eref type="inline" bibitemid="S_102" citeas="IHO S-102"><localityStack><locality type="figure"><referenceFrom>10</referenceFrom></locality></localityStack></eref> (Hierarchy of S-102 product) and  <eref type="inline" bibitemid="S_102" citeas="IHO S-102"><localityStack><locality type="clause"><referenceFrom>10.2.3</referenceFrom></locality></localityStack></eref>.</p>
+</dd>
+<dt anchor="symbol-FINST" id="_c3fa3331-ce3f-33db-d508-f5bebdf1b44c">FINST</dt><dd id="_fa06740f-e39a-6ba3-9d00-130077e03cd3"><p id="_5685ae57-7332-ffc3-6572-230ffb960647">Feature Instance. Instance of BathymetryCoverage in S-102 3.0.0. Represents the BathymetryCoverage.nn groups within the BathymetryCoverage feature type group.</p>
+</dd>
+<dt anchor="symbol-FTYPE" id="_d9b35899-8be0-5b1c-84c6-ed7675357336">FTYPE</dt><dd id="_53b21f78-f8d4-7156-5f2f-3660c85c807f"><p id="_a6391282-5c3d-2df5-7be0-fdb81e5ae94e">Feature Type. Represents the container group BathymetryCoverage in S-102. See Level 1 of Figure 10 (Hierarchy of S-102 product).</p>
+</dd>
+<dt anchor="symbol-FTYPE.N" id="_521b5074-f2f1-5d31-c203-add33b525686">FTYPE.N</dt><dd id="_721066e3-466a-e529-db31-28050f3fdffd"><p id="_469425c1-3ecb-e6ea-55d2-6cf3a7c4af18">Feature instance groups. “N” denotes the N-th Feature instance group in the dataset. See Level 2 of Figure 10 (Hierarchy of S-102 product).</p>
+</dd>
+<dt anchor="symbol-QINST" id="_3fabb208-3342-68b5-fc70-91eccb19da85">QINST</dt><dd id="_1c107a9a-41f5-726d-e229-71706bf9a4e6"><p id="_7e9d3c13-9cf7-e68c-677e-7c6a60501f08">Quality feature instance. Instance of QualityOfBathymetryCoverage in S-102 3.0.0. Represents the BathymetryCoverage.nn groups within the BathymetryCoverage feature type group.</p>
+</dd>
+<dt anchor="symbol-QTYPE" id="_ae77c15f-d7be-43ca-e69d-9ea642ddad50">QTYPE</dt><dd id="_44a20b0d-4303-b6ca-dc3a-b5c5cc42b468"><p id="_9993cd10-c1e5-418c-4768-045c9dc21ff0">Quality Feature Type. Represents the container group for QualityOfBathymetryCoverage in S-102 (ed. 3.0.0). See Level 1 of Figure 10 (Hierarchy of S-102 product).</p>
+</dd>
+<dt anchor="symbol-QTYPE.N" id="_dcaee0e6-16e0-7e36-d013-7b2e118ed340">QTYPE.N</dt><dd id="_c682b8b6-450b-6830-0f72-488c7bcbf676"><p id="_422b392a-432e-7c2c-6339-560a5f08598d">Instance groups for the quality features. “N” denotes the N-th Quality feature instance group in the dataset. See Level 2 of Figure 10 (Hierarchy of S-102 product).</p>
+</dd></dl>
+</definitions>
+<definitions id="_041b74e4-455e-2f01-bff0-13ec7e44614f" anchor="sec_1.4.3" type="symbols" obligation="normative">
+<title id="_0b7f8487-2700-d7ba-f167-879cdbcdfa05">Symbols</title>
+<p id="_2f7ffbec-bd43-5cb2-dcd7-7494acf9008f">The symbols used in logical and spatial expressions are defined in <eref type="inline" bibitemid="S_158" citeas="IHO S-158"><localityStack><locality type="clause"><referenceFrom>1.3.3</referenceFrom></locality></localityStack></eref> (Symbols).</p>
+</definitions></clause>
+
+<clause id="_a976fb7b-c8ef-8276-5d3f-b0ab25ddcc14" anchor="sec_1.5" obligation="informative">
+<title id="_1e738dc2-171c-5a52-d4d3-6db16b1be7dc">Use of language</title>
+<p id="_35a0ae43-613c-0395-909d-cd26ef4a0106">Within this document:</p>
+
+<ul id="_0113decb-e114-f381-4448-71e0b7839282"><li><p id="_54e9585a-ba9b-3fc0-a6df-b78327e4b285">“Must” indicates a mandatory requirement.</p>
+</li>
+<li><p id="_cd72a283-16bd-d9f0-b767-1cc4d57c7ec3">“Should” indicates an optional requirement, that is the recommended process to be followed, but is not mandatory.</p>
+</li>
+<li><p id="_faa915f7-f814-40f7-3124-abf9b5f3a4fe">“May” means “allowed to” or “could possibly”, and is not mandatory.</p>
+</li>
+</ul>
+</clause>
+
+<clause id="_32ce778d-b980-3d03-c84f-dc89cc47c3b3" anchor="sec_1.6" obligation="informative">
+<title id="_2ea0d054-4d1c-9110-0b23-5756bdcf4c0c">General description</title>
+<p id="_f9c9ed61-ccf0-218a-bb94-6b01d79087ea">S-158:102 is a specification describing product-specific validation checks for S-102 products. There are no data products based directly on this edition of S-158:102 and therefore no general information applicable to data products conforming to it.</p>
+
+<p id="_1fcfe52b-03a0-e704-5696-f2eb47b31346">The validation checks are intended for production systems designed to produce S-102 Bathymetric Surface datasets. The checks can be administered at any time during the production phase.</p>
+</clause>
+
+<clause id="_70fce4fe-d30d-f2a4-5c0b-13576813ba17" anchor="sec_1.7" obligation="informative">
+<title id="_101248b8-d4f9-c12c-a086-229c08eab268">Specification metadata and maintenance</title>
+<clause id="_ede12305-0038-dadb-4073-e50b5eb0de0f" anchor="sec_1.7.1" obligation="informative">
+<title id="_58afdd10-d001-a23d-7440-3beb6d03c21e">Specification metadata</title>
+<p id="_d48355be-4a0f-9eae-c6ae-ba342e544c43">This information uniquely identifies this Specification and provides information about its creation and maintenance.</p>
+
+<dl id="_cae5b3d8-43d9-cc80-80a0-e471953510eb"><dt><strong>Title:</strong></dt>
+<dd id="_20768ae2-342a-e03e-f34f-0facf9632e8d"><p id="_dd353c01-1632-58d6-7966-8321f2aeed4e">Bathymetric Surface Validation Checks</p>
+</dd>
+<dt><strong>Version:</strong></dt>
+<dd id="_79c29d07-f478-d5d8-e274-287f4417f0d9"><p id="_d0eed6c4-7f07-e1d8-7ccf-d5a75c6656b5">1.0.0</p>
+</dd>
+<dt><strong>Date:</strong></dt>
+<dd id="_d2621007-3478-8e0d-4333-5a3f4979e4ff"><p id="_75dacc3c-91b2-38cf-1df4-d8266497c58c">2025-12-31</p>
+</dd>
+<dt><strong>Language:</strong></dt>
+<dd id="_bcce6c19-2f3d-aacb-a2e8-0404d8130833"><p id="_cea567e3-48f1-61ad-9a6f-af7e6b5f18ed">English</p>
+</dd>
+<dt><strong>Classification:</strong></dt>
+<dd id="_6cbd1665-2d53-a82c-72ba-656ef4742b61"><p id="_4aeeb01d-3383-03ca-4a8d-0bbea041199f">Unclassified</p>
+</dd>
+<dt><strong>Contact:</strong></dt>
+<dd id="_d5667474-b987-01a2-90b3-6f1dd87a2916"><p id="_c254079f-b551-a7b1-dd30-fc34dc794ad8">International Hydrographic Organization.</p>
+<p id="_86a441b8-4255-a2d4-4431-31296acc86a6">4 quai Antoine 1er,<br/> B.P.445 MC 98011 MONACO CEDEX<br/> Telephone: +377 93 10 81 00<br/> B.P. 445 Fax: + 377 93 10 81 40<br/> Email:  <link target="mailto:info@iho.int">info@iho.int</link></p>
+</dd>
+<dt><strong>Role:</strong></dt>
+<dd id="_0aa90f93-9a0f-9598-972b-752bd685d60f"><p id="_778a6820-a9e0-978b-3265-39915682a6cb">Owner</p>
+</dd>
+<dt><strong>URL:</strong></dt>
+<dd id="_33e9bbf6-68e8-c892-71f4-20a682ddb03a"><p id="_6dc68168-a8b4-6a12-fab5-400ac43a6cd3"><link target="https://registry.iho.int/">https://registry.iho.int</link></p>
+</dd>
+<dt><strong>Identifier:</strong></dt>
+<dd id="_b381dabe-2049-63e7-78b1-858674c86b2f"><p id="_9bc7d016-fab1-a703-9770-21566cb72ef4">S-158:102</p>
+</dd>
+<dt><strong>Maintenance:</strong></dt>
+<dd id="_1ea4de80-0db5-6e4b-2c76-ae44f0490c6b"><p id="_c63e2eb0-5389-6879-1c61-e929c50632a5">Changes to this Specification are coordinated by the IHO S-102 Project Team of the IHO S-100 Working Group and made available via the IHO Publications website. Maintenance of the Product Specification must conform to IHO Technical Resolution 2/2007 (revised 2010). For reporting issues which need correction, use the contact information.</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_a76c8ea9-d05c-39b2-f4f3-811d29970ad0" anchor="sec_1.7.2" obligation="informative">
+<title id="_c7edd68b-898a-4225-6102-bf98ce6fb164">Specification maintenance</title>
+<clause id="_a346cade-fbe8-f9af-3742-3637f9ce071a" anchor="sec_1.7.2.1" obligation="informative">
+<title id="_4f391deb-4433-9d2a-cac9-1a7a4fb7aeae">Introduction</title>
+<p id="_b89f3c4f-ed41-ef53-7a9b-c6e8a753d4dc">Changes to S-158:102 will be released by the IHO as a New Edition, revision, or clarification.</p>
+
+<p id="_95bdb16e-765f-c297-8d96-e279ed0c2054">The list of checks, which accompanies this document is considered part of this Specification and changes to it are considered changes to this Specification.</p>
+
+<p id="_3c670ad4-a051-3c16-cc1c-512062c85955">S-158:102 is not accompanied by separate artefacts such as an XML Schema, Feature or Portrayal Catalogue and therefore this clause does not address the question of changes to such derived artefacts.</p>
+</clause>
+
+<clause id="_0b7c6b84-3af0-95ba-4f7a-a55752160852" anchor="sec_1.7.2.2" obligation="informative">
+<title id="_b64c9e8f-a328-427b-e8e7-ddedec38a21e">New Edition</title>
+<p id="_fa7bfed5-0ea3-1284-573f-8e75aa051320"><em>New Editions</em> of S-158:102 introduce significant changes.</p>
+
+<p id="_cfa7da8c-b64e-a8f0-5ee9-939fe4505bb1">The term “New Edition” conforms to the definition in S-158 clause 1.6.2.2.</p>
+</clause>
+
+<clause id="_5d65b0a9-2960-d4c9-d2d8-745942949126" anchor="sec_1.7.2.3" obligation="informative">
+<title id="_d732eef6-5d5f-df33-7ef1-4b6b23f02156">Revision</title>
+<p id="_dd52d32c-165e-af03-6b2b-61f2a76cf998"><em>Revisions</em> are defined as substantive semantic changes to S-158:102.</p>
+
+<p id="_1674844d-489b-d318-34e3-d4a69129ed79">The term “Revision” conforms to the definition in S-158 clause 1.6.2.3.</p>
+</clause>
+
+<clause id="_0c07a485-5ece-f6ba-b3f6-45239cf5ecaf" anchor="sec_1.7.2.4" obligation="informative">
+<title id="_59858a06-4a74-23bf-894e-4c88457d7403">Clarification</title>
+<p id="_ece72963-613e-ab2a-e2bd-1453ac489d10"><em>Clarifications</em> are changes to S-158:102 arising from non-substantive reasons or from introduction of a new edition or revision of S-102.</p>
+
+<p id="_3e6903da-9bb2-eb3d-0789-5cd43ed06faa">The term “Clarification” conforms to the definition in S-158 clause 1.6.2.4.</p>
+</clause>
+
+<clause id="_13b7f7e3-414c-a13a-e63f-df8775ed49d3" anchor="sec_1.7.2.5" obligation="informative">
+<title id="_4dd81461-3382-9fc4-4575-6dce2282bb8b">Version numbers</title>
+<p id="_0abd5074-a998-3d8a-6197-fa03735ba53d">The associated version control numbering to identify changes (n) to S-158:102 must be as follows:</p>
+
+<p id="_18ccd241-5151-d58f-414a-5ab689c6478d">New Editions denoted as <strong>n</strong>.0.0</p>
+
+<p id="_170bfc9d-4f75-bdc3-0806-b4a234eb6428">Revisions denoted as n.<strong>n</strong>.0</p>
+
+<p id="_a54e603c-3a30-c2b8-9fb0-f749776e6f1f">Clarifications denoted as n.n.<strong>n</strong></p>
+</clause>
+</clause>
+</clause>
+</introduction><clause id="_9c6172d0-23bd-79e8-81bb-bf6fa6246422" obligation="informative">
+<title id="_f482e726-0676-e254-4e7a-0ceccf436582">Document History</title>
+<p id="_973c33be-e3f1-dbd1-2bd6-21236ca201eb">Changes to this Specification are coordinated by the IHO S-100 Working Group S-102 Project Team. New editions will be made available via the IHO web site. Maintenance of the Specification shall conform to IHO Resolution 2/2007 (as amended).</p>
+
+<table id="_fb5744f6-5b13-8bd2-dd3f-882900f4277a" unnumbered="true"><thead><tr id="_0b2f6be9-3b2b-4100-b09f-4e634195f4f6"><th id="_4ba153f7-5898-fa62-cd02-77faad3262b6" valign="top" align="left">Version Number</th>
+<th id="_abae6440-2f0a-2ad2-a2e6-bf33e64f4c3e" valign="top" align="left">Date</th>
+<th id="_f70805c8-d3cc-c69c-88c0-26665ce05d6f" valign="top" align="left">Author/Editor</th>
+<th id="_d1ebaad4-fd6d-d793-8a87-7a150e4c8769" valign="top" align="left">Purpose</th>
+</tr></thead>
+<tbody><tr id="_e5a0ba34-3123-cb1e-57bc-939071fe491b"><td id="_c7197cd6-b7cc-98b7-708b-2f90d6efcd87" valign="top" align="left">0.1.0</td>
+<td id="_b2f7627e-3981-c7b1-003e-2ccfada00fb1" valign="top" align="left">2024-10-15</td>
+<td id="_4875ca6b-b145-3a4e-4081-ee3343ad9a90" valign="top" align="left">RM</td>
+<td id="_8c18bb55-e661-2fbc-5089-fac0ce4fe984" valign="top" align="left">Initial draft for S100 Validation Checks GitHub repository. This is based on the August 2023 checks from the S-102 PT, which are aligned to the unpublished S-102 Edition 2.3.0.</td>
+</tr><tr id="_d5ee6166-80c8-ad29-0f50-5ea997d80ffd"><td id="_d82e343e-2a75-a23c-62c6-8f72d679b2b2" valign="top" align="left">0.2.0</td>
+<td id="_2d400893-706e-dc87-02fe-512c8125c3e2" valign="top" align="left">2024-11-18</td>
+<td id="_8f2f112c-590f-f516-c754-ab816055fdb2" valign="top" align="left">RM</td>
+<td id="_bbe321ac-0360-cacb-3524-599d9dd41f85" valign="top" align="left">Editorial updates agreed at S-100 WG9. Continues to based on the August 2023 checks.</td>
+</tr><tr id="_e134bc0f-6a01-5c1e-fe3c-6af8ca3bc365"><td id="_61829557-c8ae-72df-296a-bf4527a6a4ad" valign="top" align="left">1.0.0</td>
+<td id="_3553b0e4-e0ee-5ea2-4aa8-1e97b9792329" valign="top" align="left">2025-09-30</td>
+<td id="_c64aedda-c85d-7b24-5dce-731dc37bec26" valign="top" align="left">DROH (BSH)</td>
+<td id="_d770cc19-c727-67ec-52bd-b8d8787bade7" valign="top" align="left">Update to version S-102 3.0.0 via the S-102PT25</td>
+</tr><tr id="_4a4fc768-b19a-238b-4709-34c67930d89b"><td id="_eb4b5fe9-6324-b294-5b2e-df9f6c3187f6" valign="top" align="left"/><td id="_a0bacd84-def3-602f-bbb1-774a642331fc" valign="top" align="left"/><td id="_a666e01d-236b-6609-96b1-0e938ef5e550" valign="top" align="left"/><td id="_ce1a8b54-0c19-569e-8763-f6c9e50a83d5" valign="top" align="left"/></tr><tr id="_865fad6f-6f60-8180-ed19-ed583a79960e"><td id="_003e3774-9c55-3601-17e5-6c7712c27814" valign="top" align="left"/><td id="_09d6141b-3a4b-edb6-b3f7-37ae01460f65" valign="top" align="left"/><td id="_083b609e-d2e3-567e-1b9e-106de1c2a635" valign="top" align="left"/><td id="_ecc4b447-750b-6cb9-bf6a-cdb7b02e23f0" valign="top" align="left"/></tr><tr id="_f80b8de0-4eaf-a63c-61f0-7f6e263b811f"><td id="_04a05301-3a8f-e3bd-93aa-167fbaba80cb" valign="top" align="left"/><td id="_e13d5f61-fe7f-60f8-75a4-d29c97413d1b" valign="top" align="left"/><td id="_04881853-128c-4883-f393-c9038842580b" valign="top" align="left"/><td id="_47c7102a-7f30-dce6-bd5b-f0dd7bef18b1" valign="top" align="left"/></tr><tr id="_280c6f55-0f2c-825f-6132-d93451937d3e"><td id="_66924135-a11a-edcf-25a6-83906398b543" valign="top" align="left"/><td id="_2ade8a2c-8c74-289f-60cb-bed666ea1091" valign="top" align="left"/><td id="_a9415e18-2b8a-4254-c286-ff26f3a664e8" valign="top" align="left"/><td id="_c920b3e9-ee23-b113-6d42-18c04dfde669" valign="top" align="left"/></tr></tbody>
+</table>
+</clause><clause id="_cc40a747-da7c-dd0c-16c2-44c097ac9d80" obligation="informative">
+<title id="_96b4c695-4449-759f-bfc5-ef7904cb09e6">Summary of Substantive Changes in Edition x.x</title>
+<p id="_3f044c01-deb9-4be6-66aa-58cf7bdda2ad">Bold references in the Clauses Affected column indicate the principal sections/clauses that are affected by the described change.</p>
+
+<table id="_83025636-531b-dd0d-f9f2-21b606b7435c" unnumbered="true"><thead><tr id="_b608262a-94a3-0c37-3dec-09cab9eb255e"><th id="_968e0f03-6660-ec0e-f35c-8ef3b2a4cddb" valign="top" align="left">Change Summary</th>
+<th id="_6e4167ad-336d-9db8-cd0b-510a815018cb" valign="top" align="left">Clauses Affected</th>
+</tr></thead>
+<tbody><tr id="_5c604ba3-3ce4-5d90-9de6-18533f89975f"><td id="_e2abdc0c-148f-b1da-4edf-fbd1f76f9040" valign="top" align="left">(To be populated for editions following Edition 1.0.0)</td>
+<td id="_aedccfd1-069e-ec5d-9132-a3f6a6d2c54a" valign="top" align="left"/></tr><tr id="_13598cd4-db11-673e-d537-de96647f688d"><td id="_aa2c8956-3c8b-ef8e-9c74-e05dd72b238f" valign="top" align="left"/><td id="_e6dd41da-9900-c23b-1a3f-d300498120e2" valign="top" align="left"/></tr><tr id="_21f1aa79-d557-7ce3-c8c0-aafa9ba1845a"><td id="_fe9f346c-acca-1085-4215-7b0c9080df89" valign="top" align="left"/><td id="_3ebc796e-15e4-82d9-f7bb-298a3b216949" valign="top" align="left"/></tr></tbody>
+</table>
+</clause></preface><sections>
+
+
+
+
+<clause id="_c4d501b4-fbaa-c395-7e68-32bfb94d391f" anchor="sec_2" obligation="normative">
+<title id="_8454583d-8aa9-4042-c819-01ca1c6f4360">Check Structure</title>
+<p id="_b3a9e98c-fcfd-7cf4-5522-da43df23a7a9">Check structure in S-158:102 includes the fields specified in S-158 plus the additional fields specified in  <xref target="table-2-1"/>.</p>
+
+<table id="_337430ff-66a5-44df-4d61-f4b02b25f631" anchor="table-2-1">
+<name id="_7ed5a285-3654-33e1-0849-6332f92ec834">Extensions to check structure</name>
+<thead><tr id="_5390fecc-cb0f-cfc9-0ef8-21dc65e3a445"><th id="_da214caa-eec6-db5d-f582-4a5c58c3571e" valign="top" align="left">Column Name</th>
+<th id="_0408ec72-569c-5120-3201-d82fff4392c0" valign="top" align="left">Description</th>
+</tr></thead>
+<tbody><tr id="_6c1530bc-678a-7ac9-011c-6e33d96fbb57"><td id="_58671fe4-7840-1c09-2153-b37f5ac39c0a" valign="top" align="left">Prerequisites</td>
+<td id="_afe84304-a35d-9942-43b4-71b4c8ada6c9" valign="top" align="left">Checks which must succeed (check condition evaluates to FALSE) before this check can be executed. Trivial prerequisites are omitted from this column (such as requiring the presence of an attribute before using it in a condition).</td>
+</tr><tr id="_47dd2751-cd50-08c1-6c4f-81a8bef0a1b3"><td id="_7aa2ef13-e453-1b73-2407-7b9e7f4e9f4d" valign="top" align="left">Terminate if failure</td>
+<td id="_7040dc86-8db8-4dad-d4b5-b3de59bb0ac5" valign="top" align="left">Whether failure of the check (the check condition evaluates to TRUE) will force termination of check processing before all validation checks can be executed. Valid values are TRUE and FALSE. The default is FALSE. The HDF5 format is hierarchical and the validity or even the existence of certain parts of the dataset depends on structure or content required to be provided in the dataset. Validation checks for such fundamental structure or content have this field set to TRUE so that subsequent checks which depend on that structure or content are not unnecessarily attempted if the fundamental structure or content fails its own validation check. For example, checks on groups which are members of another group are not attempted if the container group is missing.</td>
+</tr></tbody>
+</table>
+
+<p id="_79444205-9dc0-4d4e-86c3-8b2bceffa62d">Termination of check processing need not be immediate but is recommended at the end of the validation phase during which the failure occurs. Validation phases are explained in  <xref target="sec_4"/>.</p>
+</clause>
+
+<clause id="_abf10776-4bb2-ad86-4706-4b7f3ddfddab" anchor="sec_3" obligation="normative">
+<title id="_8a993423-b6ca-8eef-3097-3c87cede0d1c">Check Syntax</title>
+<p id="_e29faf07-2d77-c336-092b-5f3ec85337fe">The check syntax conforms to the syntax and operators for product-specific checks described in  <eref type="inline" bibitemid="S_158" citeas="IHO S-158"><localityStack><locality type="clause"><referenceFrom>4.2</referenceFrom></locality></localityStack></eref>.</p>
+</clause>
+
+<clause id="_74085e4e-bab0-03ce-b9c8-9ab7fe0f47f8" anchor="sec_4" obligation="normative">
+<title id="_1e5a2601-589d-d75b-1556-69e60c25d4b9">Organisation</title>
+<p id="_8888a379-6474-7d64-0893-70a2e03b59c1">The list of validation checks for this edition of S-158:102 is available separately (see  <xref target="sec_9"/>). The list of checks accompanies this specification and forms an integral part of it.</p>
+
+<p id="_7c4510bb-1f79-37d1-b1ac-b45bd044833d">The numeric component of the check ID is a 4-digit number whose first digit indicates the phase to which the check belongs (see  <xref target="table-4-1"/> below).</p>
+
+<table id="_2c9732e7-4bc8-395a-c424-c7e7f5704e4e" anchor="table-4-1">
+<name id="_893444fa-bce7-1aa1-e48a-1d25fd2a290e">Division of product-specific checks into processing phases</name>
+<thead><tr id="_57f386ff-f7b1-93e1-69de-5841ebc00baf"><th id="_aac12754-6fea-79b7-0872-7923802fba53" valign="top" align="left">Phase</th>
+<th id="_3d1258b9-7cb4-c143-444c-5055a18d7e36" valign="top" align="left">Check Numbers</th>
+<th id="_d9dd27cb-7178-261f-d4db-8b4f4b24a54e" valign="top" align="left">Name</th>
+<th id="_11685971-be3b-9cca-274d-16813387d8a2" valign="top" align="left">Description</th>
+</tr></thead>
+<tbody><tr id="_e2c158d9-42a7-4f2c-976f-ff420e796097"><td id="_01370423-e408-ab91-9b96-803437b6a687" valign="top" align="left">1</td>
+<td id="_5042c692-5248-dc78-c50a-0bf7f2ed89b3" valign="top" align="left">102_1xxx</td>
+<td id="_3afc9b70-3cf2-3268-b45b-14063c4ec573" valign="top" align="left">Validate Dataset Root and Feature Information</td>
+<td id="_902be1e6-e3e9-9ccf-2285-e733967777f9" valign="top" align="left">Validation of root group of HDF5 file and feature type information.</td>
+</tr><tr id="_0511b500-4a80-d055-89fa-b750e8784134"><td id="_ac101797-5e7b-cf36-88fb-989c922c6165" valign="top" align="left">2</td>
+<td id="_f51ef491-cfd1-cde8-5999-66878b362fc1" valign="top" align="left">102_2xxx</td>
+<td id="_e555c132-efc8-ac67-2b48-74a08cc09345" valign="top" align="left">Validate Feature Container Groups</td>
+<td id="_fae6a989-307d-6dac-24f1-7ab81e543d4e" valign="top" align="left">Validation of metadata and structure for each feature type (“Feature Container”). In S-102 there are two feature containers (one for the bathymetry data and another for survey information), so this set of checks is executed only once for each.</td>
+</tr><tr id="_0f9c0d54-39ba-80b6-0e60-16329d08b470"><td id="_9d76ccfd-4fd3-7670-a77f-b4e7a95c4d5c" valign="top" align="left">3</td>
+<td id="_c3ef1e60-e532-5740-2fc9-0b98b4ec08ca" valign="top" align="left">102_3xxx</td>
+<td id="_00159615-4d56-1407-a3ee-9c337e0ec050" valign="top" align="left">Validate Feature Instance Groups</td>
+<td id="_dbfaee35-1d15-1863-ec98-ebd9845ee80e" valign="top" align="left">Validation of feature instances. This set of checks, along with Phase 4 checks, must be executed once for each feature instance group contained within a feature container.</td>
+</tr><tr id="_94ed0d7c-6bb7-d64e-b105-badfe56e2fa5"><td id="_49bed3ef-719c-0d53-1d23-aa0134b52db8" valign="top" align="left">4</td>
+<td id="_44b4bc4e-eeda-2324-6c4a-cfb44bc8cdc5" valign="top" align="left">N/A</td>
+<td id="_341e3b25-0ce0-7af2-c114-1aa6ceca8dbf" valign="top" align="left">Validate Positioning Groups</td>
+<td id="_061bedcd-3a4d-dc6d-266a-b2efe24d7a15" valign="top" align="left">There are no Phase 4 checks for S-102, which does not use positioning groups. This phase is mentioned in this table only for compatibility with S-158:1xx for coverages which do use positioning groups.</td>
+</tr><tr id="_f58f5b6a-d797-3ad8-a500-ecdf329cf776"><td id="_fbc542c8-626a-0199-55b3-7c1b8416e8a2" valign="top" align="left">5</td>
+<td id="_bf331232-34a2-5599-fcc9-152ac68ede3d" valign="top" align="left">102_5xxx</td>
+<td id="_40b68f40-393c-ff07-2bfa-4f0f7c100320" valign="top" align="left">Validate Values Datasets</td>
+<td id="_00ea0aae-9122-8450-2e04-52576e9795c6" valign="top" align="left">Validation of bathymetry data values. This set of checks is applied to the values group in a feature instance group.</td>
+</tr><tr id="_3831ad45-76b0-12b8-d6e3-aac93e22444f"><td id="_117910eb-871c-8c3a-7b88-41f03d0d0bdc" valign="top" align="left">6</td>
+<td id="_8aa446ee-46a7-3634-0d8e-32977a4d646c" valign="top" align="left">102_9xxx</td>
+<td id="_0e106c3d-a062-fbcb-f844-ab4d4cf77d09" valign="top" align="left">Validate Exchange Catalogue</td>
+<td id="_577f617e-42a2-212d-5e7e-9e1d55db10e1" valign="top" align="left">This set of checks relates to product-specific requirements for exchange catalogues</td>
+</tr></tbody>
+</table>
+
+<p id="_dd205636-09d6-c4fb-433e-f0229f2efaf3">Dataset validation checks the structure and content of individual HDF5 data files. The checks for each HDF5 dataset file are divided into four phases</p>
+</clause>
+
+<clause id="_e0ffe5be-a037-7ab2-76c9-19a78fe15be9" anchor="sec_5" obligation="normative">
+<title id="_7be422ff-af7a-0425-b83b-02d16650553c">Other Applicable Checks</title>
+<clause id="_617db0d1-1c60-ae86-1354-2096ef64238e" anchor="sec_5.1" obligation="normative">
+<title id="_a3bed0c8-1d4b-9db1-23f9-27a2cde817cc">Generic S-100 checks</title>
+<p id="_edc821f5-52e7-668c-5c20-76d715332bd2">S-102 datasets and exchange sets must also be validated using the following subset of the generic S-100 validation checks defined in S-158:100:</p>
+
+<table id="_95c30821-e25b-66d7-f2be-6e99f9abde1a"><thead><tr id="_14ef651e-9e6f-f80b-7c71-b98d58ddf724"><th id="_b5a0d874-b5e5-36ba-78ab-e3956692c66d" valign="top" align="left">Document reference in S-158:100 list</th>
+<th id="_8639a775-6b23-d71e-2e3d-e7b2fc79e269" valign="top" align="left">Checks</th>
+<th id="_90760c6c-a16c-7d27-4b50-832b1a933364" valign="top" align="left">Apply to</th>
+<th id="_3fcad481-1883-cca5-14f7-245c5359e722" valign="top" align="left">Remarks</th>
+</tr></thead>
+<tbody><tr id="_427a20ac-bbe5-3fbe-aebc-0d5ac9ea6d18"><td id="_a567b2ca-4efa-3b66-d9cf-da5689cfc085" valign="top" align="left">Part 1</td>
+<td id="_2955124b-8ed5-9caa-5e48-1cd7eda33f9b" valign="top" align="left">All</td>
+<td id="_9c244305-0908-b632-0674-335f850ef2ac" valign="top" align="left">Product Specification</td>
+<td id="_a7c1fceb-b1f4-44ce-ad9e-61c2b4d26c35" valign="top" align="left">No direct implementation on datasets or exchange sets</td>
+</tr><tr id="_9bf1ff0b-1ba5-1a23-30b8-36f6fb638429"><td id="_c33ccebb-f691-bfb7-94e6-6a2fb9f3d39d" valign="top" align="left">Part 2 / 2a</td>
+<td id="_91462501-c458-c763-95be-424e8f732576" valign="top" align="left">All</td>
+<td id="_ab9c50ec-91d0-8231-7aed-2979e3de6f72" valign="top" align="left">Product Specification</td>
+<td id="_27a2223d-5e97-81ca-0e85-ed749f0118ac" valign="top" align="left">No direct implementation on datasets or exchange sets</td>
+</tr><tr id="_94f4cfe4-3a1d-9773-73b0-2b9733d99f32"><td id="_9d5face1-4eff-263f-dcd6-ffa6e1bd1b3f" valign="top" align="left">Part 4a</td>
+<td id="_bb4931ac-8f6c-2938-dcf0-58c291d02000" valign="top" align="left">All</td>
+<td id="_9e52b898-0494-05d1-a374-930c122ddc70" valign="top" align="left">Exchange catalogue</td>
+<td id="_2f232dcf-3ade-714a-7975-22805551042e" valign="top" align="left"/></tr><tr id="_c1414070-eb35-e3d7-dfa1-3ce95ab07356"><td id="_b473ebeb-4aa6-5f6e-1c22-fe0ffcc22756" valign="top" align="left">Part 4b</td>
+<td id="_fdd4485a-b84a-364d-5246-fad2a9269a57" valign="top" align="left">All</td>
+<td id="_550fc197-d5fb-5575-6ad3-fd01b400df6e" valign="top" align="left">Product Specification</td>
+<td id="_33b926f0-b1e2-6b66-9b1b-404ad529117d" valign="top" align="left">No direct implementation on datasets or exchange sets</td>
+</tr><tr id="_6dacf54b-96f5-c7ec-87f6-d530cb83e40c"><td id="_23a945c7-8a15-d000-d88f-d7edb0fdd7c9" valign="top" rowspan="2" align="left">Part 5 / 5a</td>
+<td id="_3a2d41d3-b129-97f4-97ed-d1d927cf7ff5" valign="top" align="left">100_5010</td>
+<td id="_79aa75a6-8aa2-b4cb-b7d4-6c2665e7582b" valign="top" align="left">Product Specification</td>
+<td id="_8d3dfc15-cf5f-ba75-e7c2-d7b2e9f1e325" valign="top" align="left">No direct implementation on datasets or exchange sets</td>
+</tr><tr id="_319f7d93-60fd-accd-a837-3f2dffe88f13"><td id="_4620f1a2-f612-7ac9-8128-8b1f3704743e" valign="top" align="left">100_0001 100_0002 100_0003 100_0004 100_0005 100_0006</td>
+<td id="_509ab578-e07b-af2a-c717-269ec6ff9ef6" valign="top" align="left">Datasets</td>
+<td id="_77558c62-cc1a-cbc6-f403-84c8020f075f" valign="top" align="left"/></tr><tr id="_2b8dc86d-2567-a588-4bfd-594f6639d288"><td id="_31576254-4cfb-a0a1-4613-3a1ae7ffc909" valign="top" align="left">Part 6</td>
+<td id="_32ef27fe-1ba4-7d62-c44d-6034ba1d257b" valign="top" align="left"/><td id="_f6121c45-0fcc-420d-2bb2-891c8ba174d2" valign="top" align="left">Datasets</td>
+<td id="_22680ff4-00f4-5352-a987-12dd8d675419" valign="top" align="left"/></tr><tr id="_380bbac3-d4d7-17c6-e780-d146b24fa6be"><td id="_107f82ea-120e-dd20-7b59-fd83bdeb428b" valign="top" align="left">Part 7</td>
+<td id="_1da7768a-bb28-0ac3-6800-272f44460f01" valign="top" align="left">Only checks for polygons</td>
+<td id="_2783e0cf-c963-560f-954a-12d4e7028e7c" valign="top" align="left">Domain extent polygons</td>
+<td id="_eb773447-ec09-2481-28e3-0bfc54c97d8b" valign="top" align="left">S-102 uses vector geometry only for domain extent polygons. Note also that domain extent polygons as used in S-102 do not have interior boundaries.</td>
+</tr><tr id="_fbe99ca9-dc54-ed29-905a-2503756dc4c0"><td id="_4833d545-7d1e-9640-30d8-b6cfafe0ba39" valign="top" align="left">Part 8</td>
+<td id="_23f41c30-df9a-fdcb-fc3f-8ee892248673" valign="top" align="left">Only checks applicable to regular grid coverages</td>
+<td id="_cf89ebf9-1ade-3ebd-d5b8-77f3afeccaa7" valign="top" align="left">Dataset</td>
+<td id="_0064a929-ecb6-7024-9bf7-73c8b6531cba" valign="top" align="left"/></tr><tr id="_467a0f69-eebd-3747-42ef-124fb64bf626"><td id="_4091043e-5c2f-8a55-7ddc-e2426d90543e" valign="top" align="left">Part 9 / 9a / 13</td>
+<td id="_ec3e0bfb-958f-83d9-9f55-94cd4c8ff812" valign="top" align="left"/><td id="_c13622f7-0704-6407-0090-6fee64437412" valign="top" align="left">Product Specitication</td>
+<td id="_08b7245b-2a02-0917-a0eb-9aff72bbfb7c" valign="top" align="left">Validation checks for Portrayal Catalogue</td>
+</tr><tr id="_1e609402-5eea-5b7f-e1ad-1c1b50fc7aad"><td id="_00086252-e75d-dbed-2f8d-7a90c7e93dec" valign="top" align="left">Part 10a</td>
+<td id="_273dbc7c-b3cd-956a-9f6a-77bd08622968" valign="top" align="left">None</td>
+<td id="_b647a12c-bf30-eb30-902f-19db1a9ca601" valign="top" align="left">N/A</td>
+<td id="_718623d0-c746-45d9-f38d-27534ecdde9a" valign="top" align="left">S-102 does not use the ISO 8211 format</td>
+</tr><tr id="_facf8235-2b72-8cd6-3c4e-f1a938723050"><td id="_25d8a33d-1390-3503-3e47-f9691a9b8bdc" valign="top" align="left">Part 10b</td>
+<td id="_af66319f-c682-5d8a-64c4-781b97b4348c" valign="top" align="left">None</td>
+<td id="_389278df-04f2-2189-63bb-13d6b539668f" valign="top" align="left">N/A</td>
+<td id="_8d14b12d-823e-860e-6042-b040c47049b4" valign="top" align="left">S-102 does not use the S-100 GML format</td>
+</tr><tr id="_4254552e-e7ac-de8a-081c-479c198dcf74"><td id="_e8f68325-a4e2-8d5e-50ff-bf1ae3ce304e" valign="top" align="left">Part 10c</td>
+<td id="_7cfabf3d-743a-b5e8-9a10-c1204b30aacf" valign="top" align="left">Only checks applicable to “Regular Grid” and “Feature oriented Regular Grid” coverages</td>
+<td id="_9ea7302f-b769-5c02-213b-934d30fd6f83" valign="top" align="left">Dataset</td>
+<td id="_2b5799d9-6f8d-6d8c-e265-2a732bf56074" valign="top" align="left">S-102 uses only the “Regular Grid” and “Feature oriented Regular Grid” coverage type</td>
+</tr><tr id="_93e30c67-65ce-ae7c-ea5d-7a9fc3d9bf46"><td id="_4124f15e-98d9-15cf-4c3b-970796a7bfe9" valign="top" align="left">Part 11</td>
+<td id="_c2170e5b-85ce-6903-52c2-c1736d0626a4" valign="top" align="left">100_0255</td>
+<td id="_b05880f5-d122-5a63-98b9-732e8cfe8c65" valign="top" align="left">Dataset</td>
+<td id="_1b182af8-9c1a-0be8-aa31-cb52fde40aa3" valign="top" align="left">There is only one Part 11 generic check, for dataset size</td>
+</tr><tr id="_5f426341-5af4-60df-3fa4-0c6d672bb0f8"><td id="_771dbbfc-b20d-a957-e570-49ddde1c4d59" valign="top" rowspan="2" align="left">Part 15</td>
+<td id="_815fef06-8ffe-7475-31da-c6d38fa85227" valign="top" align="left">100_0256</td>
+<td id="_d5949912-99e8-8cca-81cb-894279c5c9ad" valign="top" align="left">Exchange catalogue</td>
+<td id="_91398fa6-9558-66d7-9d3b-7570aad3be78" valign="top" align="left"/></tr><tr id="_2b5a9230-d0d3-4831-d96c-48709bf3bcb4"><td id="_d0253ad8-c93a-4f7d-23e3-800ba6070ec6" valign="top" align="left">100_0257 100_0258 100_0259 100_0260 100_0261 100_0262 100_0263 100_0264 100_0265 100_0266 100_0267</td>
+<td id="_6a3fa26d-45c1-377a-88ad-208e2ba44b64" valign="top" align="left">Exchange set</td>
+<td id="_ff99796e-7c84-4573-6343-ac3b103977ec" valign="top" align="left"/></tr><tr id="_692025bf-2ea8-daee-e172-806ad9124840"><td id="_a0bc4eb5-0475-1f5d-bf6a-dbe5c7c1df2f" valign="top" align="left">Part 17</td>
+<td id="_f11d7ba6-fdc4-b86f-6d7b-c1a7b7cf3ab8" valign="top" align="left">All</td>
+<td id="_98adff6d-977a-7190-23c9-0bd48d37cc5f" valign="top" align="left">Exchange catalogue<br/> Exchange set</td>
+<td id="_fc2ab7f9-c493-a1a8-ec47-512dab35ac2e" valign="top" align="left"/></tr></tbody>
+</table>
+</clause>
+
+<clause id="_4431b08a-d6ff-0471-8494-623c7b843f35" anchor="sec_5.2" obligation="normative">
+<title id="_56c36038-b44c-01a0-65a7-95cb310b4b43">Interoperability checks</title>
+<p id="_2b964055-2781-91c0-7e5e-9f9640f87862">S-102 datasets and exchange sets intended for use on ECDIS must also pass the applicable interoperability checks from those listed in S-158:98.</p>
+</clause>
+</clause>
+
+<clause id="_81b03b67-903e-67c9-1d1d-0c4719e985a1" anchor="sec_6" obligation="normative">
+<title id="_64dfb0b3-89cb-7b70-3bf6-f403e1520bb1">Check Application Sequence</title>
+<p id="_d603d69e-914e-4da2-3402-9837eb721ba5">The check application sequence expands and modifies the application sequence described in  <eref type="inline" bibitemid="S_158" citeas="IHO S-158"/>.</p>
+
+<table id="_75401582-ac41-bc25-9d80-e3db6ed76315" anchor="table-6-1">
+<name id="_4484ead8-eeb8-ff86-25a7-12b7b05a0f44">Suggested application order of validation checks</name>
+<thead><tr id="_e456219b-7ea5-9858-2042-eb93555f6a3b"><th id="_b76b4985-bcdf-1402-92f0-cfc39f7693cf" valign="top" align="left">Order</th>
+<th id="_b7e3c51f-cbe8-1c33-2db4-bb2a45919e74" valign="top" align="left">Check Collection</th>
+<th id="_90ccabab-100e-be77-e078-60250b7da451" valign="top" align="left">Defined in</th>
+<th id="_565a8560-863a-9a38-1fa3-6a02780c8552" valign="top" align="left">Apply to</th>
+</tr></thead>
+<tbody><tr id="_3eca575b-2178-516a-91d3-dfe5a2d922fa"><td id="_913f391b-17fa-a6a3-5f47-e8375216d8bc" valign="top" align="left">1</td>
+<td id="_685149a9-d1dd-a0a8-01ee-da351961a015" valign="top" align="left">S-100 generic checks for datasets</td>
+<td id="_926439fe-4bed-1d8e-3378-a4abec7a8852" valign="top" align="left">S-158:100</td>
+<td id="_74b19063-0408-51d6-14a7-d3937cc705a7" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_9140de7f-bbfd-8b7f-5f71-0a10df35f8ab"><td id="_2ca6edfb-7ff8-b04a-f19d-a1306f8f0bf5" valign="top" align="left">2</td>
+<td id="_c77b839f-6319-0a70-60b7-565659a94866" valign="top" align="left">Product-specific checks for datasets</td>
+<td id="_6ca72534-a9cc-a3c0-ab6a-8eb115ef56b7" valign="top" align="left">S-158:102</td>
+<td id="_810fbe12-e123-b39f-4edc-214528b4cff1" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_eb4b51d7-548c-eb02-6670-f2d358c85f92"><td id="_76958f0f-8f10-80a6-9dda-b944f40f3933" valign="top" align="left">2.1</td>
+<td id="_5ca814ba-89f3-2767-709f-235c071df5b2" valign="top" align="left">Root group checks</td>
+<td id="_d78770f4-80a8-c053-c0ec-3c369ede5dfc" valign="top" align="left">S-158:102 checks numbered 102_1xxx</td>
+<td id="_74cee92f-889f-a04f-b2de-56238a3165a1" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_0f3774a3-2452-1021-c60b-af1a77a97c6e"><td id="_30ca686a-a6c8-d43b-3b05-e7d7e24c9c4d" valign="top" align="left">2.2</td>
+<td id="_d672ffaf-0818-e43a-236b-53332d6c6e83" valign="top" align="left">Feature Container group checks</td>
+<td id="_da7c8c7c-a85c-ec8a-95ea-a0868b815c93" valign="top" align="left">S-158:102 checks numbered 102_2xxx</td>
+<td id="_389627a2-e128-97b7-b62a-3a0505cccde4" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_1a8ba273-6294-fa41-069b-e8d1dbf2eec6"><td id="_c1fcad73-b383-bdaf-a544-54ecae083775" valign="top" align="left">2.3</td>
+<td id="_9cd56aae-3ff6-1311-35eb-00f73dbd2c6a" valign="top" align="left">Feature Instance group checks</td>
+<td id="_0f45f74a-405b-4452-b825-794c5f9c2670" valign="top" align="left">S-158:102 checks numbered 102_3xxx</td>
+<td id="_7c9e19ae-2a4c-7142-b5b1-6f66aef0897d" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_c578dc6c-d8b5-32fd-667d-b54d06f86b3f"><td id="_48d58552-2d8b-db31-8147-2f4a88d946a7" valign="top" align="left">2.4</td>
+<td id="_120d87de-d0bc-be16-c252-a6843526301b" valign="top" align="left">Values group checks</td>
+<td id="_9ec30667-d284-833f-a6bd-553b027d9874" valign="top" align="left">S-158:102 checks numbered 102_5xxx</td>
+<td id="_646e5fb2-d9e9-98b1-91b7-3690fda94f72" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_f9297990-c088-4ac9-437b-a5bb5c0d4707"><td id="_2bbc6743-ba38-4054-251e-20669d25c9ad" valign="top" align="left">3</td>
+<td id="_26b1e5e1-976c-4350-bbd9-b0f71f8e46f1" valign="top" align="left">Interoperability checks for single S-102 dataset</td>
+<td id="_8edb2ee5-e9cc-b7a7-e929-ebdd31e35716" valign="top" align="left">S-158:98</td>
+<td id="_eb748296-e2a6-74d2-9647-60462137c442" valign="top" align="left">Dataset, in isolation</td>
+</tr><tr id="_c6ef6bc0-7858-2a30-674d-e36736f99ce2"><td id="_e2d9de11-39c2-3543-97fa-7048d35f2e2c" valign="top" align="left">4</td>
+<td id="_f000edcb-bc94-cac3-e0db-88526cd288fe" valign="top" align="left">Inter-dataset, intra-product checks</td>
+<td id="_9c05c64c-dbfb-e976-547d-f98a48bca081" valign="top" align="left">S-158:102 checks numbered 102_0xxx</td>
+<td id="_74c322e4-6f50-1ef3-3608-cea8640ded89" valign="top" align="left">Adjacent or intersecting datasets</td>
+</tr><tr id="_32e86eed-f999-9038-cb7a-633ae881b084"><td id="_aa7eb210-0bbd-1e7e-f11d-4ca1437270e8" valign="top" align="left">5</td>
+<td id="_d35a7b0e-cb10-0e39-ac93-33c8e8534500" valign="top" align="left">Interoperability checks for combinations of datasets from different products</td>
+<td id="_1181bf70-13f5-aecb-9a4a-20b03c2e0e89" valign="top" align="left">S-158:98</td>
+<td id="_a8c20bb8-555e-3467-000f-c975e0d85d65" valign="top" align="left">S-102 dataset in combination with relevant datasets from other products (e.g., S-102)</td>
+</tr><tr id="_606fd4e6-8abd-63be-2d5d-7346a85f642c"><td id="_a860f98c-2792-ef5c-a65a-f63385c917d4" valign="top" align="left">6</td>
+<td id="_8a7111ce-0f95-36f8-a525-632ca47bed36" valign="top" align="left">S-100 generic checks for exchange sets</td>
+<td id="_6fab63c3-d46b-cd0d-a380-7c19b34dd68c" valign="top" align="left">S-158:100</td>
+<td id="_1f3b83d3-df24-2c2a-3256-f7ebe468794d" valign="top" align="left">Exchange set</td>
+</tr><tr id="_cfd7211f-4087-c83d-8b99-39bc2c0dd00b"><td id="_884cd7c6-c500-ded7-9e65-10bf7aab97e8" valign="top" align="left">7</td>
+<td id="_1f3a931e-fc51-4f3d-43de-98deefd79d98" valign="top" align="left">Product-specific checks for exchange sets</td>
+<td id="_21f4bc65-241f-a822-736f-d5b56e9afc67" valign="top" align="left">S-158:102 checks numbered 102_9xxx</td>
+<td id="_6d779c8d-cc4f-666e-5434-27428a055e9d" valign="top" align="left">Exchange set</td>
+</tr><tr id="_0096402b-5fda-d970-3fa1-0853ee414817"><td id="_adfd7632-efcc-3a83-2c08-15a683fb4615" valign="top" align="left">8</td>
+<td id="_26b8c095-b28a-2ea9-9898-5782afbc4338" valign="top" align="left">Product catalogue checks</td>
+<td id="_cebe928e-93a2-0f73-9c73-364d7e46fba9" valign="top" align="left">S-158:128</td>
+<td id="_ed0eab1a-81ab-26af-aac9-bf1386fe86b0" valign="top" align="left">S-128 datasets describing S-102 datasets</td>
+</tr></tbody>
+</table>
+</clause>
+
+<clause id="_b95e7e77-3e22-fb81-4983-be7a9e696d4f" anchor="sec_7" obligation="normative">
+<title id="_f9aef338-ae60-92c6-543a-dcf8dc5ef0e9">Check Classification</title>
+<p id="_58af04d0-f1f5-2c15-bf8c-5f781d81543f">The check classification conforms to the scheme described in <eref type="inline" bibitemid="S_158" citeas="IHO S-158"/>.</p>
+</clause>
+
+<clause id="_78ccc852-9570-765a-75a7-f235c51328a4" anchor="sec_8" obligation="normative">
+<title id="_f5e87630-81ac-d23d-ab27-f55aaa495f79">Geometry and Spatial Operators</title>
+<p id="_c140061a-dcfa-cd6c-3d55-492db8a4a239">S-102 Edition 3.0.0 datasets use vector geometry only for domain extent polygons. Any spatial operators mentioned in checks on domain extent polygons conform to the operators for vector products described in S-158.</p>
+
+<p id="_6ab0eafc-3c8a-4ff8-be70-3e41d20a8927">For all spatial operators a default tolerance of zero should be applied in validation software.</p>
+</clause>
+
+<clause id="_9e0e9f0a-e3dc-2f16-4975-da8ecbc1d032" anchor="sec_9" obligation="normative">
+<title id="_7bdd1193-badc-8d69-d079-c762f88bbc45">Other Components of this Specification</title>
+<p id="_69137e6b-696f-9459-3cb0-2441a514a7ef">The other components of this Specification listed below are provided as separate documents or artefacts accompanying this document and form an integral part of this Specification.</p>
+
+<ol id="_11aa794a-54ad-1895-4701-0ee0b4e2ef6e" type="arabic"><li><p id="_4b30a9ac-564d-bee9-b72e-6e3807aa0464">Spreadsheet of S-102 validation checks named S-158_102_1_0_0.</p>
+</li>
+</ol>
+</clause>
+
+<clause id="_f3e14e62-eb64-0bd3-85c8-5765b2d154b8" anchor="sec_10" obligation="normative">
+<title id="_6fcc9dae-3444-ec3d-0b3b-16f0a3d9c315">Product-specific Validation Checks</title>
+<p id="_1fc0f939-0063-71d7-2735-f9eb7299582d">The product-specific validation checks defined in this document are listed in this clause. The same checks are also provided as a spreadsheet, as described in  <xref target="sec_9"/>.</p>
+
+<clause id="_01429418-8f41-3f9f-09be-78d023fe530a" obligation="normative">
+<title id="_93a092e1-b314-d921-b4f1-ae81f65c5eda">102_0001</title>
+<dl id="_c02d64f1-85b6-0977-272d-6219241f4bf3"><dt>Dev ID</dt>
+<dd id="_613b48a5-ed23-fc46-484f-439c86acba30"><p id="_e98de11c-8b29-8c5f-6c27-bf3057044dd5">102_Dev0001</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_fe6e543d-002f-aa24-72c8-26e758a33747"><p id="_ea6b90c6-3942-c085-f2cd-bf81f67308c0">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_a65313d9-85ad-8ed4-5830-932f25ef604e"><p id="_4cc082da-d567-bd47-8873-5ad377d1f0ba">Overlaps of &lt;FINST&gt; are only permitted where domainExtent.polygons are adjacent to each other.</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_d2f17f1f-2134-1837-2eee-b4fe6b374fb6"><p id="_d3b13360-781b-491b-a888-739854ac1cb3">IF multiple &lt;FINST&gt; are present and an overlap in areas other than those where two or more domainExtent.polygons are adjacent to each other.</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_84b2cf80-fce8-97a6-655d-7f987964d200"><p id="_c5c032f0-2141-9aff-50e8-cfc8d3b8a28e">Correct the data in &lt;FINST&gt; and/or the domainExtent.polygons.</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_367613de-cf34-0277-3421-47b6eb8c0805"><p id="_ba0a8b1e-806e-980d-ca1f-38750ab70d46">PS, 10.2.5</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_0467cb9c-4b65-e86b-7154-870e85fab223"><p id="_3a8119b8-f584-731c-1e53-516e097ddf21">spatial object</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_0860cbbe-0072-6bb2-c5bf-850d98295ae7"><p id="_18d2d4cb-88b7-2968-6223-476e57434e96">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_09fcf381-99c2-db7f-69a3-33501f9aebe6"><p id="_32202bfe-8b7a-aceb-c09a-9961e9704e3e">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_00a2be85-b114-033a-ddd1-5944f0c227f8" obligation="normative">
+<title id="_7044d06d-37e1-b113-bea0-56c8ea30d111">102_1001</title>
+<dl id="_6b2888dc-5c2b-4a0b-ad97-a59a30b5ab77"><dt>Dev ID</dt>
+<dd id="_d67a1e1d-053d-5509-29d1-22e748e30720"><p id="_be767992-6660-c518-9fde-bb4d4bc94160">102_Dev1001</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_6a783f8f-275a-ff37-1b41-d9f596288212"><p id="_665587ff-328e-db6b-103b-b49b8d48fe46">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_06913667-63d3-0feb-f6c9-7f272975aed9"><p id="_322a5aec-b009-be51-7fec-f5202e163460">No feature information group</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_1edabfa7-d72e-e449-9d83-95e5829d6860"><p id="_55536121-d906-3b82-0051-c0db0c1ca5de">IF the root group does not have exactly one group member named Group_F</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_c1d4d211-a3b0-d3f7-f836-29233a7dafa7"><p id="_f5d83d7d-6d79-069c-d454-28ccea34098c">Add feature information group</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_3eeeaf17-0ff9-5a6d-57b5-4bb1daa65d5f"><p id="_3f9fe57c-d6b1-ce1f-7e9b-25432102fb42">PS, 10.2</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_c3c5c1f8-1f25-54e2-3175-74c8145c7ccc"><p id="_104c4a44-114b-5efe-bfcc-920be1c32414">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_a15c7842-b5da-567f-0722-5ad0585c1173"><p id="_4c4c9a83-ed44-4dd8-3a9c-100e9e4fcf3d">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_e9c6627f-3411-0a4e-1f51-3b41c7a45a59"><p id="_a30b7908-9fca-4fc7-5839-9a0453844b4c">true</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_62ce5462-fe97-e67a-5e83-e09c78c2f2ed" obligation="normative">
+<title id="_82914380-1d09-8e59-dd1c-bd84eedbdee6">102_1002</title>
+<dl id="_d54ef04d-06c8-419f-3ad3-1597b3477418"><dt>Dev ID</dt>
+<dd id="_0067f354-918a-4890-9f4e-0d737e7a984e"><p id="_9a994aff-01c1-fe53-1751-380767d18937">102_Dev1002</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_76e309c8-304e-d6f4-11e5-506de4989034"><p id="_2f0f8830-c932-84d2-da9a-2e5a839f2cd0">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_057833f1-7f6e-a99b-1b59-417d3d422399"><p id="_5f412cf8-60b9-91b4-b4f4-37234cd46499">Mandatory General Metadata attribute missing</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_dffef705-bc90-6730-d28a-65b56f1128e9"><p id="_7a5132ac-75dc-afb7-c0c3-6dab1328ceb0">FOR EACH attribute in the PS Table 10-2 with multiplicity lower bound = 1, WHERE an HDF5 attribute with the identical camel case name does not exist in the root group</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_b131e2ba-07e2-7fb2-e230-31f14791bcc9"><p id="_a4d9d9b8-6ddf-59de-f339-0476653f396f">Add missing general metadata attribute</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_e4ba7ea6-f512-26f5-d5c3-a46a040c13a1"><p id="_e31a41ba-8915-1089-5fea-d8a3c3068634">PS, Table 10-2 (Root group attributes)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_1f2c465a-827c-a87f-4352-e3734a9f0ac8"><p id="_ead9118e-1862-91a5-d310-466ceea57032">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_ec93b199-630a-3f55-98fd-5d9742abd089"><p id="_b00c220e-132a-cbc8-caaf-1eff16654eb9">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_629bb0f9-27e1-1116-5ff2-71e8d154c0ce"><p id="_abf08541-b867-6d92-df77-1c953282f170">true</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_21b88051-649a-a2ab-a3f3-060b2bdc389e" obligation="normative">
+<title id="_9c56aa1a-8194-868f-d6a2-5f935b55576c">102_1003</title>
+<dl id="_1bfcfaa4-02a1-d5d6-f57c-b5b9acdf3d8a"><dt>Dev ID</dt>
+<dd id="_0bdf324b-fa8b-d9bf-d3e5-54e5cba915e4"><p id="_3fce05ea-9bd6-8f4f-ee64-670a318c0afe">102_Dev1003</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_11cf133c-203d-329f-9dd1-8c9ca74b8a11"><p id="_e110e440-498a-a30f-ed24-300acc7e7cdb">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_53f95cb5-1dcb-5b98-464a-fe63c4f1a5ce"><p id="_892aa59f-7c7c-9799-61f1-d73e9d6d92be">Conditionally mandatory General Metadata attribute missing</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_0152d1e6-9563-c983-a002-a02b7827a429"><p id="_5886ef60-fd44-49b4-c7b9-a30f337b0e3e">FOR EACH conditionally mandatory attribute in the PS Table 10-2 WHERE the prerequisite condition specified in the PS is satisfied but the attribute is missing</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_dd8f7939-7af3-8687-6f08-f9c491d54f09"><p id="_08b6e2d6-f4c9-a663-2eb7-4eaa83fcd417">Add missing attribute</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_5122d947-ab48-e492-ae98-34c8f70ad67a"><p id="_de2e6022-5f1a-60db-ed50-1fd275cba622">PS, Table 10-2 (Root group attributes)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_f702cd4a-46cb-6a63-3fa8-d1f0236e26ac"><p id="_058ba948-176a-f382-3efe-a559ebf0799e">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_6742fa09-22ce-5aa8-7ff8-71392184794d"><p id="_429500eb-19f6-0826-d6ef-7cfbd1b2e204">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_2ac68955-a06b-189d-dc21-7a6ab1edc806"><p id="_bf1646ca-54c5-134c-69d6-9007aeb5796a">true</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_c327dba4-d9cd-8734-de12-7a07359e5e76" obligation="normative">
+<title id="_373ca9de-942c-8fe8-b188-c5dac8eda701">102_1004</title>
+<dl id="_861fb5cc-a439-efbe-2301-1b8c118b1d24"><dt>Dev ID</dt>
+<dd id="_cb60583f-f4b5-6435-2eba-16c6cc47e807"><p id="_b3f861a4-c705-a6b1-a663-4bc4b8fcdfbe">102_Dev1004</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_a10bf43d-7fae-d110-9301-2d150ffd7b73"><p id="_1eb516d7-675c-92be-20df-6f7638d31ed0">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_14f2eec8-7e65-1d47-050f-71b78785606e"><p id="_3f2eff4f-0f4c-e050-949e-4b236d6a4e77">Wrong type for General Metadata attribute</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_a2fb6d74-3d91-53d4-7131-69ac22d0ca47"><p id="_487b9630-cfd4-5dfc-b088-829f0df49738">FOR EACH attribute of the root group, WHERE the type does not match the type in the PS</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_73e9c621-5eaf-549b-da4b-9ceaa8c380e1"><p id="_25c3d61f-10c5-d656-3f9e-09316ef08173">Correct attribute type</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_68f70ddc-7129-5d9c-87ab-dc331a90e86b"><p id="_9d70b69b-9621-4a3f-c1fa-f713f2b59f51">PS, Table 10-2 (Root group attributes)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_74b98f71-3e06-38b5-861c-6394c9b2d17b"><p id="_0a4b901a-543d-3136-25a6-f284e480eb8e">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_2acce1cd-7c30-238b-e720-5af1d64d6c8a"><p id="_18cee5ac-20c2-8f15-2393-4cd41d0d32fc">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_8349f8ae-71ed-37a0-924e-38838e638219"><p id="_e1b5eaaa-22fb-5a66-57e8-d2bbdc77078c">true</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_c02011ff-7d39-84c1-ec40-c5b49f7888a3" obligation="normative">
+<title id="_b0737317-2578-d69a-4d90-c7a2653e3532">102_1005</title>
+<dl id="_181ade71-6c90-80f0-a73e-871b9c363ac8"><dt>Dev ID</dt>
+<dd id="_777bb3e0-b47c-eb2c-9e25-3520f96c2b58"><p id="_351a0c80-b827-7f8c-153f-0950ce080e2e">102_Dev1005</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_564e80f0-e78a-2ba7-e034-a8175d0d1f04"><p id="_97cf3df2-c3da-debf-d118-52a84d819602">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_19e2dbfe-1aa4-83b1-05bd-d5792a42f45b"><p id="_a770b2b0-33d0-7d13-6070-524bbbcb4e2d">Wrong format for data or time</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_9f518509-5f29-3e32-0655-aa272058066e"><p id="_3f1419ea-8847-559d-5e26-f75a09e8614f">FOR attributes [issueDate, issueTime], WHERE the format of the value does not match the specified pattern.</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_ecf551f5-7db6-2236-0ec7-de3d7dd2fcb1"><p id="_428379fe-89e4-e438-d279-b21c5b87814b">Correct value string</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_bbf78f43-5724-83a7-bc28-127f9eb577df"><p id="_baed76df-50c3-cbad-c1c3-ac83084425f3">PS, Table 10-2 (Root group attributes), 5.4</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_afb5832b-c53d-5fee-f518-f927c0b7abbb"><p id="_baf48b91-a3c3-4c85-ccce-7e7439976cf3">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_046aa991-7cb1-7d09-cb82-8641cc090e21"><p id="_7b2c4b12-d073-5c6c-e8e0-f15462520d1f">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_0cc74919-9cc5-093e-8863-c191d62808dd"><p id="_e6653cfb-a0f7-44d0-17a9-f9c7da1bd74d">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_92211a60-f9fa-30a6-9559-b3fbc0838d59" obligation="normative">
+<title id="_45d67d2b-d9f8-647b-bd7d-c7064592db88">102_1006</title>
+<dl id="_650e4a5c-c1ae-438e-e393-84e344c4a060"><dt>Dev ID</dt>
+<dd id="_be6a6244-2bc1-f910-b1f8-df2a536ef948"><p id="_52153cd5-1458-7c44-a01a-7077aaa189ea">102_Dev1006</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_947a9b49-75de-2150-ee42-0009459213bf"><p id="_35856b0b-16ab-eb78-09e1-72a55b1a80c0">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_380d9c6b-11e1-172d-1ea7-58c44828ceff"><p id="_e2f04e7f-316c-397b-7c32-58e130d9120d">Wrong value for General Metadata attribute</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_d165939c-a94f-64be-d38d-5cfa4942d491"><p id="_76bbb730-0b92-f0f4-60b4-641821c6df7c">FOR EACH mandatory or conditionally mandatory attribute of the root group, WHERE the value does not match the specified range or required value (if any) in the PS</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_33b768ef-b5d1-4b25-a77f-4a032ae35fb9"><p id="_dca31670-eb29-3a96-fda9-bfe886d7c57e">Correct attribute value</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_29d1e6a7-d1ff-dfbb-2581-94d5e974548a"><p id="_47304236-9795-e148-d24b-3873414ea906">PS, Table 10-2 (Root group attributes)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_8dce4e10-35b6-7535-09cf-887fa2f6f944"><p id="_8ec7c3b9-6934-fbf8-ef14-75a4e1a36c4c">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_7106c954-3cee-65af-6cac-d6b92fc955b7"><p id="_27ca435f-bd54-280b-0d79-3f36f5192cd9">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_6efb1307-87b3-e4d5-b821-a417e6607584"><p id="_d9249829-fdd9-165c-e394-028d4a69c6a7">true</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_7f27ae6b-18f2-4f92-3805-221c796d9ce3" obligation="normative">
+<title id="_fe00f84f-b38e-848f-5470-639444285565">102_1007</title>
+<dl id="_ac434ec8-3d1a-9155-61d2-6310c4cacc07"><dt>Dev ID</dt>
+<dd id="_a8c2fae7-8335-7186-070f-83225de6e37a"><p id="_624ab57e-007d-1215-d396-e05068ce46d3">102_Dev1007</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_c7c6e6b4-5271-971e-d3b2-f5637ab0fa94"><p id="_86aa2438-db19-bb7c-9c46-716a4738934d">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_85048cde-5104-282b-fde6-3b55af790332"><p id="_04c11153-bf74-0eea-bb4d-f32fa3f12b0d">Inconsistent value for epoch</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_23d04d57-c922-3b34-2415-e1c2bf7dea7c"><p id="_90039e60-c128-1e51-70f8-0489ea5d8689">IF attribute epoch is present and its value does not correspond to an epoch for the horizontal datum</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_27e7d175-115f-a22d-6182-ac350374dea8"><p id="_8f20a942-bcb2-bed2-b1fe-f1fb7fadb0a3">Correct attribute value</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_22bc08b5-076b-a4ba-9235-5c203c3013a3"><p id="_b5b673e2-1203-7da8-26cf-f8c77116c2b2">PS, Table 10-2 (Root group attributes)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_d5078045-d50c-1cce-7baa-b1269c8a0fa3"><p id="_1a4554cb-b60a-8249-1574-e6dc1263bb8b">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_7dbe5495-2681-0d08-510d-cd34b1777eb2"><p id="_0dfdece8-5cf2-75a4-3362-4e4a572a69f8">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_158b054a-29fe-7af0-1e4a-1549204795ae"><p id="_9743dd4d-bfd0-8ba3-8e46-4195ffa7ae88">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_63245d93-7770-7131-455d-ef7b651426f2" obligation="normative">
+<title id="_a3dd9a91-08d7-e259-95a7-4a998507c0a0">102_1008</title>
+<dl id="_08e7243e-84b0-a706-7933-80ff3b108401"><dt>Dev ID</dt>
+<dd id="_4c1b2e91-614c-f97f-49fe-90b9334a0015"><p id="_dd399dca-b9d1-80c2-298f-a07186ad6a1a">102_Dev1008</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_4de26899-6fe2-0b05-e6c1-9680cd415921"><p id="_612bb3ba-f126-6ebf-81f9-cb06df503934">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_9eae77ae-102d-34b0-d408-d41d0d80e12f"><p id="_f90a48ae-b6d0-2ebb-848b-0fd0b7a4e695">ISO metadata files are not used in navigation products</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_ba259cc2-f56a-5068-1e2e-bc9af38654aa"><p id="_052000bd-32b7-8df1-0d0a-0b4ea5e08a56">IF attribute metadata is present and its value IS NOT the empty string</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_5c939ac9-3fd8-ac4d-28e2-a27d02cf6a9b"><p id="_33eb288b-7fdd-1d4e-3a1b-b4153ddb895f">Remove ISO metadata file and change the metadata attribute value to the empty string</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_28e7028b-c6cb-8842-9634-89c8e955bf29"><p id="_a1013f00-f088-6c53-1259-c15af2d6be8d">PS, 4.2, 11.1, 11.2, 11.3, 12.2</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_343ae3a7-70fd-10ac-a2c7-0563f6367e05"><p id="_ce080f4d-a5eb-5909-9168-eecda4039c51">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_c447782c-8946-47fc-43e9-38f16009f54a"><p id="_9eb05476-86a8-5398-54c9-a6ae3b14ec1a">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_8222148c-8030-a01d-b228-db48899e0877"><p id="_7cc07b57-eed6-ed8f-d290-f96d1e1846ba">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_c0d5161b-207a-3f6b-2c0f-4e692f94fab5" obligation="normative">
+<title id="_e233dd1d-0c94-55a5-99c7-1b7d32020837">102_1009</title>
+<dl id="_4dae230b-7e4b-2d6d-636f-ccd5043c7391"><dt>Dev ID</dt>
+<dd id="_ce95cb17-5898-4d53-d096-459e33ee7922"><p id="_31bd1e32-116f-d7e3-6db0-d159229457e0">102_Dev1009</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_88550f5b-ceed-51e1-bbcc-2bf7a6831aff"><p id="_54f3b08e-74d6-544d-de57-30a16a11a29c">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_2ee73eef-23d5-2467-de8b-dec80e4aa1f3"><p id="_b543cfa1-54fd-795a-ffba-27ca49e43cde">S-102 must use one of the CRS in Table 5-1</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_ee37ad84-230e-fbde-2010-0794338da57c"><p id="_110bd6fe-8b69-6d2b-61fb-e1a02b3e7fab">IF attribute horizontalCRS ≠ one of the CRS EPSG codes in Table 5-1 of the PS</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_f9a3be21-e937-ea64-3dc7-ee480d5370cf"><p id="_9a964743-4c0d-2f74-594c-08e5c00ec85d">Correct horizontalCRS value</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_cc85f21b-b635-ff1f-4317-e07765782789"><p id="_73644896-6846-2145-5f39-8fc09bf0bbb9">PS, Table 5-1 (S-102 Coordinate Reference Systems), Table 10-2 (Root group attributes)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_35786fe2-8d6b-8e4f-77aa-6dda44ae625a"><p id="_4b9f758b-d64f-611b-3ac2-1a0b2f833d2d">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_0fdbdefd-6972-5bde-0214-5f0425c13c8e"><p id="_742f11a7-dae3-ae51-b9ab-e6f3b4ab3e30">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_03992bf8-5d02-c8a9-edde-77facf7fc719"><p id="_73b13620-bcff-a81a-a8e3-4d223c6a2541">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_58718f0e-b0f7-5bb2-0c84-cbf13af06206" obligation="normative">
+<title id="_2e255682-bba9-ed94-138b-93d6101827e1">102_1010</title>
+<dl id="_49e316c8-ea8e-de33-7530-d66343d53fdd"><dt>Dev ID</dt>
+<dd id="_f354ade5-b2bb-911c-8f6b-3c19b271b9a4"><p id="_f6668c80-7fb3-f33c-731d-3b73fe65b04f">102_Dev1020</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_86b68724-0bc0-48d9-7cae-7c7363d54bd2"><p id="_6693bbd9-5cdc-48c3-e6aa-9d5f86bb204f">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_918407cd-3848-f1db-32d6-07e92dce337c"><p id="_aba8cbb5-731a-4db3-98b7-4f6f8612cd26">Attribute verticalCS must be the EPSG code 6498</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_dd1f3afa-6ba4-0755-79b5-caf8e3e12bdd"><p id="_667286e4-f0d6-aaac-921d-2d6da1d32392">IF attribute verticalCS ≠ 6498</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_822ce50a-72ed-4c59-7f01-0f2a153fd44d"><p id="_1653213e-d42d-1da2-0c57-3e20e0acb5e9">Correct vertical coordinate system</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_306f5fb3-1d90-1fc3-840f-472ef407b385"><p id="_799fa380-ebd4-8fba-54d5-3c36ceb45b98">PS, Table 10-2</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_9ded8e92-eb6b-c14c-5d37-7336d51ff46e"><p id="_67a46503-5cda-5737-c13d-ed5935a96932">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_d4678c10-6d98-88d7-d6d9-cad585de9d7e"><p id="_5ed25c71-07e0-b1dd-69bc-ebb7490e98fa">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_a3b68678-bd83-a8d7-d890-c79e8444c7a2"><p id="_439cbf60-3a80-90ff-9311-2434242f2dd8">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_8bf41de3-4a92-5a14-fe64-877d1d067944" obligation="normative">
+<title id="_6b332a73-4138-1a2a-7e00-deb2dac02aec">102_1011</title>
+<dl id="_e56cf993-14ac-e101-fcba-676776b070d6"><dt>Dev ID</dt>
+<dd id="_6b312edf-0c87-9802-7b10-1556b6da8adc"><p id="_bdfc76aa-16cf-5ea9-8312-86eea8ae8732">102_Dev1022</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_e16c0226-d337-cf16-d4ec-19dc0be1a14f"><p id="_263a1991-97b6-e774-e6e4-ca179dfdd3d1">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_4ee48d26-a48b-7558-c7d8-d96c1966ea03"><p id="_2857a2a3-0411-18fc-d473-fc11d5d19939">Bathymetry data feature missing from featureCode array</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_c1646c81-1f26-f322-687a-bd6c4de976b6"><p id="_bf38731b-0f57-739a-8aeb-547ce48d883a">IF Group_F.featureCode DOES NOT contain an entry for BathymetryCoverage</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_7016d375-e57b-fd69-5d19-c493fa33ae5d"><p id="_eed5f981-6c32-d665-b849-ca53f7f935e4">Add entry to featureCode</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_83a3e3c7-ff8a-05f6-d754-cbca621915a6"><p id="_c700c221-9a85-b873-c0cc-57cb03eeb760">PS, 4, 10.2.2</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_8897b4ac-1475-06aa-cb71-75f7cef6d262"><p id="_ce6b3b78-e6bb-cda9-39c8-a047fdb31af3">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_fd5ba588-7731-eab3-bf8f-864f28001a8f"><p id="_828e3851-3a31-686b-d14a-b0fa8b286a7b">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_14f29666-7174-562f-eab2-f60defe1397b"><p id="_acee41ea-a6cf-b19c-2fba-8d693dd786c6">true</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_fd7ecb17-a3ea-c82a-73e0-0af378c32ccb" obligation="normative">
+<title id="_60b883fb-9081-b44d-0f31-4a481bb4764a">102_1012</title>
+<dl id="_a2c7a34b-00b7-2bfb-7cc6-63716b92cb04"><dt>Dev ID</dt>
+<dd id="_91b52f04-153c-52ee-2566-ad677892dd0a"><p id="_fd72556f-abc2-0e2a-42eb-36902b6194d3">102_Dev1026</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_15a08024-14a8-71c8-96e8-f6d626109775"><p id="_0851ac2e-ca79-42ee-9a44-f91aef426317">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_0d942233-5937-4927-cc09-6e414e3c84f9"><p id="_cf407b9a-7b50-e9f6-1f66-9f90f818dfff">No feature instances for feature type</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_44875cf5-cf0a-6c6f-a722-97931f323558"><p id="_140b596f-a37a-9f17-7386-8469bbe70bea">FOR EACH feature type, IF the root group does not contain a group member of the same name</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_7e1390e8-3511-2938-eacd-1115a832d0a2"><p id="_a32e7fd5-0c2a-8b4c-c034-c91fa46898a9">Confirm omission of instances of the specified feature type from the dataset</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_95573fe6-0e5b-8a2a-f580-fec48690529d"><p id="_a5adb488-4c91-1489-6042-ba9c3bd78725">PS, 10.2, Table 10-1 (Overview of S-102 Data Product), Figure 10-2 (Hierarchy of S-102 Data Product)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_da5035a1-98cd-65f6-c84d-31d0337a5c93"><p id="_f9068fd2-23a7-a959-e8a1-ab1a76983228">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_12928c5a-0e4f-7666-7d81-13f2fec6b04e"><p id="_996b5a68-19ea-0dcc-67f1-151e200928de">3.0.0</p>
+</dd>
+<dt>Prerequisites</dt>
+<dd id="_eeb5b609-0437-728f-bb17-e1a23597d24e"><p id="_28a15ec6-28a7-8ac6-4932-261b076cc868">102_Dev1022</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_334638dd-70ae-b78d-e62c-f8a05d5833ca"><p id="_7bad90ef-5f96-d9be-265b-77d6c286db9d">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_3e9f2a99-6eaa-989b-dbe8-de3eb93718d6" obligation="normative">
+<title id="_b3cb9214-657a-39bb-1751-6d16e0c876eb">102_1013</title>
+<dl id="_2b7098ef-8d4a-7c91-226c-c8b056d8355f"><dt>Dev ID</dt>
+<dd id="_d14f5240-c7da-59cd-37a0-3e3a8a700b6b"><p id="_de0f2e58-4c2a-e3c7-155a-d4748acb6c57">102_Dev1027</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_ab3ddcb6-269f-1e0b-598d-828ba00167e0"><p id="_42cd77b1-42f7-e5e1-a009-30e24238881b">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_c953282e-1dc4-1272-e050-bb6aa0d0f94a"><p id="_36b0cb92-9755-55fd-dbb4-34830281ffff">Feature information dataset component type error</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_9ad2567c-f57c-9353-b9d5-647ecb3277d5"><p id="_f145533d-d8de-fc38-3a8e-7354af9e13cd">FOR EACH &lt;FIDS&gt;, IF the compound type or values are different from the PS</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_3d47b8f9-fb9a-db60-b9ff-06832255bdba"><p id="_36d74f8b-bc25-c88d-4389-3753f2449b14">Correct structure and/or values of feature information dataset</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_7f439e57-2be6-f6b8-6fe0-b3780b3154c1"><p id="_c34fea1b-bf9d-6c27-0a2e-5d043e491565">PS, Table 10-3 (Sample contents of the BathymetryCoverage and QualityOfBathymetryCoverage arrays)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_684af38b-e4db-8e00-8ca5-e93ec794ab2f"><p id="_cd2c8a20-182e-a7ef-c739-ccf3565daf6c">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_54ddc848-c609-3b7c-8d5b-8b3fa1a6a8cb"><p id="_eeec59ea-bfd8-b8f1-e5c9-8e3263c0ec39">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_1d53b9b3-d028-4be4-5ab0-6fea1363fd1e"><p id="_88ed86a9-dac2-6844-dd65-db7306c946b2">true</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_8b062f28-593d-7ff2-d455-d2a501e0ce90" obligation="normative">
+<title id="_febf949c-f812-ee86-aecd-1295c5dd11d8">102_1014</title>
+<dl id="_301e3bc0-6c41-458d-8106-71a6e85c5866"><dt>Dev ID</dt>
+<dd id="_a3e5b804-9bd2-43ee-e798-0df15a32bee9"><p id="_e0f518eb-2c80-7441-392f-c856cc184c5d">102_Dev1028</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_de024b11-0e44-2f84-0478-b6b740e284a5"><p id="_2e8a2edd-1552-22f2-04f2-c303e9b4eb3c">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_2782cac6-307a-572a-ecfc-b3c7e21c2f2e"><p id="_bb629e67-923c-630a-9a80-ace7707c7c04">Extra element in root group</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_21438a13-e5a3-0c6d-4a4f-a9c4e81a6a1f"><p id="_9c8e447c-016a-c94a-8e6c-025b231aa46c">IF there are attributes, datasets, or groups other than those allowed in the product specification</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_1c92ff5f-ff67-8ced-7ecb-cabf233e7b01"><p id="_3f5f3ab5-b644-f4b6-5e63-d3c1d2825221">Remove or rename extra attribute, dataset, or group</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_fb10f120-3fc9-927a-a391-197372957bc9"><p id="_9c21ad22-bdcb-1e3d-3a83-5cc0600a79de">PS, 4, 10.2.1</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_bb5b2a69-0435-a048-1e1e-e7dc4c52f683"><p id="_810721b6-b934-4384-6da3-00e9fbf8f39b">Completeness; Commission</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_b07d0a79-1022-21ae-8746-fca4ee225df8"><p id="_1d7f2d16-49f6-ab72-cc86-70cbc682b683">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_f4417c26-0ffe-5c77-6aa5-9a54876bf210"><p id="_c5c8a214-2347-3b4c-f9c3-664d7e2955c9">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_f8070f49-fed0-2479-c8cd-3450c00c8e16" obligation="normative">
+<title id="_683481a9-96bf-380d-5741-b487d82f6618">102_1015</title>
+<dl id="_7903b771-2ae5-5dfb-69db-7c3681aa38a7"><dt>Dev ID</dt>
+<dd id="_0ff1e576-7723-52ac-4edc-500a4697f986"><p id="_a960d19c-560b-17aa-506d-579a524368fd">102_Dev1029</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_69b3a972-795f-6c21-7c19-54a0d00fd788"><p id="_2f048251-bf13-435e-86cf-8aacbe7b2bdc">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_406e74eb-d5ef-c58b-3b3a-07d33f90a5be"><p id="_b6e3cbe9-8437-5739-bd1c-d71fd68ea67f">Root group structural error, must be corrected before further checks can be processed</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_68053533-8810-8568-80a2-08d59458841c"><p id="_62d802b5-0ee7-3ac9-23c0-54c5cc9a4300">IF any of the Phase 1 checks designated as terminator checks were failed</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_ce93b9c3-81bb-e63f-3cf1-fbbfc4044703"><p id="_7c060fc3-1b67-fa33-bf45-2924d464a13e">Correct root group structure before proceeding to next phase</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_266dc3d9-2e35-84a0-ecee-3e9a9c409865"><p id="_81615c3f-5d5d-9c5b-a1d7-5d97b0a6b294">N/A, N/A</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_534beb9f-4385-2971-566f-4db226d71f53"><p id="_f559820b-49b8-7865-6d5f-4dfcd1649de5">false</p>
+</dd>
+<dt>Notes</dt>
+<dd id="_13327f96-93a2-1b79-7cc6-6741419b4388"><p id="_b17f4a23-8d54-bdd6-6aa9-9530023fe83e">Gateway to next phase</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_dfadbea9-aefe-2ed0-ea0d-f6ae1dfdd639" obligation="normative">
+<title id="_102948dc-050f-9731-8483-8450804060dd">102_2001</title>
+<dl id="_5cdea8b3-f9bb-e06d-237f-137d4a4632a4"><dt>Dev ID</dt>
+<dd id="_7b6cbf78-232d-1dcf-187d-6bb5490f1339"><p id="_37d24338-ac15-aecf-2b1c-7d5fe28efced">102_Dev2001</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_d2960033-5d8b-3507-ed53-838102a72662"><p id="_9348e139-87cc-ddba-2452-c587340a2086">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_465677b4-9337-a754-d950-d34f63eb1382"><p id="_c0ffa725-b51a-8955-702f-9035ebcfc02f">Missing or invalid HDF attribute in container group</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_c509d207-1a28-db48-efe2-25e369018d32"><p id="_67069aa1-afd8-e606-22a4-13866474f7b7">IF the HDF attributes of the respective group do not conform to the multiplicities, names, types, and values in the PS</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_8f5b830c-a8b5-fede-1852-b709a437e714"><p id="_43c005dc-3e31-f3d9-818d-34001ff6b40c">Correct attribute</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_0227479c-1d46-b618-b83a-37e85ab2bafa"><p id="_3e42d58a-b572-8089-73ec-eba98bf4729e">PS, Table 10-4 (Attributes of BathymetryCoverage feature container group), 10.2.8 (para. 1)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_0f244ea3-088c-0034-5520-94f5b8a28657"><p id="_3ae20288-e4a3-24a7-9594-33ff94490a6c">Logical Consistency; Format Consistency OR Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_b022c371-1866-bc0a-617e-d69131268ed2"><p id="_1a0bef6e-256b-9c0a-5357-cba46cd0e501">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_b16165c2-7a8f-6dc5-58c4-7f32de7b54ec"><p id="_fa6a6a42-e709-d637-c4b9-89de443cedb3">true</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_4e9d055c-dbef-7dfc-847e-e993d2049867" obligation="normative">
+<title id="_e991fffc-1cf0-c2ba-ba2d-805472bf5544">102_2002</title>
+<dl id="_9fdf1a0f-fc30-5b80-c5e9-a4ca92f37900"><dt>Dev ID</dt>
+<dd id="_887ef770-829a-d4ab-e284-361ae25c747d"><p id="_aa1516b5-9ffd-548f-e094-d7e18505ccff">102_Dev2002</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_c8f846a3-1852-4a2e-4f44-996a37ca2984"><p id="_df8c0a07-a665-dc28-e414-7934870ad8e3">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_4d1badf3-ee1b-a276-b8e1-c69f136e3d64"><p id="_9a47b46c-09bf-8b93-44e8-b5a5367ea42e">HDF attributes of quality coverage must have the same values as bathymetry coverage</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_938a2a4d-dfc1-173f-f924-5a25805d7d24"><p id="_5a9f099c-1549-e881-c9bb-99f20751e67a">IF the HDF attributes of QualityOfBathymetryCoverage have values different from the corresponding attributes of BathymetryCoverage except datacoding format</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_881518f8-e99d-9b28-9517-6cc96c365fce"><p id="_889c960c-7298-7825-660c-9c6e84ef9bd3">Correct attributes</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_491c646e-f743-30cd-2b55-07704fbd4c9f"><p id="_c024f607-9f4c-27b8-29fd-eb5294893a39">PS, Table 10-4 (Attributes of BathymetryCoverage feature container group), 10.2.8 (para. 1)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_22c4186e-923a-d2ab-bf04-1bc340889062"><p id="_0aa3b4cb-839c-6f6e-66ff-c7aef66a9b7e">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_cd94ad88-3746-d285-8eab-eda1f8a7fe61"><p id="_10aa402a-0b99-f880-2782-9f3cd3305bdb">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_b005170e-fac3-72c0-a3e5-8048f68b77bc"><p id="_64d03f51-8298-a84e-a5cc-72d9593d128a">true</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_7b086584-24a8-8e42-aa1e-5e4c90b5e1e9" obligation="normative">
+<title id="_8e92416c-9d00-581a-98de-15afaa2c37ee">102_2003</title>
+<dl id="_aeb50e96-f5b0-5abd-97ef-472eaac92573"><dt>Dev ID</dt>
+<dd id="_ebbbceeb-d610-e90c-1a1e-467c9c461ff0"><p id="_4e8da159-ce45-d412-a38e-828e2b3546e4">102_Dev2003</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_ae9c2c6f-93d5-d7c6-a1c4-cbfd5401b5c9"><p id="_1333aef6-1573-c975-fe9a-6179942847fe">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_0fd5b2a3-b8e5-daea-d01c-445e6ff41b82"><p id="_7c5c8441-4726-86e2-f541-c30719015179">Feature container group does not have the axisNames dataset, or the axisNames dataset does not have the correct dimensions</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_6019f6e4-abeb-1cf6-a21a-de3d87273ff0"><p id="_a2b9331f-68e0-3815-db66-7291d13f961b">IF dataset axisNames is not found or does not have the correct rank and datatype, or has length ≠ 2</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_e0570e41-bc1b-7747-c431-ce26b11eaf53"><p id="_1202315f-385b-4d4a-ef04-f27489aa92f7">Add or correct the axisNames dataset</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_bbb6e9e6-39f7-7412-1a9a-ed1052d712fe"><p id="_dc1af64d-fafc-1124-127c-103aea5183f1">PS, Table 10-1 (Overview of S-102 Data Product), Figure 10-2 (Hierarchy of S-102 Data Product)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_8b863c20-c88b-76e4-fa90-f9fa5b5c4191"><p id="_a445862d-0e8c-c017-cf6c-7e9d886a0973">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_43f273bd-95a9-6e23-ff43-4ee92eca5cd6"><p id="_a9bab901-baae-3c8a-964f-c5ce39e69789">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_17277cb8-4535-ed64-968f-bff53f37ea61"><p id="_f3c2c540-3797-354c-0568-3b36b366a1f7">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_2ef13c28-1074-3072-5537-0e05d2a0b07b" obligation="normative">
+<title id="_5ba8fc76-65a9-c6a2-0db5-c3193ba9754e">102_2004</title>
+<dl id="_a9663c91-e581-eef7-c7d4-8b3cb0613cd7"><dt>Dev ID</dt>
+<dd id="_2fe2f3f6-2f97-1f4a-b4bb-7f560215524f"><p id="_24cec2ec-4c8f-0193-fb53-db30d0adb06e">102_Dev2004</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_6707aa62-15a5-7774-524c-18c522a612b4"><p id="_a2b5e8f1-396f-cccd-0c78-f11370dce128">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_f468a5bb-18be-3bf1-7f8b-b7adcde118c4"><p id="_df4a0902-faa6-0eaf-242d-c13d731786aa">Axis names must conform to CRS</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_45c0158a-ca2b-19b1-87d4-d7ebfdeb4f8c"><p id="_57ee7509-6a5a-cd0b-b401-6d44e4877137">If the contents of dataset axisNames do not conform to the CRS specified by horizontalCRS</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_8e11cb1f-3d9c-7872-f75f-a1135e719fd4"><p id="_3693165b-e4c5-d3a4-ec61-b15782c3d721">Correct the axisNames dataset</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_4ef005b9-6bfd-9f62-9577-786bafe2fc46"><p id="_68a9184b-182c-db94-660d-23f0dd3eef7e">PS, 4.2.1.1.1.9, 4.2.1.1.3.5</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_0cc087dc-a702-fa39-c69e-4e97924483ad"><p id="_e2fe222c-ec4a-031a-7ce3-d1acca9bc3a4">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_cf1db7ce-eae9-6d8f-285e-dd0a0d0996be"><p id="_f39062b8-7e42-5518-525c-a7c6802cafd1">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_155db458-ed2f-807d-e81a-26a8e164289c"><p id="_bd5eda7e-32fc-7b38-10d2-3a41aa4f2b20">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_9885a9c5-4ac4-0760-a740-987882d0037f" obligation="normative">
+<title id="_b26ea337-e643-35b8-1cb4-0eee3faeb710">102_2005</title>
+<dl id="_3ec21919-ea2e-e956-a186-110056e58bcb"><dt>Dev ID</dt>
+<dd id="_25158fb2-5023-9886-42a3-2cc5bb9e7625"><p id="_3a0a7916-3b1f-2376-d68e-7303e5a1061c">102_Dev2005</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_f15149b9-d215-6398-d3a4-16bc9dffbaa6"><p id="_3e85125e-6de4-4945-8b22-7ab81c823273">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_eb59d381-442e-5168-04f3-f57d89262d3d"><p id="_3966d3f3-480d-4eb8-d833-67205ce22d0c">No feature attribute table in quality feature</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_4fa1c2fc-6f9d-1614-17d4-4fa478f25f58"><p id="_bf2411d4-734c-6a50-975d-0c400b11da1b">IF &lt;QTYPE&gt; is present and the featureAttributeTable dataset does not exist</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_77ac9a1a-f653-44ea-4f2c-d06414a8ff49"><p id="_9932de04-a435-5c98-8783-3ac7a4ebcc77">Add feature attribute table</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_e28bd3e2-0410-077b-f69a-fe0f3d1300cf"><p id="_c7f3e432-6fdc-f7ac-07d1-0e33f872f38d">PS, Table 10-1 (Overview of S-102 Data Product), Figure 10-2 (Hierarchy of S-102 Data Product), 10.2.8</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_125965d2-7657-0fc8-d286-32e7dc07cf23"><p id="_c232d856-d1c8-901a-cea2-b879912b3264">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_415d9a23-4660-8566-f730-07812382a4ce"><p id="_c47b96b6-1912-a9d4-209d-f921fe0342a5">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_bccad7c1-b46d-3164-d2ed-46446dc4535f"><p id="_d7f794b4-6d59-23b9-0cb5-55f85427a6e6">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_f5117113-c9c8-1779-d2ce-d263c02c20f7" obligation="normative">
+<title id="_5acf0385-2065-29e9-ea32-6755e131f21d">102_2006</title>
+<dl id="_f0888077-d803-0e32-dd13-768f1853fed4"><dt>Dev ID</dt>
+<dd id="_88fb6acc-f2c9-4115-51fe-a46d78df39eb"><p id="_71e925ac-9c7a-3ce1-115a-13dd3a3fab4c">102_Dev2006</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_d913a98c-cb35-cb18-b687-991617e666a9"><p id="_10d4598c-cfff-7831-6490-0e041c3795fb">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_787a04be-72d7-d69f-bd5c-672959ff967a"><p id="_44758859-905c-cf84-82a2-f6866399fe2c">Feature attribute table does not conform to PS</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_4c3b7574-e386-f9d7-7c5f-26d11702e45e"><p id="_b0918917-f6ee-036d-8323-06693f4edf1d">IF the featureAttributeTable dataset does not have the structure, components, and types described in the PS</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_30597f27-c50d-8583-5527-9bb82501e4fd"><p id="_d13ae27b-b683-a063-f750-0d99bee9d1b3">Correct structure, components, and types</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_77cb23e4-752e-d177-e86e-11e43a771a0a"><p id="_704676e2-a1fe-4092-94ca-8e6c530b4bc2">PS, Table 10-8 (Elements of featureAttributeTable compound datatype)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_bf63ce00-ac80-30ce-1c36-62bc7a20a2a7"><p id="_08abbe29-d133-7489-4541-9397bd4b8515">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_cb58e350-19ac-8467-95a5-73f834addb8e"><p id="_aa3badf2-c4d3-135f-4c3a-6eb9a217f500">3.0.0</p>
+</dd>
+<dt>Prerequisites</dt>
+<dd id="_f220fc07-8257-9296-1fee-d7a70ab8bf5c"><p id="_9cb14cbe-1466-69a6-b4d7-7b7ffc736622">102_Dev2005</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_979c8272-dfa5-0937-d25c-04ee79ab24ba"><p id="_9364fc3f-17b7-4ba9-e74a-706a47e126fd">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_0aa338c2-45c7-4556-0d4c-138bec39ced7" obligation="normative">
+<title id="_67d911d1-4b16-18e9-84c8-fc08b82026a0">102_2007</title>
+<dl id="_0b5b5ede-c5b3-71e0-a62e-c48dd4669932"><dt>Dev ID</dt>
+<dd id="_35f55f4d-ff0f-5d6a-c2cb-6cb85b4e2ab0"><p id="_22f9efe3-9f05-229b-50ab-3373b791f2bd">102_Dev2009</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_155fbedc-311d-09f6-346d-492694aca4ea"><p id="_023819bc-5f97-e59e-02f5-a4260b0c2326">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_62365486-5a78-5c16-e2a4-844e67ce523d"><p id="_6e91d5ad-87ca-55e7-1abf-41bc700065a3">No instance groups in quality coverage</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_3d74ac9f-2209-ecfb-eeba-3f5374ab7564"><p id="_97ce5e01-0647-4bae-1a34-a93d3ed783d6">IF &lt;QTYPE&gt; is present and there are no groups named &lt;QTYPE&gt;.N</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_652a8ab9-04bc-ad88-5cc6-58a7bce6f195"><p id="_f0a7a6ff-6db9-0844-01ba-e15815141f84">Add instance groups to quality coverage</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_65639c1c-ca01-4ebd-58b1-da3fbf08dbe6"><p id="_7df27784-562d-e296-3279-cdb5a79a0296">PS, Table 10-1 (Overview of S-102 Data Product), Figure 10-2 (Hierarchy of S-102 Data Product)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_2965e39d-dba3-fbf3-29d3-7cc3a04ee5b2"><p id="_9ee5dcbe-2565-6168-18a8-8be86e148f61">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_8f784a77-fd20-19b8-4dee-7297c6d9b676"><p id="_61c99f7b-a15e-0d53-125d-109a6898c0e4">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_1fb580c2-7c9b-0f06-b9da-aa2d8c5e3932"><p id="_01db6002-f31e-2178-41ae-1622b2cd8407">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_13996eda-8d80-119d-4385-10ad12eb4e4a" obligation="normative">
+<title id="_19841cb7-5245-4ed7-9e64-22a80a063fc0">102_2008</title>
+<dl id="_159bb355-283f-f719-463e-76391b67d38f"><dt>Dev ID</dt>
+<dd id="_45affbb1-e1e2-e1ee-2d41-f50939b7191e"><p id="_5601b525-3413-970b-96eb-510ccd99a8ed">102_Dev2010</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_f242efe0-bfbe-0dc7-5c88-2d30400cb578"><p id="_04434cd1-c54c-48fd-0cfd-d29ed4c8b9ee">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_d9a79dcc-f4d8-f1dd-5463-391faeda754e"><p id="_3465452c-54a3-9875-fe9c-3b8b0b822785">The number of quality instance groups in &lt;QTYPE&gt; does not match the value of attribute numInstances</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_bb73a759-a134-1b91-26d2-bc0581516cce"><p id="_e378b8cd-6ea9-16e9-63e8-b3d3515deda8">IF the number of groups named &lt;QTYPE&gt;.N is not equal to the value of attribute numInstances</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_a3275726-4d0c-5663-d913-dc04e171e46b"><p id="_0686f8e4-35eb-7d5b-508b-306aaafb8063">Correct attribute numInstances or the the number of quality instance groups in &lt;QTYPE&gt;</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_337ab1f8-91f5-0494-d257-d6348711ab6f"><p id="_e39afafe-fd60-88bd-47c7-b6a9f71e202c">PS, N/A</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_ffae1a9b-ad94-69fc-8cf3-a3bcd6e3a019"><p id="_2c9f839b-020e-fb6e-396a-e92b4520d022">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_6c50628e-f2b8-313f-283d-fe36e5980924"><p id="_7b6ebacf-c474-28c7-02c7-bd39167da2f3">3.0.0</p>
+</dd>
+<dt>Prerequisites</dt>
+<dd id="_13bce402-0738-6ddc-ff0f-688755a84f9e"><p id="_ed645c51-5790-a221-b992-6b583085b8d7">102_Dev2009</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_23dd6ff5-b310-da73-ac7f-86bdd238fa72"><p id="_399b7483-8a68-197e-8b73-fcf68db64804">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_37f15fa8-64cc-920a-ae5f-7a25b642dd1c" obligation="normative">
+<title id="_dd028c4d-bb60-7683-c15c-38f116842cbe">102_2009</title>
+<dl id="_b03fa4ef-9836-0c8c-ebac-aa530d9adf2b"><dt>Dev ID</dt>
+<dd id="_a9889d6a-3673-e774-3440-faf83114d7df"><p id="_42c14b47-da75-9bef-a06f-b57f3014621f">102_Dev2011</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_b2ae1647-dba6-da6d-c8a3-bffa746972eb"><p id="_71329303-feb7-3fc9-933c-b7d2a9390283">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_4e3fc7f1-9a0d-2b03-06f7-24938757ffdc"><p id="_9957778c-f9e1-743b-c799-a41aaf5889ea">Sequencing rule scanDirection contents do not match axis names</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_2b2c089d-59ad-3805-f07d-5538fa1776f2"><p id="_f277dbf1-3fea-5a5f-e5fc-99f128671e86">IF attribute sequencingRule.scanDirection does not name all the axes in axisNames OR contains a name which is not an entry in axisNames</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_22d2999d-8ffb-c039-cfff-2b36d1fd2008"><p id="_93686d5d-3893-62c5-55e5-ae646ff52553">Correct the value of sequencingRule.scanDirection</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_ecb453f8-9ccf-b221-cc04-a28781a99cd2"><p id="_a4ddcb45-d6a6-c7d7-8d77-10b61f5d0338">PS, Table 10-4 (Attributes of BathymetryCoverage feature container group)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_cb8efa08-8530-31cd-ea4a-9f4fa4423961"><p id="_3ba68123-a85b-6c5c-7c3c-be9bcf457cbe">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_f1226a63-b628-cbc6-3cf6-d36a749fb021"><p id="_455bfbe4-0e81-60ab-65f5-0f5f6d0c0f33">3.0.0</p>
+</dd>
+<dt>Prerequisites</dt>
+<dd id="_c75381b1-2d71-905b-894d-f1fdd8da83f8"><p id="_f1428e2b-6dd3-b33f-cd1a-75176082e9d7">102_Dev2001</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_0f92fdfb-2325-4745-97be-0f5de3bbfb53"><p id="_7b0f3921-ae6f-faeb-9e35-09a00aaa01fa">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_b5396e79-f689-eb54-3588-bf9a3c1888e2" obligation="normative">
+<title id="_75e5ca61-520f-61f1-259e-9337dcd9d668">102_2010</title>
+<dl id="_6d782f63-ab13-ab35-e85e-e5bfd1a4b894"><dt>Dev ID</dt>
+<dd id="_8c586719-f548-473d-b74a-ea3ff74f6cdc"><p id="_7029f517-e5e1-e488-f004-9dad9c3d415e">102_Dev2012</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_5f976a12-6628-0d36-499d-aac3a0b67527"><p id="_7b899941-13e1-2f52-f542-938a6f111b8b">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_45d3c539-9b41-e180-33a4-672503f8c67b"><p id="_cb0ad9da-10a1-e2dc-9d63-1f166d05f6c2">Extra element in container</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_77384191-1abf-07d3-e4f7-1b9492be982a"><p id="_84938118-d53f-bff5-4f0a-0133f4c554c6">IF there are attributes, datasets, or groups other than those allowed in the product specification</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_8df3a61c-072a-be8c-16c2-ef0298287ea6"><p id="_dd077b87-8cd7-6a1e-bc08-d14ef513f350">Remove or rename extra attribute, dataset, or group</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_1d4abe10-1a81-632b-896e-88a52938ef96"><p id="_6c58d22f-c3ef-4673-daef-b1b47f541a75">PS, 4</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_3fe54357-2848-5f16-627a-b1fb6620b16a"><p id="_3184fb48-f2b9-179e-02d5-6c3cf0696f99">Thematic Accuracy; ThematicClassificationCorrectness OR LogicalConsistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_686bc5ea-5507-f1a8-f47d-43a3cede1aee"><p id="_c0f8fb48-2488-9b27-14d5-8910390dd225">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_5577480b-3293-8420-f6cd-0b2392a895f8"><p id="_9e7f50f8-394a-50b0-5ca9-6e5e5b2386f8">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_2045b951-1c5c-dd81-f9c1-1e008958a8ca" obligation="normative">
+<title id="_ef289c6f-465d-f977-09de-fb6e58dfbb0a">102_2011</title>
+<dl id="_e9ab9ca8-3d74-e811-1bff-90740a715955"><dt>Dev ID</dt>
+<dd id="_85f377a3-a781-ffbd-0676-d8e2acf375ae"><p id="_187e0df8-0813-3fc7-1640-bb74779050b5">102_Dev2014</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_ef25abc9-5e40-e69d-5e61-e97cb012ef73"><p id="_93145f80-27c8-1050-93ac-50ce8d76ac3d">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_2c3425fd-545c-abfc-ff61-4a9db636e359"><p id="_ebda7dc3-146f-266b-f4c1-156e3ee0a131">&lt;QTYPE&gt; must be encoded as Feature oriented Regular Grid</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_a65eb05b-7861-9b11-827c-46058d2eec77"><p id="_11cfc7ae-e1e6-a38e-f1b0-f434a4644990">IF &lt;QTYPE&gt; is present and the data coding format is not 9 (Feature oriented Regular Grid)</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_5dc16ebd-890e-f57a-7e88-869b3494ebd9"><p id="_5da64f52-0c0b-3225-3109-7a37581e84a3">Encode &lt;QTYPE&gt; as Feature oriented Regular Grid</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_83de8f5f-ffc0-3c87-6aa4-fd0fd9c8a01a"><p id="_61373232-8653-ca6e-2aa3-fa9c68777a3d">PS, 10.2.8</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_4482a45e-b6c6-c063-f215-526b34e9e968"><p id="_7950c10a-88d8-ef39-f637-b5dea7c1c098">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_97337b12-469e-32e1-a9fe-7236a9c3865c"><p id="_a2da4a49-3782-4314-e8ab-c36f38ebfa94">3.0.0</p>
+</dd>
+<dt>Prerequisites</dt>
+<dd id="_45d79335-601c-05fb-b91e-1e2921130b76"><p id="_eb7bc950-2326-6d6d-401a-898b18a26e9b">100_0214</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_d758f520-07ae-829b-1a04-431cbd80a695"><p id="_d9156b1e-391f-23db-9def-8b6d638c6bb3">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_0b89655f-3cb2-24a3-0638-4355c9d215c0" obligation="normative">
+<title id="_17cd0f31-b5ce-237a-f098-18744325cd7e">102_2012</title>
+<dl id="_a8fd1642-d46c-98e6-6916-c411a5b701bc"><dt>Dev ID</dt>
+<dd id="_f5327ee2-9d39-7f73-a4b6-1695caa4f683"><p id="_83a4602a-c9e3-720d-f4e3-a7bc802c8713">102_Dev2015</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_5c4cfeeb-dcc0-dd31-a2f2-ca3fd67f991f"><p id="_a2d5fddd-83dc-e124-f5e4-b1a4fad0299e">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_bcfed39e-8b89-85e1-4c5b-858f5ab9b205"><p id="_ad117d51-1a72-2690-7bb0-3de2d685fca8">&lt;FTYPE&gt; must be encoded as Regular Grid</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_329a6a3c-f8b9-fd5b-8e37-434e2b13c585"><p id="_1eb8fb48-4265-6cda-7f7a-32da52842b7a">Data coding format of &lt;FTYPE&gt; is not 2 (Regular Grid)</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_76d24691-8453-7ee7-c4a5-9c2cd23b9317"><p id="_1ee73d43-8220-43ee-866f-c94c906a314e">Encode &lt;FTYPE&gt; as Regular Grid</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_be36f679-29bb-8058-bffb-12a5967673ed"><p id="_b7df3369-eaf3-96fa-7923-cb08d6806753">PS, 10.2.4</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_18d0d7e8-ffa2-b9a0-2e1a-a5986f4e0856"><p id="_59171754-f679-842c-2bff-61c6f2709b54">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_c65c7cc0-5ae0-f6f4-4e7b-9a2635f16f16"><p id="_63df6921-50d4-e76e-f557-97ee2c3d14e8">3.0.0</p>
+</dd>
+<dt>Prerequisites</dt>
+<dd id="_134d5290-4e6c-666c-e967-3f6ae5779917"><p id="_86580d08-e90f-a088-f114-42fbd4ab3c6f">100_0214</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_6285f473-ebbb-52c7-617a-a50044e9a26c"><p id="_e7fabd1d-203d-3d12-f7c3-4be0b2f9ad9e">true</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_0eb15d53-d4a5-3898-85da-4b96e1dae0fa" obligation="normative">
+<title id="_7a2dfd51-e3f0-0e16-62cc-a00d8b566cb2">102_2013</title>
+<dl id="_f7c0a77f-59f3-d3c6-5b98-c0ae4773c400"><dt>Dev ID</dt>
+<dd id="_a19e4806-28d3-8405-68ac-227b2dc5dabc"><p id="_55bd43fa-7255-1c7b-166f-d81947a4a033">102_Dev2013</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_72c6733d-9d27-2fca-ef49-f170ed56ea52"><p id="_3b4b1b8e-3210-0e01-d389-e1394897ee80">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_e9a55a08-7bd1-8209-c569-e17bca31775a"><p id="_48c1f37b-840b-c47b-49f2-c5c28a9beecb">Feature container group error, must be corrected before feature instance checks can be processed</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_ce3b2535-75ff-8e04-2933-992697058a86"><p id="_e37e55a4-8654-5a25-8fb2-427c8da14f4b">IF any of the Phase 2 checks designated as terminator checks were failed</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_e9e931f2-5b2e-4fa5-3daa-732d2bbf7631"><p id="_fac54f23-6be0-b058-7a9b-c19b09c1e061">Correct error before proceeding to next phase</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_4f111d81-15b2-fe31-f028-78a82198a7b9"><p id="_99c11566-ed64-49ad-ab53-2a65d0629bec">N/A, N/A</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_1adea7f3-07d7-1252-b4ed-3850fca38bfd"><p id="_88141e2a-55d3-3ab4-9752-79281ee90d6c">false</p>
+</dd>
+<dt>Notes</dt>
+<dd id="_ad68c95d-fa55-b0a5-c3ed-297677d44892"><p id="_63bc2f57-777f-4d59-1d20-9c43a5ed502b">Gateway to next phase</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_04c21e45-37a9-64a1-e03a-f0e8657a8c02" obligation="normative">
+<title id="_1e28ce1c-5d22-d5ad-5006-02ac90c5396c">102_3001</title>
+<dl id="_ff47aaf1-8813-48ef-153a-b930cc900f00"><dt>Dev ID</dt>
+<dd id="_39d2fc49-557c-5d42-f431-4b0ce76e64bf"><p id="_d8e0eaf2-3bd4-fb3c-77ad-0adcbc7fb8aa">102_Dev3001</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_806df67f-0e7c-a3bb-9407-026fc12300aa"><p id="_91a34fbc-bfb5-ab55-7587-2afdb4cfe93a">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_50e76617-f053-1b2c-be8c-5ecd4d7864fc"><p id="_6f0349bf-2eff-282b-050c-915df615530d">Mandatory attribute missing or of wrong type in instance group</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_04f575e3-4223-00a0-78c6-c1c67284eba2"><p id="_18ec49ef-b9ba-514d-450b-ab27352ee7f3">IF any of the mandatory HDF5 attributes in the PS are missing or of the wrong type</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_bd97d682-9a44-c9ac-4ea6-83d47bcfd2b3"><p id="_54894e7f-0c3b-12f7-5dfc-41600774205d">Add missing attribute or correct type</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_bd8c7966-ddbd-701d-01fc-798d1d132ca5"><p id="_605cf3a4-7899-fbb9-983f-3c5cb997f19d">PS, Table 10-6 (Attributes of BathymetryCoverage feature instance group)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_f1e45fd3-58cb-dcdb-9669-f626dd2de59f"><p id="_60e92ae2-aff3-ae75-327b-37620c42c248">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_10d66deb-1dbf-e748-385a-1b625ed2eed7"><p id="_cc67ea59-002d-5b8e-07fb-90d824a928b3">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_5adc6cdd-b0ef-1f9c-a549-04534d655ede"><p id="_3cab902c-d760-cb95-a175-434b570f252d">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_0ae322fa-5347-d9d5-8ab2-171204710320" obligation="normative">
+<title id="_66923daa-6a31-06ca-3ba9-815e34b57a25">102_3002</title>
+<dl id="_902c8e30-e12b-e221-3f1b-4f86dda2659d"><dt>Dev ID</dt>
+<dd id="_f0e3f9ca-2bfe-e116-963d-26f1fe80e894"><p id="_e9df4915-cf7d-952f-e3a3-6e9ef5e6e024">102_Dev3002</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_94cfd963-2f26-5530-d78f-6b5c7b431cb7"><p id="_e6d97b4b-3bb1-770e-8523-7651eb350474">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_baa25e65-66f1-b38e-c26b-e0d6bb7ec85e"><p id="_b5c5bad3-cd19-f1fb-8ccf-1d0bea1d22fb">Error in bounding box coordinates in instance group</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_f6af412f-19f3-2a01-0a56-88e556bb9f4a"><p id="_d5afe7f0-1d7b-1a14-1901-38745b29ad6a">IF the bounding box attributes westBoundLongitude, eastBoundLongitude, southBoundLatitude, northBoundLatitude are not within the appropriate ranges for the CRS specified by the root group attribute horizontalCRS</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_01eacdab-038d-bd52-3de7-a6377dd67727"><p id="_66529cec-456a-4123-01a2-275ad0e6fc5f">Correct error in bounding box attributes</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_342b79e7-1daf-5c0c-de99-e21b323e1441"><p id="_91f6a90f-abd1-7c8a-8ad1-7e303b102143">PS, Table 10-2 (Root group attributes)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_1ea1c933-d2df-bbf2-29f8-9c1a01e580d2"><p id="_fe68ff3b-1f4f-ed8d-671d-4483db2a3674">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_c8c2c555-b07b-0c98-3bd0-1bc473b60df5"><p id="_e2003e73-67c1-898f-a78c-579930b58a29">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_86d75e85-eb46-88a5-c395-9ff4811ae731"><p id="_6de1df3e-76d3-0529-169f-a718db9bb224">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_224020b5-834d-22e7-904e-501982b6fa84" obligation="normative">
+<title id="_762778eb-1250-8434-b01f-3dee479cb9be">102_3003</title>
+<dl id="_75fea4d7-c99f-58fc-c971-5750ff6fc100"><dt>Dev ID</dt>
+<dd id="_8a9a917d-7b22-67b1-25f6-64f269011d0c"><p id="_32b18fcd-0e5d-4ceb-0eee-8918e74ef622">102_Dev3003</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_da34ecce-aaa8-6cbe-084d-85800eb62e28"><p id="_e3444b8a-3733-09c5-843f-9a665e0e8d43">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_54706fcf-8d0f-f00c-e882-7d8b8a8881f7"><p id="_e785a144-19b4-5419-58d4-eb9cec53441c">Inconsistent bounding box coordinates in instance group</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_d4dd2a6d-136b-cad2-34f0-685dd23fd2e7"><p id="_aa5de362-c487-e3a1-2d45-e7b251ea00cf">IF the bounding box attributes are inconsistent: (eastBoundLongitude ⇐ westBoundLongitude) OR (northBoundLatitude ⇐ southBoundLatitude)</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_ba3442ac-9d37-3746-4269-f6a6064c69c8"><p id="_611e918d-012b-8f8b-519a-79f504849f32">Correct error in bounding box attributes</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_23af0f4f-c27c-99fc-6be4-f4919a5dcb26"><p id="_ab8acb74-a6f6-c62b-4f8f-1cfe28104f48">PS, 6.2.1</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_a5797cdf-d137-00d4-26a6-f5288b4096c4"><p id="_21d10aed-5b35-936e-fe13-1e5187254a33">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_8b8549e3-c4a1-a340-9db3-e8f8d3b6a068"><p id="_fef29976-77a9-cea1-1a57-c4082367addd">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_c510185a-cb95-074a-10fc-d765f7c45a72"><p id="_7b6b4f3c-2373-004f-c8da-ab356c95edd0">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_f0d73f61-4de8-2428-c880-4c14d2005aa7" obligation="normative">
+<title id="_81240bf3-0232-006c-c37c-73642cf2749a">102_3004</title>
+<dl id="_4b167d72-a17c-4a5b-402f-0b58ce388a49"><dt>Dev ID</dt>
+<dd id="_52850bfb-e375-f956-11db-627bc8fca0c2"><p id="_a9397888-9940-b219-f105-6aa547a02ec6">102_Dev3004</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_af330236-e814-db9c-8b4c-a738573cf2f6"><p id="_ba2dab7b-b248-1b9a-5dac-47e63ad8ae2d">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_1935b7f9-e9a1-bd53-207c-371b6c16dfae"><p id="_b6353732-08af-02f3-7ce2-ebefb60c2cad">Bounding box coordinates in instance group not consistent with bounding box at root level</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_f659db1f-72bb-c598-80da-35fd5c81295b"><p id="_115ec318-7e83-33ce-3659-682716608a5a">IF the bounding box for the instance is not spatially within the bounding box specified in the root group</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_768b6c71-e257-84f9-f85b-c88152ff9678"><p id="_316bf422-7613-6b39-ef75-4c24d7960820">Correct error in bounding box attributes</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_1e815524-0128-77f6-4a2e-32ef9e1cab68"><p id="_10b61a5d-71b8-7652-3c8a-3924b3c3efc3">PS, Table 10-2 (Root group attributes)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_442afd10-0d06-af8b-a2ff-3b16b3cf1b47"><p id="_b67a4b11-5a42-cc32-f1ab-84832c36b253">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_23cf8b55-b2d1-ce15-8d6a-0dbeeafd80fc"><p id="_b00ed81f-12f9-ab00-e14f-9250ff0800f1">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_73b8bec0-eafa-40b0-db51-f0b2cabf9e7b"><p id="_3dfb4ba8-f738-40a4-a02a-a7a9032cdf47">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_1596295e-d244-4ec2-c621-40cbbc375a41" obligation="normative">
+<title id="_8c6cc4d4-6c55-f17d-19c2-69cae9411d9c">102_3005</title>
+<dl id="_3517f117-3987-7189-7e63-56ce26ea51da"><dt>Dev ID</dt>
+<dd id="_ff3ea5ef-b142-b891-476b-9032f953518e"><p id="_852cbf78-8a80-248b-0f4e-ddfadb074418">102_Dev3005</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_3a1664d2-b3d1-a81f-8b00-0493002851cb"><p id="_4b3e44b1-e2e9-0190-d2aa-6e8e32becd81">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_4331a5d4-2e1c-4c6e-2475-f80de2ccb39a"><p id="_d0952fb2-7b1c-03ac-af4c-b16ccc93fbbc">Error in grid origin coordinates in instance group</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_0be23dc5-173f-0dfa-5367-f931a5feeb19"><p id="_15a75e44-ba24-53ab-46d4-c5c35aa0df6b">IF the grid origin attributes gridOriginLongitude, gridOriginLatitude are either: not within range for the CRS specified by the root group attribute horizontalCRS OR not within the instance’s bounding box</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_aa473331-2a7c-d7c4-c818-558877fcb467"><p id="_096a8a46-c8ca-fa36-4664-90cde7a9342b">Correct error in grid origin attributes</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_e65afb13-ed0c-8f46-55d2-53c7daf46a71"><p id="_4a6a0dba-63b4-447c-a850-27579dbf8ca3">PS, 6.2.1, 10.2.5, Table 10-6 (Attributes of BathymetryCoverage feature instance group)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_06f80c13-4aec-a082-d93e-c88ee155bac9"><p id="_bee9223c-2d56-fb2b-51d5-38f12931444c">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_2dd3816f-a4ca-0930-8386-7c4e54a742fd"><p id="_bfaee0fc-e180-8660-3e8a-a1ef91194d04">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_fa82e776-1f21-6006-a746-145965fdff8a"><p id="_040aa527-3130-75b4-6a47-af69a1f0d4dd">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_77c79831-1420-0f43-2370-b1cd2deb9163" obligation="normative">
+<title id="_19ed3d76-1c8c-ad7b-49e2-2d1b2b50fa89">102_3006</title>
+<dl id="_703683a8-f682-6a4d-c76f-26e52dc2f4ed"><dt>Dev ID</dt>
+<dd id="_48f18747-4c07-7fb1-4ae6-df6f743897a2"><p id="_344ffe6e-77ec-2915-e1d5-0b8d379e1235">102_Dev3006</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_bba7b620-2940-d24c-fb92-ae871cef3860"><p id="_b339fc82-f69f-422f-4690-b601b890234e">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_26cd9789-9d9d-548f-da1e-7fb362f58502"><p id="_d1e7cc04-04fb-ba12-f1eb-1d9250dcf7f0">Grid spacing attribute in instance group has value out of range</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_a2b98683-6e25-c6f7-d339-4a0ae2cf4988"><p id="_9111b2aa-c047-157a-7d7c-a91ec78a0419">IF attributes gridSpacingLongitudinal ⇐ 0 OR gridSpacingLatitudinal ⇐ 0</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_e4747546-1954-36d0-50bb-9e908ec0b223"><p id="_a316a780-5637-15b6-c1c9-691ff94f105d">Correct value</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_4d8b3182-dd88-de6d-f13e-652c6ade83aa"><p id="_455e9acb-8e43-67b6-dcf7-7268ba4f4dff">PS, 6.2.3, Table 10-6 (Attributes of BathymetryCoverage feature instance group)</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_39db4d9e-78b3-c542-41c3-3b9ad083d693"><p id="_04231948-a0f6-aef3-8214-49f90e25f4c5">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_2033083d-0767-3c82-b0e5-8ea64d9046e5"><p id="_43e34220-3a2c-8fb3-d074-5ecd32359232">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_c95fa506-d731-d714-8a2c-fb29dc9007bb"><p id="_1ed2d960-1c79-46d1-81c3-f39c6342c34b">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_c1355c9a-7e8b-f5d1-9289-c38bd2d72e32" obligation="normative">
+<title id="_32051958-1175-e9c1-cf3d-d86db4e562b5">102_3007</title>
+<dl id="_f938b822-04a9-adea-c444-3e9717585729"><dt>Dev ID</dt>
+<dd id="_8e4dedc5-37fe-efb6-5da5-a4274ecefa3a"><p id="_def01b15-0227-7e61-38c0-5c3c836ccab8">102_Dev3007</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_7874a9a2-ed40-7b2d-2e21-f71f431ab962"><p id="_27725860-be3a-2f8a-e5ab-134cfb02c0b2">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_11eb92bf-6960-e71a-9371-55f8ab2c6199"><p id="_09221ba1-c682-2c30-e862-e442035912dc">Value of gridSpacingLongitudinal or gridSpacingLatitudinal in instance group too high</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_d6a57cba-a255-1c16-b9a8-563cb8a373c2"><p id="_fa518d35-035f-cf85-dbc9-9617d6483e0e">IF attribute gridSpacingLongitudinal &gt; (eastBoundLongitude — westBoundLongitude) OR attribute gridSpacingLatitudinal &gt; (northBoundLatitude — southBoundLatitude)</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_b8ee6359-bec3-2350-6f3d-b2fd08b9541a"><p id="_b8ec83db-dbd0-ee24-57e5-edce2cf3be23">Correct value of attribute</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_974cddca-4f45-5c19-5fad-0a8b288620ec"><p id="_28bb7788-c6df-3fa3-96ed-e35a687cb0bf">PS, 6.2.1</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_65712d9e-2939-4906-62c4-67e7257934d1"><p id="_7d26d3bf-e90b-3825-ff79-a99108a57740">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_a4d92299-d4fd-ff3e-3cda-ba97f701f073"><p id="_f8e5d1f6-da58-ea5b-3a21-f53549179fdd">3.0.0</p>
+</dd>
+<dt>Prerequisites</dt>
+<dd id="_f6aca970-0861-5069-ab93-bd03de8c883b"><p id="_d4a00dd5-1b0c-36b4-2322-c1d8cfab91fb">102_Dev3006</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_ab56970f-2e26-ae08-d1cb-67170932b2ef"><p id="_bc377c54-5e81-fa5f-efb8-2d32ab34665d">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_4ab31ce9-588d-d6b5-8c5c-8e24c08818ff" obligation="normative">
+<title id="_bec95401-f06e-14b4-c08a-d73084b6d17a">102_3008</title>
+<dl id="_9ba4b7c6-a85e-9bdb-b2ac-a04d7f74f800"><dt>Dev ID</dt>
+<dd id="_afd2c2ae-569d-605f-6e42-f6832cde87e2"><p id="_94f78274-9312-badb-d4aa-ad18356c4f13">102_Dev3015</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_e9a015d2-1fc0-8bad-6805-70e5d56350ad"><p id="_6b5fd326-b175-6e6a-df8a-690037587bb1">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_f516e7b5-9e3e-1fd5-63e0-0cc8e60d595e"><p id="_8cec9259-306e-89bf-9c0a-4f51d4bc9978">Extra element in instance group</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_becdcdf3-114c-358b-63bb-e389586678af"><p id="_9ea1fbfd-95d2-4c7a-32d2-3f6ed3b8fdcc">IF there are attributes, datasets, or groups other than those allowed in the product specification</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_1a76e1e2-b846-05e7-4bc2-c5298543c359"><p id="_ec149de7-241d-b7dc-ebf1-873d1817a36e">Remove or rename extra attribute, dataset, or group, or confirm its permissibility</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_eebdbcfc-520f-1d96-32c3-1d410f206a41"><p id="_16e17aed-716f-5827-6097-59781a1b9af1">PS, 10.2.5, 10.2.9</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_9659f7fb-fb91-0416-7302-9ef579765f1c"><p id="_ad73e3a1-0e8a-6d53-2cf0-be02f87db2ee">Thematic Accuracy; ThematicClassificationCorrectness OR Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_4ecb4b75-09b3-e5c8-b3d7-e144c1b01c15"><p id="_582cfeba-684a-ff7f-cef2-34dc22f9a0fb">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_c1b26c87-8941-e496-18c0-6fbc0b993398"><p id="_383eb5dc-d678-8ab3-df25-998e45b3e4cb">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_1aeec65f-ee25-20c1-768b-679460a179ee" obligation="normative">
+<title id="_b06f3917-cb6a-ba78-6724-766dee6371b1">102_3009</title>
+<dl id="_1e8a0014-eb65-4685-c837-ff6f4932c6bb"><dt>Dev ID</dt>
+<dd id="_c25d05b3-f519-9edf-321c-a2bbeb55b124"><p id="_a8980307-9c72-19bd-5b26-2b60859f5d16">102_Dev3017</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_0237b6a4-4895-e45f-28a3-2ed8f79a93b1"><p id="_a8973585-7f8d-29bd-c2ff-e85016cd7882">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_8a87002f-ef9d-67a7-f542-06ee9673e766"><p id="_5563b4ae-6eba-3fb3-0711-ebd2096ed547">Attributes of quality instance group do not match attributes of coverage instance group</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_89af2626-c318-4b47-c43e-dbd5b36380fa"><p id="_d317a10d-2e0e-1363-3e14-20b1a524d9c5">If the HDF5 attributes of &lt;QINST&gt; are different from those of &lt;FINST&gt;. If multiple &lt;FINST&gt; are present, the attributes for the bounding box, domainExtent.polygon and verticalDatum may differ.</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_f98aa3a6-1aeb-1c9a-a146-99667a244f77"><p id="_7c1a9045-d82e-141d-e045-dab2e6005a37">Correct attributes of quality instance group</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_05c3457b-007e-5264-f5ed-cc383cef0856"><p id="_4909026c-605a-eba8-a2bc-e3b8109e0153">PS, 10.2.5, 10.2.9</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_97838809-d644-9f50-0670-d353972eb4bf"><p id="_e6e91a51-b4a8-9e89-847d-c2413872e797">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_8f85cbda-1298-b909-868a-68b52ed55f73"><p id="_712e4f5a-d4ad-57d1-601e-4656f0b0430c">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_6dde7e2a-7555-a56e-e94d-1edada6cc119"><p id="_673486c2-3029-daff-72ba-aee1d863bb7d">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_7f2b7cec-f5d7-cb51-52ef-6cc2d26e9c04" obligation="normative">
+<title id="_b660a89d-3448-7950-3907-18a9ed2f14e9">102_3010</title>
+<dl id="_d9f554e4-0ace-a83e-1efb-e851fff3023d"><dt>Dev ID</dt>
+<dd id="_a32934f2-a9e8-a277-b57a-2eb40793da44"><p id="_57d84ce6-f28f-9c2a-c1e5-4273ee3fb876">102_Dev3018</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_5de3a240-ac38-2f74-783a-7ce5f066e90d"><p id="_e917919a-2530-5f79-6827-a1a7727f2abf">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_9ad42752-01c8-d10b-c862-8a022125ad79"><p id="_5aa3d0af-7d37-c2ad-ca4f-9ca458aaa452">Grid resolution out of range</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_2e8237cc-1481-c7be-66ca-27831aa99e34"><p id="_2559f86b-78ff-2134-b42c-b2760cef5570">IF ABS(numPointsLongitudinal — 1) * gridSpacingLongitudinal) — (eastBoundLongitude — westBoundLongitude<index><primary>numPointsLongitudinal — 1) * gridSpacingLongitudinal) — (eastBoundLongitude — westBoundLongitude</primary></index> &gt; (0.5 * gridSpacingLongitudinal) OR ABS(numPointsLatitudinal — 1) * gridSpacingLatitudinal) — (northBoundLatitude — southBoundLatitude<index><primary>numPointsLatitudinal — 1) * gridSpacingLatitudinal) — (northBoundLatitude — southBoundLatitude</primary></index> &gt; (0.5 * gridSpacingLatitudinal)</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_7911e149-4ce2-36d3-d686-0a94ab11ad5a"><p id="_d3ea4665-e280-a46b-7f43-63416a7625eb">Ensure that grid has correct resolution</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_e2afb99c-55f7-2fba-7735-edb7c6cc1526"><p id="_d415a4fa-f576-75d9-bf2a-96ea58e810c4">PS, 6.2.1</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_71eb5333-4e1a-3f89-7df2-98227851e714"><p id="_197febac-a4a1-3308-cc0c-89c87c27c79c">Logical Consistency; Conceptual Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_4e5d1ff8-97f3-f4c0-2246-a562a6df14d4"><p id="_6d1ffce5-f2f9-a8a2-2bb3-8904d248a30b">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_c9425077-befa-bf4c-1ba1-253de9262ea3"><p id="_b2eb2462-39de-8dc8-d9b0-771a8f06befa">false</p>
+</dd>
+<dt>Notes</dt>
+<dd id="_a9a11532-6684-8ccc-baa8-98d435324062"><p id="_5760206f-a55b-d2d3-f017-1c41cf54be30">there is a tolerance of +/- (0.5*grid spacing) when doing the comparison, as noted in the logical check description</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_70b27540-5eae-700e-aced-b5319b00d952" obligation="normative">
+<title id="_4c4946e5-9640-8a3e-210d-b03da0cb1af5">102_3011</title>
+<dl id="_e6c6233e-0c87-029c-4449-962790860261"><dt>Dev ID</dt>
+<dd id="_3592d9fb-3ac6-3be8-fe4a-d11d28457b32"><p id="_24c598d6-0326-641f-7f6e-92819cf30335">102_Dev3019</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_ee6b9571-26ab-5b40-9aa5-e3d2171ca943"><p id="_15d90fe0-faa5-4678-d897-ce38213becd2">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_4c046c6a-8fac-30d5-a8ff-e6d9c53bb953"><p id="_3ed5cced-a963-e01f-edc7-0ef3985d4631">Instance group structural error, must be corrected before further checks can be processed</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_b70d2f7e-1fc4-42bc-b33c-0ab820ff0cd3"><p id="_4bfc5039-6294-ea83-6481-915d64e97812">IF any of the Phase 3 checks designated as terminator checks were failed</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_ca88642b-2385-3757-14e2-a6eb329dbef3"><p id="_5f59072d-3548-2e05-e20a-49e975fc1052">Correct &lt;FINST&gt; group structure before proceeding to next phase</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_5c61c93d-7d08-bb9b-4024-d3e665b89a45"><p id="_35e27055-99aa-6fb3-51a5-6f6db3f4a84c">N/A, N/A</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_3d37e58b-d691-4e12-ef65-03809ebbd8b3"><p id="_9c204f5c-e777-82c6-0ad2-7e157def2f2a">false</p>
+</dd>
+<dt>Notes</dt>
+<dd id="_16d30e70-5d13-e6cf-6bac-47f733e9ef47"><p id="_73f7a86b-ff3e-9f8c-f676-1e3afae1311f">Gateway to next phase</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_3abba166-eb86-3617-cc22-9d9f361da750" obligation="normative">
+<title id="_34a50318-9edd-8251-c2b0-721c8cc28200">102_5001</title>
+<dl id="_409a2708-cf44-60fd-13e9-ace0bb929807"><dt>Dev ID</dt>
+<dd id="_6d5418bd-cb8d-f1a5-d58b-e3937065ed3f"><p id="_477bf74a-3772-2389-1d01-dd085e9f7103">102_Dev5004</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_97053663-7e61-922c-01d3-4b77fb360f9c"><p id="_555327e4-4456-8853-ccd1-f65ce1ff2c91">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_867ccc59-33a9-2ecc-074c-1a46ee50335d"><p id="_4394c4ea-8805-38a2-5ba0-b90da58af5f9">Values dataset must be s 2-dimensional array</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_d66f422c-d58a-9ece-6f14-13d356910715"><p id="_1fa0a820-ad3b-fd2f-58c8-a820d346088b">IF the values dataset IS NOT a 2-dimensional array of dimensions numPointsLatitudinal X numPointsLongitudinal</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_8ea69108-66c7-2a9b-d688-67f09365ced7"><p id="_f4af5198-b478-05c5-9d49-9c9b8266825a">Correct values dataset</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_84cbabb1-fb15-7b1b-a2c7-1dc43675adcd"><p id="_1082e9ea-7f14-f0ad-d312-9c4365defb15">PS, 10.2.7</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_77c6f488-e871-06e3-4cbb-1c65b35f8621"><p id="_07adde22-49be-a69d-693b-43a08271fed9">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_f4854925-5440-1efa-0775-1533ad0a79ab"><p id="_13a16e4c-1139-4fc3-670d-3e243284b2e3">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_41153e5d-a0c2-4a9b-0091-fd041c77c5e0"><p id="_c8118474-2ffc-cca3-68c1-a638d80ef491">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_b62bfdbd-4f16-731f-1f88-bbfd8508ea2c" obligation="normative">
+<title id="_454b868f-f919-40fb-3ddc-96464ce56d67">102_5002</title>
+<dl id="_0354f16f-bc45-fbe3-b279-f27734867ed2"><dt>Dev ID</dt>
+<dd id="_bbef4f0b-0594-7e40-ef01-0a54f2ba570d"><p id="_cc045fd7-a0d3-f319-7b87-0bdde956ca5b">102_Dev5009</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_ac5c0e09-eec1-0051-f9be-376cd8088163"><p id="_8f430553-c3ef-ff90-fe87-71f74a79158a">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_00d56867-4e75-7955-abc6-8aa8ca83355b"><p id="_b72476de-2b53-634b-86e9-adaecfbf11d6">Data value resolution exceeds product specification</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_9b856390-e93f-6b12-7235-4a031b8c64e4"><p id="_e65b11dc-6528-abe0-414e-30fccce48f0b">IF the precision of any depth or uncertainty value exceeds 0.01 metres</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_8df8572e-d884-6cc7-9f03-1c976e36f517"><p id="_1fbda7ec-7a13-22c8-df8a-e1932c177421">Verify and/or correct</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_3eae8cb7-b7bb-1d5f-8946-1923b1504d03"><p id="_cf5f9b45-c050-eddf-cfa7-0c26492ea272">PS, Annex A.1.1</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_3ba1358c-b781-9542-200f-8f1ee61417a0"><p id="_19991cf3-9833-f58b-74c2-cf2b2c387f25">Logical Consistency; Domain Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_75b313f1-6943-bec0-afaf-11bc2ce939db"><p id="_8280c517-e733-5e40-acd2-7700450047b1">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_76df85e6-dd5d-0fab-4ac4-b1fa1fb28d9e"><p id="_0b8bf21e-26ee-223a-f96c-3d8a5801fcfa">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_b07fb12a-b7eb-2e9e-1479-959e0388bbcc" obligation="normative">
+<title id="_ac14ce3d-bca1-6421-0fe5-2c8b05b194bc">102_5003</title>
+<dl id="_7fdf06ae-c89e-378e-199d-d014b28ba51c"><dt>Dev ID</dt>
+<dd id="_5c18d431-aaa8-892c-acf0-8348339f253d"><p id="_9d9e95d9-5c0e-3b91-1f7c-9ce956199579">102_Dev5010</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_c6108014-f2c4-5207-14ce-1f8c81653717"><p id="_fe04560e-aaea-dfdf-2d75-407dfdcc2cb0">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_47785b44-f47e-65fc-864f-0ef5c786e807"><p id="_4ec60870-8229-4677-0134-b6f336e628fb">Extra element in values group</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_e94ca69a-ffa9-1cc0-4784-0de4ee135212"><p id="_0e6d22bb-fbc6-b794-104c-ff0f248fd522">IF there are attributes, datasets, or groups other than those allowed in the product specification</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_a5200d76-ca24-e756-9458-7f5b692d3b5f"><p id="_2ab2c7b0-1529-ab75-33a1-fda4d7cf953d">Remove or rename extra attribute, dataset, or group, or confirm its permissibility</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_f2d9e954-7951-eae5-55e4-86a1e084686a"><p id="_5b15ab0b-e6fb-6d4d-7099-05a7deee9b69">PS, 10.2.6</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_76299bd4-4e49-a23d-300f-578fd0910e60"><p id="_483da64f-d5a1-0f81-6715-13de88ff9a77">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_22fa602c-8406-9b57-2fe9-f01aadfa9b78"><p id="_485e9a08-571a-9613-eae7-96dafbbf8094">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_ab1f9b8f-8945-921c-8ab8-961baf28b5d2"><p id="_f12c562a-ebb9-5aff-9709-ba53492ef1a6">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_407acf06-6cbd-d4a1-bd4d-208563e3fe5b" obligation="normative">
+<title id="_ae27bc4d-646b-a5b8-bb2c-e638b58ab574">102_5004</title>
+<dl id="_70dc498d-d720-aa83-ef53-e5dd5e255f83"><dt>Dev ID</dt>
+<dd id="_dd8c8597-df1f-fe55-1a56-8613b86ee063"><p id="_a678740e-f562-06d9-3f96-10aadadc105e">102_Dev5011</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_d35c30dd-c342-ca4a-6264-9265b3a73ebc"><p id="_9aa60f37-c33a-e2a0-47e8-488fe03ad384">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_044a0848-9bce-1fb6-005a-1654a8fddd6d"><p id="_7c6ed807-f738-1f7a-2200-0cf72a4ebb37">[X] interior data holes with a size less than [N] nodes were found. Review for potential data gaps.</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_9a7b5f13-5feb-98e0-ea4a-b9152aaec233"><p id="_34a4c19c-6a72-aab8-b005-40c3569098c3">Reports the number of interior no-data regions (“holes”) in &lt;FTYPE&gt; that are smaller than a specified size threshold N. This check identifies undesirable holes within the data footprint. It performs a connected components analysis on no-data cells, discards the main exterior region, and counts the remaining interior regions (“holes”) that have a size less than a threshold N.</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_4f75f1c8-2f22-ccba-a390-6a3c3cd01179"><p id="_55dc97ce-cc4c-83cd-7ca1-2862cc656919">(Notification only)</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_dc688e1e-4e18-33e7-b98b-54dc469c0476"><p id="_b7e8d917-f608-120f-282e-0ef405a46140">N/A, N/A</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_27979c3d-2689-37bf-6cd9-4cccafa0832c"><p id="_44f1ba63-abd1-c614-56b1-c65e19f5ab4a">spatial object</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_818ab89f-7e4a-c5c6-ba56-3d50215c63a7"><p id="_6b890d87-1834-0fc5-6437-54f84f5b9274">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_1b9729f6-2141-f68d-59c8-30d0b611a408"><p id="_74f67251-f224-cbae-40c5-67841abf531e">true</p>
+</dd>
+<dt>Notes</dt>
+<dd id="_3cfd7d2b-c36f-471e-6285-a1180b80df50"><p id="_96a1a59f-10f3-1f33-115d-107c9829a699">The size threshold N should be a configurable parameter in the validation software. A sensible default could be proposed (e.g., N=10).</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_388dee27-ebac-a483-44eb-b14e31c92af9" obligation="normative">
+<title id="_f88499b2-cfe0-2ab9-4aff-d33c79faf653">102_5005</title>
+<dl id="_9344698b-4a37-202a-bda6-79fcf6bb2d0b"><dt>Dev ID</dt>
+<dd id="_03d9a3a9-540f-6a1a-d1e7-219d0bb0f7c8"><p id="_603792e2-fae4-97b6-39ef-3730bbdab3aa">102_Dev5012</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_d3af2181-65c0-4083-04a7-d07e96b7f112"><p id="_8c380b42-d3b7-37ea-a97c-30977128c5ea">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_70dfc6df-055d-2841-4943-0e72979266a7"><p id="_796d63c7-55cb-6d9d-6ecb-1faf126f5299">[X] isolated data groups with a size less than [N] nodes were found. Review for potential data speckling or noise.</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_8dd3a61b-9e38-7149-4bf8-c55e5cceba38"><p id="_e6d73d4c-edc8-e306-8d26-9f0ddbd2bf17">Reports the number of contiguous data groups in &lt;FTYPE&gt; that are smaller than a specified size threshold N. This check identifies data speckling by performing a connected components analysis to find all distinct “islands” of valid data cells. It then counts how many of these islands have a size less than a threshold N.</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_441f6dfb-4f18-666f-5fba-dbf62c3f15cb"><p id="_624dace8-81f7-5b07-ca56-28ceb66c4186">(Notification only)</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_73c4f245-52a1-1926-563d-41abc7d3e65e"><p id="_11827d9b-23c4-7ef5-cf2e-8435a03c1be0">N/A, N/A</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_66c59534-aec9-76f7-9748-279dd58836a4"><p id="_238fa0d6-006c-8f0c-b402-d4673e42cded">spatial object</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_fbfb20fa-2059-b153-6ad2-a76fad4f3b75"><p id="_9a7866bb-4953-62b7-1779-da247716daa7">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_f2e4c590-71de-fe8a-e415-da9072f66bb6"><p id="_3c41709b-32aa-f1d5-f743-326c89fdfc6d">true</p>
+</dd>
+<dt>Notes</dt>
+<dd id="_eb92bb35-d96a-6c31-7693-f48381ef638a"><p id="_405d9550-d18a-5b8d-094a-6b1df833ff15">The size threshold N should be a configurable parameter in the validation software. Recommend a default of N=4.</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_31e54194-fb46-27ee-6de0-e23aedd2a8fd" obligation="normative">
+<title id="_99d7aaba-776b-a8ab-2985-44651437610b">102_9001</title>
+<dl id="_74b2856a-a5bb-bd10-86a6-3506f39399d1"><dt>Dev ID</dt>
+<dd id="_bdbb8065-5630-2e58-bbd2-218375a79907"><p id="_e7372822-3e99-fdcc-81e4-3d1f44882f50">102_Dev9001</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_039feb41-2075-e9dd-4dfc-cc0cb588f99a"><p id="_bc57dce2-69e2-cb78-d22e-28cb071c89ec">critical_error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_363c0a8a-98f3-fc6b-27dd-095367f870fd"><p id="_c88d064b-b652-5820-0884-668ca56a33d0">Non-conformant discovery metadata block</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_e98eba33-b80b-3b20-541c-361bfa94a443"><p id="_8a20516a-2bf9-4d59-189d-9445cecb1267">IF the exchange catalogue blocks for S100_ExchangeCatalogue and S100_DatasetDiscoveryMetadata do not conform to the product-specific restrictions in the PS.</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_ce5f38be-9c5e-1651-3571-34abd6326db7"><p id="_050c6dbd-3133-467a-9e37-f3f9a8073914">Correct discovery metadata block</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_2dfa5d13-2e55-615a-19b1-831dfb46e252"><p id="_ae1fa517-ff83-b07e-30f0-9398585b2c3d">PS, 12</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_bc4b2cf2-2de7-108f-36a4-6c1d3c048c60"><p id="_7767d708-520d-2252-3c1d-b237a6298634">Metadata Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_4b83cc71-33c1-fe53-9033-c2a8bd24544f"><p id="_f1a8db01-95dc-d237-5f00-1ae599fd8f46">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_8762e254-0220-e5a9-2205-bd7e9d617a55"><p id="_dc1435e0-181e-c9d3-9984-5ed22ca70403">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_75c678d9-af2e-2e4c-dc04-352a9ee92932" obligation="normative">
+<title id="_f668531a-f569-10df-4299-19633db74ee6">102_9002</title>
+<dl id="_3684033f-cbe1-c0f5-3419-ba38709395d6"><dt>Dev ID</dt>
+<dd id="_76d6de1d-76e9-3718-a56c-ab027d3212e3"><p id="_7697b4f9-5e58-c27b-ebc0-e66e2f2f3216">102_Dev9002</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_1e18362b-9244-fa1e-6da7-97b44bd321e8"><p id="_f4d0f958-69ee-7a72-5a69-490db14c6175">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_ee8686d0-f086-dec8-e395-7ecb7b29cb73"><p id="_451df36c-cfb9-77f3-ed64-9f0e3a610a08">Inconsistent bounding box for discovery metadata and bounding box.</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_ffd38d32-0565-70cb-0723-0879c6b4a88f"><p id="_01b4fe2c-7096-916d-3b5c-2b2da394deea">If S100_DatasetDiscoveryMetadata attribute boundingBox values are not identical to the bounding box attributes for the root group of the HDF5 dataset.</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_d0db6802-25b6-68ed-9107-38e3b25df107"><p id="_00dc1034-04a5-3ce4-58ae-93a6af52e455">Correct bounding box values.</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_499d8b63-d970-524f-88cc-537b586f47ce"><p id="_8e8f9104-4ae2-3e0b-6adf-b1b59ab816f5">PS, Table 10-2 (Root group attributes), 12.5</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_4d7f9113-44e7-2840-46a1-10a59850e1bf"><p id="_fa119b80-8a96-cdd4-6797-88ad71337afb">Metadata Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_a25704f9-c0b0-7b65-8631-3d5f96399657"><p id="_5764b682-0ebc-f724-7075-a2dac651ee79">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_3dd45fd4-1a01-5636-3a1e-3a3d6cbe54b3"><p id="_3888e86b-2642-89f2-5f01-28e54fa3f194">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_787c67e0-f5bc-7491-8916-a38ab04df91e" obligation="normative">
+<title id="_19031aef-3575-93ec-2f04-e910683fbbce">102_9003</title>
+<dl id="_e2d8600c-67ed-9e51-36a0-fe94502dc898"><dt>Dev ID</dt>
+<dd id="_257bbf8b-6488-2220-1226-74151bdcc85f"><p id="_773c7ee1-1cdb-8f7e-49b2-5ea826ebd942">102_Dev9004</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_cf79c28b-80b6-ca01-2adc-7f04ce8bbbaf"><p id="_d8e254de-d89e-3be0-9877-a4138f9a8ea6">error</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_a01ad3ac-119b-4640-b4cd-987e36e7fa22"><p id="_0c66f340-83cc-7977-5629-e5e3ee15c8ac">This edition of S-102 does not use support files.</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_a54b0c41-1458-97e6-899c-4f4ccf674c14"><p id="_78e13cc3-0f84-e533-483c-ef69f421a458">If support file blocks for S-102 support files are included in the exchange catalogue.</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_71e50d1f-c514-9870-948d-c8f17e03256a"><p id="_b6979b68-3f54-6a73-fc95-57dc0bf54ae6">Remove support file blocks and associated support files if any.</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_98a01358-fe14-764e-3dc4-3f728561a1a0"><p id="_8c8acf8c-006a-3445-68e1-99ff9cd6ebc2">PS, 11.3, 12.5</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_ceb08a50-a6dd-5ee4-1206-4b7bf136e475"><p id="_105b76f1-10d1-1640-b7c8-87a41f3a82cf">Metadata Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_36bf61b4-7aa8-7048-c3be-5c45136f548e"><p id="_cd91f4fa-71dd-f646-caa3-0a0e6e539e24">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_9dee9001-fc01-1674-c5ad-6cff284ce4db"><p id="_637d9ced-a7d1-74a3-3adb-a2a2e15e0e30">false</p>
+</dd>
+</dl>
+</clause>
+
+<clause id="_a4fd35c6-ac29-e42c-0b36-8b4e97dab4a0" obligation="normative">
+<title id="_a6b083a5-b9ba-d4ab-4151-118fbd60218a">102_9004</title>
+<dl id="_eacd4e50-fac8-397b-2ac8-106c277bae52"><dt>Dev ID</dt>
+<dd id="_cc5c5d03-0ab6-a762-1e44-33806e17dcad"><p id="_75fed58c-8554-5340-8149-576a630121d0">102_Dev9005</p>
+</dd>
+<dt>Classification</dt>
+<dd id="_f6f0ddc6-ae35-8a1e-eb56-f76aacdada5c"><p id="_0fc5cf47-a5da-cbed-2e9d-17571dcbdcfe">warning</p>
+</dd>
+<dt>Check message</dt>
+<dd id="_a97ccf9c-7d4c-caa4-526b-93c9c8059a0c"><p id="_0fa0587b-a67f-3162-641c-285eed9cc4a0">Dataset file size exceeds 10MB.</p>
+</dd>
+<dt>Check description</dt>
+<dd id="_c2528509-e234-0493-82e3-bd815c446d05"><p id="_d5f21fe6-2a50-9797-770d-35dead745d26">If the dataset file size is greater than 10MB.</p>
+</dd>
+<dt>Solution</dt>
+<dd id="_25dc9a4b-98d5-bf8d-c5a9-7300360b106d"><p id="_e001b6ff-fdae-fb77-07ed-c8a1e35c4384">(Notification only)</p>
+</dd>
+<dt>Reference</dt>
+<dd id="_694f3d53-9876-f902-266a-9716458f3e7b"><p id="_a8140114-665e-81bf-c7a0-01e37256250b">PS, 11.2.2</p>
+</dd>
+<dt>Data quality measures</dt>
+<dd id="_fcec1fc4-fc4c-b8ae-226a-751da7509c08"><p id="_2be780f5-15f5-dfba-accd-6ec7ad938196">Logical Consistency; Format Consistency</p>
+</dd>
+<dt>Introduced</dt>
+<dd id="_868377cf-10ad-dd04-4f3e-4c5e85c5ee43"><p id="_33bfbebf-e304-d235-a412-ca96573aebe4">3.0.0</p>
+</dd>
+<dt>Terminate if failure</dt>
+<dd id="_ac9af51f-65e2-5dbc-c36b-05550bd20530"><p id="_dd4441c6-3faf-7629-a886-3dae40cfb629">false</p>
+</dd>
+</dl>
+</clause>
+</clause>
+
+
+</sections><bibliography><references id="_e28b5acd-452b-1b6c-bf8c-c242a10ca297" normative="false" obligation="informative">
+<title id="_2b4ed339-a7ed-1bbb-9576-55fcbc1ace3a">Bibliography</title><bibitem id="_2d854cc3-d6cf-130d-e3f6-d3dc9b7c3c6d" type="standard" schema-version="v1.5.6" anchor="ISO_19101" hidden="true">
+  <fetched>2026-11-25</fetched>
+  
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
+
+  
+<title language="en" script="Latn" type="title-main">Reference model</title>
+
+  
+<title language="en" script="Latn" type="main">Geographic information — Reference model</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Modèle de référence</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Modèle de référence</title>
+
+  <uri type="src">https://www.iso.org/standard/26002.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:26002:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/02/60/26002.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19101</docidentifier>
+  <docidentifier type="iso-reference">ISO 19101(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19101:stage-95.99</docidentifier>
+  <docnumber>19101</docnumber>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier>ISO/TC 211</identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <language>en</language>
+  <script>Latn</script>
+  <status>
+    <stage>95</stage>
+    <substage>99</substage>
+  </status>
+  <copyright>
+    <from>2002</from>
+    <owner>
+      <organization>
+        
+<name>ISO</name>
+
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletedBy">
+    <bibitem>
+      <formattedref>ISO 19101-1:2014</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19101-1:2014</docidentifier>
+      <date type="published">
+        <on>2014-11-12</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="instanceOf">
+    <bibitem type="standard">
+      
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
+
+      
+<title language="en" script="Latn" type="title-main">Reference model</title>
+
+      
+<title language="en" script="Latn" type="main">Geographic information — Reference model</title>
+
+      
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+      
+<title language="fr" script="Latn" type="title-main">Modèle de référence</title>
+
+      
+<title language="fr" script="Latn" type="main">Information géographique — Modèle de référence</title>
+
+      <uri type="src">https://www.iso.org/standard/26002.html</uri>
+      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:26002:en</uri>
+      <uri type="rss">https://www.iso.org/contents/data/standard/02/60/26002.detail.rss</uri>
+      <docidentifier type="ISO" primary="true">ISO 19101:2002</docidentifier>
+      <docidentifier type="iso-undated">ISO 19101</docidentifier>
+      <docidentifier type="iso-reference">ISO 19101:2002(E)</docidentifier>
+      <docidentifier type="URN">urn:iso:std:iso:19101:stage-95.99</docidentifier>
+      <docnumber>19101</docnumber>
+      <date type="published">
+        <on>2002-07-04</on>
+      </date>
+      <contributor>
+        <role type="publisher"/>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <abbreviation>ISO</abbreviation>
+          <uri>www.iso.org</uri>
+        </organization>
+      </contributor>
+      <contributor>
+        <role type="author">
+          <description>committee</description>
+        </role>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <subdivision type="technical-committee" subtype="TC">
+            
+<name>Geographic information/Geomatics</name>
+
+            <identifier>ISO/TC 211</identifier>
+          </subdivision>
+          <abbreviation>ISO</abbreviation>
+        </organization>
+      </contributor>
+      <edition>1</edition>
+      <language>en</language>
+      <script>Latn</script>
+      <abstract language="en" script="Latn">This International Standard defines the framework for standardization in the field of geographic information and sets forth the basic principles by which this standardization takes place. This framework identifies the scope of the standardization activity being undertaken and the context in which it takes place. The framework provides the method by which what is to be standardized can be determined and describes how the contents of the standards are related. Although structured in the context of information technology and information technology standards, this International Standard is independent of any application development method or technology implementation approach.</abstract>
+      <status>
+        <stage>95</stage>
+        <substage>99</substage>
+      </status>
+      <copyright>
+        <from>2002</from>
+        <owner>
+          <organization>
+            
+<name>ISO</name>
+
+          </organization>
+        </owner>
+      </copyright>
+      <relation type="obsoletedBy">
+        <bibitem>
+          <formattedref>ISO 19101-1:2014</formattedref>
+          <docidentifier type="ISO" primary="true">ISO 19101-1:2014</docidentifier>
+          <date type="published">
+            <on>2014-11-12</on>
+          </date>
+        </bibitem>
+
+      </relation>
+      <place>
+        <city>Geneva</city>
+      </place>
+    </bibitem>
+
+  </relation>
+  <place>
+    <city>Geneva</city>
+  </place>
+</bibitem><bibitem id="_b5cd2be9-9614-c191-862c-7a6fc07c4958" type="standard" schema-version="v1.5.6" anchor="ISO_19107" hidden="true">
+  <fetched>2026-11-25</fetched>
+  
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
+
+  
+<title language="en" script="Latn" type="title-main">Spatial schema</title>
+
+  
+<title language="en" script="Latn" type="main">Geographic information — Spatial schema</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Schéma spatial</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Schéma spatial</title>
+
+  <uri type="src">https://www.iso.org/standard/66175.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:66175:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/06/61/66175.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19107</docidentifier>
+  <docidentifier type="iso-reference">ISO 19107(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19107:stage-90.93</docidentifier>
+  <docnumber>19107</docnumber>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier>ISO/TC 211</identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
+  <edition>2</edition>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <status>
+    <stage>90</stage>
+    <substage>93</substage>
+  </status>
+  <copyright>
+    <from>2019</from>
+    <owner>
+      <organization>
+        
+<name>ISO</name>
+
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO 19107:2003</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19107:2003</docidentifier>
+      <date type="published">
+        <on>2003-05-08</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="instanceOf">
+    <bibitem type="standard">
+      
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
+
+      
+<title language="en" script="Latn" type="title-main">Spatial schema</title>
+
+      
+<title language="en" script="Latn" type="main">Geographic information — Spatial schema</title>
+
+      
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+      
+<title language="fr" script="Latn" type="title-main">Schéma spatial</title>
+
+      
+<title language="fr" script="Latn" type="main">Information géographique — Schéma spatial</title>
+
+      <uri type="src">https://www.iso.org/standard/66175.html</uri>
+      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:66175:en</uri>
+      <uri type="rss">https://www.iso.org/contents/data/standard/06/61/66175.detail.rss</uri>
+      <docidentifier type="ISO" primary="true">ISO 19107:2019</docidentifier>
+      <docidentifier type="iso-undated">ISO 19107</docidentifier>
+      <docidentifier type="iso-reference">ISO 19107:2019(E)</docidentifier>
+      <docidentifier type="URN">urn:iso:std:iso:19107:stage-90.93</docidentifier>
+      <docnumber>19107</docnumber>
+      <date type="published">
+        <on>2019-12-02</on>
+      </date>
+      <contributor>
+        <role type="publisher"/>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <abbreviation>ISO</abbreviation>
+          <uri>www.iso.org</uri>
+        </organization>
+      </contributor>
+      <contributor>
+        <role type="author">
+          <description>committee</description>
+        </role>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <subdivision type="technical-committee" subtype="TC">
+            
+<name>Geographic information/Geomatics</name>
+
+            <identifier>ISO/TC 211</identifier>
+          </subdivision>
+          <abbreviation>ISO</abbreviation>
+        </organization>
+      </contributor>
+      <edition>2</edition>
+      <language>en</language>
+      <language>fr</language>
+      <script>Latn</script>
+      <abstract language="en" script="Latn">This document specifies conceptual schemas for describing the spatial characteristics of geographic entities, and a set of spatial operations consistent with these schemas. It treats “vector” geometry and topology. It defines standard spatial operations for use in access, query, management, processing and data exchange of geographic information for spatial (geometric and topological) objects. Because of the nature of geographic information, these geometric coordinate spaces will normally have up to three spatial dimensions, one temporal dimension and any number of other spatially dependent parameters as needed by the applications. In general, the topological dimension of the spatial projections of the geometric objects will be at most three.</abstract>
+      <status>
+        <stage>90</stage>
+        <substage>93</substage>
+      </status>
+      <copyright>
+        <from>2019</from>
+        <owner>
+          <organization>
+            
+<name>ISO</name>
+
+          </organization>
+        </owner>
+      </copyright>
+      <relation type="obsoletes">
+        <bibitem>
+          <formattedref>ISO 19107:2003</formattedref>
+          <docidentifier type="ISO" primary="true">ISO 19107:2003</docidentifier>
+          <date type="published">
+            <on>2003-05-08</on>
+          </date>
+        </bibitem>
+
+      </relation>
+      <place>
+        <city>Geneva</city>
+      </place>
+    </bibitem>
+
+  </relation>
+  <place>
+    <city>Geneva</city>
+  </place>
+</bibitem><bibitem id="_dba0bb52-6b88-9e03-3f80-0f336df43eee" type="standard" schema-version="v1.5.6" anchor="ISO_19103" hidden="true">
+  <fetched>2026-11-25</fetched>
+  
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
+
+  
+<title language="en" script="Latn" type="title-main">Conceptual schema language</title>
+
+  
+<title language="en" script="Latn" type="main">Geographic information — Conceptual schema language</title>
+
+  
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+  
+<title language="fr" script="Latn" type="title-main">Langage de schéma conceptuel</title>
+
+  
+<title language="fr" script="Latn" type="main">Information géographique — Langage de schéma conceptuel</title>
+
+  <uri type="src">https://www.iso.org/standard/83454.html</uri>
+  <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:83454:en</uri>
+  <uri type="rss">https://www.iso.org/contents/data/standard/08/34/83454.detail.rss</uri>
+  <docidentifier type="ISO" primary="true">ISO 19103</docidentifier>
+  <docidentifier type="iso-reference">ISO 19103(E)</docidentifier>
+  <docidentifier type="URN">urn:iso:std:iso:19103</docidentifier>
+  <docnumber>19103</docnumber>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <abbreviation>ISO</abbreviation>
+      <uri>www.iso.org</uri>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author">
+      <description>committee</description>
+    </role>
+    <organization>
+      
+<name>International Organization for Standardization</name>
+
+      <subdivision type="technical-committee" subtype="TC">
+        
+<name>Geographic information/Geomatics</name>
+
+        <identifier>ISO/TC 211</identifier>
+      </subdivision>
+      <abbreviation>ISO</abbreviation>
+    </organization>
+  </contributor>
+  <edition>2</edition>
+  <language>en</language>
+  <language>fr</language>
+  <script>Latn</script>
+  <status>
+    <stage>60</stage>
+    <substage>60</substage>
+  </status>
+  <copyright>
+    <from>2024</from>
+    <owner>
+      <organization>
+        
+<name>ISO</name>
+
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem>
+      <formattedref>ISO 19103:2015</formattedref>
+      <docidentifier type="ISO" primary="true">ISO 19103:2015</docidentifier>
+      <date type="published">
+        <on>2015-12-02</on>
+      </date>
+    </bibitem>
+
+  </relation>
+  <relation type="instanceOf">
+    <bibitem type="standard">
+      
+<title language="en" script="Latn" type="title-intro">Geographic information</title>
+
+      
+<title language="en" script="Latn" type="title-main">Conceptual schema language</title>
+
+      
+<title language="en" script="Latn" type="main">Geographic information — Conceptual schema language</title>
+
+      
+<title language="fr" script="Latn" type="title-intro">Information géographique</title>
+
+      
+<title language="fr" script="Latn" type="title-main">Langage de schéma conceptuel</title>
+
+      
+<title language="fr" script="Latn" type="main">Information géographique — Langage de schéma conceptuel</title>
+
+      <uri type="src">https://www.iso.org/standard/83454.html</uri>
+      <uri type="obp">https://www.iso.org/obp/ui/en/#!iso:std:83454:en</uri>
+      <uri type="rss">https://www.iso.org/contents/data/standard/08/34/83454.detail.rss</uri>
+      <docidentifier type="ISO" primary="true">ISO 19103:2024</docidentifier>
+      <docidentifier type="iso-undated">ISO 19103</docidentifier>
+      <docidentifier type="iso-reference">ISO 19103:2024(E)</docidentifier>
+      <docidentifier type="URN">urn:iso:std:iso:19103</docidentifier>
+      <docnumber>19103</docnumber>
+      <date type="published">
+        <on>2024-09-27</on>
+      </date>
+      <contributor>
+        <role type="publisher"/>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <abbreviation>ISO</abbreviation>
+          <uri>www.iso.org</uri>
+        </organization>
+      </contributor>
+      <contributor>
+        <role type="author">
+          <description>committee</description>
+        </role>
+        <organization>
+          
+<name>International Organization for Standardization</name>
+
+          <subdivision type="technical-committee" subtype="TC">
+            
+<name>Geographic information/Geomatics</name>
+
+            <identifier>ISO/TC 211</identifier>
+          </subdivision>
+          <abbreviation>ISO</abbreviation>
+        </organization>
+      </contributor>
+      <edition>2</edition>
+      <language>en</language>
+      <language>fr</language>
+      <script>Latn</script>
+      <abstract language="en" script="Latn">This document specifies provisions for the use of a conceptual schema language within the context of modelling geographic information. The chosen conceptual schema language is a subset of the Unified Modeling Language (UML). This document specifies a UML profile for modelling geographic information. This document specifies a set of core data types for use in conceptual schemas. The standardization target type of this document is conceptual schemas describing geographic information.</abstract>
+      <status>
+        <stage>60</stage>
+        <substage>60</substage>
+      </status>
+      <copyright>
+        <from>2024</from>
+        <owner>
+          <organization>
+            
+<name>ISO</name>
+
+          </organization>
+        </owner>
+      </copyright>
+      <relation type="obsoletes">
+        <bibitem>
+          <formattedref>ISO 19103:2015</formattedref>
+          <docidentifier type="ISO" primary="true">ISO 19103:2015</docidentifier>
+          <date type="published">
+            <on>2015-12-02</on>
+          </date>
+        </bibitem>
+
+      </relation>
+      <place>
+        <city>Geneva</city>
+      </place>
+    </bibitem>
+
+  </relation>
+  <place>
+    <city>Geneva</city>
+  </place>
+</bibitem>
+
+
+
+</references></bibliography>
+</metanorma>
